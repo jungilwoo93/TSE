@@ -10,3 +10,4 @@ Require-Bundle: fr.uha.ensisa.project.pan_chabalier,
  org.eclipse.xtext.testing,
  org.eclipse.xtext.xbase.testing
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: fr.uha.ensisa.project.pan_chabalier.tests

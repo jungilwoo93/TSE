@@ -12,3 +12,4 @@ Require-Bundle: fr.uha.ensisa.project.pan_chabalier.ui,
  org.eclipse.xtext.junit4,
  org.eclipse.xtext.xbase.junit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: fr.uha.ensisa.project.pan_chabalier.ui.tests

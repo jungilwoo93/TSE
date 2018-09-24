@@ -9,3 +9,4 @@ Require-Bundle: fr.uha.ensisa.project.pan_chabalier,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: fr.uha.ensisa.project.pan_chabalier.ide
