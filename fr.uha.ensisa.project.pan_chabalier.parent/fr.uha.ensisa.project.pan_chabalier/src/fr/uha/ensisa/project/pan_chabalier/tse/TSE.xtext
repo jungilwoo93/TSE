@@ -1,0 +1,9 @@
+grammar fr.uha.ensisa.project.pan_chabalier.tse.TSE with org.eclipse.xtext.common.Terminals
+
+generate tSE "http://www.uha.fr/ensisa/project/pan_chabalier/tse/TSE"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
