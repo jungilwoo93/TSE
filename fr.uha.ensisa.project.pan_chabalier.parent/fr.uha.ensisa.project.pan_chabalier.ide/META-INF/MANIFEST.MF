@@ -7,6 +7,10 @@ Bundle-SymbolicName: fr.uha.ensisa.project.pan_chabalier.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: fr.uha.ensisa.project.pan_chabalier,
  org.eclipse.xtext.ide,
- org.eclipse.xtext.xbase.ide
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: fr.uha.ensisa.project.pan_chabalier.ide
+Export-Package: fr.uha.ensisa.project.pan_chabalier.tse.ide.contentassist.antlr.internal,
+ fr.uha.ensisa.project.pan_chabalier.tse.ide.contentassist.antlr
+

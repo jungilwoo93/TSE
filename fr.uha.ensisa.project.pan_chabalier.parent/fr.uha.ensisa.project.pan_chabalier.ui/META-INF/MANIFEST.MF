@@ -11,7 +11,16 @@ Require-Bundle: fr.uha.ensisa.project.pan_chabalier,
  org.eclipse.xtext.ui.shared,
  org.eclipse.xtext.ui.codetemplates.ui,
  org.eclipse.ui.editors;bundle-version="3.5.0",
- org.eclipse.ui.ide;bundle-version="3.5.0"
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtend.lib;resolution:=optional,
+ org.eclipse.xtext.xbase.lib
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: fr.uha.ensisa.project.pan_chabalier.ui
+Export-Package: fr.uha.ensisa.project.pan_chabalier.tse.ui.quickfix,
+ fr.uha.ensisa.project.pan_chabalier.tse.ui.contentassist,
+ fr.uha.ensisa.project.pan_chabalier.ui.internal
+Bundle-Activator: fr.uha.ensisa.project.pan_chabalier.ui.internal.Pan_chabalierActivator

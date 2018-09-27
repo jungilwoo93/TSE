@@ -3,7 +3,45 @@ grammar fr.uha.ensisa.project.pan_chabalier.tse.TSE with org.eclipse.xtext.commo
 generate tSE "http://www.uha.fr/ensisa/project/pan_chabalier/tse/TSE"
 
 Model:
-	greetings+=Greeting*;
+	elements+=Element*;
+
+Element:
+	states+=State
+	| transitions+=Transition;
+
+State:
+	"state" name+=ID statesPropriety+=StatesProperties*;
+
+StatesProperties:
+	"color" color+=COLOR
+	| "thickness" thickness+=FLOAT
+	| "position" position+=ID
+	| DEFAULT position+=ID;
+
+Transition:
+	"transition" start+=ID end+=EndTransition proprietyStates+=transitionProperties* (label=Label)?
+	| "initialTransition" init+=ID INT;
+
+Label:
+	"label" INT;
+
+EndTransition:
+	"->" end+=ID
+	| "reflexive" end+="reflexive";
+
+transitionProperties:
+	"color" color+=COLOR
+	| "thickness" thickness+=FLOAT
+	| "curvature" curve+=FLOAT
+	| DEFAULT position+=ID;
+
+terminal DEFAULT:
+	("DEFAULT" | "default");
+
+terminal COLOR:
+	("WHITE" | "BLACK" | "BLUE" | "CYAN" | "DARK_GRAY" | "GRAY" | "LIGHT_GRAY" | "GREEN" | "MAGENTA" | "ORANGE" | "PINK"
+	| "RED" | "YELLOW");
+
+terminal FLOAT:
+	INT '.' INT;
 	
-Greeting:
-	'Hello' name=ID '!';
