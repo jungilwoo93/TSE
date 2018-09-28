@@ -34,7 +34,6 @@ public class TSEParser extends AbstractContentAssistParser {
 					put(grammarAccess.getElementAccess().getAlternatives(), "rule__Element__Alternatives");
 					put(grammarAccess.getStatesPropertiesAccess().getAlternatives(), "rule__StatesProperties__Alternatives");
 					put(grammarAccess.getTransitionAccess().getAlternatives(), "rule__Transition__Alternatives");
-					put(grammarAccess.getEndTransitionAccess().getAlternatives(), "rule__EndTransition__Alternatives");
 					put(grammarAccess.getTransitionPropertiesAccess().getAlternatives(), "rule__TransitionProperties__Alternatives");
 					put(grammarAccess.getStateAccess().getGroup(), "rule__State__Group__0");
 					put(grammarAccess.getStatesPropertiesAccess().getGroup_0(), "rule__StatesProperties__Group_0__0");
@@ -44,12 +43,9 @@ public class TSEParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTransitionAccess().getGroup_0(), "rule__Transition__Group_0__0");
 					put(grammarAccess.getTransitionAccess().getGroup_1(), "rule__Transition__Group_1__0");
 					put(grammarAccess.getLabelAccess().getGroup(), "rule__Label__Group__0");
-					put(grammarAccess.getEndTransitionAccess().getGroup_0(), "rule__EndTransition__Group_0__0");
-					put(grammarAccess.getEndTransitionAccess().getGroup_1(), "rule__EndTransition__Group_1__0");
 					put(grammarAccess.getTransitionPropertiesAccess().getGroup_0(), "rule__TransitionProperties__Group_0__0");
 					put(grammarAccess.getTransitionPropertiesAccess().getGroup_1(), "rule__TransitionProperties__Group_1__0");
 					put(grammarAccess.getTransitionPropertiesAccess().getGroup_2(), "rule__TransitionProperties__Group_2__0");
-					put(grammarAccess.getTransitionPropertiesAccess().getGroup_3(), "rule__TransitionProperties__Group_3__0");
 					put(grammarAccess.getModelAccess().getElementsAssignment(), "rule__Model__ElementsAssignment");
 					put(grammarAccess.getElementAccess().getStatesAssignment_0(), "rule__Element__StatesAssignment_0");
 					put(grammarAccess.getElementAccess().getTransitionsAssignment_1(), "rule__Element__TransitionsAssignment_1");
@@ -60,16 +56,16 @@ public class TSEParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStatesPropertiesAccess().getPositionAssignment_2_1(), "rule__StatesProperties__PositionAssignment_2_1");
 					put(grammarAccess.getStatesPropertiesAccess().getPositionAssignment_3_1(), "rule__StatesProperties__PositionAssignment_3_1");
 					put(grammarAccess.getTransitionAccess().getStartAssignment_0_1(), "rule__Transition__StartAssignment_0_1");
-					put(grammarAccess.getTransitionAccess().getEndAssignment_0_2(), "rule__Transition__EndAssignment_0_2");
-					put(grammarAccess.getTransitionAccess().getProprietyStatesAssignment_0_3(), "rule__Transition__ProprietyStatesAssignment_0_3");
-					put(grammarAccess.getTransitionAccess().getLabelAssignment_0_4(), "rule__Transition__LabelAssignment_0_4");
+					put(grammarAccess.getTransitionAccess().getEndAssignment_0_3(), "rule__Transition__EndAssignment_0_3");
+					put(grammarAccess.getTransitionAccess().getProprietyTransitionAssignment_0_4(), "rule__Transition__ProprietyTransitionAssignment_0_4");
+					put(grammarAccess.getTransitionAccess().getLabelAssignment_0_5(), "rule__Transition__LabelAssignment_0_5");
 					put(grammarAccess.getTransitionAccess().getInitAssignment_1_1(), "rule__Transition__InitAssignment_1_1");
-					put(grammarAccess.getEndTransitionAccess().getEndAssignment_0_1(), "rule__EndTransition__EndAssignment_0_1");
-					put(grammarAccess.getEndTransitionAccess().getEndAssignment_1_1(), "rule__EndTransition__EndAssignment_1_1");
+					put(grammarAccess.getLabelAccess().getTextAssignment_1(), "rule__Label__TextAssignment_1");
+					put(grammarAccess.getLabelAccess().getPositionAssignment_2(), "rule__Label__PositionAssignment_2");
+					put(grammarAccess.getCoordinatesStatesTransitionAccess().getStateTransitionAssignment(), "rule__CoordinatesStatesTransition__StateTransitionAssignment");
 					put(grammarAccess.getTransitionPropertiesAccess().getColorAssignment_0_1(), "rule__TransitionProperties__ColorAssignment_0_1");
 					put(grammarAccess.getTransitionPropertiesAccess().getThicknessAssignment_1_1(), "rule__TransitionProperties__ThicknessAssignment_1_1");
 					put(grammarAccess.getTransitionPropertiesAccess().getCurveAssignment_2_1(), "rule__TransitionProperties__CurveAssignment_2_1");
-					put(grammarAccess.getTransitionPropertiesAccess().getPositionAssignment_3_1(), "rule__TransitionProperties__PositionAssignment_3_1");
 				}
 			};
 		}

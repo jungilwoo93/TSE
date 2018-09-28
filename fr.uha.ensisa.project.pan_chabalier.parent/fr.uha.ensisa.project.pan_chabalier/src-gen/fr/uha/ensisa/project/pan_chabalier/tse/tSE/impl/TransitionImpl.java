@@ -3,7 +3,8 @@
  */
 package fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl;
 
-import fr.uha.ensisa.project.pan_chabalier.tse.tSE.EndTransition;
+import fr.uha.ensisa.project.pan_chabalier.tse.tSE.CoordinatesStatesTransition;
+import fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties;
@@ -35,7 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionImpl#getStart <em>Start</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionImpl#getEnd <em>End</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionImpl#getProprietyStates <em>Propriety States</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionImpl#getProprietyTransition <em>Propriety Transition</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionImpl#getInit <em>Init</em>}</li>
  * </ul>
@@ -45,54 +46,44 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class TransitionImpl extends MinimalEObjectImpl.Container implements Transition
 {
   /**
-   * The cached value of the '{@link #getStart() <em>Start</em>}' attribute list.
+   * The cached value of the '{@link #getStart() <em>Start</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStart()
    * @generated
    * @ordered
    */
-  protected EList<String> start;
+  protected CoordinatesStatesTransition start;
 
   /**
-   * The cached value of the '{@link #getEnd() <em>End</em>}' containment reference list.
+   * The cached value of the '{@link #getEnd() <em>End</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEnd()
    * @generated
    * @ordered
    */
-  protected EList<EndTransition> end;
+  protected CoordinatesStatesTransition end;
 
   /**
-   * The cached value of the '{@link #getProprietyStates() <em>Propriety States</em>}' containment reference list.
+   * The cached value of the '{@link #getProprietyTransition() <em>Propriety Transition</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProprietyStates()
+   * @see #getProprietyTransition()
    * @generated
    * @ordered
    */
-  protected EList<transitionProperties> proprietyStates;
+  protected EList<transitionProperties> proprietyTransition;
 
   /**
-   * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getLabel()
-   * @generated
-   * @ordered
-   */
-  protected static final String LABEL_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
+   * The cached value of the '{@link #getLabel() <em>Label</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getLabel()
    * @generated
    * @ordered
    */
-  protected String label = LABEL_EDEFAULT;
+  protected Label label;
 
   /**
    * The cached value of the '{@link #getInit() <em>Init</em>}' attribute list.
@@ -130,12 +121,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getStart()
+  public CoordinatesStatesTransition getStart()
   {
-    if (start == null)
-    {
-      start = new EDataTypeEList<String>(String.class, this, TSEPackage.TRANSITION__START);
-    }
     return start;
   }
 
@@ -144,12 +131,46 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EndTransition> getEnd()
+  public NotificationChain basicSetStart(CoordinatesStatesTransition newStart, NotificationChain msgs)
   {
-    if (end == null)
+    CoordinatesStatesTransition oldStart = start;
+    start = newStart;
+    if (eNotificationRequired())
     {
-      end = new EObjectContainmentEList<EndTransition>(EndTransition.class, this, TSEPackage.TRANSITION__END);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION__START, oldStart, newStart);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStart(CoordinatesStatesTransition newStart)
+  {
+    if (newStart != start)
+    {
+      NotificationChain msgs = null;
+      if (start != null)
+        msgs = ((InternalEObject)start).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TSEPackage.TRANSITION__START, null, msgs);
+      if (newStart != null)
+        msgs = ((InternalEObject)newStart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TSEPackage.TRANSITION__START, null, msgs);
+      msgs = basicSetStart(newStart, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION__START, newStart, newStart));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CoordinatesStatesTransition getEnd()
+  {
     return end;
   }
 
@@ -158,13 +179,16 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<transitionProperties> getProprietyStates()
+  public NotificationChain basicSetEnd(CoordinatesStatesTransition newEnd, NotificationChain msgs)
   {
-    if (proprietyStates == null)
+    CoordinatesStatesTransition oldEnd = end;
+    end = newEnd;
+    if (eNotificationRequired())
     {
-      proprietyStates = new EObjectContainmentEList<transitionProperties>(transitionProperties.class, this, TSEPackage.TRANSITION__PROPRIETY_STATES);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION__END, oldEnd, newEnd);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return proprietyStates;
+    return msgs;
   }
 
   /**
@@ -172,7 +196,42 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getLabel()
+  public void setEnd(CoordinatesStatesTransition newEnd)
+  {
+    if (newEnd != end)
+    {
+      NotificationChain msgs = null;
+      if (end != null)
+        msgs = ((InternalEObject)end).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TSEPackage.TRANSITION__END, null, msgs);
+      if (newEnd != null)
+        msgs = ((InternalEObject)newEnd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TSEPackage.TRANSITION__END, null, msgs);
+      msgs = basicSetEnd(newEnd, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION__END, newEnd, newEnd));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<transitionProperties> getProprietyTransition()
+  {
+    if (proprietyTransition == null)
+    {
+      proprietyTransition = new EObjectContainmentEList<transitionProperties>(transitionProperties.class, this, TSEPackage.TRANSITION__PROPRIETY_TRANSITION);
+    }
+    return proprietyTransition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Label getLabel()
   {
     return label;
   }
@@ -182,12 +241,37 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLabel(String newLabel)
+  public NotificationChain basicSetLabel(Label newLabel, NotificationChain msgs)
   {
-    String oldLabel = label;
+    Label oldLabel = label;
     label = newLabel;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION__LABEL, oldLabel, label));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION__LABEL, oldLabel, newLabel);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLabel(Label newLabel)
+  {
+    if (newLabel != label)
+    {
+      NotificationChain msgs = null;
+      if (label != null)
+        msgs = ((InternalEObject)label).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TSEPackage.TRANSITION__LABEL, null, msgs);
+      if (newLabel != null)
+        msgs = ((InternalEObject)newLabel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TSEPackage.TRANSITION__LABEL, null, msgs);
+      msgs = basicSetLabel(newLabel, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION__LABEL, newLabel, newLabel));
   }
 
   /**
@@ -214,10 +298,14 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
   {
     switch (featureID)
     {
+      case TSEPackage.TRANSITION__START:
+        return basicSetStart(null, msgs);
       case TSEPackage.TRANSITION__END:
-        return ((InternalEList<?>)getEnd()).basicRemove(otherEnd, msgs);
-      case TSEPackage.TRANSITION__PROPRIETY_STATES:
-        return ((InternalEList<?>)getProprietyStates()).basicRemove(otherEnd, msgs);
+        return basicSetEnd(null, msgs);
+      case TSEPackage.TRANSITION__PROPRIETY_TRANSITION:
+        return ((InternalEList<?>)getProprietyTransition()).basicRemove(otherEnd, msgs);
+      case TSEPackage.TRANSITION__LABEL:
+        return basicSetLabel(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -236,8 +324,8 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
         return getStart();
       case TSEPackage.TRANSITION__END:
         return getEnd();
-      case TSEPackage.TRANSITION__PROPRIETY_STATES:
-        return getProprietyStates();
+      case TSEPackage.TRANSITION__PROPRIETY_TRANSITION:
+        return getProprietyTransition();
       case TSEPackage.TRANSITION__LABEL:
         return getLabel();
       case TSEPackage.TRANSITION__INIT:
@@ -258,19 +346,17 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
     switch (featureID)
     {
       case TSEPackage.TRANSITION__START:
-        getStart().clear();
-        getStart().addAll((Collection<? extends String>)newValue);
+        setStart((CoordinatesStatesTransition)newValue);
         return;
       case TSEPackage.TRANSITION__END:
-        getEnd().clear();
-        getEnd().addAll((Collection<? extends EndTransition>)newValue);
+        setEnd((CoordinatesStatesTransition)newValue);
         return;
-      case TSEPackage.TRANSITION__PROPRIETY_STATES:
-        getProprietyStates().clear();
-        getProprietyStates().addAll((Collection<? extends transitionProperties>)newValue);
+      case TSEPackage.TRANSITION__PROPRIETY_TRANSITION:
+        getProprietyTransition().clear();
+        getProprietyTransition().addAll((Collection<? extends transitionProperties>)newValue);
         return;
       case TSEPackage.TRANSITION__LABEL:
-        setLabel((String)newValue);
+        setLabel((Label)newValue);
         return;
       case TSEPackage.TRANSITION__INIT:
         getInit().clear();
@@ -291,16 +377,16 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
     switch (featureID)
     {
       case TSEPackage.TRANSITION__START:
-        getStart().clear();
+        setStart((CoordinatesStatesTransition)null);
         return;
       case TSEPackage.TRANSITION__END:
-        getEnd().clear();
+        setEnd((CoordinatesStatesTransition)null);
         return;
-      case TSEPackage.TRANSITION__PROPRIETY_STATES:
-        getProprietyStates().clear();
+      case TSEPackage.TRANSITION__PROPRIETY_TRANSITION:
+        getProprietyTransition().clear();
         return;
       case TSEPackage.TRANSITION__LABEL:
-        setLabel(LABEL_EDEFAULT);
+        setLabel((Label)null);
         return;
       case TSEPackage.TRANSITION__INIT:
         getInit().clear();
@@ -320,13 +406,13 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
     switch (featureID)
     {
       case TSEPackage.TRANSITION__START:
-        return start != null && !start.isEmpty();
+        return start != null;
       case TSEPackage.TRANSITION__END:
-        return end != null && !end.isEmpty();
-      case TSEPackage.TRANSITION__PROPRIETY_STATES:
-        return proprietyStates != null && !proprietyStates.isEmpty();
+        return end != null;
+      case TSEPackage.TRANSITION__PROPRIETY_TRANSITION:
+        return proprietyTransition != null && !proprietyTransition.isEmpty();
       case TSEPackage.TRANSITION__LABEL:
-        return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
+        return label != null;
       case TSEPackage.TRANSITION__INIT:
         return init != null && !init.isEmpty();
     }
@@ -344,11 +430,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (start: ");
-    result.append(start);
-    result.append(", label: ");
-    result.append(label);
-    result.append(", init: ");
+    result.append(" (init: ");
     result.append(init);
     result.append(')');
     return result.toString();

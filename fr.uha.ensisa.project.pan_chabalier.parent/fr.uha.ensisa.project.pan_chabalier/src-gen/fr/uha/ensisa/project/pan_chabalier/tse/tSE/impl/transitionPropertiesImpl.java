@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.transitionPropertiesImpl#getColor <em>Color</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.transitionPropertiesImpl#getThickness <em>Thickness</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.transitionPropertiesImpl#getCurve <em>Curve</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.transitionPropertiesImpl#getPosition <em>Position</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,16 +62,6 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
    * @ordered
    */
   protected EList<String> curve;
-
-  /**
-   * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPosition()
-   * @generated
-   * @ordered
-   */
-  protected EList<String> position;
 
   /**
    * <!-- begin-user-doc -->
@@ -142,20 +131,6 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getPosition()
-  {
-    if (position == null)
-    {
-      position = new EDataTypeEList<String>(String.class, this, TSEPackage.TRANSITION_PROPERTIES__POSITION);
-    }
-    return position;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -167,8 +142,6 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
         return getThickness();
       case TSEPackage.TRANSITION_PROPERTIES__CURVE:
         return getCurve();
-      case TSEPackage.TRANSITION_PROPERTIES__POSITION:
-        return getPosition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -196,10 +169,6 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
         getCurve().clear();
         getCurve().addAll((Collection<? extends String>)newValue);
         return;
-      case TSEPackage.TRANSITION_PROPERTIES__POSITION:
-        getPosition().clear();
-        getPosition().addAll((Collection<? extends String>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -223,9 +192,6 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
       case TSEPackage.TRANSITION_PROPERTIES__CURVE:
         getCurve().clear();
         return;
-      case TSEPackage.TRANSITION_PROPERTIES__POSITION:
-        getPosition().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -246,8 +212,6 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
         return thickness != null && !thickness.isEmpty();
       case TSEPackage.TRANSITION_PROPERTIES__CURVE:
         return curve != null && !curve.isEmpty();
-      case TSEPackage.TRANSITION_PROPERTIES__POSITION:
-        return position != null && !position.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -269,8 +233,6 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
     result.append(thickness);
     result.append(", curve: ");
     result.append(curve);
-    result.append(", position: ");
-    result.append(position);
     result.append(')');
     return result.toString();
   }

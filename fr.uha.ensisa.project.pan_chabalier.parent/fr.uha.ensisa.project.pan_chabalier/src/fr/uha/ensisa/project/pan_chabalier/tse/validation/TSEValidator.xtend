@@ -3,14 +3,17 @@
  */
 package fr.uha.ensisa.project.pan_chabalier.tse.validation
 
+import fr.uha.ensisa.project.pan_chabalier.tse.tSE.CoordinatesStatesTransition
+import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage
+import org.eclipse.xtext.validation.Check
 
 /**
  * This class contains custom validation rules. 
- *
+ * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 class TSEValidator extends AbstractTSEValidator {
-	
+
 //	public static val INVALID_NAME = 'invalidName'
 //
 //	@Check
@@ -22,4 +25,17 @@ class TSEValidator extends AbstractTSEValidator {
 //		}
 //	}
 	
+	boolean flag
+	
+	@Check
+	def checkTransitionHaveExistingStates(CoordinatesStatesTransition statesTransitionName) {
+		flag = false;
+		TSEPackage.Literals.STATE__NAME.
+		while(){
+			if(.equals(statesTransitionName)){
+			flag = true;
+		}
+		}
+		
+	 }
 }

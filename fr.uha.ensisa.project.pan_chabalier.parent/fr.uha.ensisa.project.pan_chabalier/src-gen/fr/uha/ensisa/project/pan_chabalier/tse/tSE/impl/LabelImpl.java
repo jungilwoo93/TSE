@@ -3,7 +3,7 @@
  */
 package fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl;
 
-import fr.uha.ensisa.project.pan_chabalier.tse.tSE.EndTransition;
+import fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage;
 
 import java.util.Collection;
@@ -18,35 +18,46 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>End Transition</b></em>'.
+ * An implementation of the model object '<em><b>Label</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.EndTransitionImpl#getEnd <em>End</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.LabelImpl#getText <em>Text</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.LabelImpl#getPosition <em>Position</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class EndTransitionImpl extends MinimalEObjectImpl.Container implements EndTransition
+public class LabelImpl extends MinimalEObjectImpl.Container implements Label
 {
   /**
-   * The cached value of the '{@link #getEnd() <em>End</em>}' attribute list.
+   * The cached value of the '{@link #getText() <em>Text</em>}' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEnd()
+   * @see #getText()
    * @generated
    * @ordered
    */
-  protected EList<String> end;
+  protected EList<String> text;
+
+  /**
+   * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPosition()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> position;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected EndTransitionImpl()
+  protected LabelImpl()
   {
     super();
   }
@@ -59,7 +70,7 @@ public class EndTransitionImpl extends MinimalEObjectImpl.Container implements E
   @Override
   protected EClass eStaticClass()
   {
-    return TSEPackage.Literals.END_TRANSITION;
+    return TSEPackage.Literals.LABEL;
   }
 
   /**
@@ -67,13 +78,27 @@ public class EndTransitionImpl extends MinimalEObjectImpl.Container implements E
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getEnd()
+  public EList<String> getText()
   {
-    if (end == null)
+    if (text == null)
     {
-      end = new EDataTypeEList<String>(String.class, this, TSEPackage.END_TRANSITION__END);
+      text = new EDataTypeEList<String>(String.class, this, TSEPackage.LABEL__TEXT);
     }
-    return end;
+    return text;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<String> getPosition()
+  {
+    if (position == null)
+    {
+      position = new EDataTypeEList<String>(String.class, this, TSEPackage.LABEL__POSITION);
+    }
+    return position;
   }
 
   /**
@@ -86,8 +111,10 @@ public class EndTransitionImpl extends MinimalEObjectImpl.Container implements E
   {
     switch (featureID)
     {
-      case TSEPackage.END_TRANSITION__END:
-        return getEnd();
+      case TSEPackage.LABEL__TEXT:
+        return getText();
+      case TSEPackage.LABEL__POSITION:
+        return getPosition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -103,9 +130,13 @@ public class EndTransitionImpl extends MinimalEObjectImpl.Container implements E
   {
     switch (featureID)
     {
-      case TSEPackage.END_TRANSITION__END:
-        getEnd().clear();
-        getEnd().addAll((Collection<? extends String>)newValue);
+      case TSEPackage.LABEL__TEXT:
+        getText().clear();
+        getText().addAll((Collection<? extends String>)newValue);
+        return;
+      case TSEPackage.LABEL__POSITION:
+        getPosition().clear();
+        getPosition().addAll((Collection<? extends String>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -121,8 +152,11 @@ public class EndTransitionImpl extends MinimalEObjectImpl.Container implements E
   {
     switch (featureID)
     {
-      case TSEPackage.END_TRANSITION__END:
-        getEnd().clear();
+      case TSEPackage.LABEL__TEXT:
+        getText().clear();
+        return;
+      case TSEPackage.LABEL__POSITION:
+        getPosition().clear();
         return;
     }
     super.eUnset(featureID);
@@ -138,8 +172,10 @@ public class EndTransitionImpl extends MinimalEObjectImpl.Container implements E
   {
     switch (featureID)
     {
-      case TSEPackage.END_TRANSITION__END:
-        return end != null && !end.isEmpty();
+      case TSEPackage.LABEL__TEXT:
+        return text != null && !text.isEmpty();
+      case TSEPackage.LABEL__POSITION:
+        return position != null && !position.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -155,10 +191,12 @@ public class EndTransitionImpl extends MinimalEObjectImpl.Container implements E
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (end: ");
-    result.append(end);
+    result.append(" (text: ");
+    result.append(text);
+    result.append(", position: ");
+    result.append(position);
     result.append(')');
     return result.toString();
   }
 
-} //EndTransitionImpl
+} //LabelImpl

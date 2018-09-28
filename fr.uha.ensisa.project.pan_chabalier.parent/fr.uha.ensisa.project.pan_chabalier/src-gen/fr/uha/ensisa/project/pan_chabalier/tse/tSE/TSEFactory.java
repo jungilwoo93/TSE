@@ -69,13 +69,22 @@ public interface TSEFactory extends EFactory
   Transition createTransition();
 
   /**
-   * Returns a new object of class '<em>End Transition</em>'.
+   * Returns a new object of class '<em>Label</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>End Transition</em>'.
+   * @return a new object of class '<em>Label</em>'.
    * @generated
    */
-  EndTransition createEndTransition();
+  Label createLabel();
+
+  /**
+   * Returns a new object of class '<em>Coordinates States Transition</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Coordinates States Transition</em>'.
+   * @generated
+   */
+  CoordinatesStatesTransition createCoordinatesStatesTransition();
 
   /**
    * Returns a new object of class '<em>transition Properties</em>'.

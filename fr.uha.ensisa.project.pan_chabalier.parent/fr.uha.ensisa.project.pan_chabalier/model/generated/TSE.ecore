@@ -27,19 +27,25 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" unique="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" upperBound="-1" eType="#//EndTransition"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//CoordinatesStatesTransition"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="proprietyStates" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//CoordinatesStatesTransition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="proprietyTransition" upperBound="-1"
         eType="#//transitionProperties" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//Label"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EndTransition">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" unique="false" upperBound="-1"
+  <eClassifiers xsi:type="ecore:EClass" name="Label">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CoordinatesStatesTransition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateTransition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="transitionProperties">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" unique="false" upperBound="-1"
@@ -48,7 +54,5 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="curve" unique="false" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

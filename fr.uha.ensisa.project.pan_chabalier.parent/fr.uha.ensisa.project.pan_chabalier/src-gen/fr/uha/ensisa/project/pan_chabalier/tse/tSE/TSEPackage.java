@@ -216,7 +216,7 @@ public interface TSEPackage extends EPackage
   int TRANSITION = 4;
 
   /**
-   * The feature id for the '<em><b>Start</b></em>' attribute list.
+   * The feature id for the '<em><b>Start</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -225,7 +225,7 @@ public interface TSEPackage extends EPackage
   int TRANSITION__START = 0;
 
   /**
-   * The feature id for the '<em><b>End</b></em>' containment reference list.
+   * The feature id for the '<em><b>End</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -234,16 +234,16 @@ public interface TSEPackage extends EPackage
   int TRANSITION__END = 1;
 
   /**
-   * The feature id for the '<em><b>Propriety States</b></em>' containment reference list.
+   * The feature id for the '<em><b>Propriety Transition</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSITION__PROPRIETY_STATES = 2;
+  int TRANSITION__PROPRIETY_TRANSITION = 2;
 
   /**
-   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * The feature id for the '<em><b>Label</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -270,32 +270,69 @@ public interface TSEPackage extends EPackage
   int TRANSITION_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.EndTransitionImpl <em>End Transition</em>}' class.
+   * The meta object id for the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.LabelImpl <em>Label</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.EndTransitionImpl
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TSEPackageImpl#getEndTransition()
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.LabelImpl
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TSEPackageImpl#getLabel()
    * @generated
    */
-  int END_TRANSITION = 5;
+  int LABEL = 5;
 
   /**
-   * The feature id for the '<em><b>End</b></em>' attribute list.
+   * The feature id for the '<em><b>Text</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int END_TRANSITION__END = 0;
+  int LABEL__TEXT = 0;
 
   /**
-   * The number of structural features of the '<em>End Transition</em>' class.
+   * The feature id for the '<em><b>Position</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int END_TRANSITION_FEATURE_COUNT = 1;
+  int LABEL__POSITION = 1;
+
+  /**
+   * The number of structural features of the '<em>Label</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LABEL_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.CoordinatesStatesTransitionImpl <em>Coordinates States Transition</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.CoordinatesStatesTransitionImpl
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TSEPackageImpl#getCoordinatesStatesTransition()
+   * @generated
+   */
+  int COORDINATES_STATES_TRANSITION = 6;
+
+  /**
+   * The feature id for the '<em><b>State Transition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COORDINATES_STATES_TRANSITION__STATE_TRANSITION = 0;
+
+  /**
+   * The number of structural features of the '<em>Coordinates States Transition</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COORDINATES_STATES_TRANSITION_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.transitionPropertiesImpl <em>transition Properties</em>}' class.
@@ -305,7 +342,7 @@ public interface TSEPackage extends EPackage
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TSEPackageImpl#gettransitionProperties()
    * @generated
    */
-  int TRANSITION_PROPERTIES = 6;
+  int TRANSITION_PROPERTIES = 7;
 
   /**
    * The feature id for the '<em><b>Color</b></em>' attribute list.
@@ -335,22 +372,13 @@ public interface TSEPackage extends EPackage
   int TRANSITION_PROPERTIES__CURVE = 2;
 
   /**
-   * The feature id for the '<em><b>Position</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRANSITION_PROPERTIES__POSITION = 3;
-
-  /**
    * The number of structural features of the '<em>transition Properties</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSITION_PROPERTIES_FEATURE_COUNT = 4;
+  int TRANSITION_PROPERTIES_FEATURE_COUNT = 3;
 
 
   /**
@@ -492,21 +520,21 @@ public interface TSEPackage extends EPackage
   EClass getTransition();
 
   /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getStart <em>Start</em>}'.
+   * Returns the meta object for the containment reference '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getStart <em>Start</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Start</em>'.
+   * @return the meta object for the containment reference '<em>Start</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getStart()
    * @see #getTransition()
    * @generated
    */
-  EAttribute getTransition_Start();
+  EReference getTransition_Start();
 
   /**
-   * Returns the meta object for the containment reference list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getEnd <em>End</em>}'.
+   * Returns the meta object for the containment reference '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getEnd <em>End</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>End</em>'.
+   * @return the meta object for the containment reference '<em>End</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getEnd()
    * @see #getTransition()
    * @generated
@@ -514,26 +542,26 @@ public interface TSEPackage extends EPackage
   EReference getTransition_End();
 
   /**
-   * Returns the meta object for the containment reference list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getProprietyStates <em>Propriety States</em>}'.
+   * Returns the meta object for the containment reference list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getProprietyTransition <em>Propriety Transition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Propriety States</em>'.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getProprietyStates()
+   * @return the meta object for the containment reference list '<em>Propriety Transition</em>'.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getProprietyTransition()
    * @see #getTransition()
    * @generated
    */
-  EReference getTransition_ProprietyStates();
+  EReference getTransition_ProprietyTransition();
 
   /**
-   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getLabel <em>Label</em>}'.
+   * Returns the meta object for the containment reference '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getLabel <em>Label</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Label</em>'.
+   * @return the meta object for the containment reference '<em>Label</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getLabel()
    * @see #getTransition()
    * @generated
    */
-  EAttribute getTransition_Label();
+  EReference getTransition_Label();
 
   /**
    * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getInit <em>Init</em>}'.
@@ -547,25 +575,57 @@ public interface TSEPackage extends EPackage
   EAttribute getTransition_Init();
 
   /**
-   * Returns the meta object for class '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.EndTransition <em>End Transition</em>}'.
+   * Returns the meta object for class '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label <em>Label</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>End Transition</em>'.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.EndTransition
+   * @return the meta object for class '<em>Label</em>'.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label
    * @generated
    */
-  EClass getEndTransition();
+  EClass getLabel();
 
   /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.EndTransition#getEnd <em>End</em>}'.
+   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label#getText <em>Text</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>End</em>'.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.EndTransition#getEnd()
-   * @see #getEndTransition()
+   * @return the meta object for the attribute list '<em>Text</em>'.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label#getText()
+   * @see #getLabel()
    * @generated
    */
-  EAttribute getEndTransition_End();
+  EAttribute getLabel_Text();
+
+  /**
+   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label#getPosition <em>Position</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Position</em>'.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label#getPosition()
+   * @see #getLabel()
+   * @generated
+   */
+  EAttribute getLabel_Position();
+
+  /**
+   * Returns the meta object for class '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.CoordinatesStatesTransition <em>Coordinates States Transition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Coordinates States Transition</em>'.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.CoordinatesStatesTransition
+   * @generated
+   */
+  EClass getCoordinatesStatesTransition();
+
+  /**
+   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.CoordinatesStatesTransition#getStateTransition <em>State Transition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>State Transition</em>'.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.CoordinatesStatesTransition#getStateTransition()
+   * @see #getCoordinatesStatesTransition()
+   * @generated
+   */
+  EAttribute getCoordinatesStatesTransition_StateTransition();
 
   /**
    * Returns the meta object for class '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties <em>transition Properties</em>}'.
@@ -609,17 +669,6 @@ public interface TSEPackage extends EPackage
    * @generated
    */
   EAttribute gettransitionProperties_Curve();
-
-  /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getPosition <em>Position</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Position</em>'.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getPosition()
-   * @see #gettransitionProperties()
-   * @generated
-   */
-  EAttribute gettransitionProperties_Position();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -759,15 +808,15 @@ public interface TSEPackage extends EPackage
     EClass TRANSITION = eINSTANCE.getTransition();
 
     /**
-     * The meta object literal for the '<em><b>Start</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Start</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRANSITION__START = eINSTANCE.getTransition_Start();
+    EReference TRANSITION__START = eINSTANCE.getTransition_Start();
 
     /**
-     * The meta object literal for the '<em><b>End</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>End</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -775,20 +824,20 @@ public interface TSEPackage extends EPackage
     EReference TRANSITION__END = eINSTANCE.getTransition_End();
 
     /**
-     * The meta object literal for the '<em><b>Propriety States</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Propriety Transition</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TRANSITION__PROPRIETY_STATES = eINSTANCE.getTransition_ProprietyStates();
+    EReference TRANSITION__PROPRIETY_TRANSITION = eINSTANCE.getTransition_ProprietyTransition();
 
     /**
-     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Label</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRANSITION__LABEL = eINSTANCE.getTransition_Label();
+    EReference TRANSITION__LABEL = eINSTANCE.getTransition_Label();
 
     /**
      * The meta object literal for the '<em><b>Init</b></em>' attribute list feature.
@@ -799,22 +848,48 @@ public interface TSEPackage extends EPackage
     EAttribute TRANSITION__INIT = eINSTANCE.getTransition_Init();
 
     /**
-     * The meta object literal for the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.EndTransitionImpl <em>End Transition</em>}' class.
+     * The meta object literal for the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.LabelImpl <em>Label</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.EndTransitionImpl
-     * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TSEPackageImpl#getEndTransition()
+     * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.LabelImpl
+     * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TSEPackageImpl#getLabel()
      * @generated
      */
-    EClass END_TRANSITION = eINSTANCE.getEndTransition();
+    EClass LABEL = eINSTANCE.getLabel();
 
     /**
-     * The meta object literal for the '<em><b>End</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Text</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute END_TRANSITION__END = eINSTANCE.getEndTransition_End();
+    EAttribute LABEL__TEXT = eINSTANCE.getLabel_Text();
+
+    /**
+     * The meta object literal for the '<em><b>Position</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LABEL__POSITION = eINSTANCE.getLabel_Position();
+
+    /**
+     * The meta object literal for the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.CoordinatesStatesTransitionImpl <em>Coordinates States Transition</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.CoordinatesStatesTransitionImpl
+     * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TSEPackageImpl#getCoordinatesStatesTransition()
+     * @generated
+     */
+    EClass COORDINATES_STATES_TRANSITION = eINSTANCE.getCoordinatesStatesTransition();
+
+    /**
+     * The meta object literal for the '<em><b>State Transition</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COORDINATES_STATES_TRANSITION__STATE_TRANSITION = eINSTANCE.getCoordinatesStatesTransition_StateTransition();
 
     /**
      * The meta object literal for the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.transitionPropertiesImpl <em>transition Properties</em>}' class.
@@ -849,14 +924,6 @@ public interface TSEPackage extends EPackage
      * @generated
      */
     EAttribute TRANSITION_PROPERTIES__CURVE = eINSTANCE.gettransitionProperties_Curve();
-
-    /**
-     * The meta object literal for the '<em><b>Position</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TRANSITION_PROPERTIES__POSITION = eINSTANCE.gettransitionProperties_Position();
 
   }
 

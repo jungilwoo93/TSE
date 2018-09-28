@@ -10,30 +10,27 @@ Element:
 	| transitions+=Transition;
 
 State:
-	"state" name+=ID statesPropriety+=StatesProperties*;
+	"state" name+=ID statesPropriety+=StatesProperties+;
 
 StatesProperties:
 	"color" color+=COLOR
 	| "thickness" thickness+=FLOAT
-	| "position" position+=ID
-	| DEFAULT position+=ID;
+	| "position" position+=COORDINATES
+	| DEFAULT position+=COORDINATES;
 
 Transition:
-	"transition" start+=ID end+=EndTransition proprietyStates+=transitionProperties* (label=Label)?
-	| "initialTransition" init+=ID INT;
+	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition proprietyTransition+=transitionProperties* (label=Label)?
+	| "initialTransition" init+=ID COORDINATES; 
 
 Label:
-	"label" INT;
+	"label" text+=STRING position+=COORDINATES;
 
-EndTransition:
-	"->" end+=ID
-	| "reflexive" end+="reflexive";
+CoordinatesStatesTransition:
+	stateTransition=ID
+;
 
 transitionProperties:
-	"color" color+=COLOR
-	| "thickness" thickness+=FLOAT
-	| "curvature" curve+=FLOAT
-	| DEFAULT position+=ID;
+	"color" color+=COLOR | "thickness" thickness+=FLOAT | "curvature" curve+=FLOAT;
 
 terminal DEFAULT:
 	("DEFAULT" | "default");
@@ -44,4 +41,7 @@ terminal COLOR:
 
 terminal FLOAT:
 	INT '.' INT;
+
+terminal COORDINATES:
+	INT ',' INT;
 	

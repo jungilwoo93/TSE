@@ -22,25 +22,25 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTSEParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DEFAULT", "RULE_INT", "RULE_ID", "RULE_COLOR", "RULE_FLOAT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'state'", "'color'", "'thickness'", "'position'", "'transition'", "'initialTransition'", "'label'", "'->'", "'reflexive'", "'curvature'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_DEFAULT", "RULE_COORDINATES", "RULE_ID", "RULE_COLOR", "RULE_FLOAT", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'state'", "'color'", "'thickness'", "'position'", "'transition'", "'->'", "'initialTransition'", "'label'", "'curvature'"
     };
     public static final int RULE_STRING=9;
-    public static final int RULE_SL_COMMENT=11;
+    public static final int RULE_SL_COMMENT=12;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
+    public static final int RULE_COORDINATES=5;
     public static final int RULE_COLOR=7;
     public static final int RULE_DEFAULT=4;
-    public static final int T__14=14;
     public static final int EOF=-1;
     public static final int RULE_ID=6;
-    public static final int RULE_WS=12;
-    public static final int RULE_ANY_OTHER=13;
-    public static final int RULE_INT=5;
+    public static final int RULE_WS=13;
+    public static final int RULE_ANY_OTHER=14;
+    public static final int RULE_INT=10;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=10;
+    public static final int RULE_ML_COMMENT=11;
     public static final int T__23=23;
     public static final int RULE_FLOAT=8;
     public static final int T__20=20;
@@ -131,7 +131,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==14||(LA1_0>=18 && LA1_0<=19)) ) {
+                if ( (LA1_0==15||LA1_0==19||LA1_0==21) ) {
                     alt1=1;
                 }
 
@@ -561,20 +561,20 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleLabel"
 
 
-    // $ANTLR start "entryRuleEndTransition"
-    // InternalTSE.g:203:1: entryRuleEndTransition : ruleEndTransition EOF ;
-    public final void entryRuleEndTransition() throws RecognitionException {
+    // $ANTLR start "entryRuleCoordinatesStatesTransition"
+    // InternalTSE.g:203:1: entryRuleCoordinatesStatesTransition : ruleCoordinatesStatesTransition EOF ;
+    public final void entryRuleCoordinatesStatesTransition() throws RecognitionException {
         try {
-            // InternalTSE.g:204:1: ( ruleEndTransition EOF )
-            // InternalTSE.g:205:1: ruleEndTransition EOF
+            // InternalTSE.g:204:1: ( ruleCoordinatesStatesTransition EOF )
+            // InternalTSE.g:205:1: ruleCoordinatesStatesTransition EOF
             {
-             before(grammarAccess.getEndTransitionRule()); 
+             before(grammarAccess.getCoordinatesStatesTransitionRule()); 
             pushFollow(FOLLOW_1);
-            ruleEndTransition();
+            ruleCoordinatesStatesTransition();
 
             state._fsp--;
 
-             after(grammarAccess.getEndTransitionRule()); 
+             after(grammarAccess.getCoordinatesStatesTransitionRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -588,35 +588,35 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleEndTransition"
+    // $ANTLR end "entryRuleCoordinatesStatesTransition"
 
 
-    // $ANTLR start "ruleEndTransition"
-    // InternalTSE.g:212:1: ruleEndTransition : ( ( rule__EndTransition__Alternatives ) ) ;
-    public final void ruleEndTransition() throws RecognitionException {
+    // $ANTLR start "ruleCoordinatesStatesTransition"
+    // InternalTSE.g:212:1: ruleCoordinatesStatesTransition : ( ( rule__CoordinatesStatesTransition__StateTransitionAssignment ) ) ;
+    public final void ruleCoordinatesStatesTransition() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:216:2: ( ( ( rule__EndTransition__Alternatives ) ) )
-            // InternalTSE.g:217:2: ( ( rule__EndTransition__Alternatives ) )
+            // InternalTSE.g:216:2: ( ( ( rule__CoordinatesStatesTransition__StateTransitionAssignment ) ) )
+            // InternalTSE.g:217:2: ( ( rule__CoordinatesStatesTransition__StateTransitionAssignment ) )
             {
-            // InternalTSE.g:217:2: ( ( rule__EndTransition__Alternatives ) )
-            // InternalTSE.g:218:3: ( rule__EndTransition__Alternatives )
+            // InternalTSE.g:217:2: ( ( rule__CoordinatesStatesTransition__StateTransitionAssignment ) )
+            // InternalTSE.g:218:3: ( rule__CoordinatesStatesTransition__StateTransitionAssignment )
             {
-             before(grammarAccess.getEndTransitionAccess().getAlternatives()); 
-            // InternalTSE.g:219:3: ( rule__EndTransition__Alternatives )
-            // InternalTSE.g:219:4: rule__EndTransition__Alternatives
+             before(grammarAccess.getCoordinatesStatesTransitionAccess().getStateTransitionAssignment()); 
+            // InternalTSE.g:219:3: ( rule__CoordinatesStatesTransition__StateTransitionAssignment )
+            // InternalTSE.g:219:4: rule__CoordinatesStatesTransition__StateTransitionAssignment
             {
             pushFollow(FOLLOW_2);
-            rule__EndTransition__Alternatives();
+            rule__CoordinatesStatesTransition__StateTransitionAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEndTransitionAccess().getAlternatives()); 
+             after(grammarAccess.getCoordinatesStatesTransitionAccess().getStateTransitionAssignment()); 
 
             }
 
@@ -635,7 +635,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleEndTransition"
+    // $ANTLR end "ruleCoordinatesStatesTransition"
 
 
     // $ANTLR start "entryRuletransitionProperties"
@@ -726,10 +726,10 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==14) ) {
+            if ( (LA2_0==15) ) {
                 alt2=1;
             }
-            else if ( ((LA2_0>=18 && LA2_0<=19)) ) {
+            else if ( (LA2_0==19||LA2_0==21) ) {
                 alt2=2;
             }
             else {
@@ -816,17 +816,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             // InternalTSE.g:277:1: ( ( ( rule__StatesProperties__Group_0__0 ) ) | ( ( rule__StatesProperties__Group_1__0 ) ) | ( ( rule__StatesProperties__Group_2__0 ) ) | ( ( rule__StatesProperties__Group_3__0 ) ) )
             int alt3=4;
             switch ( input.LA(1) ) {
-            case 15:
+            case 16:
                 {
                 alt3=1;
                 }
                 break;
-            case 16:
+            case 17:
                 {
                 alt3=2;
                 }
                 break;
-            case 17:
+            case 18:
                 {
                 alt3=3;
                 }
@@ -972,10 +972,10 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==18) ) {
+            if ( (LA4_0==19) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==19) ) {
+            else if ( (LA4_0==21) ) {
                 alt4=2;
             }
             else {
@@ -1052,144 +1052,48 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Transition__Alternatives"
 
 
-    // $ANTLR start "rule__EndTransition__Alternatives"
-    // InternalTSE.g:327:1: rule__EndTransition__Alternatives : ( ( ( rule__EndTransition__Group_0__0 ) ) | ( ( rule__EndTransition__Group_1__0 ) ) );
-    public final void rule__EndTransition__Alternatives() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:331:1: ( ( ( rule__EndTransition__Group_0__0 ) ) | ( ( rule__EndTransition__Group_1__0 ) ) )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( (LA5_0==21) ) {
-                alt5=1;
-            }
-            else if ( (LA5_0==22) ) {
-                alt5=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
-
-                throw nvae;
-            }
-            switch (alt5) {
-                case 1 :
-                    // InternalTSE.g:332:2: ( ( rule__EndTransition__Group_0__0 ) )
-                    {
-                    // InternalTSE.g:332:2: ( ( rule__EndTransition__Group_0__0 ) )
-                    // InternalTSE.g:333:3: ( rule__EndTransition__Group_0__0 )
-                    {
-                     before(grammarAccess.getEndTransitionAccess().getGroup_0()); 
-                    // InternalTSE.g:334:3: ( rule__EndTransition__Group_0__0 )
-                    // InternalTSE.g:334:4: rule__EndTransition__Group_0__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__EndTransition__Group_0__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getEndTransitionAccess().getGroup_0()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 2 :
-                    // InternalTSE.g:338:2: ( ( rule__EndTransition__Group_1__0 ) )
-                    {
-                    // InternalTSE.g:338:2: ( ( rule__EndTransition__Group_1__0 ) )
-                    // InternalTSE.g:339:3: ( rule__EndTransition__Group_1__0 )
-                    {
-                     before(grammarAccess.getEndTransitionAccess().getGroup_1()); 
-                    // InternalTSE.g:340:3: ( rule__EndTransition__Group_1__0 )
-                    // InternalTSE.g:340:4: rule__EndTransition__Group_1__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__EndTransition__Group_1__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getEndTransitionAccess().getGroup_1()); 
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndTransition__Alternatives"
-
-
     // $ANTLR start "rule__TransitionProperties__Alternatives"
-    // InternalTSE.g:348:1: rule__TransitionProperties__Alternatives : ( ( ( rule__TransitionProperties__Group_0__0 ) ) | ( ( rule__TransitionProperties__Group_1__0 ) ) | ( ( rule__TransitionProperties__Group_2__0 ) ) | ( ( rule__TransitionProperties__Group_3__0 ) ) );
+    // InternalTSE.g:327:1: rule__TransitionProperties__Alternatives : ( ( ( rule__TransitionProperties__Group_0__0 ) ) | ( ( rule__TransitionProperties__Group_1__0 ) ) | ( ( rule__TransitionProperties__Group_2__0 ) ) );
     public final void rule__TransitionProperties__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:352:1: ( ( ( rule__TransitionProperties__Group_0__0 ) ) | ( ( rule__TransitionProperties__Group_1__0 ) ) | ( ( rule__TransitionProperties__Group_2__0 ) ) | ( ( rule__TransitionProperties__Group_3__0 ) ) )
-            int alt6=4;
+            // InternalTSE.g:331:1: ( ( ( rule__TransitionProperties__Group_0__0 ) ) | ( ( rule__TransitionProperties__Group_1__0 ) ) | ( ( rule__TransitionProperties__Group_2__0 ) ) )
+            int alt5=3;
             switch ( input.LA(1) ) {
-            case 15:
-                {
-                alt6=1;
-                }
-                break;
             case 16:
                 {
-                alt6=2;
+                alt5=1;
+                }
+                break;
+            case 17:
+                {
+                alt5=2;
                 }
                 break;
             case 23:
                 {
-                alt6=3;
-                }
-                break;
-            case RULE_DEFAULT:
-                {
-                alt6=4;
+                alt5=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // InternalTSE.g:353:2: ( ( rule__TransitionProperties__Group_0__0 ) )
+                    // InternalTSE.g:332:2: ( ( rule__TransitionProperties__Group_0__0 ) )
                     {
-                    // InternalTSE.g:353:2: ( ( rule__TransitionProperties__Group_0__0 ) )
-                    // InternalTSE.g:354:3: ( rule__TransitionProperties__Group_0__0 )
+                    // InternalTSE.g:332:2: ( ( rule__TransitionProperties__Group_0__0 ) )
+                    // InternalTSE.g:333:3: ( rule__TransitionProperties__Group_0__0 )
                     {
                      before(grammarAccess.getTransitionPropertiesAccess().getGroup_0()); 
-                    // InternalTSE.g:355:3: ( rule__TransitionProperties__Group_0__0 )
-                    // InternalTSE.g:355:4: rule__TransitionProperties__Group_0__0
+                    // InternalTSE.g:334:3: ( rule__TransitionProperties__Group_0__0 )
+                    // InternalTSE.g:334:4: rule__TransitionProperties__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__TransitionProperties__Group_0__0();
@@ -1207,14 +1111,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalTSE.g:359:2: ( ( rule__TransitionProperties__Group_1__0 ) )
+                    // InternalTSE.g:338:2: ( ( rule__TransitionProperties__Group_1__0 ) )
                     {
-                    // InternalTSE.g:359:2: ( ( rule__TransitionProperties__Group_1__0 ) )
-                    // InternalTSE.g:360:3: ( rule__TransitionProperties__Group_1__0 )
+                    // InternalTSE.g:338:2: ( ( rule__TransitionProperties__Group_1__0 ) )
+                    // InternalTSE.g:339:3: ( rule__TransitionProperties__Group_1__0 )
                     {
                      before(grammarAccess.getTransitionPropertiesAccess().getGroup_1()); 
-                    // InternalTSE.g:361:3: ( rule__TransitionProperties__Group_1__0 )
-                    // InternalTSE.g:361:4: rule__TransitionProperties__Group_1__0
+                    // InternalTSE.g:340:3: ( rule__TransitionProperties__Group_1__0 )
+                    // InternalTSE.g:340:4: rule__TransitionProperties__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__TransitionProperties__Group_1__0();
@@ -1232,14 +1136,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalTSE.g:365:2: ( ( rule__TransitionProperties__Group_2__0 ) )
+                    // InternalTSE.g:344:2: ( ( rule__TransitionProperties__Group_2__0 ) )
                     {
-                    // InternalTSE.g:365:2: ( ( rule__TransitionProperties__Group_2__0 ) )
-                    // InternalTSE.g:366:3: ( rule__TransitionProperties__Group_2__0 )
+                    // InternalTSE.g:344:2: ( ( rule__TransitionProperties__Group_2__0 ) )
+                    // InternalTSE.g:345:3: ( rule__TransitionProperties__Group_2__0 )
                     {
                      before(grammarAccess.getTransitionPropertiesAccess().getGroup_2()); 
-                    // InternalTSE.g:367:3: ( rule__TransitionProperties__Group_2__0 )
-                    // InternalTSE.g:367:4: rule__TransitionProperties__Group_2__0
+                    // InternalTSE.g:346:3: ( rule__TransitionProperties__Group_2__0 )
+                    // InternalTSE.g:346:4: rule__TransitionProperties__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__TransitionProperties__Group_2__0();
@@ -1250,31 +1154,6 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
                     }
 
                      after(grammarAccess.getTransitionPropertiesAccess().getGroup_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalTSE.g:371:2: ( ( rule__TransitionProperties__Group_3__0 ) )
-                    {
-                    // InternalTSE.g:371:2: ( ( rule__TransitionProperties__Group_3__0 ) )
-                    // InternalTSE.g:372:3: ( rule__TransitionProperties__Group_3__0 )
-                    {
-                     before(grammarAccess.getTransitionPropertiesAccess().getGroup_3()); 
-                    // InternalTSE.g:373:3: ( rule__TransitionProperties__Group_3__0 )
-                    // InternalTSE.g:373:4: rule__TransitionProperties__Group_3__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__TransitionProperties__Group_3__0();
-
-                    state._fsp--;
-
-
-                    }
-
-                     after(grammarAccess.getTransitionPropertiesAccess().getGroup_3()); 
 
                     }
 
@@ -1299,14 +1178,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__0"
-    // InternalTSE.g:381:1: rule__State__Group__0 : rule__State__Group__0__Impl rule__State__Group__1 ;
+    // InternalTSE.g:354:1: rule__State__Group__0 : rule__State__Group__0__Impl rule__State__Group__1 ;
     public final void rule__State__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:385:1: ( rule__State__Group__0__Impl rule__State__Group__1 )
-            // InternalTSE.g:386:2: rule__State__Group__0__Impl rule__State__Group__1
+            // InternalTSE.g:358:1: ( rule__State__Group__0__Impl rule__State__Group__1 )
+            // InternalTSE.g:359:2: rule__State__Group__0__Impl rule__State__Group__1
             {
             pushFollow(FOLLOW_4);
             rule__State__Group__0__Impl();
@@ -1337,20 +1216,20 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__0__Impl"
-    // InternalTSE.g:393:1: rule__State__Group__0__Impl : ( 'state' ) ;
+    // InternalTSE.g:366:1: rule__State__Group__0__Impl : ( 'state' ) ;
     public final void rule__State__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:397:1: ( ( 'state' ) )
-            // InternalTSE.g:398:1: ( 'state' )
+            // InternalTSE.g:370:1: ( ( 'state' ) )
+            // InternalTSE.g:371:1: ( 'state' )
             {
-            // InternalTSE.g:398:1: ( 'state' )
-            // InternalTSE.g:399:2: 'state'
+            // InternalTSE.g:371:1: ( 'state' )
+            // InternalTSE.g:372:2: 'state'
             {
              before(grammarAccess.getStateAccess().getStateKeyword_0()); 
-            match(input,14,FOLLOW_2); 
+            match(input,15,FOLLOW_2); 
              after(grammarAccess.getStateAccess().getStateKeyword_0()); 
 
             }
@@ -1374,14 +1253,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__1"
-    // InternalTSE.g:408:1: rule__State__Group__1 : rule__State__Group__1__Impl rule__State__Group__2 ;
+    // InternalTSE.g:381:1: rule__State__Group__1 : rule__State__Group__1__Impl rule__State__Group__2 ;
     public final void rule__State__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:412:1: ( rule__State__Group__1__Impl rule__State__Group__2 )
-            // InternalTSE.g:413:2: rule__State__Group__1__Impl rule__State__Group__2
+            // InternalTSE.g:385:1: ( rule__State__Group__1__Impl rule__State__Group__2 )
+            // InternalTSE.g:386:2: rule__State__Group__1__Impl rule__State__Group__2
             {
             pushFollow(FOLLOW_5);
             rule__State__Group__1__Impl();
@@ -1412,21 +1291,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__1__Impl"
-    // InternalTSE.g:420:1: rule__State__Group__1__Impl : ( ( rule__State__NameAssignment_1 ) ) ;
+    // InternalTSE.g:393:1: rule__State__Group__1__Impl : ( ( rule__State__NameAssignment_1 ) ) ;
     public final void rule__State__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:424:1: ( ( ( rule__State__NameAssignment_1 ) ) )
-            // InternalTSE.g:425:1: ( ( rule__State__NameAssignment_1 ) )
+            // InternalTSE.g:397:1: ( ( ( rule__State__NameAssignment_1 ) ) )
+            // InternalTSE.g:398:1: ( ( rule__State__NameAssignment_1 ) )
             {
-            // InternalTSE.g:425:1: ( ( rule__State__NameAssignment_1 ) )
-            // InternalTSE.g:426:2: ( rule__State__NameAssignment_1 )
+            // InternalTSE.g:398:1: ( ( rule__State__NameAssignment_1 ) )
+            // InternalTSE.g:399:2: ( rule__State__NameAssignment_1 )
             {
              before(grammarAccess.getStateAccess().getNameAssignment_1()); 
-            // InternalTSE.g:427:2: ( rule__State__NameAssignment_1 )
-            // InternalTSE.g:427:3: rule__State__NameAssignment_1
+            // InternalTSE.g:400:2: ( rule__State__NameAssignment_1 )
+            // InternalTSE.g:400:3: rule__State__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__State__NameAssignment_1();
@@ -1459,14 +1338,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__2"
-    // InternalTSE.g:435:1: rule__State__Group__2 : rule__State__Group__2__Impl ;
+    // InternalTSE.g:408:1: rule__State__Group__2 : rule__State__Group__2__Impl ;
     public final void rule__State__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:439:1: ( rule__State__Group__2__Impl )
-            // InternalTSE.g:440:2: rule__State__Group__2__Impl
+            // InternalTSE.g:412:1: ( rule__State__Group__2__Impl )
+            // InternalTSE.g:413:2: rule__State__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__State__Group__2__Impl();
@@ -1492,33 +1371,55 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__Group__2__Impl"
-    // InternalTSE.g:446:1: rule__State__Group__2__Impl : ( ( rule__State__StatesProprietyAssignment_2 )* ) ;
+    // InternalTSE.g:419:1: rule__State__Group__2__Impl : ( ( ( rule__State__StatesProprietyAssignment_2 ) ) ( ( rule__State__StatesProprietyAssignment_2 )* ) ) ;
     public final void rule__State__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:450:1: ( ( ( rule__State__StatesProprietyAssignment_2 )* ) )
-            // InternalTSE.g:451:1: ( ( rule__State__StatesProprietyAssignment_2 )* )
+            // InternalTSE.g:423:1: ( ( ( ( rule__State__StatesProprietyAssignment_2 ) ) ( ( rule__State__StatesProprietyAssignment_2 )* ) ) )
+            // InternalTSE.g:424:1: ( ( ( rule__State__StatesProprietyAssignment_2 ) ) ( ( rule__State__StatesProprietyAssignment_2 )* ) )
             {
-            // InternalTSE.g:451:1: ( ( rule__State__StatesProprietyAssignment_2 )* )
-            // InternalTSE.g:452:2: ( rule__State__StatesProprietyAssignment_2 )*
+            // InternalTSE.g:424:1: ( ( ( rule__State__StatesProprietyAssignment_2 ) ) ( ( rule__State__StatesProprietyAssignment_2 )* ) )
+            // InternalTSE.g:425:2: ( ( rule__State__StatesProprietyAssignment_2 ) ) ( ( rule__State__StatesProprietyAssignment_2 )* )
+            {
+            // InternalTSE.g:425:2: ( ( rule__State__StatesProprietyAssignment_2 ) )
+            // InternalTSE.g:426:3: ( rule__State__StatesProprietyAssignment_2 )
             {
              before(grammarAccess.getStateAccess().getStatesProprietyAssignment_2()); 
-            // InternalTSE.g:453:2: ( rule__State__StatesProprietyAssignment_2 )*
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+            // InternalTSE.g:427:3: ( rule__State__StatesProprietyAssignment_2 )
+            // InternalTSE.g:427:4: rule__State__StatesProprietyAssignment_2
+            {
+            pushFollow(FOLLOW_6);
+            rule__State__StatesProprietyAssignment_2();
 
-                if ( (LA7_0==RULE_DEFAULT||(LA7_0>=15 && LA7_0<=17)) ) {
-                    alt7=1;
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getStateAccess().getStatesProprietyAssignment_2()); 
+
+            }
+
+            // InternalTSE.g:430:2: ( ( rule__State__StatesProprietyAssignment_2 )* )
+            // InternalTSE.g:431:3: ( rule__State__StatesProprietyAssignment_2 )*
+            {
+             before(grammarAccess.getStateAccess().getStatesProprietyAssignment_2()); 
+            // InternalTSE.g:432:3: ( rule__State__StatesProprietyAssignment_2 )*
+            loop6:
+            do {
+                int alt6=2;
+                int LA6_0 = input.LA(1);
+
+                if ( (LA6_0==RULE_DEFAULT||(LA6_0>=16 && LA6_0<=18)) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt6) {
             	case 1 :
-            	    // InternalTSE.g:453:3: rule__State__StatesProprietyAssignment_2
+            	    // InternalTSE.g:432:4: rule__State__StatesProprietyAssignment_2
             	    {
             	    pushFollow(FOLLOW_6);
             	    rule__State__StatesProprietyAssignment_2();
@@ -1530,11 +1431,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop6;
                 }
             } while (true);
 
              after(grammarAccess.getStateAccess().getStatesProprietyAssignment_2()); 
+
+            }
+
 
             }
 
@@ -1557,14 +1461,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_0__0"
-    // InternalTSE.g:462:1: rule__StatesProperties__Group_0__0 : rule__StatesProperties__Group_0__0__Impl rule__StatesProperties__Group_0__1 ;
+    // InternalTSE.g:442:1: rule__StatesProperties__Group_0__0 : rule__StatesProperties__Group_0__0__Impl rule__StatesProperties__Group_0__1 ;
     public final void rule__StatesProperties__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:466:1: ( rule__StatesProperties__Group_0__0__Impl rule__StatesProperties__Group_0__1 )
-            // InternalTSE.g:467:2: rule__StatesProperties__Group_0__0__Impl rule__StatesProperties__Group_0__1
+            // InternalTSE.g:446:1: ( rule__StatesProperties__Group_0__0__Impl rule__StatesProperties__Group_0__1 )
+            // InternalTSE.g:447:2: rule__StatesProperties__Group_0__0__Impl rule__StatesProperties__Group_0__1
             {
             pushFollow(FOLLOW_7);
             rule__StatesProperties__Group_0__0__Impl();
@@ -1595,20 +1499,20 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_0__0__Impl"
-    // InternalTSE.g:474:1: rule__StatesProperties__Group_0__0__Impl : ( 'color' ) ;
+    // InternalTSE.g:454:1: rule__StatesProperties__Group_0__0__Impl : ( 'color' ) ;
     public final void rule__StatesProperties__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:478:1: ( ( 'color' ) )
-            // InternalTSE.g:479:1: ( 'color' )
+            // InternalTSE.g:458:1: ( ( 'color' ) )
+            // InternalTSE.g:459:1: ( 'color' )
             {
-            // InternalTSE.g:479:1: ( 'color' )
-            // InternalTSE.g:480:2: 'color'
+            // InternalTSE.g:459:1: ( 'color' )
+            // InternalTSE.g:460:2: 'color'
             {
              before(grammarAccess.getStatesPropertiesAccess().getColorKeyword_0_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getStatesPropertiesAccess().getColorKeyword_0_0()); 
 
             }
@@ -1632,14 +1536,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_0__1"
-    // InternalTSE.g:489:1: rule__StatesProperties__Group_0__1 : rule__StatesProperties__Group_0__1__Impl ;
+    // InternalTSE.g:469:1: rule__StatesProperties__Group_0__1 : rule__StatesProperties__Group_0__1__Impl ;
     public final void rule__StatesProperties__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:493:1: ( rule__StatesProperties__Group_0__1__Impl )
-            // InternalTSE.g:494:2: rule__StatesProperties__Group_0__1__Impl
+            // InternalTSE.g:473:1: ( rule__StatesProperties__Group_0__1__Impl )
+            // InternalTSE.g:474:2: rule__StatesProperties__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StatesProperties__Group_0__1__Impl();
@@ -1665,21 +1569,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_0__1__Impl"
-    // InternalTSE.g:500:1: rule__StatesProperties__Group_0__1__Impl : ( ( rule__StatesProperties__ColorAssignment_0_1 ) ) ;
+    // InternalTSE.g:480:1: rule__StatesProperties__Group_0__1__Impl : ( ( rule__StatesProperties__ColorAssignment_0_1 ) ) ;
     public final void rule__StatesProperties__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:504:1: ( ( ( rule__StatesProperties__ColorAssignment_0_1 ) ) )
-            // InternalTSE.g:505:1: ( ( rule__StatesProperties__ColorAssignment_0_1 ) )
+            // InternalTSE.g:484:1: ( ( ( rule__StatesProperties__ColorAssignment_0_1 ) ) )
+            // InternalTSE.g:485:1: ( ( rule__StatesProperties__ColorAssignment_0_1 ) )
             {
-            // InternalTSE.g:505:1: ( ( rule__StatesProperties__ColorAssignment_0_1 ) )
-            // InternalTSE.g:506:2: ( rule__StatesProperties__ColorAssignment_0_1 )
+            // InternalTSE.g:485:1: ( ( rule__StatesProperties__ColorAssignment_0_1 ) )
+            // InternalTSE.g:486:2: ( rule__StatesProperties__ColorAssignment_0_1 )
             {
              before(grammarAccess.getStatesPropertiesAccess().getColorAssignment_0_1()); 
-            // InternalTSE.g:507:2: ( rule__StatesProperties__ColorAssignment_0_1 )
-            // InternalTSE.g:507:3: rule__StatesProperties__ColorAssignment_0_1
+            // InternalTSE.g:487:2: ( rule__StatesProperties__ColorAssignment_0_1 )
+            // InternalTSE.g:487:3: rule__StatesProperties__ColorAssignment_0_1
             {
             pushFollow(FOLLOW_2);
             rule__StatesProperties__ColorAssignment_0_1();
@@ -1712,14 +1616,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_1__0"
-    // InternalTSE.g:516:1: rule__StatesProperties__Group_1__0 : rule__StatesProperties__Group_1__0__Impl rule__StatesProperties__Group_1__1 ;
+    // InternalTSE.g:496:1: rule__StatesProperties__Group_1__0 : rule__StatesProperties__Group_1__0__Impl rule__StatesProperties__Group_1__1 ;
     public final void rule__StatesProperties__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:520:1: ( rule__StatesProperties__Group_1__0__Impl rule__StatesProperties__Group_1__1 )
-            // InternalTSE.g:521:2: rule__StatesProperties__Group_1__0__Impl rule__StatesProperties__Group_1__1
+            // InternalTSE.g:500:1: ( rule__StatesProperties__Group_1__0__Impl rule__StatesProperties__Group_1__1 )
+            // InternalTSE.g:501:2: rule__StatesProperties__Group_1__0__Impl rule__StatesProperties__Group_1__1
             {
             pushFollow(FOLLOW_8);
             rule__StatesProperties__Group_1__0__Impl();
@@ -1750,20 +1654,20 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_1__0__Impl"
-    // InternalTSE.g:528:1: rule__StatesProperties__Group_1__0__Impl : ( 'thickness' ) ;
+    // InternalTSE.g:508:1: rule__StatesProperties__Group_1__0__Impl : ( 'thickness' ) ;
     public final void rule__StatesProperties__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:532:1: ( ( 'thickness' ) )
-            // InternalTSE.g:533:1: ( 'thickness' )
+            // InternalTSE.g:512:1: ( ( 'thickness' ) )
+            // InternalTSE.g:513:1: ( 'thickness' )
             {
-            // InternalTSE.g:533:1: ( 'thickness' )
-            // InternalTSE.g:534:2: 'thickness'
+            // InternalTSE.g:513:1: ( 'thickness' )
+            // InternalTSE.g:514:2: 'thickness'
             {
              before(grammarAccess.getStatesPropertiesAccess().getThicknessKeyword_1_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getStatesPropertiesAccess().getThicknessKeyword_1_0()); 
 
             }
@@ -1787,14 +1691,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_1__1"
-    // InternalTSE.g:543:1: rule__StatesProperties__Group_1__1 : rule__StatesProperties__Group_1__1__Impl ;
+    // InternalTSE.g:523:1: rule__StatesProperties__Group_1__1 : rule__StatesProperties__Group_1__1__Impl ;
     public final void rule__StatesProperties__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:547:1: ( rule__StatesProperties__Group_1__1__Impl )
-            // InternalTSE.g:548:2: rule__StatesProperties__Group_1__1__Impl
+            // InternalTSE.g:527:1: ( rule__StatesProperties__Group_1__1__Impl )
+            // InternalTSE.g:528:2: rule__StatesProperties__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StatesProperties__Group_1__1__Impl();
@@ -1820,21 +1724,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_1__1__Impl"
-    // InternalTSE.g:554:1: rule__StatesProperties__Group_1__1__Impl : ( ( rule__StatesProperties__ThicknessAssignment_1_1 ) ) ;
+    // InternalTSE.g:534:1: rule__StatesProperties__Group_1__1__Impl : ( ( rule__StatesProperties__ThicknessAssignment_1_1 ) ) ;
     public final void rule__StatesProperties__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:558:1: ( ( ( rule__StatesProperties__ThicknessAssignment_1_1 ) ) )
-            // InternalTSE.g:559:1: ( ( rule__StatesProperties__ThicknessAssignment_1_1 ) )
+            // InternalTSE.g:538:1: ( ( ( rule__StatesProperties__ThicknessAssignment_1_1 ) ) )
+            // InternalTSE.g:539:1: ( ( rule__StatesProperties__ThicknessAssignment_1_1 ) )
             {
-            // InternalTSE.g:559:1: ( ( rule__StatesProperties__ThicknessAssignment_1_1 ) )
-            // InternalTSE.g:560:2: ( rule__StatesProperties__ThicknessAssignment_1_1 )
+            // InternalTSE.g:539:1: ( ( rule__StatesProperties__ThicknessAssignment_1_1 ) )
+            // InternalTSE.g:540:2: ( rule__StatesProperties__ThicknessAssignment_1_1 )
             {
              before(grammarAccess.getStatesPropertiesAccess().getThicknessAssignment_1_1()); 
-            // InternalTSE.g:561:2: ( rule__StatesProperties__ThicknessAssignment_1_1 )
-            // InternalTSE.g:561:3: rule__StatesProperties__ThicknessAssignment_1_1
+            // InternalTSE.g:541:2: ( rule__StatesProperties__ThicknessAssignment_1_1 )
+            // InternalTSE.g:541:3: rule__StatesProperties__ThicknessAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__StatesProperties__ThicknessAssignment_1_1();
@@ -1867,16 +1771,16 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_2__0"
-    // InternalTSE.g:570:1: rule__StatesProperties__Group_2__0 : rule__StatesProperties__Group_2__0__Impl rule__StatesProperties__Group_2__1 ;
+    // InternalTSE.g:550:1: rule__StatesProperties__Group_2__0 : rule__StatesProperties__Group_2__0__Impl rule__StatesProperties__Group_2__1 ;
     public final void rule__StatesProperties__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:574:1: ( rule__StatesProperties__Group_2__0__Impl rule__StatesProperties__Group_2__1 )
-            // InternalTSE.g:575:2: rule__StatesProperties__Group_2__0__Impl rule__StatesProperties__Group_2__1
+            // InternalTSE.g:554:1: ( rule__StatesProperties__Group_2__0__Impl rule__StatesProperties__Group_2__1 )
+            // InternalTSE.g:555:2: rule__StatesProperties__Group_2__0__Impl rule__StatesProperties__Group_2__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_9);
             rule__StatesProperties__Group_2__0__Impl();
 
             state._fsp--;
@@ -1905,20 +1809,20 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_2__0__Impl"
-    // InternalTSE.g:582:1: rule__StatesProperties__Group_2__0__Impl : ( 'position' ) ;
+    // InternalTSE.g:562:1: rule__StatesProperties__Group_2__0__Impl : ( 'position' ) ;
     public final void rule__StatesProperties__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:586:1: ( ( 'position' ) )
-            // InternalTSE.g:587:1: ( 'position' )
+            // InternalTSE.g:566:1: ( ( 'position' ) )
+            // InternalTSE.g:567:1: ( 'position' )
             {
-            // InternalTSE.g:587:1: ( 'position' )
-            // InternalTSE.g:588:2: 'position'
+            // InternalTSE.g:567:1: ( 'position' )
+            // InternalTSE.g:568:2: 'position'
             {
              before(grammarAccess.getStatesPropertiesAccess().getPositionKeyword_2_0()); 
-            match(input,17,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getStatesPropertiesAccess().getPositionKeyword_2_0()); 
 
             }
@@ -1942,14 +1846,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_2__1"
-    // InternalTSE.g:597:1: rule__StatesProperties__Group_2__1 : rule__StatesProperties__Group_2__1__Impl ;
+    // InternalTSE.g:577:1: rule__StatesProperties__Group_2__1 : rule__StatesProperties__Group_2__1__Impl ;
     public final void rule__StatesProperties__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:601:1: ( rule__StatesProperties__Group_2__1__Impl )
-            // InternalTSE.g:602:2: rule__StatesProperties__Group_2__1__Impl
+            // InternalTSE.g:581:1: ( rule__StatesProperties__Group_2__1__Impl )
+            // InternalTSE.g:582:2: rule__StatesProperties__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StatesProperties__Group_2__1__Impl();
@@ -1975,21 +1879,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_2__1__Impl"
-    // InternalTSE.g:608:1: rule__StatesProperties__Group_2__1__Impl : ( ( rule__StatesProperties__PositionAssignment_2_1 ) ) ;
+    // InternalTSE.g:588:1: rule__StatesProperties__Group_2__1__Impl : ( ( rule__StatesProperties__PositionAssignment_2_1 ) ) ;
     public final void rule__StatesProperties__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:612:1: ( ( ( rule__StatesProperties__PositionAssignment_2_1 ) ) )
-            // InternalTSE.g:613:1: ( ( rule__StatesProperties__PositionAssignment_2_1 ) )
+            // InternalTSE.g:592:1: ( ( ( rule__StatesProperties__PositionAssignment_2_1 ) ) )
+            // InternalTSE.g:593:1: ( ( rule__StatesProperties__PositionAssignment_2_1 ) )
             {
-            // InternalTSE.g:613:1: ( ( rule__StatesProperties__PositionAssignment_2_1 ) )
-            // InternalTSE.g:614:2: ( rule__StatesProperties__PositionAssignment_2_1 )
+            // InternalTSE.g:593:1: ( ( rule__StatesProperties__PositionAssignment_2_1 ) )
+            // InternalTSE.g:594:2: ( rule__StatesProperties__PositionAssignment_2_1 )
             {
              before(grammarAccess.getStatesPropertiesAccess().getPositionAssignment_2_1()); 
-            // InternalTSE.g:615:2: ( rule__StatesProperties__PositionAssignment_2_1 )
-            // InternalTSE.g:615:3: rule__StatesProperties__PositionAssignment_2_1
+            // InternalTSE.g:595:2: ( rule__StatesProperties__PositionAssignment_2_1 )
+            // InternalTSE.g:595:3: rule__StatesProperties__PositionAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__StatesProperties__PositionAssignment_2_1();
@@ -2022,16 +1926,16 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_3__0"
-    // InternalTSE.g:624:1: rule__StatesProperties__Group_3__0 : rule__StatesProperties__Group_3__0__Impl rule__StatesProperties__Group_3__1 ;
+    // InternalTSE.g:604:1: rule__StatesProperties__Group_3__0 : rule__StatesProperties__Group_3__0__Impl rule__StatesProperties__Group_3__1 ;
     public final void rule__StatesProperties__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:628:1: ( rule__StatesProperties__Group_3__0__Impl rule__StatesProperties__Group_3__1 )
-            // InternalTSE.g:629:2: rule__StatesProperties__Group_3__0__Impl rule__StatesProperties__Group_3__1
+            // InternalTSE.g:608:1: ( rule__StatesProperties__Group_3__0__Impl rule__StatesProperties__Group_3__1 )
+            // InternalTSE.g:609:2: rule__StatesProperties__Group_3__0__Impl rule__StatesProperties__Group_3__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_9);
             rule__StatesProperties__Group_3__0__Impl();
 
             state._fsp--;
@@ -2060,17 +1964,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_3__0__Impl"
-    // InternalTSE.g:636:1: rule__StatesProperties__Group_3__0__Impl : ( RULE_DEFAULT ) ;
+    // InternalTSE.g:616:1: rule__StatesProperties__Group_3__0__Impl : ( RULE_DEFAULT ) ;
     public final void rule__StatesProperties__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:640:1: ( ( RULE_DEFAULT ) )
-            // InternalTSE.g:641:1: ( RULE_DEFAULT )
+            // InternalTSE.g:620:1: ( ( RULE_DEFAULT ) )
+            // InternalTSE.g:621:1: ( RULE_DEFAULT )
             {
-            // InternalTSE.g:641:1: ( RULE_DEFAULT )
-            // InternalTSE.g:642:2: RULE_DEFAULT
+            // InternalTSE.g:621:1: ( RULE_DEFAULT )
+            // InternalTSE.g:622:2: RULE_DEFAULT
             {
              before(grammarAccess.getStatesPropertiesAccess().getDEFAULTTerminalRuleCall_3_0()); 
             match(input,RULE_DEFAULT,FOLLOW_2); 
@@ -2097,14 +2001,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_3__1"
-    // InternalTSE.g:651:1: rule__StatesProperties__Group_3__1 : rule__StatesProperties__Group_3__1__Impl ;
+    // InternalTSE.g:631:1: rule__StatesProperties__Group_3__1 : rule__StatesProperties__Group_3__1__Impl ;
     public final void rule__StatesProperties__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:655:1: ( rule__StatesProperties__Group_3__1__Impl )
-            // InternalTSE.g:656:2: rule__StatesProperties__Group_3__1__Impl
+            // InternalTSE.g:635:1: ( rule__StatesProperties__Group_3__1__Impl )
+            // InternalTSE.g:636:2: rule__StatesProperties__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__StatesProperties__Group_3__1__Impl();
@@ -2130,21 +2034,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__Group_3__1__Impl"
-    // InternalTSE.g:662:1: rule__StatesProperties__Group_3__1__Impl : ( ( rule__StatesProperties__PositionAssignment_3_1 ) ) ;
+    // InternalTSE.g:642:1: rule__StatesProperties__Group_3__1__Impl : ( ( rule__StatesProperties__PositionAssignment_3_1 ) ) ;
     public final void rule__StatesProperties__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:666:1: ( ( ( rule__StatesProperties__PositionAssignment_3_1 ) ) )
-            // InternalTSE.g:667:1: ( ( rule__StatesProperties__PositionAssignment_3_1 ) )
+            // InternalTSE.g:646:1: ( ( ( rule__StatesProperties__PositionAssignment_3_1 ) ) )
+            // InternalTSE.g:647:1: ( ( rule__StatesProperties__PositionAssignment_3_1 ) )
             {
-            // InternalTSE.g:667:1: ( ( rule__StatesProperties__PositionAssignment_3_1 ) )
-            // InternalTSE.g:668:2: ( rule__StatesProperties__PositionAssignment_3_1 )
+            // InternalTSE.g:647:1: ( ( rule__StatesProperties__PositionAssignment_3_1 ) )
+            // InternalTSE.g:648:2: ( rule__StatesProperties__PositionAssignment_3_1 )
             {
              before(grammarAccess.getStatesPropertiesAccess().getPositionAssignment_3_1()); 
-            // InternalTSE.g:669:2: ( rule__StatesProperties__PositionAssignment_3_1 )
-            // InternalTSE.g:669:3: rule__StatesProperties__PositionAssignment_3_1
+            // InternalTSE.g:649:2: ( rule__StatesProperties__PositionAssignment_3_1 )
+            // InternalTSE.g:649:3: rule__StatesProperties__PositionAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__StatesProperties__PositionAssignment_3_1();
@@ -2177,14 +2081,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__0"
-    // InternalTSE.g:678:1: rule__Transition__Group_0__0 : rule__Transition__Group_0__0__Impl rule__Transition__Group_0__1 ;
+    // InternalTSE.g:658:1: rule__Transition__Group_0__0 : rule__Transition__Group_0__0__Impl rule__Transition__Group_0__1 ;
     public final void rule__Transition__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:682:1: ( rule__Transition__Group_0__0__Impl rule__Transition__Group_0__1 )
-            // InternalTSE.g:683:2: rule__Transition__Group_0__0__Impl rule__Transition__Group_0__1
+            // InternalTSE.g:662:1: ( rule__Transition__Group_0__0__Impl rule__Transition__Group_0__1 )
+            // InternalTSE.g:663:2: rule__Transition__Group_0__0__Impl rule__Transition__Group_0__1
             {
             pushFollow(FOLLOW_4);
             rule__Transition__Group_0__0__Impl();
@@ -2215,20 +2119,20 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__0__Impl"
-    // InternalTSE.g:690:1: rule__Transition__Group_0__0__Impl : ( 'transition' ) ;
+    // InternalTSE.g:670:1: rule__Transition__Group_0__0__Impl : ( 'transition' ) ;
     public final void rule__Transition__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:694:1: ( ( 'transition' ) )
-            // InternalTSE.g:695:1: ( 'transition' )
+            // InternalTSE.g:674:1: ( ( 'transition' ) )
+            // InternalTSE.g:675:1: ( 'transition' )
             {
-            // InternalTSE.g:695:1: ( 'transition' )
-            // InternalTSE.g:696:2: 'transition'
+            // InternalTSE.g:675:1: ( 'transition' )
+            // InternalTSE.g:676:2: 'transition'
             {
              before(grammarAccess.getTransitionAccess().getTransitionKeyword_0_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getTransitionAccess().getTransitionKeyword_0_0()); 
 
             }
@@ -2252,16 +2156,16 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__1"
-    // InternalTSE.g:705:1: rule__Transition__Group_0__1 : rule__Transition__Group_0__1__Impl rule__Transition__Group_0__2 ;
+    // InternalTSE.g:685:1: rule__Transition__Group_0__1 : rule__Transition__Group_0__1__Impl rule__Transition__Group_0__2 ;
     public final void rule__Transition__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:709:1: ( rule__Transition__Group_0__1__Impl rule__Transition__Group_0__2 )
-            // InternalTSE.g:710:2: rule__Transition__Group_0__1__Impl rule__Transition__Group_0__2
+            // InternalTSE.g:689:1: ( rule__Transition__Group_0__1__Impl rule__Transition__Group_0__2 )
+            // InternalTSE.g:690:2: rule__Transition__Group_0__1__Impl rule__Transition__Group_0__2
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__Transition__Group_0__1__Impl();
 
             state._fsp--;
@@ -2290,21 +2194,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__1__Impl"
-    // InternalTSE.g:717:1: rule__Transition__Group_0__1__Impl : ( ( rule__Transition__StartAssignment_0_1 ) ) ;
+    // InternalTSE.g:697:1: rule__Transition__Group_0__1__Impl : ( ( rule__Transition__StartAssignment_0_1 ) ) ;
     public final void rule__Transition__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:721:1: ( ( ( rule__Transition__StartAssignment_0_1 ) ) )
-            // InternalTSE.g:722:1: ( ( rule__Transition__StartAssignment_0_1 ) )
+            // InternalTSE.g:701:1: ( ( ( rule__Transition__StartAssignment_0_1 ) ) )
+            // InternalTSE.g:702:1: ( ( rule__Transition__StartAssignment_0_1 ) )
             {
-            // InternalTSE.g:722:1: ( ( rule__Transition__StartAssignment_0_1 ) )
-            // InternalTSE.g:723:2: ( rule__Transition__StartAssignment_0_1 )
+            // InternalTSE.g:702:1: ( ( rule__Transition__StartAssignment_0_1 ) )
+            // InternalTSE.g:703:2: ( rule__Transition__StartAssignment_0_1 )
             {
              before(grammarAccess.getTransitionAccess().getStartAssignment_0_1()); 
-            // InternalTSE.g:724:2: ( rule__Transition__StartAssignment_0_1 )
-            // InternalTSE.g:724:3: rule__Transition__StartAssignment_0_1
+            // InternalTSE.g:704:2: ( rule__Transition__StartAssignment_0_1 )
+            // InternalTSE.g:704:3: rule__Transition__StartAssignment_0_1
             {
             pushFollow(FOLLOW_2);
             rule__Transition__StartAssignment_0_1();
@@ -2337,16 +2241,16 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__2"
-    // InternalTSE.g:732:1: rule__Transition__Group_0__2 : rule__Transition__Group_0__2__Impl rule__Transition__Group_0__3 ;
+    // InternalTSE.g:712:1: rule__Transition__Group_0__2 : rule__Transition__Group_0__2__Impl rule__Transition__Group_0__3 ;
     public final void rule__Transition__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:736:1: ( rule__Transition__Group_0__2__Impl rule__Transition__Group_0__3 )
-            // InternalTSE.g:737:2: rule__Transition__Group_0__2__Impl rule__Transition__Group_0__3
+            // InternalTSE.g:716:1: ( rule__Transition__Group_0__2__Impl rule__Transition__Group_0__3 )
+            // InternalTSE.g:717:2: rule__Transition__Group_0__2__Impl rule__Transition__Group_0__3
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_4);
             rule__Transition__Group_0__2__Impl();
 
             state._fsp--;
@@ -2375,31 +2279,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__2__Impl"
-    // InternalTSE.g:744:1: rule__Transition__Group_0__2__Impl : ( ( rule__Transition__EndAssignment_0_2 ) ) ;
+    // InternalTSE.g:724:1: rule__Transition__Group_0__2__Impl : ( '->' ) ;
     public final void rule__Transition__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:748:1: ( ( ( rule__Transition__EndAssignment_0_2 ) ) )
-            // InternalTSE.g:749:1: ( ( rule__Transition__EndAssignment_0_2 ) )
+            // InternalTSE.g:728:1: ( ( '->' ) )
+            // InternalTSE.g:729:1: ( '->' )
             {
-            // InternalTSE.g:749:1: ( ( rule__Transition__EndAssignment_0_2 ) )
-            // InternalTSE.g:750:2: ( rule__Transition__EndAssignment_0_2 )
+            // InternalTSE.g:729:1: ( '->' )
+            // InternalTSE.g:730:2: '->'
             {
-             before(grammarAccess.getTransitionAccess().getEndAssignment_0_2()); 
-            // InternalTSE.g:751:2: ( rule__Transition__EndAssignment_0_2 )
-            // InternalTSE.g:751:3: rule__Transition__EndAssignment_0_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__Transition__EndAssignment_0_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTransitionAccess().getEndAssignment_0_2()); 
+             before(grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_0_2()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_0_2()); 
 
             }
 
@@ -2422,16 +2316,16 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__3"
-    // InternalTSE.g:759:1: rule__Transition__Group_0__3 : rule__Transition__Group_0__3__Impl rule__Transition__Group_0__4 ;
+    // InternalTSE.g:739:1: rule__Transition__Group_0__3 : rule__Transition__Group_0__3__Impl rule__Transition__Group_0__4 ;
     public final void rule__Transition__Group_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:763:1: ( rule__Transition__Group_0__3__Impl rule__Transition__Group_0__4 )
-            // InternalTSE.g:764:2: rule__Transition__Group_0__3__Impl rule__Transition__Group_0__4
+            // InternalTSE.g:743:1: ( rule__Transition__Group_0__3__Impl rule__Transition__Group_0__4 )
+            // InternalTSE.g:744:2: rule__Transition__Group_0__3__Impl rule__Transition__Group_0__4
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__Transition__Group_0__3__Impl();
 
             state._fsp--;
@@ -2460,49 +2354,31 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__3__Impl"
-    // InternalTSE.g:771:1: rule__Transition__Group_0__3__Impl : ( ( rule__Transition__ProprietyStatesAssignment_0_3 )* ) ;
+    // InternalTSE.g:751:1: rule__Transition__Group_0__3__Impl : ( ( rule__Transition__EndAssignment_0_3 ) ) ;
     public final void rule__Transition__Group_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:775:1: ( ( ( rule__Transition__ProprietyStatesAssignment_0_3 )* ) )
-            // InternalTSE.g:776:1: ( ( rule__Transition__ProprietyStatesAssignment_0_3 )* )
+            // InternalTSE.g:755:1: ( ( ( rule__Transition__EndAssignment_0_3 ) ) )
+            // InternalTSE.g:756:1: ( ( rule__Transition__EndAssignment_0_3 ) )
             {
-            // InternalTSE.g:776:1: ( ( rule__Transition__ProprietyStatesAssignment_0_3 )* )
-            // InternalTSE.g:777:2: ( rule__Transition__ProprietyStatesAssignment_0_3 )*
+            // InternalTSE.g:756:1: ( ( rule__Transition__EndAssignment_0_3 ) )
+            // InternalTSE.g:757:2: ( rule__Transition__EndAssignment_0_3 )
             {
-             before(grammarAccess.getTransitionAccess().getProprietyStatesAssignment_0_3()); 
-            // InternalTSE.g:778:2: ( rule__Transition__ProprietyStatesAssignment_0_3 )*
-            loop8:
-            do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+             before(grammarAccess.getTransitionAccess().getEndAssignment_0_3()); 
+            // InternalTSE.g:758:2: ( rule__Transition__EndAssignment_0_3 )
+            // InternalTSE.g:758:3: rule__Transition__EndAssignment_0_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__EndAssignment_0_3();
 
-                if ( (LA8_0==RULE_DEFAULT||(LA8_0>=15 && LA8_0<=16)||LA8_0==23) ) {
-                    alt8=1;
-                }
+            state._fsp--;
 
 
-                switch (alt8) {
-            	case 1 :
-            	    // InternalTSE.g:778:3: rule__Transition__ProprietyStatesAssignment_0_3
-            	    {
-            	    pushFollow(FOLLOW_11);
-            	    rule__Transition__ProprietyStatesAssignment_0_3();
+            }
 
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop8;
-                }
-            } while (true);
-
-             after(grammarAccess.getTransitionAccess().getProprietyStatesAssignment_0_3()); 
+             after(grammarAccess.getTransitionAccess().getEndAssignment_0_3()); 
 
             }
 
@@ -2525,17 +2401,22 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__4"
-    // InternalTSE.g:786:1: rule__Transition__Group_0__4 : rule__Transition__Group_0__4__Impl ;
+    // InternalTSE.g:766:1: rule__Transition__Group_0__4 : rule__Transition__Group_0__4__Impl rule__Transition__Group_0__5 ;
     public final void rule__Transition__Group_0__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:790:1: ( rule__Transition__Group_0__4__Impl )
-            // InternalTSE.g:791:2: rule__Transition__Group_0__4__Impl
+            // InternalTSE.g:770:1: ( rule__Transition__Group_0__4__Impl rule__Transition__Group_0__5 )
+            // InternalTSE.g:771:2: rule__Transition__Group_0__4__Impl rule__Transition__Group_0__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_11);
             rule__Transition__Group_0__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0__5();
 
             state._fsp--;
 
@@ -2558,42 +2439,49 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__4__Impl"
-    // InternalTSE.g:797:1: rule__Transition__Group_0__4__Impl : ( ( rule__Transition__LabelAssignment_0_4 )? ) ;
+    // InternalTSE.g:778:1: rule__Transition__Group_0__4__Impl : ( ( rule__Transition__ProprietyTransitionAssignment_0_4 )* ) ;
     public final void rule__Transition__Group_0__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:801:1: ( ( ( rule__Transition__LabelAssignment_0_4 )? ) )
-            // InternalTSE.g:802:1: ( ( rule__Transition__LabelAssignment_0_4 )? )
+            // InternalTSE.g:782:1: ( ( ( rule__Transition__ProprietyTransitionAssignment_0_4 )* ) )
+            // InternalTSE.g:783:1: ( ( rule__Transition__ProprietyTransitionAssignment_0_4 )* )
             {
-            // InternalTSE.g:802:1: ( ( rule__Transition__LabelAssignment_0_4 )? )
-            // InternalTSE.g:803:2: ( rule__Transition__LabelAssignment_0_4 )?
+            // InternalTSE.g:783:1: ( ( rule__Transition__ProprietyTransitionAssignment_0_4 )* )
+            // InternalTSE.g:784:2: ( rule__Transition__ProprietyTransitionAssignment_0_4 )*
             {
-             before(grammarAccess.getTransitionAccess().getLabelAssignment_0_4()); 
-            // InternalTSE.g:804:2: ( rule__Transition__LabelAssignment_0_4 )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+             before(grammarAccess.getTransitionAccess().getProprietyTransitionAssignment_0_4()); 
+            // InternalTSE.g:785:2: ( rule__Transition__ProprietyTransitionAssignment_0_4 )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-            if ( (LA9_0==20) ) {
-                alt9=1;
-            }
-            switch (alt9) {
-                case 1 :
-                    // InternalTSE.g:804:3: rule__Transition__LabelAssignment_0_4
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Transition__LabelAssignment_0_4();
-
-                    state._fsp--;
+                if ( ((LA7_0>=16 && LA7_0<=17)||LA7_0==23) ) {
+                    alt7=1;
+                }
 
 
-                    }
-                    break;
+                switch (alt7) {
+            	case 1 :
+            	    // InternalTSE.g:785:3: rule__Transition__ProprietyTransitionAssignment_0_4
+            	    {
+            	    pushFollow(FOLLOW_12);
+            	    rule__Transition__ProprietyTransitionAssignment_0_4();
 
-            }
+            	    state._fsp--;
 
-             after(grammarAccess.getTransitionAccess().getLabelAssignment_0_4()); 
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+             after(grammarAccess.getTransitionAccess().getProprietyTransitionAssignment_0_4()); 
 
             }
 
@@ -2615,15 +2503,106 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Transition__Group_0__4__Impl"
 
 
+    // $ANTLR start "rule__Transition__Group_0__5"
+    // InternalTSE.g:793:1: rule__Transition__Group_0__5 : rule__Transition__Group_0__5__Impl ;
+    public final void rule__Transition__Group_0__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTSE.g:797:1: ( rule__Transition__Group_0__5__Impl )
+            // InternalTSE.g:798:2: rule__Transition__Group_0__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Transition__Group_0__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0__5"
+
+
+    // $ANTLR start "rule__Transition__Group_0__5__Impl"
+    // InternalTSE.g:804:1: rule__Transition__Group_0__5__Impl : ( ( rule__Transition__LabelAssignment_0_5 )? ) ;
+    public final void rule__Transition__Group_0__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTSE.g:808:1: ( ( ( rule__Transition__LabelAssignment_0_5 )? ) )
+            // InternalTSE.g:809:1: ( ( rule__Transition__LabelAssignment_0_5 )? )
+            {
+            // InternalTSE.g:809:1: ( ( rule__Transition__LabelAssignment_0_5 )? )
+            // InternalTSE.g:810:2: ( rule__Transition__LabelAssignment_0_5 )?
+            {
+             before(grammarAccess.getTransitionAccess().getLabelAssignment_0_5()); 
+            // InternalTSE.g:811:2: ( rule__Transition__LabelAssignment_0_5 )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0==22) ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // InternalTSE.g:811:3: rule__Transition__LabelAssignment_0_5
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Transition__LabelAssignment_0_5();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getTransitionAccess().getLabelAssignment_0_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Transition__Group_0__5__Impl"
+
+
     // $ANTLR start "rule__Transition__Group_1__0"
-    // InternalTSE.g:813:1: rule__Transition__Group_1__0 : rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1 ;
+    // InternalTSE.g:820:1: rule__Transition__Group_1__0 : rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1 ;
     public final void rule__Transition__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:817:1: ( rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1 )
-            // InternalTSE.g:818:2: rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1
+            // InternalTSE.g:824:1: ( rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1 )
+            // InternalTSE.g:825:2: rule__Transition__Group_1__0__Impl rule__Transition__Group_1__1
             {
             pushFollow(FOLLOW_4);
             rule__Transition__Group_1__0__Impl();
@@ -2654,20 +2633,20 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_1__0__Impl"
-    // InternalTSE.g:825:1: rule__Transition__Group_1__0__Impl : ( 'initialTransition' ) ;
+    // InternalTSE.g:832:1: rule__Transition__Group_1__0__Impl : ( 'initialTransition' ) ;
     public final void rule__Transition__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:829:1: ( ( 'initialTransition' ) )
-            // InternalTSE.g:830:1: ( 'initialTransition' )
+            // InternalTSE.g:836:1: ( ( 'initialTransition' ) )
+            // InternalTSE.g:837:1: ( 'initialTransition' )
             {
-            // InternalTSE.g:830:1: ( 'initialTransition' )
-            // InternalTSE.g:831:2: 'initialTransition'
+            // InternalTSE.g:837:1: ( 'initialTransition' )
+            // InternalTSE.g:838:2: 'initialTransition'
             {
              before(grammarAccess.getTransitionAccess().getInitialTransitionKeyword_1_0()); 
-            match(input,19,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getTransitionAccess().getInitialTransitionKeyword_1_0()); 
 
             }
@@ -2691,16 +2670,16 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_1__1"
-    // InternalTSE.g:840:1: rule__Transition__Group_1__1 : rule__Transition__Group_1__1__Impl rule__Transition__Group_1__2 ;
+    // InternalTSE.g:847:1: rule__Transition__Group_1__1 : rule__Transition__Group_1__1__Impl rule__Transition__Group_1__2 ;
     public final void rule__Transition__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:844:1: ( rule__Transition__Group_1__1__Impl rule__Transition__Group_1__2 )
-            // InternalTSE.g:845:2: rule__Transition__Group_1__1__Impl rule__Transition__Group_1__2
+            // InternalTSE.g:851:1: ( rule__Transition__Group_1__1__Impl rule__Transition__Group_1__2 )
+            // InternalTSE.g:852:2: rule__Transition__Group_1__1__Impl rule__Transition__Group_1__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_9);
             rule__Transition__Group_1__1__Impl();
 
             state._fsp--;
@@ -2729,21 +2708,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_1__1__Impl"
-    // InternalTSE.g:852:1: rule__Transition__Group_1__1__Impl : ( ( rule__Transition__InitAssignment_1_1 ) ) ;
+    // InternalTSE.g:859:1: rule__Transition__Group_1__1__Impl : ( ( rule__Transition__InitAssignment_1_1 ) ) ;
     public final void rule__Transition__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:856:1: ( ( ( rule__Transition__InitAssignment_1_1 ) ) )
-            // InternalTSE.g:857:1: ( ( rule__Transition__InitAssignment_1_1 ) )
+            // InternalTSE.g:863:1: ( ( ( rule__Transition__InitAssignment_1_1 ) ) )
+            // InternalTSE.g:864:1: ( ( rule__Transition__InitAssignment_1_1 ) )
             {
-            // InternalTSE.g:857:1: ( ( rule__Transition__InitAssignment_1_1 ) )
-            // InternalTSE.g:858:2: ( rule__Transition__InitAssignment_1_1 )
+            // InternalTSE.g:864:1: ( ( rule__Transition__InitAssignment_1_1 ) )
+            // InternalTSE.g:865:2: ( rule__Transition__InitAssignment_1_1 )
             {
              before(grammarAccess.getTransitionAccess().getInitAssignment_1_1()); 
-            // InternalTSE.g:859:2: ( rule__Transition__InitAssignment_1_1 )
-            // InternalTSE.g:859:3: rule__Transition__InitAssignment_1_1
+            // InternalTSE.g:866:2: ( rule__Transition__InitAssignment_1_1 )
+            // InternalTSE.g:866:3: rule__Transition__InitAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Transition__InitAssignment_1_1();
@@ -2776,14 +2755,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_1__2"
-    // InternalTSE.g:867:1: rule__Transition__Group_1__2 : rule__Transition__Group_1__2__Impl ;
+    // InternalTSE.g:874:1: rule__Transition__Group_1__2 : rule__Transition__Group_1__2__Impl ;
     public final void rule__Transition__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:871:1: ( rule__Transition__Group_1__2__Impl )
-            // InternalTSE.g:872:2: rule__Transition__Group_1__2__Impl
+            // InternalTSE.g:878:1: ( rule__Transition__Group_1__2__Impl )
+            // InternalTSE.g:879:2: rule__Transition__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Transition__Group_1__2__Impl();
@@ -2809,21 +2788,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_1__2__Impl"
-    // InternalTSE.g:878:1: rule__Transition__Group_1__2__Impl : ( RULE_INT ) ;
+    // InternalTSE.g:885:1: rule__Transition__Group_1__2__Impl : ( RULE_COORDINATES ) ;
     public final void rule__Transition__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:882:1: ( ( RULE_INT ) )
-            // InternalTSE.g:883:1: ( RULE_INT )
+            // InternalTSE.g:889:1: ( ( RULE_COORDINATES ) )
+            // InternalTSE.g:890:1: ( RULE_COORDINATES )
             {
-            // InternalTSE.g:883:1: ( RULE_INT )
-            // InternalTSE.g:884:2: RULE_INT
+            // InternalTSE.g:890:1: ( RULE_COORDINATES )
+            // InternalTSE.g:891:2: RULE_COORDINATES
             {
-             before(grammarAccess.getTransitionAccess().getINTTerminalRuleCall_1_2()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getTransitionAccess().getINTTerminalRuleCall_1_2()); 
+             before(grammarAccess.getTransitionAccess().getCOORDINATESTerminalRuleCall_1_2()); 
+            match(input,RULE_COORDINATES,FOLLOW_2); 
+             after(grammarAccess.getTransitionAccess().getCOORDINATESTerminalRuleCall_1_2()); 
 
             }
 
@@ -2846,16 +2825,16 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Label__Group__0"
-    // InternalTSE.g:894:1: rule__Label__Group__0 : rule__Label__Group__0__Impl rule__Label__Group__1 ;
+    // InternalTSE.g:901:1: rule__Label__Group__0 : rule__Label__Group__0__Impl rule__Label__Group__1 ;
     public final void rule__Label__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:898:1: ( rule__Label__Group__0__Impl rule__Label__Group__1 )
-            // InternalTSE.g:899:2: rule__Label__Group__0__Impl rule__Label__Group__1
+            // InternalTSE.g:905:1: ( rule__Label__Group__0__Impl rule__Label__Group__1 )
+            // InternalTSE.g:906:2: rule__Label__Group__0__Impl rule__Label__Group__1
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_13);
             rule__Label__Group__0__Impl();
 
             state._fsp--;
@@ -2884,20 +2863,20 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Label__Group__0__Impl"
-    // InternalTSE.g:906:1: rule__Label__Group__0__Impl : ( 'label' ) ;
+    // InternalTSE.g:913:1: rule__Label__Group__0__Impl : ( 'label' ) ;
     public final void rule__Label__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:910:1: ( ( 'label' ) )
-            // InternalTSE.g:911:1: ( 'label' )
+            // InternalTSE.g:917:1: ( ( 'label' ) )
+            // InternalTSE.g:918:1: ( 'label' )
             {
-            // InternalTSE.g:911:1: ( 'label' )
-            // InternalTSE.g:912:2: 'label'
+            // InternalTSE.g:918:1: ( 'label' )
+            // InternalTSE.g:919:2: 'label'
             {
              before(grammarAccess.getLabelAccess().getLabelKeyword_0()); 
-            match(input,20,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getLabelAccess().getLabelKeyword_0()); 
 
             }
@@ -2921,17 +2900,22 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Label__Group__1"
-    // InternalTSE.g:921:1: rule__Label__Group__1 : rule__Label__Group__1__Impl ;
+    // InternalTSE.g:928:1: rule__Label__Group__1 : rule__Label__Group__1__Impl rule__Label__Group__2 ;
     public final void rule__Label__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:925:1: ( rule__Label__Group__1__Impl )
-            // InternalTSE.g:926:2: rule__Label__Group__1__Impl
+            // InternalTSE.g:932:1: ( rule__Label__Group__1__Impl rule__Label__Group__2 )
+            // InternalTSE.g:933:2: rule__Label__Group__1__Impl rule__Label__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_9);
             rule__Label__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Label__Group__2();
 
             state._fsp--;
 
@@ -2954,21 +2938,31 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Label__Group__1__Impl"
-    // InternalTSE.g:932:1: rule__Label__Group__1__Impl : ( RULE_INT ) ;
+    // InternalTSE.g:940:1: rule__Label__Group__1__Impl : ( ( rule__Label__TextAssignment_1 ) ) ;
     public final void rule__Label__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:936:1: ( ( RULE_INT ) )
-            // InternalTSE.g:937:1: ( RULE_INT )
+            // InternalTSE.g:944:1: ( ( ( rule__Label__TextAssignment_1 ) ) )
+            // InternalTSE.g:945:1: ( ( rule__Label__TextAssignment_1 ) )
             {
-            // InternalTSE.g:937:1: ( RULE_INT )
-            // InternalTSE.g:938:2: RULE_INT
+            // InternalTSE.g:945:1: ( ( rule__Label__TextAssignment_1 ) )
+            // InternalTSE.g:946:2: ( rule__Label__TextAssignment_1 )
             {
-             before(grammarAccess.getLabelAccess().getINTTerminalRuleCall_1()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getLabelAccess().getINTTerminalRuleCall_1()); 
+             before(grammarAccess.getLabelAccess().getTextAssignment_1()); 
+            // InternalTSE.g:947:2: ( rule__Label__TextAssignment_1 )
+            // InternalTSE.g:947:3: rule__Label__TextAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Label__TextAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getLabelAccess().getTextAssignment_1()); 
 
             }
 
@@ -2990,93 +2984,18 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Label__Group__1__Impl"
 
 
-    // $ANTLR start "rule__EndTransition__Group_0__0"
-    // InternalTSE.g:948:1: rule__EndTransition__Group_0__0 : rule__EndTransition__Group_0__0__Impl rule__EndTransition__Group_0__1 ;
-    public final void rule__EndTransition__Group_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Label__Group__2"
+    // InternalTSE.g:955:1: rule__Label__Group__2 : rule__Label__Group__2__Impl ;
+    public final void rule__Label__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:952:1: ( rule__EndTransition__Group_0__0__Impl rule__EndTransition__Group_0__1 )
-            // InternalTSE.g:953:2: rule__EndTransition__Group_0__0__Impl rule__EndTransition__Group_0__1
-            {
-            pushFollow(FOLLOW_4);
-            rule__EndTransition__Group_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__EndTransition__Group_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndTransition__Group_0__0"
-
-
-    // $ANTLR start "rule__EndTransition__Group_0__0__Impl"
-    // InternalTSE.g:960:1: rule__EndTransition__Group_0__0__Impl : ( '->' ) ;
-    public final void rule__EndTransition__Group_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:964:1: ( ( '->' ) )
-            // InternalTSE.g:965:1: ( '->' )
-            {
-            // InternalTSE.g:965:1: ( '->' )
-            // InternalTSE.g:966:2: '->'
-            {
-             before(grammarAccess.getEndTransitionAccess().getHyphenMinusGreaterThanSignKeyword_0_0()); 
-            match(input,21,FOLLOW_2); 
-             after(grammarAccess.getEndTransitionAccess().getHyphenMinusGreaterThanSignKeyword_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndTransition__Group_0__0__Impl"
-
-
-    // $ANTLR start "rule__EndTransition__Group_0__1"
-    // InternalTSE.g:975:1: rule__EndTransition__Group_0__1 : rule__EndTransition__Group_0__1__Impl ;
-    public final void rule__EndTransition__Group_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:979:1: ( rule__EndTransition__Group_0__1__Impl )
-            // InternalTSE.g:980:2: rule__EndTransition__Group_0__1__Impl
+            // InternalTSE.g:959:1: ( rule__Label__Group__2__Impl )
+            // InternalTSE.g:960:2: rule__Label__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__EndTransition__Group_0__1__Impl();
+            rule__Label__Group__2__Impl();
 
             state._fsp--;
 
@@ -3095,35 +3014,35 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EndTransition__Group_0__1"
+    // $ANTLR end "rule__Label__Group__2"
 
 
-    // $ANTLR start "rule__EndTransition__Group_0__1__Impl"
-    // InternalTSE.g:986:1: rule__EndTransition__Group_0__1__Impl : ( ( rule__EndTransition__EndAssignment_0_1 ) ) ;
-    public final void rule__EndTransition__Group_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Label__Group__2__Impl"
+    // InternalTSE.g:966:1: rule__Label__Group__2__Impl : ( ( rule__Label__PositionAssignment_2 ) ) ;
+    public final void rule__Label__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:990:1: ( ( ( rule__EndTransition__EndAssignment_0_1 ) ) )
-            // InternalTSE.g:991:1: ( ( rule__EndTransition__EndAssignment_0_1 ) )
+            // InternalTSE.g:970:1: ( ( ( rule__Label__PositionAssignment_2 ) ) )
+            // InternalTSE.g:971:1: ( ( rule__Label__PositionAssignment_2 ) )
             {
-            // InternalTSE.g:991:1: ( ( rule__EndTransition__EndAssignment_0_1 ) )
-            // InternalTSE.g:992:2: ( rule__EndTransition__EndAssignment_0_1 )
+            // InternalTSE.g:971:1: ( ( rule__Label__PositionAssignment_2 ) )
+            // InternalTSE.g:972:2: ( rule__Label__PositionAssignment_2 )
             {
-             before(grammarAccess.getEndTransitionAccess().getEndAssignment_0_1()); 
-            // InternalTSE.g:993:2: ( rule__EndTransition__EndAssignment_0_1 )
-            // InternalTSE.g:993:3: rule__EndTransition__EndAssignment_0_1
+             before(grammarAccess.getLabelAccess().getPositionAssignment_2()); 
+            // InternalTSE.g:973:2: ( rule__Label__PositionAssignment_2 )
+            // InternalTSE.g:973:3: rule__Label__PositionAssignment_2
             {
             pushFollow(FOLLOW_2);
-            rule__EndTransition__EndAssignment_0_1();
+            rule__Label__PositionAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEndTransitionAccess().getEndAssignment_0_1()); 
+             after(grammarAccess.getLabelAccess().getPositionAssignment_2()); 
 
             }
 
@@ -3142,173 +3061,18 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EndTransition__Group_0__1__Impl"
-
-
-    // $ANTLR start "rule__EndTransition__Group_1__0"
-    // InternalTSE.g:1002:1: rule__EndTransition__Group_1__0 : rule__EndTransition__Group_1__0__Impl rule__EndTransition__Group_1__1 ;
-    public final void rule__EndTransition__Group_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:1006:1: ( rule__EndTransition__Group_1__0__Impl rule__EndTransition__Group_1__1 )
-            // InternalTSE.g:1007:2: rule__EndTransition__Group_1__0__Impl rule__EndTransition__Group_1__1
-            {
-            pushFollow(FOLLOW_13);
-            rule__EndTransition__Group_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__EndTransition__Group_1__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndTransition__Group_1__0"
-
-
-    // $ANTLR start "rule__EndTransition__Group_1__0__Impl"
-    // InternalTSE.g:1014:1: rule__EndTransition__Group_1__0__Impl : ( 'reflexive' ) ;
-    public final void rule__EndTransition__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:1018:1: ( ( 'reflexive' ) )
-            // InternalTSE.g:1019:1: ( 'reflexive' )
-            {
-            // InternalTSE.g:1019:1: ( 'reflexive' )
-            // InternalTSE.g:1020:2: 'reflexive'
-            {
-             before(grammarAccess.getEndTransitionAccess().getReflexiveKeyword_1_0()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getEndTransitionAccess().getReflexiveKeyword_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndTransition__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__EndTransition__Group_1__1"
-    // InternalTSE.g:1029:1: rule__EndTransition__Group_1__1 : rule__EndTransition__Group_1__1__Impl ;
-    public final void rule__EndTransition__Group_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:1033:1: ( rule__EndTransition__Group_1__1__Impl )
-            // InternalTSE.g:1034:2: rule__EndTransition__Group_1__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__EndTransition__Group_1__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndTransition__Group_1__1"
-
-
-    // $ANTLR start "rule__EndTransition__Group_1__1__Impl"
-    // InternalTSE.g:1040:1: rule__EndTransition__Group_1__1__Impl : ( ( rule__EndTransition__EndAssignment_1_1 ) ) ;
-    public final void rule__EndTransition__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:1044:1: ( ( ( rule__EndTransition__EndAssignment_1_1 ) ) )
-            // InternalTSE.g:1045:1: ( ( rule__EndTransition__EndAssignment_1_1 ) )
-            {
-            // InternalTSE.g:1045:1: ( ( rule__EndTransition__EndAssignment_1_1 ) )
-            // InternalTSE.g:1046:2: ( rule__EndTransition__EndAssignment_1_1 )
-            {
-             before(grammarAccess.getEndTransitionAccess().getEndAssignment_1_1()); 
-            // InternalTSE.g:1047:2: ( rule__EndTransition__EndAssignment_1_1 )
-            // InternalTSE.g:1047:3: rule__EndTransition__EndAssignment_1_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__EndTransition__EndAssignment_1_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEndTransitionAccess().getEndAssignment_1_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndTransition__Group_1__1__Impl"
+    // $ANTLR end "rule__Label__Group__2__Impl"
 
 
     // $ANTLR start "rule__TransitionProperties__Group_0__0"
-    // InternalTSE.g:1056:1: rule__TransitionProperties__Group_0__0 : rule__TransitionProperties__Group_0__0__Impl rule__TransitionProperties__Group_0__1 ;
+    // InternalTSE.g:982:1: rule__TransitionProperties__Group_0__0 : rule__TransitionProperties__Group_0__0__Impl rule__TransitionProperties__Group_0__1 ;
     public final void rule__TransitionProperties__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1060:1: ( rule__TransitionProperties__Group_0__0__Impl rule__TransitionProperties__Group_0__1 )
-            // InternalTSE.g:1061:2: rule__TransitionProperties__Group_0__0__Impl rule__TransitionProperties__Group_0__1
+            // InternalTSE.g:986:1: ( rule__TransitionProperties__Group_0__0__Impl rule__TransitionProperties__Group_0__1 )
+            // InternalTSE.g:987:2: rule__TransitionProperties__Group_0__0__Impl rule__TransitionProperties__Group_0__1
             {
             pushFollow(FOLLOW_7);
             rule__TransitionProperties__Group_0__0__Impl();
@@ -3339,20 +3103,20 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_0__0__Impl"
-    // InternalTSE.g:1068:1: rule__TransitionProperties__Group_0__0__Impl : ( 'color' ) ;
+    // InternalTSE.g:994:1: rule__TransitionProperties__Group_0__0__Impl : ( 'color' ) ;
     public final void rule__TransitionProperties__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1072:1: ( ( 'color' ) )
-            // InternalTSE.g:1073:1: ( 'color' )
+            // InternalTSE.g:998:1: ( ( 'color' ) )
+            // InternalTSE.g:999:1: ( 'color' )
             {
-            // InternalTSE.g:1073:1: ( 'color' )
-            // InternalTSE.g:1074:2: 'color'
+            // InternalTSE.g:999:1: ( 'color' )
+            // InternalTSE.g:1000:2: 'color'
             {
              before(grammarAccess.getTransitionPropertiesAccess().getColorKeyword_0_0()); 
-            match(input,15,FOLLOW_2); 
+            match(input,16,FOLLOW_2); 
              after(grammarAccess.getTransitionPropertiesAccess().getColorKeyword_0_0()); 
 
             }
@@ -3376,14 +3140,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_0__1"
-    // InternalTSE.g:1083:1: rule__TransitionProperties__Group_0__1 : rule__TransitionProperties__Group_0__1__Impl ;
+    // InternalTSE.g:1009:1: rule__TransitionProperties__Group_0__1 : rule__TransitionProperties__Group_0__1__Impl ;
     public final void rule__TransitionProperties__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1087:1: ( rule__TransitionProperties__Group_0__1__Impl )
-            // InternalTSE.g:1088:2: rule__TransitionProperties__Group_0__1__Impl
+            // InternalTSE.g:1013:1: ( rule__TransitionProperties__Group_0__1__Impl )
+            // InternalTSE.g:1014:2: rule__TransitionProperties__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TransitionProperties__Group_0__1__Impl();
@@ -3409,21 +3173,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_0__1__Impl"
-    // InternalTSE.g:1094:1: rule__TransitionProperties__Group_0__1__Impl : ( ( rule__TransitionProperties__ColorAssignment_0_1 ) ) ;
+    // InternalTSE.g:1020:1: rule__TransitionProperties__Group_0__1__Impl : ( ( rule__TransitionProperties__ColorAssignment_0_1 ) ) ;
     public final void rule__TransitionProperties__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1098:1: ( ( ( rule__TransitionProperties__ColorAssignment_0_1 ) ) )
-            // InternalTSE.g:1099:1: ( ( rule__TransitionProperties__ColorAssignment_0_1 ) )
+            // InternalTSE.g:1024:1: ( ( ( rule__TransitionProperties__ColorAssignment_0_1 ) ) )
+            // InternalTSE.g:1025:1: ( ( rule__TransitionProperties__ColorAssignment_0_1 ) )
             {
-            // InternalTSE.g:1099:1: ( ( rule__TransitionProperties__ColorAssignment_0_1 ) )
-            // InternalTSE.g:1100:2: ( rule__TransitionProperties__ColorAssignment_0_1 )
+            // InternalTSE.g:1025:1: ( ( rule__TransitionProperties__ColorAssignment_0_1 ) )
+            // InternalTSE.g:1026:2: ( rule__TransitionProperties__ColorAssignment_0_1 )
             {
              before(grammarAccess.getTransitionPropertiesAccess().getColorAssignment_0_1()); 
-            // InternalTSE.g:1101:2: ( rule__TransitionProperties__ColorAssignment_0_1 )
-            // InternalTSE.g:1101:3: rule__TransitionProperties__ColorAssignment_0_1
+            // InternalTSE.g:1027:2: ( rule__TransitionProperties__ColorAssignment_0_1 )
+            // InternalTSE.g:1027:3: rule__TransitionProperties__ColorAssignment_0_1
             {
             pushFollow(FOLLOW_2);
             rule__TransitionProperties__ColorAssignment_0_1();
@@ -3456,14 +3220,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_1__0"
-    // InternalTSE.g:1110:1: rule__TransitionProperties__Group_1__0 : rule__TransitionProperties__Group_1__0__Impl rule__TransitionProperties__Group_1__1 ;
+    // InternalTSE.g:1036:1: rule__TransitionProperties__Group_1__0 : rule__TransitionProperties__Group_1__0__Impl rule__TransitionProperties__Group_1__1 ;
     public final void rule__TransitionProperties__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1114:1: ( rule__TransitionProperties__Group_1__0__Impl rule__TransitionProperties__Group_1__1 )
-            // InternalTSE.g:1115:2: rule__TransitionProperties__Group_1__0__Impl rule__TransitionProperties__Group_1__1
+            // InternalTSE.g:1040:1: ( rule__TransitionProperties__Group_1__0__Impl rule__TransitionProperties__Group_1__1 )
+            // InternalTSE.g:1041:2: rule__TransitionProperties__Group_1__0__Impl rule__TransitionProperties__Group_1__1
             {
             pushFollow(FOLLOW_8);
             rule__TransitionProperties__Group_1__0__Impl();
@@ -3494,20 +3258,20 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_1__0__Impl"
-    // InternalTSE.g:1122:1: rule__TransitionProperties__Group_1__0__Impl : ( 'thickness' ) ;
+    // InternalTSE.g:1048:1: rule__TransitionProperties__Group_1__0__Impl : ( 'thickness' ) ;
     public final void rule__TransitionProperties__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1126:1: ( ( 'thickness' ) )
-            // InternalTSE.g:1127:1: ( 'thickness' )
+            // InternalTSE.g:1052:1: ( ( 'thickness' ) )
+            // InternalTSE.g:1053:1: ( 'thickness' )
             {
-            // InternalTSE.g:1127:1: ( 'thickness' )
-            // InternalTSE.g:1128:2: 'thickness'
+            // InternalTSE.g:1053:1: ( 'thickness' )
+            // InternalTSE.g:1054:2: 'thickness'
             {
              before(grammarAccess.getTransitionPropertiesAccess().getThicknessKeyword_1_0()); 
-            match(input,16,FOLLOW_2); 
+            match(input,17,FOLLOW_2); 
              after(grammarAccess.getTransitionPropertiesAccess().getThicknessKeyword_1_0()); 
 
             }
@@ -3531,14 +3295,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_1__1"
-    // InternalTSE.g:1137:1: rule__TransitionProperties__Group_1__1 : rule__TransitionProperties__Group_1__1__Impl ;
+    // InternalTSE.g:1063:1: rule__TransitionProperties__Group_1__1 : rule__TransitionProperties__Group_1__1__Impl ;
     public final void rule__TransitionProperties__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1141:1: ( rule__TransitionProperties__Group_1__1__Impl )
-            // InternalTSE.g:1142:2: rule__TransitionProperties__Group_1__1__Impl
+            // InternalTSE.g:1067:1: ( rule__TransitionProperties__Group_1__1__Impl )
+            // InternalTSE.g:1068:2: rule__TransitionProperties__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TransitionProperties__Group_1__1__Impl();
@@ -3564,21 +3328,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_1__1__Impl"
-    // InternalTSE.g:1148:1: rule__TransitionProperties__Group_1__1__Impl : ( ( rule__TransitionProperties__ThicknessAssignment_1_1 ) ) ;
+    // InternalTSE.g:1074:1: rule__TransitionProperties__Group_1__1__Impl : ( ( rule__TransitionProperties__ThicknessAssignment_1_1 ) ) ;
     public final void rule__TransitionProperties__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1152:1: ( ( ( rule__TransitionProperties__ThicknessAssignment_1_1 ) ) )
-            // InternalTSE.g:1153:1: ( ( rule__TransitionProperties__ThicknessAssignment_1_1 ) )
+            // InternalTSE.g:1078:1: ( ( ( rule__TransitionProperties__ThicknessAssignment_1_1 ) ) )
+            // InternalTSE.g:1079:1: ( ( rule__TransitionProperties__ThicknessAssignment_1_1 ) )
             {
-            // InternalTSE.g:1153:1: ( ( rule__TransitionProperties__ThicknessAssignment_1_1 ) )
-            // InternalTSE.g:1154:2: ( rule__TransitionProperties__ThicknessAssignment_1_1 )
+            // InternalTSE.g:1079:1: ( ( rule__TransitionProperties__ThicknessAssignment_1_1 ) )
+            // InternalTSE.g:1080:2: ( rule__TransitionProperties__ThicknessAssignment_1_1 )
             {
              before(grammarAccess.getTransitionPropertiesAccess().getThicknessAssignment_1_1()); 
-            // InternalTSE.g:1155:2: ( rule__TransitionProperties__ThicknessAssignment_1_1 )
-            // InternalTSE.g:1155:3: rule__TransitionProperties__ThicknessAssignment_1_1
+            // InternalTSE.g:1081:2: ( rule__TransitionProperties__ThicknessAssignment_1_1 )
+            // InternalTSE.g:1081:3: rule__TransitionProperties__ThicknessAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__TransitionProperties__ThicknessAssignment_1_1();
@@ -3611,14 +3375,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_2__0"
-    // InternalTSE.g:1164:1: rule__TransitionProperties__Group_2__0 : rule__TransitionProperties__Group_2__0__Impl rule__TransitionProperties__Group_2__1 ;
+    // InternalTSE.g:1090:1: rule__TransitionProperties__Group_2__0 : rule__TransitionProperties__Group_2__0__Impl rule__TransitionProperties__Group_2__1 ;
     public final void rule__TransitionProperties__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1168:1: ( rule__TransitionProperties__Group_2__0__Impl rule__TransitionProperties__Group_2__1 )
-            // InternalTSE.g:1169:2: rule__TransitionProperties__Group_2__0__Impl rule__TransitionProperties__Group_2__1
+            // InternalTSE.g:1094:1: ( rule__TransitionProperties__Group_2__0__Impl rule__TransitionProperties__Group_2__1 )
+            // InternalTSE.g:1095:2: rule__TransitionProperties__Group_2__0__Impl rule__TransitionProperties__Group_2__1
             {
             pushFollow(FOLLOW_8);
             rule__TransitionProperties__Group_2__0__Impl();
@@ -3649,17 +3413,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_2__0__Impl"
-    // InternalTSE.g:1176:1: rule__TransitionProperties__Group_2__0__Impl : ( 'curvature' ) ;
+    // InternalTSE.g:1102:1: rule__TransitionProperties__Group_2__0__Impl : ( 'curvature' ) ;
     public final void rule__TransitionProperties__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1180:1: ( ( 'curvature' ) )
-            // InternalTSE.g:1181:1: ( 'curvature' )
+            // InternalTSE.g:1106:1: ( ( 'curvature' ) )
+            // InternalTSE.g:1107:1: ( 'curvature' )
             {
-            // InternalTSE.g:1181:1: ( 'curvature' )
-            // InternalTSE.g:1182:2: 'curvature'
+            // InternalTSE.g:1107:1: ( 'curvature' )
+            // InternalTSE.g:1108:2: 'curvature'
             {
              before(grammarAccess.getTransitionPropertiesAccess().getCurvatureKeyword_2_0()); 
             match(input,23,FOLLOW_2); 
@@ -3686,14 +3450,14 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_2__1"
-    // InternalTSE.g:1191:1: rule__TransitionProperties__Group_2__1 : rule__TransitionProperties__Group_2__1__Impl ;
+    // InternalTSE.g:1117:1: rule__TransitionProperties__Group_2__1 : rule__TransitionProperties__Group_2__1__Impl ;
     public final void rule__TransitionProperties__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1195:1: ( rule__TransitionProperties__Group_2__1__Impl )
-            // InternalTSE.g:1196:2: rule__TransitionProperties__Group_2__1__Impl
+            // InternalTSE.g:1121:1: ( rule__TransitionProperties__Group_2__1__Impl )
+            // InternalTSE.g:1122:2: rule__TransitionProperties__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TransitionProperties__Group_2__1__Impl();
@@ -3719,21 +3483,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__Group_2__1__Impl"
-    // InternalTSE.g:1202:1: rule__TransitionProperties__Group_2__1__Impl : ( ( rule__TransitionProperties__CurveAssignment_2_1 ) ) ;
+    // InternalTSE.g:1128:1: rule__TransitionProperties__Group_2__1__Impl : ( ( rule__TransitionProperties__CurveAssignment_2_1 ) ) ;
     public final void rule__TransitionProperties__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1206:1: ( ( ( rule__TransitionProperties__CurveAssignment_2_1 ) ) )
-            // InternalTSE.g:1207:1: ( ( rule__TransitionProperties__CurveAssignment_2_1 ) )
+            // InternalTSE.g:1132:1: ( ( ( rule__TransitionProperties__CurveAssignment_2_1 ) ) )
+            // InternalTSE.g:1133:1: ( ( rule__TransitionProperties__CurveAssignment_2_1 ) )
             {
-            // InternalTSE.g:1207:1: ( ( rule__TransitionProperties__CurveAssignment_2_1 ) )
-            // InternalTSE.g:1208:2: ( rule__TransitionProperties__CurveAssignment_2_1 )
+            // InternalTSE.g:1133:1: ( ( rule__TransitionProperties__CurveAssignment_2_1 ) )
+            // InternalTSE.g:1134:2: ( rule__TransitionProperties__CurveAssignment_2_1 )
             {
              before(grammarAccess.getTransitionPropertiesAccess().getCurveAssignment_2_1()); 
-            // InternalTSE.g:1209:2: ( rule__TransitionProperties__CurveAssignment_2_1 )
-            // InternalTSE.g:1209:3: rule__TransitionProperties__CurveAssignment_2_1
+            // InternalTSE.g:1135:2: ( rule__TransitionProperties__CurveAssignment_2_1 )
+            // InternalTSE.g:1135:3: rule__TransitionProperties__CurveAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__TransitionProperties__CurveAssignment_2_1();
@@ -3765,173 +3529,18 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__TransitionProperties__Group_2__1__Impl"
 
 
-    // $ANTLR start "rule__TransitionProperties__Group_3__0"
-    // InternalTSE.g:1218:1: rule__TransitionProperties__Group_3__0 : rule__TransitionProperties__Group_3__0__Impl rule__TransitionProperties__Group_3__1 ;
-    public final void rule__TransitionProperties__Group_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:1222:1: ( rule__TransitionProperties__Group_3__0__Impl rule__TransitionProperties__Group_3__1 )
-            // InternalTSE.g:1223:2: rule__TransitionProperties__Group_3__0__Impl rule__TransitionProperties__Group_3__1
-            {
-            pushFollow(FOLLOW_4);
-            rule__TransitionProperties__Group_3__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__TransitionProperties__Group_3__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TransitionProperties__Group_3__0"
-
-
-    // $ANTLR start "rule__TransitionProperties__Group_3__0__Impl"
-    // InternalTSE.g:1230:1: rule__TransitionProperties__Group_3__0__Impl : ( RULE_DEFAULT ) ;
-    public final void rule__TransitionProperties__Group_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:1234:1: ( ( RULE_DEFAULT ) )
-            // InternalTSE.g:1235:1: ( RULE_DEFAULT )
-            {
-            // InternalTSE.g:1235:1: ( RULE_DEFAULT )
-            // InternalTSE.g:1236:2: RULE_DEFAULT
-            {
-             before(grammarAccess.getTransitionPropertiesAccess().getDEFAULTTerminalRuleCall_3_0()); 
-            match(input,RULE_DEFAULT,FOLLOW_2); 
-             after(grammarAccess.getTransitionPropertiesAccess().getDEFAULTTerminalRuleCall_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TransitionProperties__Group_3__0__Impl"
-
-
-    // $ANTLR start "rule__TransitionProperties__Group_3__1"
-    // InternalTSE.g:1245:1: rule__TransitionProperties__Group_3__1 : rule__TransitionProperties__Group_3__1__Impl ;
-    public final void rule__TransitionProperties__Group_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:1249:1: ( rule__TransitionProperties__Group_3__1__Impl )
-            // InternalTSE.g:1250:2: rule__TransitionProperties__Group_3__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__TransitionProperties__Group_3__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TransitionProperties__Group_3__1"
-
-
-    // $ANTLR start "rule__TransitionProperties__Group_3__1__Impl"
-    // InternalTSE.g:1256:1: rule__TransitionProperties__Group_3__1__Impl : ( ( rule__TransitionProperties__PositionAssignment_3_1 ) ) ;
-    public final void rule__TransitionProperties__Group_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:1260:1: ( ( ( rule__TransitionProperties__PositionAssignment_3_1 ) ) )
-            // InternalTSE.g:1261:1: ( ( rule__TransitionProperties__PositionAssignment_3_1 ) )
-            {
-            // InternalTSE.g:1261:1: ( ( rule__TransitionProperties__PositionAssignment_3_1 ) )
-            // InternalTSE.g:1262:2: ( rule__TransitionProperties__PositionAssignment_3_1 )
-            {
-             before(grammarAccess.getTransitionPropertiesAccess().getPositionAssignment_3_1()); 
-            // InternalTSE.g:1263:2: ( rule__TransitionProperties__PositionAssignment_3_1 )
-            // InternalTSE.g:1263:3: rule__TransitionProperties__PositionAssignment_3_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__TransitionProperties__PositionAssignment_3_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTransitionPropertiesAccess().getPositionAssignment_3_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TransitionProperties__Group_3__1__Impl"
-
-
     // $ANTLR start "rule__Model__ElementsAssignment"
-    // InternalTSE.g:1272:1: rule__Model__ElementsAssignment : ( ruleElement ) ;
+    // InternalTSE.g:1144:1: rule__Model__ElementsAssignment : ( ruleElement ) ;
     public final void rule__Model__ElementsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1276:1: ( ( ruleElement ) )
-            // InternalTSE.g:1277:2: ( ruleElement )
+            // InternalTSE.g:1148:1: ( ( ruleElement ) )
+            // InternalTSE.g:1149:2: ( ruleElement )
             {
-            // InternalTSE.g:1277:2: ( ruleElement )
-            // InternalTSE.g:1278:3: ruleElement
+            // InternalTSE.g:1149:2: ( ruleElement )
+            // InternalTSE.g:1150:3: ruleElement
             {
              before(grammarAccess.getModelAccess().getElementsElementParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -3962,17 +3571,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Element__StatesAssignment_0"
-    // InternalTSE.g:1287:1: rule__Element__StatesAssignment_0 : ( ruleState ) ;
+    // InternalTSE.g:1159:1: rule__Element__StatesAssignment_0 : ( ruleState ) ;
     public final void rule__Element__StatesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1291:1: ( ( ruleState ) )
-            // InternalTSE.g:1292:2: ( ruleState )
+            // InternalTSE.g:1163:1: ( ( ruleState ) )
+            // InternalTSE.g:1164:2: ( ruleState )
             {
-            // InternalTSE.g:1292:2: ( ruleState )
-            // InternalTSE.g:1293:3: ruleState
+            // InternalTSE.g:1164:2: ( ruleState )
+            // InternalTSE.g:1165:3: ruleState
             {
              before(grammarAccess.getElementAccess().getStatesStateParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -4003,17 +3612,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Element__TransitionsAssignment_1"
-    // InternalTSE.g:1302:1: rule__Element__TransitionsAssignment_1 : ( ruleTransition ) ;
+    // InternalTSE.g:1174:1: rule__Element__TransitionsAssignment_1 : ( ruleTransition ) ;
     public final void rule__Element__TransitionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1306:1: ( ( ruleTransition ) )
-            // InternalTSE.g:1307:2: ( ruleTransition )
+            // InternalTSE.g:1178:1: ( ( ruleTransition ) )
+            // InternalTSE.g:1179:2: ( ruleTransition )
             {
-            // InternalTSE.g:1307:2: ( ruleTransition )
-            // InternalTSE.g:1308:3: ruleTransition
+            // InternalTSE.g:1179:2: ( ruleTransition )
+            // InternalTSE.g:1180:3: ruleTransition
             {
              before(grammarAccess.getElementAccess().getTransitionsTransitionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -4044,17 +3653,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__NameAssignment_1"
-    // InternalTSE.g:1317:1: rule__State__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalTSE.g:1189:1: rule__State__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__State__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1321:1: ( ( RULE_ID ) )
-            // InternalTSE.g:1322:2: ( RULE_ID )
+            // InternalTSE.g:1193:1: ( ( RULE_ID ) )
+            // InternalTSE.g:1194:2: ( RULE_ID )
             {
-            // InternalTSE.g:1322:2: ( RULE_ID )
-            // InternalTSE.g:1323:3: RULE_ID
+            // InternalTSE.g:1194:2: ( RULE_ID )
+            // InternalTSE.g:1195:3: RULE_ID
             {
              before(grammarAccess.getStateAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4081,17 +3690,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__State__StatesProprietyAssignment_2"
-    // InternalTSE.g:1332:1: rule__State__StatesProprietyAssignment_2 : ( ruleStatesProperties ) ;
+    // InternalTSE.g:1204:1: rule__State__StatesProprietyAssignment_2 : ( ruleStatesProperties ) ;
     public final void rule__State__StatesProprietyAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1336:1: ( ( ruleStatesProperties ) )
-            // InternalTSE.g:1337:2: ( ruleStatesProperties )
+            // InternalTSE.g:1208:1: ( ( ruleStatesProperties ) )
+            // InternalTSE.g:1209:2: ( ruleStatesProperties )
             {
-            // InternalTSE.g:1337:2: ( ruleStatesProperties )
-            // InternalTSE.g:1338:3: ruleStatesProperties
+            // InternalTSE.g:1209:2: ( ruleStatesProperties )
+            // InternalTSE.g:1210:3: ruleStatesProperties
             {
              before(grammarAccess.getStateAccess().getStatesProprietyStatesPropertiesParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -4122,17 +3731,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__ColorAssignment_0_1"
-    // InternalTSE.g:1347:1: rule__StatesProperties__ColorAssignment_0_1 : ( RULE_COLOR ) ;
+    // InternalTSE.g:1219:1: rule__StatesProperties__ColorAssignment_0_1 : ( RULE_COLOR ) ;
     public final void rule__StatesProperties__ColorAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1351:1: ( ( RULE_COLOR ) )
-            // InternalTSE.g:1352:2: ( RULE_COLOR )
+            // InternalTSE.g:1223:1: ( ( RULE_COLOR ) )
+            // InternalTSE.g:1224:2: ( RULE_COLOR )
             {
-            // InternalTSE.g:1352:2: ( RULE_COLOR )
-            // InternalTSE.g:1353:3: RULE_COLOR
+            // InternalTSE.g:1224:2: ( RULE_COLOR )
+            // InternalTSE.g:1225:3: RULE_COLOR
             {
              before(grammarAccess.getStatesPropertiesAccess().getColorCOLORTerminalRuleCall_0_1_0()); 
             match(input,RULE_COLOR,FOLLOW_2); 
@@ -4159,17 +3768,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__ThicknessAssignment_1_1"
-    // InternalTSE.g:1362:1: rule__StatesProperties__ThicknessAssignment_1_1 : ( RULE_FLOAT ) ;
+    // InternalTSE.g:1234:1: rule__StatesProperties__ThicknessAssignment_1_1 : ( RULE_FLOAT ) ;
     public final void rule__StatesProperties__ThicknessAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1366:1: ( ( RULE_FLOAT ) )
-            // InternalTSE.g:1367:2: ( RULE_FLOAT )
+            // InternalTSE.g:1238:1: ( ( RULE_FLOAT ) )
+            // InternalTSE.g:1239:2: ( RULE_FLOAT )
             {
-            // InternalTSE.g:1367:2: ( RULE_FLOAT )
-            // InternalTSE.g:1368:3: RULE_FLOAT
+            // InternalTSE.g:1239:2: ( RULE_FLOAT )
+            // InternalTSE.g:1240:3: RULE_FLOAT
             {
              before(grammarAccess.getStatesPropertiesAccess().getThicknessFLOATTerminalRuleCall_1_1_0()); 
             match(input,RULE_FLOAT,FOLLOW_2); 
@@ -4196,21 +3805,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__PositionAssignment_2_1"
-    // InternalTSE.g:1377:1: rule__StatesProperties__PositionAssignment_2_1 : ( RULE_ID ) ;
+    // InternalTSE.g:1249:1: rule__StatesProperties__PositionAssignment_2_1 : ( RULE_COORDINATES ) ;
     public final void rule__StatesProperties__PositionAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1381:1: ( ( RULE_ID ) )
-            // InternalTSE.g:1382:2: ( RULE_ID )
+            // InternalTSE.g:1253:1: ( ( RULE_COORDINATES ) )
+            // InternalTSE.g:1254:2: ( RULE_COORDINATES )
             {
-            // InternalTSE.g:1382:2: ( RULE_ID )
-            // InternalTSE.g:1383:3: RULE_ID
+            // InternalTSE.g:1254:2: ( RULE_COORDINATES )
+            // InternalTSE.g:1255:3: RULE_COORDINATES
             {
-             before(grammarAccess.getStatesPropertiesAccess().getPositionIDTerminalRuleCall_2_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getStatesPropertiesAccess().getPositionIDTerminalRuleCall_2_1_0()); 
+             before(grammarAccess.getStatesPropertiesAccess().getPositionCOORDINATESTerminalRuleCall_2_1_0()); 
+            match(input,RULE_COORDINATES,FOLLOW_2); 
+             after(grammarAccess.getStatesPropertiesAccess().getPositionCOORDINATESTerminalRuleCall_2_1_0()); 
 
             }
 
@@ -4233,21 +3842,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StatesProperties__PositionAssignment_3_1"
-    // InternalTSE.g:1392:1: rule__StatesProperties__PositionAssignment_3_1 : ( RULE_ID ) ;
+    // InternalTSE.g:1264:1: rule__StatesProperties__PositionAssignment_3_1 : ( RULE_COORDINATES ) ;
     public final void rule__StatesProperties__PositionAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1396:1: ( ( RULE_ID ) )
-            // InternalTSE.g:1397:2: ( RULE_ID )
+            // InternalTSE.g:1268:1: ( ( RULE_COORDINATES ) )
+            // InternalTSE.g:1269:2: ( RULE_COORDINATES )
             {
-            // InternalTSE.g:1397:2: ( RULE_ID )
-            // InternalTSE.g:1398:3: RULE_ID
+            // InternalTSE.g:1269:2: ( RULE_COORDINATES )
+            // InternalTSE.g:1270:3: RULE_COORDINATES
             {
-             before(grammarAccess.getStatesPropertiesAccess().getPositionIDTerminalRuleCall_3_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getStatesPropertiesAccess().getPositionIDTerminalRuleCall_3_1_0()); 
+             before(grammarAccess.getStatesPropertiesAccess().getPositionCOORDINATESTerminalRuleCall_3_1_0()); 
+            match(input,RULE_COORDINATES,FOLLOW_2); 
+             after(grammarAccess.getStatesPropertiesAccess().getPositionCOORDINATESTerminalRuleCall_3_1_0()); 
 
             }
 
@@ -4270,21 +3879,25 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__StartAssignment_0_1"
-    // InternalTSE.g:1407:1: rule__Transition__StartAssignment_0_1 : ( RULE_ID ) ;
+    // InternalTSE.g:1279:1: rule__Transition__StartAssignment_0_1 : ( ruleCoordinatesStatesTransition ) ;
     public final void rule__Transition__StartAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1411:1: ( ( RULE_ID ) )
-            // InternalTSE.g:1412:2: ( RULE_ID )
+            // InternalTSE.g:1283:1: ( ( ruleCoordinatesStatesTransition ) )
+            // InternalTSE.g:1284:2: ( ruleCoordinatesStatesTransition )
             {
-            // InternalTSE.g:1412:2: ( RULE_ID )
-            // InternalTSE.g:1413:3: RULE_ID
+            // InternalTSE.g:1284:2: ( ruleCoordinatesStatesTransition )
+            // InternalTSE.g:1285:3: ruleCoordinatesStatesTransition
             {
-             before(grammarAccess.getTransitionAccess().getStartIDTerminalRuleCall_0_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getTransitionAccess().getStartIDTerminalRuleCall_0_1_0()); 
+             before(grammarAccess.getTransitionAccess().getStartCoordinatesStatesTransitionParserRuleCall_0_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleCoordinatesStatesTransition();
+
+            state._fsp--;
+
+             after(grammarAccess.getTransitionAccess().getStartCoordinatesStatesTransitionParserRuleCall_0_1_0()); 
 
             }
 
@@ -4306,26 +3919,26 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Transition__StartAssignment_0_1"
 
 
-    // $ANTLR start "rule__Transition__EndAssignment_0_2"
-    // InternalTSE.g:1422:1: rule__Transition__EndAssignment_0_2 : ( ruleEndTransition ) ;
-    public final void rule__Transition__EndAssignment_0_2() throws RecognitionException {
+    // $ANTLR start "rule__Transition__EndAssignment_0_3"
+    // InternalTSE.g:1294:1: rule__Transition__EndAssignment_0_3 : ( ruleCoordinatesStatesTransition ) ;
+    public final void rule__Transition__EndAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1426:1: ( ( ruleEndTransition ) )
-            // InternalTSE.g:1427:2: ( ruleEndTransition )
+            // InternalTSE.g:1298:1: ( ( ruleCoordinatesStatesTransition ) )
+            // InternalTSE.g:1299:2: ( ruleCoordinatesStatesTransition )
             {
-            // InternalTSE.g:1427:2: ( ruleEndTransition )
-            // InternalTSE.g:1428:3: ruleEndTransition
+            // InternalTSE.g:1299:2: ( ruleCoordinatesStatesTransition )
+            // InternalTSE.g:1300:3: ruleCoordinatesStatesTransition
             {
-             before(grammarAccess.getTransitionAccess().getEndEndTransitionParserRuleCall_0_2_0()); 
+             before(grammarAccess.getTransitionAccess().getEndCoordinatesStatesTransitionParserRuleCall_0_3_0()); 
             pushFollow(FOLLOW_2);
-            ruleEndTransition();
+            ruleCoordinatesStatesTransition();
 
             state._fsp--;
 
-             after(grammarAccess.getTransitionAccess().getEndEndTransitionParserRuleCall_0_2_0()); 
+             after(grammarAccess.getTransitionAccess().getEndCoordinatesStatesTransitionParserRuleCall_0_3_0()); 
 
             }
 
@@ -4344,29 +3957,29 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__EndAssignment_0_2"
+    // $ANTLR end "rule__Transition__EndAssignment_0_3"
 
 
-    // $ANTLR start "rule__Transition__ProprietyStatesAssignment_0_3"
-    // InternalTSE.g:1437:1: rule__Transition__ProprietyStatesAssignment_0_3 : ( ruletransitionProperties ) ;
-    public final void rule__Transition__ProprietyStatesAssignment_0_3() throws RecognitionException {
+    // $ANTLR start "rule__Transition__ProprietyTransitionAssignment_0_4"
+    // InternalTSE.g:1309:1: rule__Transition__ProprietyTransitionAssignment_0_4 : ( ruletransitionProperties ) ;
+    public final void rule__Transition__ProprietyTransitionAssignment_0_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1441:1: ( ( ruletransitionProperties ) )
-            // InternalTSE.g:1442:2: ( ruletransitionProperties )
+            // InternalTSE.g:1313:1: ( ( ruletransitionProperties ) )
+            // InternalTSE.g:1314:2: ( ruletransitionProperties )
             {
-            // InternalTSE.g:1442:2: ( ruletransitionProperties )
-            // InternalTSE.g:1443:3: ruletransitionProperties
+            // InternalTSE.g:1314:2: ( ruletransitionProperties )
+            // InternalTSE.g:1315:3: ruletransitionProperties
             {
-             before(grammarAccess.getTransitionAccess().getProprietyStatesTransitionPropertiesParserRuleCall_0_3_0()); 
+             before(grammarAccess.getTransitionAccess().getProprietyTransitionTransitionPropertiesParserRuleCall_0_4_0()); 
             pushFollow(FOLLOW_2);
             ruletransitionProperties();
 
             state._fsp--;
 
-             after(grammarAccess.getTransitionAccess().getProprietyStatesTransitionPropertiesParserRuleCall_0_3_0()); 
+             after(grammarAccess.getTransitionAccess().getProprietyTransitionTransitionPropertiesParserRuleCall_0_4_0()); 
 
             }
 
@@ -4385,29 +3998,29 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__ProprietyStatesAssignment_0_3"
+    // $ANTLR end "rule__Transition__ProprietyTransitionAssignment_0_4"
 
 
-    // $ANTLR start "rule__Transition__LabelAssignment_0_4"
-    // InternalTSE.g:1452:1: rule__Transition__LabelAssignment_0_4 : ( ruleLabel ) ;
-    public final void rule__Transition__LabelAssignment_0_4() throws RecognitionException {
+    // $ANTLR start "rule__Transition__LabelAssignment_0_5"
+    // InternalTSE.g:1324:1: rule__Transition__LabelAssignment_0_5 : ( ruleLabel ) ;
+    public final void rule__Transition__LabelAssignment_0_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1456:1: ( ( ruleLabel ) )
-            // InternalTSE.g:1457:2: ( ruleLabel )
+            // InternalTSE.g:1328:1: ( ( ruleLabel ) )
+            // InternalTSE.g:1329:2: ( ruleLabel )
             {
-            // InternalTSE.g:1457:2: ( ruleLabel )
-            // InternalTSE.g:1458:3: ruleLabel
+            // InternalTSE.g:1329:2: ( ruleLabel )
+            // InternalTSE.g:1330:3: ruleLabel
             {
-             before(grammarAccess.getTransitionAccess().getLabelLabelParserRuleCall_0_4_0()); 
+             before(grammarAccess.getTransitionAccess().getLabelLabelParserRuleCall_0_5_0()); 
             pushFollow(FOLLOW_2);
             ruleLabel();
 
             state._fsp--;
 
-             after(grammarAccess.getTransitionAccess().getLabelLabelParserRuleCall_0_4_0()); 
+             after(grammarAccess.getTransitionAccess().getLabelLabelParserRuleCall_0_5_0()); 
 
             }
 
@@ -4426,21 +4039,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Transition__LabelAssignment_0_4"
+    // $ANTLR end "rule__Transition__LabelAssignment_0_5"
 
 
     // $ANTLR start "rule__Transition__InitAssignment_1_1"
-    // InternalTSE.g:1467:1: rule__Transition__InitAssignment_1_1 : ( RULE_ID ) ;
+    // InternalTSE.g:1339:1: rule__Transition__InitAssignment_1_1 : ( RULE_ID ) ;
     public final void rule__Transition__InitAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1471:1: ( ( RULE_ID ) )
-            // InternalTSE.g:1472:2: ( RULE_ID )
+            // InternalTSE.g:1343:1: ( ( RULE_ID ) )
+            // InternalTSE.g:1344:2: ( RULE_ID )
             {
-            // InternalTSE.g:1472:2: ( RULE_ID )
-            // InternalTSE.g:1473:3: RULE_ID
+            // InternalTSE.g:1344:2: ( RULE_ID )
+            // InternalTSE.g:1345:3: RULE_ID
             {
              before(grammarAccess.getTransitionAccess().getInitIDTerminalRuleCall_1_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -4466,22 +4079,96 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Transition__InitAssignment_1_1"
 
 
-    // $ANTLR start "rule__EndTransition__EndAssignment_0_1"
-    // InternalTSE.g:1482:1: rule__EndTransition__EndAssignment_0_1 : ( RULE_ID ) ;
-    public final void rule__EndTransition__EndAssignment_0_1() throws RecognitionException {
+    // $ANTLR start "rule__Label__TextAssignment_1"
+    // InternalTSE.g:1354:1: rule__Label__TextAssignment_1 : ( RULE_STRING ) ;
+    public final void rule__Label__TextAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1486:1: ( ( RULE_ID ) )
-            // InternalTSE.g:1487:2: ( RULE_ID )
+            // InternalTSE.g:1358:1: ( ( RULE_STRING ) )
+            // InternalTSE.g:1359:2: ( RULE_STRING )
             {
-            // InternalTSE.g:1487:2: ( RULE_ID )
-            // InternalTSE.g:1488:3: RULE_ID
+            // InternalTSE.g:1359:2: ( RULE_STRING )
+            // InternalTSE.g:1360:3: RULE_STRING
             {
-             before(grammarAccess.getEndTransitionAccess().getEndIDTerminalRuleCall_0_1_0()); 
+             before(grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_1_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Label__TextAssignment_1"
+
+
+    // $ANTLR start "rule__Label__PositionAssignment_2"
+    // InternalTSE.g:1369:1: rule__Label__PositionAssignment_2 : ( RULE_COORDINATES ) ;
+    public final void rule__Label__PositionAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTSE.g:1373:1: ( ( RULE_COORDINATES ) )
+            // InternalTSE.g:1374:2: ( RULE_COORDINATES )
+            {
+            // InternalTSE.g:1374:2: ( RULE_COORDINATES )
+            // InternalTSE.g:1375:3: RULE_COORDINATES
+            {
+             before(grammarAccess.getLabelAccess().getPositionCOORDINATESTerminalRuleCall_2_0()); 
+            match(input,RULE_COORDINATES,FOLLOW_2); 
+             after(grammarAccess.getLabelAccess().getPositionCOORDINATESTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Label__PositionAssignment_2"
+
+
+    // $ANTLR start "rule__CoordinatesStatesTransition__StateTransitionAssignment"
+    // InternalTSE.g:1384:1: rule__CoordinatesStatesTransition__StateTransitionAssignment : ( RULE_ID ) ;
+    public final void rule__CoordinatesStatesTransition__StateTransitionAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalTSE.g:1388:1: ( ( RULE_ID ) )
+            // InternalTSE.g:1389:2: ( RULE_ID )
+            {
+            // InternalTSE.g:1389:2: ( RULE_ID )
+            // InternalTSE.g:1390:3: RULE_ID
+            {
+             before(grammarAccess.getCoordinatesStatesTransitionAccess().getStateTransitionIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getEndTransitionAccess().getEndIDTerminalRuleCall_0_1_0()); 
+             after(grammarAccess.getCoordinatesStatesTransitionAccess().getStateTransitionIDTerminalRuleCall_0()); 
 
             }
 
@@ -4500,66 +4187,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EndTransition__EndAssignment_0_1"
-
-
-    // $ANTLR start "rule__EndTransition__EndAssignment_1_1"
-    // InternalTSE.g:1497:1: rule__EndTransition__EndAssignment_1_1 : ( ( 'reflexive' ) ) ;
-    public final void rule__EndTransition__EndAssignment_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:1501:1: ( ( ( 'reflexive' ) ) )
-            // InternalTSE.g:1502:2: ( ( 'reflexive' ) )
-            {
-            // InternalTSE.g:1502:2: ( ( 'reflexive' ) )
-            // InternalTSE.g:1503:3: ( 'reflexive' )
-            {
-             before(grammarAccess.getEndTransitionAccess().getEndReflexiveKeyword_1_1_0()); 
-            // InternalTSE.g:1504:3: ( 'reflexive' )
-            // InternalTSE.g:1505:4: 'reflexive'
-            {
-             before(grammarAccess.getEndTransitionAccess().getEndReflexiveKeyword_1_1_0()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getEndTransitionAccess().getEndReflexiveKeyword_1_1_0()); 
-
-            }
-
-             after(grammarAccess.getEndTransitionAccess().getEndReflexiveKeyword_1_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EndTransition__EndAssignment_1_1"
+    // $ANTLR end "rule__CoordinatesStatesTransition__StateTransitionAssignment"
 
 
     // $ANTLR start "rule__TransitionProperties__ColorAssignment_0_1"
-    // InternalTSE.g:1516:1: rule__TransitionProperties__ColorAssignment_0_1 : ( RULE_COLOR ) ;
+    // InternalTSE.g:1399:1: rule__TransitionProperties__ColorAssignment_0_1 : ( RULE_COLOR ) ;
     public final void rule__TransitionProperties__ColorAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1520:1: ( ( RULE_COLOR ) )
-            // InternalTSE.g:1521:2: ( RULE_COLOR )
+            // InternalTSE.g:1403:1: ( ( RULE_COLOR ) )
+            // InternalTSE.g:1404:2: ( RULE_COLOR )
             {
-            // InternalTSE.g:1521:2: ( RULE_COLOR )
-            // InternalTSE.g:1522:3: RULE_COLOR
+            // InternalTSE.g:1404:2: ( RULE_COLOR )
+            // InternalTSE.g:1405:3: RULE_COLOR
             {
              before(grammarAccess.getTransitionPropertiesAccess().getColorCOLORTerminalRuleCall_0_1_0()); 
             match(input,RULE_COLOR,FOLLOW_2); 
@@ -4586,17 +4228,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__ThicknessAssignment_1_1"
-    // InternalTSE.g:1531:1: rule__TransitionProperties__ThicknessAssignment_1_1 : ( RULE_FLOAT ) ;
+    // InternalTSE.g:1414:1: rule__TransitionProperties__ThicknessAssignment_1_1 : ( RULE_FLOAT ) ;
     public final void rule__TransitionProperties__ThicknessAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1535:1: ( ( RULE_FLOAT ) )
-            // InternalTSE.g:1536:2: ( RULE_FLOAT )
+            // InternalTSE.g:1418:1: ( ( RULE_FLOAT ) )
+            // InternalTSE.g:1419:2: ( RULE_FLOAT )
             {
-            // InternalTSE.g:1536:2: ( RULE_FLOAT )
-            // InternalTSE.g:1537:3: RULE_FLOAT
+            // InternalTSE.g:1419:2: ( RULE_FLOAT )
+            // InternalTSE.g:1420:3: RULE_FLOAT
             {
              before(grammarAccess.getTransitionPropertiesAccess().getThicknessFLOATTerminalRuleCall_1_1_0()); 
             match(input,RULE_FLOAT,FOLLOW_2); 
@@ -4623,17 +4265,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TransitionProperties__CurveAssignment_2_1"
-    // InternalTSE.g:1546:1: rule__TransitionProperties__CurveAssignment_2_1 : ( RULE_FLOAT ) ;
+    // InternalTSE.g:1429:1: rule__TransitionProperties__CurveAssignment_2_1 : ( RULE_FLOAT ) ;
     public final void rule__TransitionProperties__CurveAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:1550:1: ( ( RULE_FLOAT ) )
-            // InternalTSE.g:1551:2: ( RULE_FLOAT )
+            // InternalTSE.g:1433:1: ( ( RULE_FLOAT ) )
+            // InternalTSE.g:1434:2: ( RULE_FLOAT )
             {
-            // InternalTSE.g:1551:2: ( RULE_FLOAT )
-            // InternalTSE.g:1552:3: RULE_FLOAT
+            // InternalTSE.g:1434:2: ( RULE_FLOAT )
+            // InternalTSE.g:1435:3: RULE_FLOAT
             {
              before(grammarAccess.getTransitionPropertiesAccess().getCurveFLOATTerminalRuleCall_2_1_0()); 
             match(input,RULE_FLOAT,FOLLOW_2); 
@@ -4658,43 +4300,6 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
     }
     // $ANTLR end "rule__TransitionProperties__CurveAssignment_2_1"
 
-
-    // $ANTLR start "rule__TransitionProperties__PositionAssignment_3_1"
-    // InternalTSE.g:1561:1: rule__TransitionProperties__PositionAssignment_3_1 : ( RULE_ID ) ;
-    public final void rule__TransitionProperties__PositionAssignment_3_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalTSE.g:1565:1: ( ( RULE_ID ) )
-            // InternalTSE.g:1566:2: ( RULE_ID )
-            {
-            // InternalTSE.g:1566:2: ( RULE_ID )
-            // InternalTSE.g:1567:3: RULE_ID
-            {
-             before(grammarAccess.getTransitionPropertiesAccess().getPositionIDTerminalRuleCall_3_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getTransitionPropertiesAccess().getPositionIDTerminalRuleCall_3_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__TransitionProperties__PositionAssignment_3_1"
-
     // Delegated rules
 
 
@@ -4702,16 +4307,16 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000000C4002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000288002L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000038010L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000038012L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000070010L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000070012L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000600000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000918010L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000818012L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000C30000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000830002L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000200L});
 
 }

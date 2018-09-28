@@ -101,9 +101,14 @@ public class TSEAdapterFactory extends AdapterFactoryImpl
         return createTransitionAdapter();
       }
       @Override
-      public Adapter caseEndTransition(EndTransition object)
+      public Adapter caseLabel(Label object)
       {
-        return createEndTransitionAdapter();
+        return createLabelAdapter();
+      }
+      @Override
+      public Adapter caseCoordinatesStatesTransition(CoordinatesStatesTransition object)
+      {
+        return createCoordinatesStatesTransitionAdapter();
       }
       @Override
       public Adapter casetransitionProperties(transitionProperties object)
@@ -208,16 +213,31 @@ public class TSEAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.EndTransition <em>End Transition</em>}'.
+   * Creates a new adapter for an object of class '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label <em>Label</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.EndTransition
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label
    * @generated
    */
-  public Adapter createEndTransitionAdapter()
+  public Adapter createLabelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.CoordinatesStatesTransition <em>Coordinates States Transition</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.CoordinatesStatesTransition
+   * @generated
+   */
+  public Adapter createCoordinatesStatesTransitionAdapter()
   {
     return null;
   }

@@ -108,10 +108,17 @@ public class TSESwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TSEPackage.END_TRANSITION:
+      case TSEPackage.LABEL:
       {
-        EndTransition endTransition = (EndTransition)theEObject;
-        T result = caseEndTransition(endTransition);
+        Label label = (Label)theEObject;
+        T result = caseLabel(label);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case TSEPackage.COORDINATES_STATES_TRANSITION:
+      {
+        CoordinatesStatesTransition coordinatesStatesTransition = (CoordinatesStatesTransition)theEObject;
+        T result = caseCoordinatesStatesTransition(coordinatesStatesTransition);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -207,17 +214,33 @@ public class TSESwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>End Transition</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Label</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>End Transition</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Label</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseEndTransition(EndTransition object)
+  public T caseLabel(Label object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Coordinates States Transition</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Coordinates States Transition</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCoordinatesStatesTransition(CoordinatesStatesTransition object)
   {
     return null;
   }

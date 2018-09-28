@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getStart <em>Start</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getEnd <em>End</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getProprietyStates <em>Propriety States</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getProprietyTransition <em>Propriety Transition</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getLabel <em>Label</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getInit <em>Init</em>}</li>
  * </ul>
@@ -30,78 +30,98 @@ import org.eclipse.emf.ecore.EObject;
 public interface Transition extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Start</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Start</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Start</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Start</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Start</em>' attribute list.
+   * @return the value of the '<em>Start</em>' containment reference.
+   * @see #setStart(CoordinatesStatesTransition)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransition_Start()
-   * @model unique="false"
+   * @model containment="true"
    * @generated
    */
-  EList<String> getStart();
+  CoordinatesStatesTransition getStart();
 
   /**
-   * Returns the value of the '<em><b>End</b></em>' containment reference list.
-   * The list contents are of type {@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.EndTransition}.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getStart <em>Start</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Start</em>' containment reference.
+   * @see #getStart()
+   * @generated
+   */
+  void setStart(CoordinatesStatesTransition value);
+
+  /**
+   * Returns the value of the '<em><b>End</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>End</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>End</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>End</em>' containment reference list.
+   * @return the value of the '<em>End</em>' containment reference.
+   * @see #setEnd(CoordinatesStatesTransition)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransition_End()
    * @model containment="true"
    * @generated
    */
-  EList<EndTransition> getEnd();
+  CoordinatesStatesTransition getEnd();
 
   /**
-   * Returns the value of the '<em><b>Propriety States</b></em>' containment reference list.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getEnd <em>End</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>End</em>' containment reference.
+   * @see #getEnd()
+   * @generated
+   */
+  void setEnd(CoordinatesStatesTransition value);
+
+  /**
+   * Returns the value of the '<em><b>Propriety Transition</b></em>' containment reference list.
    * The list contents are of type {@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Propriety States</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Propriety Transition</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Propriety States</em>' containment reference list.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransition_ProprietyStates()
+   * @return the value of the '<em>Propriety Transition</em>' containment reference list.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransition_ProprietyTransition()
    * @model containment="true"
    * @generated
    */
-  EList<transitionProperties> getProprietyStates();
+  EList<transitionProperties> getProprietyTransition();
 
   /**
-   * Returns the value of the '<em><b>Label</b></em>' attribute.
+   * Returns the value of the '<em><b>Label</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Label</em>' attribute isn't clear,
+   * If the meaning of the '<em>Label</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Label</em>' attribute.
-   * @see #setLabel(String)
+   * @return the value of the '<em>Label</em>' containment reference.
+   * @see #setLabel(Label)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransition_Label()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getLabel();
+  Label getLabel();
 
   /**
-   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getLabel <em>Label</em>}' attribute.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getLabel <em>Label</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Label</em>' attribute.
+   * @param value the new value of the '<em>Label</em>' containment reference.
    * @see #getLabel()
    * @generated
    */
-  void setLabel(String value);
+  void setLabel(Label value);
 
   /**
    * Returns the value of the '<em><b>Init</b></em>' attribute list.

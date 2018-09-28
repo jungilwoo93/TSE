@@ -210,7 +210,7 @@ ruleState returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)*
+		)+
 	)
 ;
 
@@ -287,9 +287,9 @@ ruleStatesProperties returns [EObject current=null]
 			}
 			(
 				(
-					lv_position_5_0=RULE_ID
+					lv_position_5_0=RULE_COORDINATES
 					{
-						newLeafNode(lv_position_5_0, grammarAccess.getStatesPropertiesAccess().getPositionIDTerminalRuleCall_2_1_0());
+						newLeafNode(lv_position_5_0, grammarAccess.getStatesPropertiesAccess().getPositionCOORDINATESTerminalRuleCall_2_1_0());
 					}
 					{
 						if ($current==null) {
@@ -299,7 +299,7 @@ ruleStatesProperties returns [EObject current=null]
 							$current,
 							"position",
 							lv_position_5_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.COORDINATES");
 					}
 				)
 			)
@@ -312,9 +312,9 @@ ruleStatesProperties returns [EObject current=null]
 			}
 			(
 				(
-					lv_position_7_0=RULE_ID
+					lv_position_7_0=RULE_COORDINATES
 					{
-						newLeafNode(lv_position_7_0, grammarAccess.getStatesPropertiesAccess().getPositionIDTerminalRuleCall_3_1_0());
+						newLeafNode(lv_position_7_0, grammarAccess.getStatesPropertiesAccess().getPositionCOORDINATESTerminalRuleCall_3_1_0());
 					}
 					{
 						if ($current==null) {
@@ -324,7 +324,7 @@ ruleStatesProperties returns [EObject current=null]
 							$current,
 							"position",
 							lv_position_7_0,
-							"org.eclipse.xtext.common.Terminals.ID");
+							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.COORDINATES");
 					}
 				)
 			)
@@ -355,37 +355,42 @@ ruleTransition returns [EObject current=null]
 			}
 			(
 				(
-					lv_start_1_0=RULE_ID
 					{
-						newLeafNode(lv_start_1_0, grammarAccess.getTransitionAccess().getStartIDTerminalRuleCall_0_1_0());
+						newCompositeNode(grammarAccess.getTransitionAccess().getStartCoordinatesStatesTransitionParserRuleCall_0_1_0());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTransitionRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"start",
-							lv_start_1_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getEndEndTransitionParserRuleCall_0_2_0());
-					}
-					lv_end_2_0=ruleEndTransition
+					lv_start_1_0=ruleCoordinatesStatesTransition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTransitionRule());
 						}
-						add(
+						set(
+							$current,
+							"start",
+							lv_start_1_0,
+							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.CoordinatesStatesTransition");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_2='->'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_0_2());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getTransitionAccess().getEndCoordinatesStatesTransitionParserRuleCall_0_3_0());
+					}
+					lv_end_3_0=ruleCoordinatesStatesTransition
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTransitionRule());
+						}
+						set(
 							$current,
 							"end",
-							lv_end_2_0,
-							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.EndTransition");
+							lv_end_3_0,
+							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.CoordinatesStatesTransition");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -393,17 +398,17 @@ ruleTransition returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getProprietyStatesTransitionPropertiesParserRuleCall_0_3_0());
+						newCompositeNode(grammarAccess.getTransitionAccess().getProprietyTransitionTransitionPropertiesParserRuleCall_0_4_0());
 					}
-					lv_proprietyStates_3_0=ruletransitionProperties
+					lv_proprietyTransition_4_0=ruletransitionProperties
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTransitionRule());
 						}
 						add(
 							$current,
-							"proprietyStates",
-							lv_proprietyStates_3_0,
+							"proprietyTransition",
+							lv_proprietyTransition_4_0,
 							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.transitionProperties");
 						afterParserOrEnumRuleCall();
 					}
@@ -412,9 +417,9 @@ ruleTransition returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getLabelLabelParserRuleCall_0_4_0());
+						newCompositeNode(grammarAccess.getTransitionAccess().getLabelLabelParserRuleCall_0_5_0());
 					}
-					lv_label_4_0=ruleLabel
+					lv_label_5_0=ruleLabel
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTransitionRule());
@@ -422,7 +427,7 @@ ruleTransition returns [EObject current=null]
 						set(
 							$current,
 							"label",
-							lv_label_4_0,
+							lv_label_5_0,
 							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.Label");
 						afterParserOrEnumRuleCall();
 					}
@@ -431,15 +436,15 @@ ruleTransition returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_5='initialTransition'
+			otherlv_6='initialTransition'
 			{
-				newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getInitialTransitionKeyword_1_0());
+				newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getInitialTransitionKeyword_1_0());
 			}
 			(
 				(
-					lv_init_6_0=RULE_ID
+					lv_init_7_0=RULE_ID
 					{
-						newLeafNode(lv_init_6_0, grammarAccess.getTransitionAccess().getInitIDTerminalRuleCall_1_1_0());
+						newLeafNode(lv_init_7_0, grammarAccess.getTransitionAccess().getInitIDTerminalRuleCall_1_1_0());
 					}
 					{
 						if ($current==null) {
@@ -448,28 +453,28 @@ ruleTransition returns [EObject current=null]
 						addWithLastConsumed(
 							$current,
 							"init",
-							lv_init_6_0,
+							lv_init_7_0,
 							"org.eclipse.xtext.common.Terminals.ID");
 					}
 				)
 			)
-			this_INT_7=RULE_INT
+			this_COORDINATES_8=RULE_COORDINATES
 			{
-				newLeafNode(this_INT_7, grammarAccess.getTransitionAccess().getINTTerminalRuleCall_1_2());
+				newLeafNode(this_COORDINATES_8, grammarAccess.getTransitionAccess().getCOORDINATESTerminalRuleCall_1_2());
 			}
 		)
 	)
 ;
 
 // Entry rule entryRuleLabel
-entryRuleLabel returns [String current=null]:
+entryRuleLabel returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getLabelRule()); }
 	iv_ruleLabel=ruleLabel
-	{ $current=$iv_ruleLabel.current.getText(); }
+	{ $current=$iv_ruleLabel.current; }
 	EOF;
 
 // Rule Label
-ruleLabel returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleLabel returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -477,30 +482,58 @@ ruleLabel returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	leaveRule();
 }:
 	(
-		kw='label'
+		otherlv_0='label'
 		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getLabelAccess().getLabelKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getLabelAccess().getLabelKeyword_0());
 		}
-		this_INT_1=RULE_INT
-		{
-			$current.merge(this_INT_1);
-		}
-		{
-			newLeafNode(this_INT_1, grammarAccess.getLabelAccess().getINTTerminalRuleCall_1());
-		}
+		(
+			(
+				lv_text_1_0=RULE_STRING
+				{
+					newLeafNode(lv_text_1_0, grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLabelRule());
+					}
+					addWithLastConsumed(
+						$current,
+						"text",
+						lv_text_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		(
+			(
+				lv_position_2_0=RULE_COORDINATES
+				{
+					newLeafNode(lv_position_2_0, grammarAccess.getLabelAccess().getPositionCOORDINATESTerminalRuleCall_2_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLabelRule());
+					}
+					addWithLastConsumed(
+						$current,
+						"position",
+						lv_position_2_0,
+						"fr.uha.ensisa.project.pan_chabalier.tse.TSE.COORDINATES");
+				}
+			)
+		)
 	)
 ;
 
-// Entry rule entryRuleEndTransition
-entryRuleEndTransition returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEndTransitionRule()); }
-	iv_ruleEndTransition=ruleEndTransition
-	{ $current=$iv_ruleEndTransition.current; }
+// Entry rule entryRuleCoordinatesStatesTransition
+entryRuleCoordinatesStatesTransition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCoordinatesStatesTransitionRule()); }
+	iv_ruleCoordinatesStatesTransition=ruleCoordinatesStatesTransition
+	{ $current=$iv_ruleCoordinatesStatesTransition.current; }
 	EOF;
 
-// Rule EndTransition
-ruleEndTransition returns [EObject current=null]
+// Rule CoordinatesStatesTransition
+ruleCoordinatesStatesTransition returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -509,49 +542,20 @@ ruleEndTransition returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='->'
+			lv_stateTransition_0_0=RULE_ID
 			{
-				newLeafNode(otherlv_0, grammarAccess.getEndTransitionAccess().getHyphenMinusGreaterThanSignKeyword_0_0());
+				newLeafNode(lv_stateTransition_0_0, grammarAccess.getCoordinatesStatesTransitionAccess().getStateTransitionIDTerminalRuleCall_0());
 			}
-			(
-				(
-					lv_end_1_0=RULE_ID
-					{
-						newLeafNode(lv_end_1_0, grammarAccess.getEndTransitionAccess().getEndIDTerminalRuleCall_0_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEndTransitionRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"end",
-							lv_end_1_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
-			)
-		)
-		    |
-		(
-			otherlv_2='reflexive'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getEndTransitionAccess().getReflexiveKeyword_1_0());
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getCoordinatesStatesTransitionRule());
+				}
+				setWithLastConsumed(
+					$current,
+					"stateTransition",
+					lv_stateTransition_0_0,
+					"org.eclipse.xtext.common.Terminals.ID");
 			}
-			(
-				(
-					lv_end_3_0='reflexive'
-					{
-						newLeafNode(lv_end_3_0, grammarAccess.getEndTransitionAccess().getEndReflexiveKeyword_1_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEndTransitionRule());
-						}
-						addWithLastConsumed($current, "end", lv_end_3_0, "reflexive");
-					}
-				)
-			)
 		)
 	)
 ;
@@ -646,31 +650,6 @@ ruletransitionProperties returns [EObject current=null]
 				)
 			)
 		)
-		    |
-		(
-			this_DEFAULT_6=RULE_DEFAULT
-			{
-				newLeafNode(this_DEFAULT_6, grammarAccess.getTransitionPropertiesAccess().getDEFAULTTerminalRuleCall_3_0());
-			}
-			(
-				(
-					lv_position_7_0=RULE_ID
-					{
-						newLeafNode(lv_position_7_0, grammarAccess.getTransitionPropertiesAccess().getPositionIDTerminalRuleCall_3_1_0());
-					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTransitionPropertiesRule());
-						}
-						addWithLastConsumed(
-							$current,
-							"position",
-							lv_position_7_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
-			)
-		)
 	)
 ;
 
@@ -680,9 +659,11 @@ RULE_COLOR : ('WHITE'|'BLACK'|'BLUE'|'CYAN'|'DARK_GRAY'|'GRAY'|'LIGHT_GRAY'|'GRE
 
 RULE_FLOAT : RULE_INT '.' RULE_INT;
 
+RULE_COORDINATES : RULE_INT ',' RULE_INT;
+
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 
-RULE_INT : ('0'..'9')+;
+fragment RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 

@@ -23,20 +23,23 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//StatesProperties/position"/>
     </genClasses>
     <genClasses ecoreClass="TSE.ecore#//Transition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//Transition/start"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//Transition/start"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//Transition/end"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//Transition/proprietyStates"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//Transition/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//Transition/proprietyTransition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//Transition/label"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//Transition/init"/>
     </genClasses>
-    <genClasses ecoreClass="TSE.ecore#//EndTransition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//EndTransition/end"/>
+    <genClasses ecoreClass="TSE.ecore#//Label">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//Label/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//Label/position"/>
+    </genClasses>
+    <genClasses ecoreClass="TSE.ecore#//CoordinatesStatesTransition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//CoordinatesStatesTransition/stateTransition"/>
     </genClasses>
     <genClasses ecoreClass="TSE.ecore#//transitionProperties">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//transitionProperties/color"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//transitionProperties/thickness"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//transitionProperties/curve"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//transitionProperties/position"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

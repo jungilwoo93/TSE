@@ -26,11 +26,21 @@ public class TSESyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getDEFAULTRule())
+		if (ruleCall.getRule() == grammarAccess.getCOORDINATESRule())
+			return getCOORDINATESToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getDEFAULTRule())
 			return getDEFAULTToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getINTRule())
-			return getINTToken(semanticObject, ruleCall, node);
 		return "";
+	}
+	
+	/**
+	 * terminal COORDINATES:
+	 * 	INT ',' INT;
+	 */
+	protected String getCOORDINATESToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ",";
 	}
 	
 	/**
@@ -41,15 +51,6 @@ public class TSESyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "DEFAULT";
-	}
-	
-	/**
-	 * terminal INT returns ecore::EInt: ('0'..'9')+;
-	 */
-	protected String getINTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "";
 	}
 	
 	@Override

@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getColor <em>Color</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getThickness <em>Thickness</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getCurve <em>Curve</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getPosition <em>Position</em>}</li>
  * </ul>
  *
  * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#gettransitionProperties()
@@ -75,21 +74,5 @@ public interface transitionProperties extends EObject
    * @generated
    */
   EList<String> getCurve();
-
-  /**
-   * Returns the value of the '<em><b>Position</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Position</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Position</em>' attribute list.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#gettransitionProperties_Position()
-   * @model unique="false"
-   * @generated
-   */
-  EList<String> getPosition();
 
 } // transitionProperties
