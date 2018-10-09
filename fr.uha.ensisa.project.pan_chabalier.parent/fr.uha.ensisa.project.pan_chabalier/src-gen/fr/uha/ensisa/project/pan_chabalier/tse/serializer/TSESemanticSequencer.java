@@ -127,7 +127,7 @@ public class TSESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     State returns State
 	 *
 	 * Constraint:
-	 *     (name+=ID statesPropriety+=StatesProperties+)
+	 *     (name=ID statesPropriety+=StatesProperties+)
 	 */
 	protected void sequence_State(ISerializationContext context, State semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

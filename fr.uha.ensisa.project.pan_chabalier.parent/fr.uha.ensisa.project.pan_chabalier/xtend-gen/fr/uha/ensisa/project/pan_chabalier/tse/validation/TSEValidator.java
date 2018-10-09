@@ -3,9 +3,7 @@
  */
 package fr.uha.ensisa.project.pan_chabalier.tse.validation;
 
-import fr.uha.ensisa.project.pan_chabalier.tse.tSE.CoordinatesStatesTransition;
 import fr.uha.ensisa.project.pan_chabalier.tse.validation.AbstractTSEValidator;
-import org.eclipse.xtext.validation.Check;
 
 /**
  * This class contains custom validation rules.
@@ -14,14 +12,4 @@ import org.eclipse.xtext.validation.Check;
  */
 @SuppressWarnings("all")
 public class TSEValidator extends AbstractTSEValidator {
-  private boolean flag;
-  
-  @Check
-  public boolean checkTransitionHaveExistingStates(final CoordinatesStatesTransition statesTransitionName) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nno viable alternative at input \'while\'"
-      + "\nno viable alternative at input \')\'"
-      + "\nno viable alternative at input \'.\'"
-      + "\nmismatched input \')\' expecting \'}\'");
-  }
 }

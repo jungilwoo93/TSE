@@ -133,7 +133,7 @@ public interface TSEPackage extends EPackage
   int STATE = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute list.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -445,10 +445,10 @@ public interface TSEPackage extends EPackage
   EClass getState();
 
   /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.State#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.State#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Name</em>'.
+   * @return the meta object for the attribute '<em>Name</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.State#getName()
    * @see #getState()
    * @generated
@@ -748,7 +748,7 @@ public interface TSEPackage extends EPackage
     EClass STATE = eINSTANCE.getState();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

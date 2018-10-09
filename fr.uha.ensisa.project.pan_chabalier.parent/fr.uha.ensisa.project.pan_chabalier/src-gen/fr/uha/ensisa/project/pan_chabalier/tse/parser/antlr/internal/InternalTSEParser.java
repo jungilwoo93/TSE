@@ -443,7 +443,7 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
             					if (current==null) {
             						current = createModelElement(grammarAccess.getStateRule());
             					}
-            					addWithLastConsumed(
+            					setWithLastConsumed(
             						current,
             						"name",
             						lv_name_1_0,

@@ -9,6 +9,7 @@ import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,9 +17,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -39,14 +40,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class StateImpl extends MinimalEObjectImpl.Container implements State
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute list.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected EList<String> name;
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getStatesPropriety() <em>States Propriety</em>}' containment reference list.
@@ -84,13 +95,22 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getName()
+  public String getName()
   {
-    if (name == null)
-    {
-      name = new EDataTypeEList<String>(String.class, this, TSEPackage.STATE__NAME);
-    }
     return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.STATE__NAME, oldName, name));
   }
 
   /**
@@ -153,8 +173,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
     switch (featureID)
     {
       case TSEPackage.STATE__NAME:
-        getName().clear();
-        getName().addAll((Collection<? extends String>)newValue);
+        setName((String)newValue);
         return;
       case TSEPackage.STATE__STATES_PROPRIETY:
         getStatesPropriety().clear();
@@ -175,7 +194,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
     switch (featureID)
     {
       case TSEPackage.STATE__NAME:
-        getName().clear();
+        setName(NAME_EDEFAULT);
         return;
       case TSEPackage.STATE__STATES_PROPRIETY:
         getStatesPropriety().clear();
@@ -195,7 +214,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
     switch (featureID)
     {
       case TSEPackage.STATE__NAME:
-        return name != null && !name.isEmpty();
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case TSEPackage.STATE__STATES_PROPRIETY:
         return statesPropriety != null && !statesPropriety.isEmpty();
     }

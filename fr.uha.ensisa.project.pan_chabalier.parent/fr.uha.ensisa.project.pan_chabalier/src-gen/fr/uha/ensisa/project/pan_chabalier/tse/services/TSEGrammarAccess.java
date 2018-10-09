@@ -75,16 +75,16 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cStatesProprietyStatesPropertiesParserRuleCall_2_0 = (RuleCall)cStatesProprietyAssignment_2.eContents().get(0);
 		
 		//State:
-		//	"state" name+=ID statesPropriety+=StatesProperties+;
+		//	"state" name=ID statesPropriety+=StatesProperties+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"state" name+=ID statesPropriety+=StatesProperties+
+		//"state" name=ID statesPropriety+=StatesProperties+
 		public Group getGroup() { return cGroup; }
 		
 		//"state"
 		public Keyword getStateKeyword_0() { return cStateKeyword_0; }
 		
-		//name+=ID
+		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
@@ -445,7 +445,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//State:
-	//	"state" name+=ID statesPropriety+=StatesProperties+;
+	//	"state" name=ID statesPropriety+=StatesProperties+;
 	public StateElements getStateAccess() {
 		return pState;
 	}
