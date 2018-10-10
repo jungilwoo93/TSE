@@ -13,15 +13,15 @@ State:
 	"state" name=ID statesPropriety+=StatesProperties+;
 
 StatesProperties:
-	"color" color+=COLOR
-	| "thickness" thickness+=FLOAT
-	| "position" position+=COORDINATES
-	| DEFAULT position+=COORDINATES;
+	"color" color=COLOR
+	| "thickness" thickness=FLOAT
+	| "position" position=COORDINATES
+	| DEFAULT position=COORDINATES;
 
 Transition:
 	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
 	proprietyTransition+=transitionProperties* (label=Label)?
-	| "initialTransition" init+=ID COORDINATES;
+	| "initialTransition" init=ID COORDINATES;
 
 Label:
 	"label" text+=STRING position+=COORDINATES;
@@ -30,7 +30,7 @@ CoordinatesStatesTransition:
 	stateTransition=ID;
 
 transitionProperties:
-	"color" color+=COLOR | "thickness" thickness+=FLOAT | "curvature" curve+=FLOAT;
+	"color" color=COLOR | "thickness" thickness=FLOAT | "curvature" curve=FLOAT;
 
 terminal DEFAULT:
 	("DEFAULT" | "default");

@@ -6,15 +6,12 @@ package fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,34 +31,64 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class transitionPropertiesImpl extends MinimalEObjectImpl.Container implements transitionProperties
 {
   /**
-   * The cached value of the '{@link #getColor() <em>Color</em>}' attribute list.
+   * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getColor()
    * @generated
    * @ordered
    */
-  protected EList<String> color;
+  protected static final String COLOR_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getThickness() <em>Thickness</em>}' attribute list.
+   * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getColor()
+   * @generated
+   * @ordered
+   */
+  protected String color = COLOR_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getThickness() <em>Thickness</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getThickness()
    * @generated
    * @ordered
    */
-  protected EList<String> thickness;
+  protected static final String THICKNESS_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getCurve() <em>Curve</em>}' attribute list.
+   * The cached value of the '{@link #getThickness() <em>Thickness</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThickness()
+   * @generated
+   * @ordered
+   */
+  protected String thickness = THICKNESS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCurve() <em>Curve</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCurve()
    * @generated
    * @ordered
    */
-  protected EList<String> curve;
+  protected static final String CURVE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getCurve() <em>Curve</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCurve()
+   * @generated
+   * @ordered
+   */
+  protected String curve = CURVE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -89,12 +116,8 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getColor()
+  public String getColor()
   {
-    if (color == null)
-    {
-      color = new EDataTypeEList<String>(String.class, this, TSEPackage.TRANSITION_PROPERTIES__COLOR);
-    }
     return color;
   }
 
@@ -103,12 +126,21 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getThickness()
+  public void setColor(String newColor)
   {
-    if (thickness == null)
-    {
-      thickness = new EDataTypeEList<String>(String.class, this, TSEPackage.TRANSITION_PROPERTIES__THICKNESS);
-    }
+    String oldColor = color;
+    color = newColor;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION_PROPERTIES__COLOR, oldColor, color));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getThickness()
+  {
     return thickness;
   }
 
@@ -117,13 +149,35 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getCurve()
+  public void setThickness(String newThickness)
   {
-    if (curve == null)
-    {
-      curve = new EDataTypeEList<String>(String.class, this, TSEPackage.TRANSITION_PROPERTIES__CURVE);
-    }
+    String oldThickness = thickness;
+    thickness = newThickness;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION_PROPERTIES__THICKNESS, oldThickness, thickness));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getCurve()
+  {
     return curve;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCurve(String newCurve)
+  {
+    String oldCurve = curve;
+    curve = newCurve;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION_PROPERTIES__CURVE, oldCurve, curve));
   }
 
   /**
@@ -151,23 +205,19 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case TSEPackage.TRANSITION_PROPERTIES__COLOR:
-        getColor().clear();
-        getColor().addAll((Collection<? extends String>)newValue);
+        setColor((String)newValue);
         return;
       case TSEPackage.TRANSITION_PROPERTIES__THICKNESS:
-        getThickness().clear();
-        getThickness().addAll((Collection<? extends String>)newValue);
+        setThickness((String)newValue);
         return;
       case TSEPackage.TRANSITION_PROPERTIES__CURVE:
-        getCurve().clear();
-        getCurve().addAll((Collection<? extends String>)newValue);
+        setCurve((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -184,13 +234,13 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
     switch (featureID)
     {
       case TSEPackage.TRANSITION_PROPERTIES__COLOR:
-        getColor().clear();
+        setColor(COLOR_EDEFAULT);
         return;
       case TSEPackage.TRANSITION_PROPERTIES__THICKNESS:
-        getThickness().clear();
+        setThickness(THICKNESS_EDEFAULT);
         return;
       case TSEPackage.TRANSITION_PROPERTIES__CURVE:
-        getCurve().clear();
+        setCurve(CURVE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -207,11 +257,11 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
     switch (featureID)
     {
       case TSEPackage.TRANSITION_PROPERTIES__COLOR:
-        return color != null && !color.isEmpty();
+        return COLOR_EDEFAULT == null ? color != null : !COLOR_EDEFAULT.equals(color);
       case TSEPackage.TRANSITION_PROPERTIES__THICKNESS:
-        return thickness != null && !thickness.isEmpty();
+        return THICKNESS_EDEFAULT == null ? thickness != null : !THICKNESS_EDEFAULT.equals(thickness);
       case TSEPackage.TRANSITION_PROPERTIES__CURVE:
-        return curve != null && !curve.isEmpty();
+        return CURVE_EDEFAULT == null ? curve != null : !CURVE_EDEFAULT.equals(curve);
     }
     return super.eIsSet(featureID);
   }

@@ -6,15 +6,12 @@ package fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,34 +31,64 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class StatesPropertiesImpl extends MinimalEObjectImpl.Container implements StatesProperties
 {
   /**
-   * The cached value of the '{@link #getColor() <em>Color</em>}' attribute list.
+   * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getColor()
    * @generated
    * @ordered
    */
-  protected EList<String> color;
+  protected static final String COLOR_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getThickness() <em>Thickness</em>}' attribute list.
+   * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getColor()
+   * @generated
+   * @ordered
+   */
+  protected String color = COLOR_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getThickness() <em>Thickness</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getThickness()
    * @generated
    * @ordered
    */
-  protected EList<String> thickness;
+  protected static final String THICKNESS_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute list.
+   * The cached value of the '{@link #getThickness() <em>Thickness</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getThickness()
+   * @generated
+   * @ordered
+   */
+  protected String thickness = THICKNESS_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPosition() <em>Position</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPosition()
    * @generated
    * @ordered
    */
-  protected EList<String> position;
+  protected static final String POSITION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPosition()
+   * @generated
+   * @ordered
+   */
+  protected String position = POSITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -89,12 +116,8 @@ public class StatesPropertiesImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getColor()
+  public String getColor()
   {
-    if (color == null)
-    {
-      color = new EDataTypeEList<String>(String.class, this, TSEPackage.STATES_PROPERTIES__COLOR);
-    }
     return color;
   }
 
@@ -103,12 +126,21 @@ public class StatesPropertiesImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getThickness()
+  public void setColor(String newColor)
   {
-    if (thickness == null)
-    {
-      thickness = new EDataTypeEList<String>(String.class, this, TSEPackage.STATES_PROPERTIES__THICKNESS);
-    }
+    String oldColor = color;
+    color = newColor;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.STATES_PROPERTIES__COLOR, oldColor, color));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getThickness()
+  {
     return thickness;
   }
 
@@ -117,13 +149,35 @@ public class StatesPropertiesImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getPosition()
+  public void setThickness(String newThickness)
   {
-    if (position == null)
-    {
-      position = new EDataTypeEList<String>(String.class, this, TSEPackage.STATES_PROPERTIES__POSITION);
-    }
+    String oldThickness = thickness;
+    thickness = newThickness;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.STATES_PROPERTIES__THICKNESS, oldThickness, thickness));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getPosition()
+  {
     return position;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPosition(String newPosition)
+  {
+    String oldPosition = position;
+    position = newPosition;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.STATES_PROPERTIES__POSITION, oldPosition, position));
   }
 
   /**
@@ -151,23 +205,19 @@ public class StatesPropertiesImpl extends MinimalEObjectImpl.Container implement
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case TSEPackage.STATES_PROPERTIES__COLOR:
-        getColor().clear();
-        getColor().addAll((Collection<? extends String>)newValue);
+        setColor((String)newValue);
         return;
       case TSEPackage.STATES_PROPERTIES__THICKNESS:
-        getThickness().clear();
-        getThickness().addAll((Collection<? extends String>)newValue);
+        setThickness((String)newValue);
         return;
       case TSEPackage.STATES_PROPERTIES__POSITION:
-        getPosition().clear();
-        getPosition().addAll((Collection<? extends String>)newValue);
+        setPosition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -184,13 +234,13 @@ public class StatesPropertiesImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case TSEPackage.STATES_PROPERTIES__COLOR:
-        getColor().clear();
+        setColor(COLOR_EDEFAULT);
         return;
       case TSEPackage.STATES_PROPERTIES__THICKNESS:
-        getThickness().clear();
+        setThickness(THICKNESS_EDEFAULT);
         return;
       case TSEPackage.STATES_PROPERTIES__POSITION:
-        getPosition().clear();
+        setPosition(POSITION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -207,11 +257,11 @@ public class StatesPropertiesImpl extends MinimalEObjectImpl.Container implement
     switch (featureID)
     {
       case TSEPackage.STATES_PROPERTIES__COLOR:
-        return color != null && !color.isEmpty();
+        return COLOR_EDEFAULT == null ? color != null : !COLOR_EDEFAULT.equals(color);
       case TSEPackage.STATES_PROPERTIES__THICKNESS:
-        return thickness != null && !thickness.isEmpty();
+        return THICKNESS_EDEFAULT == null ? thickness != null : !THICKNESS_EDEFAULT.equals(thickness);
       case TSEPackage.STATES_PROPERTIES__POSITION:
-        return position != null && !position.isEmpty();
+        return POSITION_EDEFAULT == null ? position != null : !POSITION_EDEFAULT.equals(position);
     }
     return super.eIsSet(featureID);
   }

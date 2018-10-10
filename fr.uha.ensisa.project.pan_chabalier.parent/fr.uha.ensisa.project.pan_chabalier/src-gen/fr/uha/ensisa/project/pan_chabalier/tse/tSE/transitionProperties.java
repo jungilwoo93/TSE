@@ -3,8 +3,6 @@
  */
 package fr.uha.ensisa.project.pan_chabalier.tse.tSE;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -28,51 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface transitionProperties extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Color</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Color</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Color</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Color</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Color</em>' attribute list.
+   * @return the value of the '<em>Color</em>' attribute.
+   * @see #setColor(String)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#gettransitionProperties_Color()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getColor();
+  String getColor();
 
   /**
-   * Returns the value of the '<em><b>Thickness</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getColor <em>Color</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Color</em>' attribute.
+   * @see #getColor()
+   * @generated
+   */
+  void setColor(String value);
+
+  /**
+   * Returns the value of the '<em><b>Thickness</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Thickness</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Thickness</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Thickness</em>' attribute list.
+   * @return the value of the '<em>Thickness</em>' attribute.
+   * @see #setThickness(String)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#gettransitionProperties_Thickness()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getThickness();
+  String getThickness();
 
   /**
-   * Returns the value of the '<em><b>Curve</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getThickness <em>Thickness</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Thickness</em>' attribute.
+   * @see #getThickness()
+   * @generated
+   */
+  void setThickness(String value);
+
+  /**
+   * Returns the value of the '<em><b>Curve</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Curve</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Curve</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Curve</em>' attribute list.
+   * @return the value of the '<em>Curve</em>' attribute.
+   * @see #setCurve(String)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#gettransitionProperties_Curve()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getCurve();
+  String getCurve();
+
+  /**
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getCurve <em>Curve</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Curve</em>' attribute.
+   * @see #getCurve()
+   * @generated
+   */
+  void setCurve(String value);
 
 } // transitionProperties

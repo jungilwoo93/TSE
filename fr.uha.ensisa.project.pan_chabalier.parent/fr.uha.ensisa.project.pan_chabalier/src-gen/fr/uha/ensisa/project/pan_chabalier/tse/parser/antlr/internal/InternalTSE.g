@@ -245,7 +245,7 @@ ruleStatesProperties returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getStatesPropertiesRule());
 						}
-						addWithLastConsumed(
+						setWithLastConsumed(
 							$current,
 							"color",
 							lv_color_1_0,
@@ -270,7 +270,7 @@ ruleStatesProperties returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getStatesPropertiesRule());
 						}
-						addWithLastConsumed(
+						setWithLastConsumed(
 							$current,
 							"thickness",
 							lv_thickness_3_0,
@@ -295,7 +295,7 @@ ruleStatesProperties returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getStatesPropertiesRule());
 						}
-						addWithLastConsumed(
+						setWithLastConsumed(
 							$current,
 							"position",
 							lv_position_5_0,
@@ -320,7 +320,7 @@ ruleStatesProperties returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getStatesPropertiesRule());
 						}
-						addWithLastConsumed(
+						setWithLastConsumed(
 							$current,
 							"position",
 							lv_position_7_0,
@@ -450,7 +450,7 @@ ruleTransition returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getTransitionRule());
 						}
-						addWithLastConsumed(
+						setWithLastConsumed(
 							$current,
 							"init",
 							lv_init_7_0,
@@ -591,7 +591,7 @@ ruletransitionProperties returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getTransitionPropertiesRule());
 						}
-						addWithLastConsumed(
+						setWithLastConsumed(
 							$current,
 							"color",
 							lv_color_1_0,
@@ -616,7 +616,7 @@ ruletransitionProperties returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getTransitionPropertiesRule());
 						}
-						addWithLastConsumed(
+						setWithLastConsumed(
 							$current,
 							"thickness",
 							lv_thickness_3_0,
@@ -641,7 +641,7 @@ ruletransitionProperties returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getTransitionPropertiesRule());
 						}
-						addWithLastConsumed(
+						setWithLastConsumed(
 							$current,
 							"curve",
 							lv_curve_5_0,

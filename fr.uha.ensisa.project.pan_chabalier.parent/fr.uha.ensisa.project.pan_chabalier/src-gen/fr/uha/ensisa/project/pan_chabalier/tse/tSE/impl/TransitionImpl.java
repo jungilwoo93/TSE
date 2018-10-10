@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -86,14 +85,24 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
   protected Label label;
 
   /**
-   * The cached value of the '{@link #getInit() <em>Init</em>}' attribute list.
+   * The default value of the '{@link #getInit() <em>Init</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getInit()
    * @generated
    * @ordered
    */
-  protected EList<String> init;
+  protected static final String INIT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getInit() <em>Init</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInit()
+   * @generated
+   * @ordered
+   */
+  protected String init = INIT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -279,13 +288,22 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getInit()
+  public String getInit()
   {
-    if (init == null)
-    {
-      init = new EDataTypeEList<String>(String.class, this, TSEPackage.TRANSITION__INIT);
-    }
     return init;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInit(String newInit)
+  {
+    String oldInit = init;
+    init = newInit;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION__INIT, oldInit, init));
   }
 
   /**
@@ -359,8 +377,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
         setLabel((Label)newValue);
         return;
       case TSEPackage.TRANSITION__INIT:
-        getInit().clear();
-        getInit().addAll((Collection<? extends String>)newValue);
+        setInit((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -389,7 +406,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
         setLabel((Label)null);
         return;
       case TSEPackage.TRANSITION__INIT:
-        getInit().clear();
+        setInit(INIT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -414,7 +431,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
       case TSEPackage.TRANSITION__LABEL:
         return label != null;
       case TSEPackage.TRANSITION__INIT:
-        return init != null && !init.isEmpty();
+        return INIT_EDEFAULT == null ? init != null : !INIT_EDEFAULT.equals(init);
     }
     return super.eIsSet(featureID);
   }

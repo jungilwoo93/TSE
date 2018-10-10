@@ -170,7 +170,7 @@ public interface TSEPackage extends EPackage
   int STATES_PROPERTIES = 3;
 
   /**
-   * The feature id for the '<em><b>Color</b></em>' attribute list.
+   * The feature id for the '<em><b>Color</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -179,7 +179,7 @@ public interface TSEPackage extends EPackage
   int STATES_PROPERTIES__COLOR = 0;
 
   /**
-   * The feature id for the '<em><b>Thickness</b></em>' attribute list.
+   * The feature id for the '<em><b>Thickness</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -188,7 +188,7 @@ public interface TSEPackage extends EPackage
   int STATES_PROPERTIES__THICKNESS = 1;
 
   /**
-   * The feature id for the '<em><b>Position</b></em>' attribute list.
+   * The feature id for the '<em><b>Position</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -252,7 +252,7 @@ public interface TSEPackage extends EPackage
   int TRANSITION__LABEL = 3;
 
   /**
-   * The feature id for the '<em><b>Init</b></em>' attribute list.
+   * The feature id for the '<em><b>Init</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -345,7 +345,7 @@ public interface TSEPackage extends EPackage
   int TRANSITION_PROPERTIES = 7;
 
   /**
-   * The feature id for the '<em><b>Color</b></em>' attribute list.
+   * The feature id for the '<em><b>Color</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -354,7 +354,7 @@ public interface TSEPackage extends EPackage
   int TRANSITION_PROPERTIES__COLOR = 0;
 
   /**
-   * The feature id for the '<em><b>Thickness</b></em>' attribute list.
+   * The feature id for the '<em><b>Thickness</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -363,7 +363,7 @@ public interface TSEPackage extends EPackage
   int TRANSITION_PROPERTIES__THICKNESS = 1;
 
   /**
-   * The feature id for the '<em><b>Curve</b></em>' attribute list.
+   * The feature id for the '<em><b>Curve</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -477,10 +477,10 @@ public interface TSEPackage extends EPackage
   EClass getStatesProperties();
 
   /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getColor <em>Color</em>}'.
+   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getColor <em>Color</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Color</em>'.
+   * @return the meta object for the attribute '<em>Color</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getColor()
    * @see #getStatesProperties()
    * @generated
@@ -488,10 +488,10 @@ public interface TSEPackage extends EPackage
   EAttribute getStatesProperties_Color();
 
   /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getThickness <em>Thickness</em>}'.
+   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getThickness <em>Thickness</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Thickness</em>'.
+   * @return the meta object for the attribute '<em>Thickness</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getThickness()
    * @see #getStatesProperties()
    * @generated
@@ -499,10 +499,10 @@ public interface TSEPackage extends EPackage
   EAttribute getStatesProperties_Thickness();
 
   /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getPosition <em>Position</em>}'.
+   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getPosition <em>Position</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Position</em>'.
+   * @return the meta object for the attribute '<em>Position</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getPosition()
    * @see #getStatesProperties()
    * @generated
@@ -564,10 +564,10 @@ public interface TSEPackage extends EPackage
   EReference getTransition_Label();
 
   /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getInit <em>Init</em>}'.
+   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getInit <em>Init</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Init</em>'.
+   * @return the meta object for the attribute '<em>Init</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getInit()
    * @see #getTransition()
    * @generated
@@ -638,10 +638,10 @@ public interface TSEPackage extends EPackage
   EClass gettransitionProperties();
 
   /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getColor <em>Color</em>}'.
+   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getColor <em>Color</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Color</em>'.
+   * @return the meta object for the attribute '<em>Color</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getColor()
    * @see #gettransitionProperties()
    * @generated
@@ -649,10 +649,10 @@ public interface TSEPackage extends EPackage
   EAttribute gettransitionProperties_Color();
 
   /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getThickness <em>Thickness</em>}'.
+   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getThickness <em>Thickness</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Thickness</em>'.
+   * @return the meta object for the attribute '<em>Thickness</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getThickness()
    * @see #gettransitionProperties()
    * @generated
@@ -660,10 +660,10 @@ public interface TSEPackage extends EPackage
   EAttribute gettransitionProperties_Thickness();
 
   /**
-   * Returns the meta object for the attribute list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getCurve <em>Curve</em>}'.
+   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getCurve <em>Curve</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Curve</em>'.
+   * @return the meta object for the attribute '<em>Curve</em>'.
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getCurve()
    * @see #gettransitionProperties()
    * @generated
@@ -774,7 +774,7 @@ public interface TSEPackage extends EPackage
     EClass STATES_PROPERTIES = eINSTANCE.getStatesProperties();
 
     /**
-     * The meta object literal for the '<em><b>Color</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -782,7 +782,7 @@ public interface TSEPackage extends EPackage
     EAttribute STATES_PROPERTIES__COLOR = eINSTANCE.getStatesProperties_Color();
 
     /**
-     * The meta object literal for the '<em><b>Thickness</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Thickness</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -790,7 +790,7 @@ public interface TSEPackage extends EPackage
     EAttribute STATES_PROPERTIES__THICKNESS = eINSTANCE.getStatesProperties_Thickness();
 
     /**
-     * The meta object literal for the '<em><b>Position</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Position</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -840,7 +840,7 @@ public interface TSEPackage extends EPackage
     EReference TRANSITION__LABEL = eINSTANCE.getTransition_Label();
 
     /**
-     * The meta object literal for the '<em><b>Init</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Init</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -902,7 +902,7 @@ public interface TSEPackage extends EPackage
     EClass TRANSITION_PROPERTIES = eINSTANCE.gettransitionProperties();
 
     /**
-     * The meta object literal for the '<em><b>Color</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -910,7 +910,7 @@ public interface TSEPackage extends EPackage
     EAttribute TRANSITION_PROPERTIES__COLOR = eINSTANCE.gettransitionProperties_Color();
 
     /**
-     * The meta object literal for the '<em><b>Thickness</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Thickness</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -918,7 +918,7 @@ public interface TSEPackage extends EPackage
     EAttribute TRANSITION_PROPERTIES__THICKNESS = eINSTANCE.gettransitionProperties_Thickness();
 
     /**
-     * The meta object literal for the '<em><b>Curve</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Curve</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

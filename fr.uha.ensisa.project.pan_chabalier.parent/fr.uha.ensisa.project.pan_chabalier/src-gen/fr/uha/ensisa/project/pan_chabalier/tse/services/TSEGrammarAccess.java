@@ -117,58 +117,58 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPositionCOORDINATESTerminalRuleCall_3_1_0 = (RuleCall)cPositionAssignment_3_1.eContents().get(0);
 		
 		//StatesProperties:
-		//	"color" color+=COLOR
-		//	| "thickness" thickness+=FLOAT
-		//	| "position" position+=COORDINATES
-		//	| DEFAULT position+=COORDINATES;
+		//	"color" color=COLOR
+		//	| "thickness" thickness=FLOAT
+		//	| "position" position=COORDINATES
+		//	| DEFAULT position=COORDINATES;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"color" color+=COLOR | "thickness" thickness+=FLOAT | "position" position+=COORDINATES | DEFAULT position+=COORDINATES
+		//"color" color=COLOR | "thickness" thickness=FLOAT | "position" position=COORDINATES | DEFAULT position=COORDINATES
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//"color" color+=COLOR
+		//"color" color=COLOR
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//"color"
 		public Keyword getColorKeyword_0_0() { return cColorKeyword_0_0; }
 		
-		//color+=COLOR
+		//color=COLOR
 		public Assignment getColorAssignment_0_1() { return cColorAssignment_0_1; }
 		
 		//COLOR
 		public RuleCall getColorCOLORTerminalRuleCall_0_1_0() { return cColorCOLORTerminalRuleCall_0_1_0; }
 		
-		//"thickness" thickness+=FLOAT
+		//"thickness" thickness=FLOAT
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//"thickness"
 		public Keyword getThicknessKeyword_1_0() { return cThicknessKeyword_1_0; }
 		
-		//thickness+=FLOAT
+		//thickness=FLOAT
 		public Assignment getThicknessAssignment_1_1() { return cThicknessAssignment_1_1; }
 		
 		//FLOAT
 		public RuleCall getThicknessFLOATTerminalRuleCall_1_1_0() { return cThicknessFLOATTerminalRuleCall_1_1_0; }
 		
-		//"position" position+=COORDINATES
+		//"position" position=COORDINATES
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//"position"
 		public Keyword getPositionKeyword_2_0() { return cPositionKeyword_2_0; }
 		
-		//position+=COORDINATES
+		//position=COORDINATES
 		public Assignment getPositionAssignment_2_1() { return cPositionAssignment_2_1; }
 		
 		//COORDINATES
 		public RuleCall getPositionCOORDINATESTerminalRuleCall_2_1_0() { return cPositionCOORDINATESTerminalRuleCall_2_1_0; }
 		
-		//DEFAULT position+=COORDINATES
+		//DEFAULT position=COORDINATES
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//DEFAULT
 		public RuleCall getDEFAULTTerminalRuleCall_3_0() { return cDEFAULTTerminalRuleCall_3_0; }
 		
-		//position+=COORDINATES
+		//position=COORDINATES
 		public Assignment getPositionAssignment_3_1() { return cPositionAssignment_3_1; }
 		
 		//COORDINATES
@@ -197,11 +197,11 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		//Transition:
 		//	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
 		//	proprietyTransition+=transitionProperties* label=Label?
-		//	| "initialTransition" init+=ID COORDINATES;
+		//	| "initialTransition" init=ID COORDINATES;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
-		//proprietyTransition+=transitionProperties* label=Label? | "initialTransition" init+=ID COORDINATES
+		//proprietyTransition+=transitionProperties* label=Label? | "initialTransition" init=ID COORDINATES
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
@@ -238,13 +238,13 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		//Label
 		public RuleCall getLabelLabelParserRuleCall_0_5_0() { return cLabelLabelParserRuleCall_0_5_0; }
 		
-		//"initialTransition" init+=ID COORDINATES
+		//"initialTransition" init=ID COORDINATES
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//"initialTransition"
 		public Keyword getInitialTransitionKeyword_1_0() { return cInitialTransitionKeyword_1_0; }
 		
-		//init+=ID
+		//init=ID
 		public Assignment getInitAssignment_1_1() { return cInitAssignment_1_1; }
 		
 		//ID
@@ -316,43 +316,43 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCurveFLOATTerminalRuleCall_2_1_0 = (RuleCall)cCurveAssignment_2_1.eContents().get(0);
 		
 		//transitionProperties:
-		//	"color" color+=COLOR | "thickness" thickness+=FLOAT | "curvature" curve+=FLOAT;
+		//	"color" color=COLOR | "thickness" thickness=FLOAT | "curvature" curve=FLOAT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"color" color+=COLOR | "thickness" thickness+=FLOAT | "curvature" curve+=FLOAT
+		//"color" color=COLOR | "thickness" thickness=FLOAT | "curvature" curve=FLOAT
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//"color" color+=COLOR
+		//"color" color=COLOR
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//"color"
 		public Keyword getColorKeyword_0_0() { return cColorKeyword_0_0; }
 		
-		//color+=COLOR
+		//color=COLOR
 		public Assignment getColorAssignment_0_1() { return cColorAssignment_0_1; }
 		
 		//COLOR
 		public RuleCall getColorCOLORTerminalRuleCall_0_1_0() { return cColorCOLORTerminalRuleCall_0_1_0; }
 		
-		//"thickness" thickness+=FLOAT
+		//"thickness" thickness=FLOAT
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//"thickness"
 		public Keyword getThicknessKeyword_1_0() { return cThicknessKeyword_1_0; }
 		
-		//thickness+=FLOAT
+		//thickness=FLOAT
 		public Assignment getThicknessAssignment_1_1() { return cThicknessAssignment_1_1; }
 		
 		//FLOAT
 		public RuleCall getThicknessFLOATTerminalRuleCall_1_1_0() { return cThicknessFLOATTerminalRuleCall_1_1_0; }
 		
-		//"curvature" curve+=FLOAT
+		//"curvature" curve=FLOAT
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//"curvature"
 		public Keyword getCurvatureKeyword_2_0() { return cCurvatureKeyword_2_0; }
 		
-		//curve+=FLOAT
+		//curve=FLOAT
 		public Assignment getCurveAssignment_2_1() { return cCurveAssignment_2_1; }
 		
 		//FLOAT
@@ -455,10 +455,10 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//StatesProperties:
-	//	"color" color+=COLOR
-	//	| "thickness" thickness+=FLOAT
-	//	| "position" position+=COORDINATES
-	//	| DEFAULT position+=COORDINATES;
+	//	"color" color=COLOR
+	//	| "thickness" thickness=FLOAT
+	//	| "position" position=COORDINATES
+	//	| DEFAULT position=COORDINATES;
 	public StatesPropertiesElements getStatesPropertiesAccess() {
 		return pStatesProperties;
 	}
@@ -470,7 +470,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 	//Transition:
 	//	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
 	//	proprietyTransition+=transitionProperties* label=Label?
-	//	| "initialTransition" init+=ID COORDINATES;
+	//	| "initialTransition" init=ID COORDINATES;
 	public TransitionElements getTransitionAccess() {
 		return pTransition;
 	}
@@ -500,7 +500,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//transitionProperties:
-	//	"color" color+=COLOR | "thickness" thickness+=FLOAT | "curvature" curve+=FLOAT;
+	//	"color" color=COLOR | "thickness" thickness=FLOAT | "curvature" curve=FLOAT;
 	public TransitionPropertiesElements getTransitionPropertiesAccess() {
 		return pTransitionProperties;
 	}

@@ -3,8 +3,6 @@
  */
 package fr.uha.ensisa.project.pan_chabalier.tse.tSE;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -28,51 +26,81 @@ import org.eclipse.emf.ecore.EObject;
 public interface StatesProperties extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Color</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Color</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Color</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Color</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Color</em>' attribute list.
+   * @return the value of the '<em>Color</em>' attribute.
+   * @see #setColor(String)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getStatesProperties_Color()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getColor();
+  String getColor();
 
   /**
-   * Returns the value of the '<em><b>Thickness</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getColor <em>Color</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Color</em>' attribute.
+   * @see #getColor()
+   * @generated
+   */
+  void setColor(String value);
+
+  /**
+   * Returns the value of the '<em><b>Thickness</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Thickness</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Thickness</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Thickness</em>' attribute list.
+   * @return the value of the '<em>Thickness</em>' attribute.
+   * @see #setThickness(String)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getStatesProperties_Thickness()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getThickness();
+  String getThickness();
 
   /**
-   * Returns the value of the '<em><b>Position</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getThickness <em>Thickness</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Thickness</em>' attribute.
+   * @see #getThickness()
+   * @generated
+   */
+  void setThickness(String value);
+
+  /**
+   * Returns the value of the '<em><b>Position</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Position</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Position</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Position</em>' attribute list.
+   * @return the value of the '<em>Position</em>' attribute.
+   * @see #setPosition(String)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getStatesProperties_Position()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getPosition();
+  String getPosition();
+
+  /**
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties#getPosition <em>Position</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Position</em>' attribute.
+   * @see #getPosition()
+   * @generated
+   */
+  void setPosition(String value);
 
 } // StatesProperties

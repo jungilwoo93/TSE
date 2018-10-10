@@ -139,7 +139,7 @@ public class TSESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     StatesProperties returns StatesProperties
 	 *
 	 * Constraint:
-	 *     (color+=COLOR | thickness+=FLOAT | position+=COORDINATES | position+=COORDINATES)
+	 *     (color=COLOR | thickness=FLOAT | position=COORDINATES | position=COORDINATES)
 	 */
 	protected void sequence_StatesProperties(ISerializationContext context, StatesProperties semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -151,7 +151,7 @@ public class TSESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Transition returns Transition
 	 *
 	 * Constraint:
-	 *     ((start=CoordinatesStatesTransition end=CoordinatesStatesTransition proprietyTransition+=transitionProperties* label=Label?) | init+=ID)
+	 *     ((start=CoordinatesStatesTransition end=CoordinatesStatesTransition proprietyTransition+=transitionProperties* label=Label?) | init=ID)
 	 */
 	protected void sequence_Transition(ISerializationContext context, Transition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -163,7 +163,7 @@ public class TSESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     transitionProperties returns transitionProperties
 	 *
 	 * Constraint:
-	 *     (color+=COLOR | thickness+=FLOAT | curve+=FLOAT)
+	 *     (color=COLOR | thickness=FLOAT | curve=FLOAT)
 	 */
 	protected void sequence_transitionProperties(ISerializationContext context, transitionProperties semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

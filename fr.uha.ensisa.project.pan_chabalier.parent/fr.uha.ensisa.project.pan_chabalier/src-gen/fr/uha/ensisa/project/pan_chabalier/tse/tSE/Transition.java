@@ -124,19 +124,29 @@ public interface Transition extends EObject
   void setLabel(Label value);
 
   /**
-   * Returns the value of the '<em><b>Init</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Init</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Init</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Init</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Init</em>' attribute list.
+   * @return the value of the '<em>Init</em>' attribute.
+   * @see #setInit(String)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransition_Init()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getInit();
+  String getInit();
+
+  /**
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getInit <em>Init</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Init</em>' attribute.
+   * @see #getInit()
+   * @generated
+   */
+  void setInit(String value);
 
 } // Transition
