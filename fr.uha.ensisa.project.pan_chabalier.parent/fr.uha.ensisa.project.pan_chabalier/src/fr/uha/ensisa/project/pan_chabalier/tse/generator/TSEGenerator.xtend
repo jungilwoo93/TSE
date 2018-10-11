@@ -30,12 +30,12 @@ package fr.uha.ensisa.project.pan_chabalier.tmp;
 
 import java.awt.Color;
 import java.awt.Point;
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class tmpJavaCode {
 
-	private HashMap<String,  ArrayList<Object>> states = new HashMap<String,  ArrayList<Object>>();
+	private HashMap<String,HashMap<String,Object>> states = new HashMap<String,HashMap<String,Object>>();
+	private HashMap<String,HashMap<String,Object>> transitions = new HashMap<String,HashMap<String,Object>>();
 
 	public tmpJavaCode() {
 		«FOR e : model.elements»
@@ -43,14 +43,17 @@ public class tmpJavaCode {
 		«ENDFOR»
 	}
 	
-		
-	public HashMap<String,  ArrayList<Object>> getStates(){
+	public HashMap<String, HashMap<String,Object>> getStates(){
 		return this.states;
+	}
+	
+	public HashMap<String,Object> getStatesProperties(String stateName){
+		return this.states.get(stateName);
 	}
 	
 	public static void main(String[] args) {
 		tmpJavaCode tmp = new tmpJavaCode();
-		for(ArrayList<Object> s : tmp.getStates().values()) {
+		for(HashMap<String,Object> s : tmp.getStates().values()) {
 			System.out.println(s.toString());
 		}
 	}
@@ -59,9 +62,9 @@ public class tmpJavaCode {
 
 	def compile(Element e) '''
 		«FOR s : e.states»
-			states.put("«s.name»", new ArrayList<Object>(){{«FOR p:s.statesPropriety» add(«p.compile»);«ENDFOR»}});
+			states.put("«s.name»", new HashMap<String,Object>(){{«FOR p:s.statesPropriety» put(«p.compile»);«ENDFOR»}});
 		«ENDFOR»
 	'''
 
-	def compile(StatesProperties p) '''«IF p.position!==null»new Point(«p.position»)«ENDIF»«IF p.color !== null»Color.«p.color»«ENDIF»«IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»'''
+	def compile(StatesProperties p) '''«IF p.position!==null»"position", new Point(«p.position»)«ENDIF»«IF p.color !== null»"color", Color.«p.color»«ENDIF»«IF p.thickness!==null»"thickness", new Float(«p.thickness»)«ENDIF»'''
 }
