@@ -13,7 +13,7 @@ import fr.uha.ensisa.project.pan_chabalier.tse.tSE.State;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition;
-import fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties;
+import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -61,7 +61,7 @@ public class TSESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 				sequence_Transition(context, (Transition) semanticObject); 
 				return; 
 			case TSEPackage.TRANSITION_PROPERTIES:
-				sequence_transitionProperties(context, (transitionProperties) semanticObject); 
+				sequence_TransitionProperties(context, (TransitionProperties) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -91,7 +91,7 @@ public class TSESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Element returns Element
 	 *
 	 * Constraint:
-	 *     (states+=State | transitions+=Transition)
+	 *     (state=State | transition=Transition)
 	 */
 	protected void sequence_Element(ISerializationContext context, Element semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -103,10 +103,19 @@ public class TSESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Label returns Label
 	 *
 	 * Constraint:
-	 *     (text+=STRING position+=COORDINATES)
+	 *     (text=STRING position=COORDINATES)
 	 */
 	protected void sequence_Label(ISerializationContext context, Label semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TSEPackage.Literals.LABEL__TEXT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TSEPackage.Literals.LABEL__TEXT));
+			if (transientValues.isValueTransient(semanticObject, TSEPackage.Literals.LABEL__POSITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TSEPackage.Literals.LABEL__POSITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLabelAccess().getTextSTRINGTerminalRuleCall_1_0(), semanticObject.getText());
+		feeder.accept(grammarAccess.getLabelAccess().getPositionCOORDINATESTerminalRuleCall_2_0(), semanticObject.getPosition());
+		feeder.finish();
 	}
 	
 	
@@ -148,24 +157,24 @@ public class TSESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Contexts:
-	 *     Transition returns Transition
+	 *     TransitionProperties returns TransitionProperties
 	 *
 	 * Constraint:
-	 *     ((start=CoordinatesStatesTransition end=CoordinatesStatesTransition proprietyTransition+=transitionProperties* label=Label?) | init=ID)
+	 *     (color=COLOR | thickness=FLOAT | curve=FLOAT)
 	 */
-	protected void sequence_Transition(ISerializationContext context, Transition semanticObject) {
+	protected void sequence_TransitionProperties(ISerializationContext context, TransitionProperties semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     transitionProperties returns transitionProperties
+	 *     Transition returns Transition
 	 *
 	 * Constraint:
-	 *     (color=COLOR | thickness=FLOAT | curve=FLOAT)
+	 *     ((name=ID start=CoordinatesStatesTransition end=CoordinatesStatesTransition transitionProperties+=TransitionProperties* label=Label?) | init=ID)
 	 */
-	protected void sequence_transitionProperties(ISerializationContext context, transitionProperties semanticObject) {
+	protected void sequence_Transition(ISerializationContext context, Transition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

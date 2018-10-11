@@ -7,23 +7,23 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>transition Properties</b></em>'.
+ * A representation of the model object '<em><b>Transition Properties</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getColor <em>Color</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getThickness <em>Thickness</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getCurve <em>Curve</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties#getColor <em>Color</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties#getThickness <em>Thickness</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties#getCurve <em>Curve</em>}</li>
  * </ul>
  *
- * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#gettransitionProperties()
+ * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransitionProperties()
  * @model
  * @generated
  */
-public interface transitionProperties extends EObject
+public interface TransitionProperties extends EObject
 {
   /**
    * Returns the value of the '<em><b>Color</b></em>' attribute.
@@ -35,14 +35,14 @@ public interface transitionProperties extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Color</em>' attribute.
    * @see #setColor(String)
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#gettransitionProperties_Color()
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransitionProperties_Color()
    * @model
    * @generated
    */
   String getColor();
 
   /**
-   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getColor <em>Color</em>}' attribute.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties#getColor <em>Color</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Color</em>' attribute.
@@ -61,14 +61,14 @@ public interface transitionProperties extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Thickness</em>' attribute.
    * @see #setThickness(String)
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#gettransitionProperties_Thickness()
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransitionProperties_Thickness()
    * @model
    * @generated
    */
   String getThickness();
 
   /**
-   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getThickness <em>Thickness</em>}' attribute.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties#getThickness <em>Thickness</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Thickness</em>' attribute.
@@ -87,14 +87,14 @@ public interface transitionProperties extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Curve</em>' attribute.
    * @see #setCurve(String)
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#gettransitionProperties_Curve()
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransitionProperties_Curve()
    * @model
    * @generated
    */
   String getCurve();
 
   /**
-   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties#getCurve <em>Curve</em>}' attribute.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties#getCurve <em>Curve</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Curve</em>' attribute.
@@ -103,4 +103,4 @@ public interface transitionProperties extends EObject
    */
   void setCurve(String value);
 
-} // transitionProperties
+} // TransitionProperties

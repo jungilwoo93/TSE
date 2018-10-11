@@ -111,9 +111,9 @@ public class TSEAdapterFactory extends AdapterFactoryImpl
         return createCoordinatesStatesTransitionAdapter();
       }
       @Override
-      public Adapter casetransitionProperties(transitionProperties object)
+      public Adapter caseTransitionProperties(TransitionProperties object)
       {
-        return createtransitionPropertiesAdapter();
+        return createTransitionPropertiesAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -243,16 +243,16 @@ public class TSEAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties <em>transition Properties</em>}'.
+   * Creates a new adapter for an object of class '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties <em>Transition Properties</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties
    * @generated
    */
-  public Adapter createtransitionPropertiesAdapter()
+  public Adapter createTransitionPropertiesAdapter()
   {
     return null;
   }

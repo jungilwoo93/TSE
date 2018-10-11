@@ -6,6 +6,7 @@ package fr.uha.ensisa.project.pan_chabalier.tse.generator
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.Element
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.Model
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties
+import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
@@ -20,7 +21,7 @@ class TSEGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for (m : resource.allContents.toIterable.filter(Model)) {
-			fsa.generateFile("fr/uha/ensisa/project/pan_chabalier/tmp/tmpJavaCode.java", m.compile());
+			fsa.generateFile("fr/uha/ensisa/project/pan_chabalier/tmp/GeneratedData.java", m.compile());
 		}
 
 	}
@@ -32,19 +33,36 @@ import java.awt.Color;
 import java.awt.Point;
 import java.util.HashMap;
 
-public class tmpJavaCode {
+public class GeneratedData {
 
 	private HashMap<String,HashMap<String,Object>> states = new HashMap<String,HashMap<String,Object>>();
 	private HashMap<String,HashMap<String,Object>> transitions = new HashMap<String,HashMap<String,Object>>();
+	private HashMap<String,HashMap<String,Object>> labels = new HashMap<String,HashMap<String,Object>>();
 
-	public tmpJavaCode() {
+	public GeneratedData() {
 		«FOR e : model.elements»
 			«e.compile»
 		«ENDFOR»
 	}
 	
+	public HashMap<String, HashMap<String, Object>> getTransitions() {
+		return transitions;
+	}
+
+	public HashMap<String, HashMap<String, Object>> getLabels() {
+		return labels;
+	}
+
 	public HashMap<String, HashMap<String,Object>> getStates(){
 		return this.states;
+	}
+	
+	public HashMap<String,Object> getTransitionProperties(String transitionName){
+		return this.transitions.get(transitionName);
+	}
+	
+	public HashMap<String,Object> getLabelProperties(String transitionName){
+		return this.labels.get(transitionName);
 	}
 	
 	public HashMap<String,Object> getStatesProperties(String stateName){
@@ -52,7 +70,7 @@ public class tmpJavaCode {
 	}
 	
 	public static void main(String[] args) {
-		tmpJavaCode tmp = new tmpJavaCode();
+		GeneratedData tmp = new GeneratedData();
 		for(HashMap<String,Object> s : tmp.getStates().values()) {
 			System.out.println(s.toString());
 		}
@@ -61,10 +79,21 @@ public class tmpJavaCode {
 	'''
 
 	def compile(Element e) '''
-		«FOR s : e.states»
-			states.put("«s.name»", new HashMap<String,Object>(){{«FOR p:s.statesPropriety» put(«p.compile»);«ENDFOR»}});
-		«ENDFOR»
+		«IF e.state !== null»
+			states.put("«e.state.name»", new HashMap<String,Object>(){{«FOR p:e.state.statesPropriety» put(«p.compile»);«ENDFOR»}});
+		«ENDIF»
+		
+		«IF e.transition !== null»
+			transitions.put("«e.transition.name»", new HashMap<String,Object>(){{«FOR p:e.transition.transitionProperties» put(«p.compile»);«ENDFOR»}});
+			«IF e.transition.label !== null»
+			labels.put("«e.transition.name»", new HashMap<String,Object>(){{ put("text", "«e.transition.label.text»"); put("position",  new Point(«e.transition.label.position»));}});
+			«ENDIF»
+		«ENDIF»
 	'''
+	
+	def compile(TransitionProperties p)'''«IF p.thickness!==null»"thickness", new Float(«p.thickness»)«ENDIF»«IF p.color !== null»"color", Color.«p.color»«ENDIF»«IF p.curve !== null»"curvature", new Float(«p.curve»)«ENDIF»'''
 
 	def compile(StatesProperties p) '''«IF p.position!==null»"position", new Point(«p.position»)«ENDIF»«IF p.color !== null»"color", Color.«p.color»«ENDIF»«IF p.thickness!==null»"thickness", new Float(«p.thickness»)«ENDIF»'''
+	
+
 }

@@ -16,9 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getName <em>Name</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getStart <em>Start</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getEnd <em>End</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getProprietyTransition <em>Propriety Transition</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getTransitionProperties <em>Transition Properties</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getLabel <em>Label</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getInit <em>Init</em>}</li>
  * </ul>
@@ -29,6 +30,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Transition extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransition_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
   /**
    * Returns the value of the '<em><b>Start</b></em>' containment reference.
    * <!-- begin-user-doc -->
@@ -82,20 +109,20 @@ public interface Transition extends EObject
   void setEnd(CoordinatesStatesTransition value);
 
   /**
-   * Returns the value of the '<em><b>Propriety Transition</b></em>' containment reference list.
-   * The list contents are of type {@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties}.
+   * Returns the value of the '<em><b>Transition Properties</b></em>' containment reference list.
+   * The list contents are of type {@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Propriety Transition</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Transition Properties</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Propriety Transition</em>' containment reference list.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransition_ProprietyTransition()
+   * @return the value of the '<em>Transition Properties</em>' containment reference list.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getTransition_TransitionProperties()
    * @model containment="true"
    * @generated
    */
-  EList<transitionProperties> getProprietyTransition();
+  EList<TransitionProperties> getTransitionProperties();
 
   /**
    * Returns the value of the '<em><b>Label</b></em>' containment reference.

@@ -6,8 +6,8 @@ Model:
 	elements+=Element*;
 
 Element:
-	states+=State
-	| transitions+=Transition;
+	state=State
+	| transition=Transition;
 
 State:
 	"state" name=ID statesPropriety+=StatesProperties+;
@@ -19,17 +19,17 @@ StatesProperties:
 	| DEFAULT position=COORDINATES;
 
 Transition:
-	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
-	proprietyTransition+=transitionProperties* (label=Label)?
+	"transition" name=ID start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
+	transitionProperties+=TransitionProperties* (label=Label)?
 	| "initialTransition" init=ID COORDINATES;
 
 Label:
-	"label" text+=STRING position+=COORDINATES;
+	"label" text=STRING position=COORDINATES;
 
 CoordinatesStatesTransition:
 	stateTransition=ID;
 
-transitionProperties:
+TransitionProperties:
 	"color" color=COLOR | "thickness" thickness=FLOAT | "curvature" curve=FLOAT;
 
 terminal DEFAULT:

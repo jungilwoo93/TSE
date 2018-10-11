@@ -72,7 +72,7 @@ public class TSEFactoryImpl extends EFactoryImpl implements TSEFactory
       case TSEPackage.TRANSITION: return createTransition();
       case TSEPackage.LABEL: return createLabel();
       case TSEPackage.COORDINATES_STATES_TRANSITION: return createCoordinatesStatesTransition();
-      case TSEPackage.TRANSITION_PROPERTIES: return createtransitionProperties();
+      case TSEPackage.TRANSITION_PROPERTIES: return createTransitionProperties();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -160,9 +160,9 @@ public class TSEFactoryImpl extends EFactoryImpl implements TSEFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public transitionProperties createtransitionProperties()
+  public TransitionProperties createTransitionProperties()
   {
-    transitionPropertiesImpl transitionProperties = new transitionPropertiesImpl();
+    TransitionPropertiesImpl transitionProperties = new TransitionPropertiesImpl();
     return transitionProperties;
   }
 

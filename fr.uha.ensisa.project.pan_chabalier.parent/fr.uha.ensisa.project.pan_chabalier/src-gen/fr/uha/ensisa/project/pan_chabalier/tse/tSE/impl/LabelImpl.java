@@ -6,15 +6,12 @@ package fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage;
 
-import java.util.Collection;
-
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,24 +30,44 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
 public class LabelImpl extends MinimalEObjectImpl.Container implements Label
 {
   /**
-   * The cached value of the '{@link #getText() <em>Text</em>}' attribute list.
+   * The default value of the '{@link #getText() <em>Text</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getText()
    * @generated
    * @ordered
    */
-  protected EList<String> text;
+  protected static final String TEXT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute list.
+   * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getText()
+   * @generated
+   * @ordered
+   */
+  protected String text = TEXT_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getPosition() <em>Position</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPosition()
    * @generated
    * @ordered
    */
-  protected EList<String> position;
+  protected static final String POSITION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPosition() <em>Position</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPosition()
+   * @generated
+   * @ordered
+   */
+  protected String position = POSITION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -78,12 +95,8 @@ public class LabelImpl extends MinimalEObjectImpl.Container implements Label
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getText()
+  public String getText()
   {
-    if (text == null)
-    {
-      text = new EDataTypeEList<String>(String.class, this, TSEPackage.LABEL__TEXT);
-    }
     return text;
   }
 
@@ -92,13 +105,35 @@ public class LabelImpl extends MinimalEObjectImpl.Container implements Label
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getPosition()
+  public void setText(String newText)
   {
-    if (position == null)
-    {
-      position = new EDataTypeEList<String>(String.class, this, TSEPackage.LABEL__POSITION);
-    }
+    String oldText = text;
+    text = newText;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.LABEL__TEXT, oldText, text));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getPosition()
+  {
     return position;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPosition(String newPosition)
+  {
+    String oldPosition = position;
+    position = newPosition;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.LABEL__POSITION, oldPosition, position));
   }
 
   /**
@@ -124,19 +159,16 @@ public class LabelImpl extends MinimalEObjectImpl.Container implements Label
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case TSEPackage.LABEL__TEXT:
-        getText().clear();
-        getText().addAll((Collection<? extends String>)newValue);
+        setText((String)newValue);
         return;
       case TSEPackage.LABEL__POSITION:
-        getPosition().clear();
-        getPosition().addAll((Collection<? extends String>)newValue);
+        setPosition((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -153,10 +185,10 @@ public class LabelImpl extends MinimalEObjectImpl.Container implements Label
     switch (featureID)
     {
       case TSEPackage.LABEL__TEXT:
-        getText().clear();
+        setText(TEXT_EDEFAULT);
         return;
       case TSEPackage.LABEL__POSITION:
-        getPosition().clear();
+        setPosition(POSITION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -173,9 +205,9 @@ public class LabelImpl extends MinimalEObjectImpl.Container implements Label
     switch (featureID)
     {
       case TSEPackage.LABEL__TEXT:
-        return text != null && !text.isEmpty();
+        return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
       case TSEPackage.LABEL__POSITION:
-        return position != null && !position.isEmpty();
+        return POSITION_EDEFAULT == null ? position != null : !POSITION_EDEFAULT.equals(position);
     }
     return super.eIsSet(featureID);
   }

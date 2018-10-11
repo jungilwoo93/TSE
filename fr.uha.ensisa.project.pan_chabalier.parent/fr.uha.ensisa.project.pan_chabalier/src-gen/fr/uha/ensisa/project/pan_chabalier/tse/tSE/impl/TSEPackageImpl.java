@@ -12,7 +12,7 @@ import fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEFactory;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition;
-import fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties;
+import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -183,7 +183,7 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getElement_States()
+  public EReference getElement_State()
   {
     return (EReference)elementEClass.getEStructuralFeatures().get(0);
   }
@@ -193,7 +193,7 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getElement_Transitions()
+  public EReference getElement_Transition()
   {
     return (EReference)elementEClass.getEStructuralFeatures().get(1);
   }
@@ -283,9 +283,9 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransition_Start()
+  public EAttribute getTransition_Name()
   {
-    return (EReference)transitionEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)transitionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -293,7 +293,7 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransition_End()
+  public EReference getTransition_Start()
   {
     return (EReference)transitionEClass.getEStructuralFeatures().get(1);
   }
@@ -303,7 +303,7 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransition_ProprietyTransition()
+  public EReference getTransition_End()
   {
     return (EReference)transitionEClass.getEStructuralFeatures().get(2);
   }
@@ -313,7 +313,7 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTransition_Label()
+  public EReference getTransition_TransitionProperties()
   {
     return (EReference)transitionEClass.getEStructuralFeatures().get(3);
   }
@@ -323,9 +323,19 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getTransition_Label()
+  {
+    return (EReference)transitionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getTransition_Init()
   {
-    return (EAttribute)transitionEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)transitionEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -383,7 +393,7 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass gettransitionProperties()
+  public EClass getTransitionProperties()
   {
     return transitionPropertiesEClass;
   }
@@ -393,7 +403,7 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute gettransitionProperties_Color()
+  public EAttribute getTransitionProperties_Color()
   {
     return (EAttribute)transitionPropertiesEClass.getEStructuralFeatures().get(0);
   }
@@ -403,7 +413,7 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute gettransitionProperties_Thickness()
+  public EAttribute getTransitionProperties_Thickness()
   {
     return (EAttribute)transitionPropertiesEClass.getEStructuralFeatures().get(1);
   }
@@ -413,7 +423,7 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute gettransitionProperties_Curve()
+  public EAttribute getTransitionProperties_Curve()
   {
     return (EAttribute)transitionPropertiesEClass.getEStructuralFeatures().get(2);
   }
@@ -452,8 +462,8 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
     createEReference(modelEClass, MODEL__ELEMENTS);
 
     elementEClass = createEClass(ELEMENT);
-    createEReference(elementEClass, ELEMENT__STATES);
-    createEReference(elementEClass, ELEMENT__TRANSITIONS);
+    createEReference(elementEClass, ELEMENT__STATE);
+    createEReference(elementEClass, ELEMENT__TRANSITION);
 
     stateEClass = createEClass(STATE);
     createEAttribute(stateEClass, STATE__NAME);
@@ -465,9 +475,10 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
     createEAttribute(statesPropertiesEClass, STATES_PROPERTIES__POSITION);
 
     transitionEClass = createEClass(TRANSITION);
+    createEAttribute(transitionEClass, TRANSITION__NAME);
     createEReference(transitionEClass, TRANSITION__START);
     createEReference(transitionEClass, TRANSITION__END);
-    createEReference(transitionEClass, TRANSITION__PROPRIETY_TRANSITION);
+    createEReference(transitionEClass, TRANSITION__TRANSITION_PROPERTIES);
     createEReference(transitionEClass, TRANSITION__LABEL);
     createEAttribute(transitionEClass, TRANSITION__INIT);
 
@@ -519,8 +530,8 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
     initEReference(getModel_Elements(), this.getElement(), null, "elements", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getElement_States(), this.getState(), null, "states", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getElement_Transitions(), this.getTransition(), null, "transitions", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_State(), this.getState(), null, "state", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElement_Transition(), this.getTransition(), null, "transition", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getState_Name(), ecorePackage.getEString(), "name", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -532,23 +543,24 @@ public class TSEPackageImpl extends EPackageImpl implements TSEPackage
     initEAttribute(getStatesProperties_Position(), ecorePackage.getEString(), "position", null, 0, 1, StatesProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTransition_Name(), ecorePackage.getEString(), "name", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTransition_Start(), this.getCoordinatesStatesTransition(), null, "start", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTransition_End(), this.getCoordinatesStatesTransition(), null, "end", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTransition_ProprietyTransition(), this.gettransitionProperties(), null, "proprietyTransition", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransition_TransitionProperties(), this.getTransitionProperties(), null, "transitionProperties", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTransition_Label(), this.getLabel(), null, "label", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTransition_Init(), ecorePackage.getEString(), "init", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(labelEClass, Label.class, "Label", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLabel_Text(), ecorePackage.getEString(), "text", null, 0, -1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLabel_Position(), ecorePackage.getEString(), "position", null, 0, -1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLabel_Text(), ecorePackage.getEString(), "text", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLabel_Position(), ecorePackage.getEString(), "position", null, 0, 1, Label.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(coordinatesStatesTransitionEClass, CoordinatesStatesTransition.class, "CoordinatesStatesTransition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCoordinatesStatesTransition_StateTransition(), ecorePackage.getEString(), "stateTransition", null, 0, 1, CoordinatesStatesTransition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(transitionPropertiesEClass, transitionProperties.class, "transitionProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(gettransitionProperties_Color(), ecorePackage.getEString(), "color", null, 0, 1, transitionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(gettransitionProperties_Thickness(), ecorePackage.getEString(), "thickness", null, 0, 1, transitionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(gettransitionProperties_Curve(), ecorePackage.getEString(), "curve", null, 0, 1, transitionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(transitionPropertiesEClass, TransitionProperties.class, "TransitionProperties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTransitionProperties_Color(), ecorePackage.getEString(), "color", null, 0, 1, TransitionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTransitionProperties_Thickness(), ecorePackage.getEString(), "thickness", null, 0, 1, TransitionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTransitionProperties_Curve(), ecorePackage.getEString(), "curve", null, 0, 1, TransitionProperties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

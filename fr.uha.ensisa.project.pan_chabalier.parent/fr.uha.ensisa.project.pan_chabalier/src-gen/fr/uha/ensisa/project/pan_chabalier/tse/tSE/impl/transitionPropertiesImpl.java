@@ -4,7 +4,7 @@
 package fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl;
 
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage;
-import fr.uha.ensisa.project.pan_chabalier.tse.tSE.transitionProperties;
+import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TransitionProperties;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,20 +15,20 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>transition Properties</b></em>'.
+ * An implementation of the model object '<em><b>Transition Properties</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.transitionPropertiesImpl#getColor <em>Color</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.transitionPropertiesImpl#getThickness <em>Thickness</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.transitionPropertiesImpl#getCurve <em>Curve</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionPropertiesImpl#getColor <em>Color</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionPropertiesImpl#getThickness <em>Thickness</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionPropertiesImpl#getCurve <em>Curve</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class transitionPropertiesImpl extends MinimalEObjectImpl.Container implements transitionProperties
+public class TransitionPropertiesImpl extends MinimalEObjectImpl.Container implements TransitionProperties
 {
   /**
    * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
@@ -95,7 +95,7 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
    * <!-- end-user-doc -->
    * @generated
    */
-  protected transitionPropertiesImpl()
+  protected TransitionPropertiesImpl()
   {
     super();
   }
@@ -287,4 +287,4 @@ public class transitionPropertiesImpl extends MinimalEObjectImpl.Container imple
     return result.toString();
   }
 
-} //transitionPropertiesImpl
+} //TransitionPropertiesImpl

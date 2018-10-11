@@ -87,13 +87,13 @@ public interface TSEFactory extends EFactory
   CoordinatesStatesTransition createCoordinatesStatesTransition();
 
   /**
-   * Returns a new object of class '<em>transition Properties</em>'.
+   * Returns a new object of class '<em>Transition Properties</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>transition Properties</em>'.
+   * @return a new object of class '<em>Transition Properties</em>'.
    * @generated
    */
-  transitionProperties createtransitionProperties();
+  TransitionProperties createTransitionProperties();
 
   /**
    * Returns the package supported by this factory.

@@ -3,8 +3,6 @@
  */
 package fr.uha.ensisa.project.pan_chabalier.tse.tSE;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Element#getStates <em>States</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Element#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Element#getState <em>State</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Element#getTransition <em>Transition</em>}</li>
  * </ul>
  *
  * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getElement()
@@ -27,35 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface Element extends EObject
 {
   /**
-   * Returns the value of the '<em><b>States</b></em>' containment reference list.
-   * The list contents are of type {@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.State}.
+   * Returns the value of the '<em><b>State</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>States</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>State</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>States</em>' containment reference list.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getElement_States()
+   * @return the value of the '<em>State</em>' containment reference.
+   * @see #setState(State)
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getElement_State()
    * @model containment="true"
    * @generated
    */
-  EList<State> getStates();
+  State getState();
 
   /**
-   * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
-   * The list contents are of type {@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition}.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Element#getState <em>State</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>State</em>' containment reference.
+   * @see #getState()
+   * @generated
+   */
+  void setState(State value);
+
+  /**
+   * Returns the value of the '<em><b>Transition</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Transitions</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Transition</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Transitions</em>' containment reference list.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getElement_Transitions()
+   * @return the value of the '<em>Transition</em>' containment reference.
+   * @see #setTransition(Transition)
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getElement_Transition()
    * @model containment="true"
    * @generated
    */
-  EList<Transition> getTransitions();
+  Transition getTransition();
+
+  /**
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Element#getTransition <em>Transition</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Transition</em>' containment reference.
+   * @see #getTransition()
+   * @generated
+   */
+  void setTransition(Transition value);
 
 } // Element

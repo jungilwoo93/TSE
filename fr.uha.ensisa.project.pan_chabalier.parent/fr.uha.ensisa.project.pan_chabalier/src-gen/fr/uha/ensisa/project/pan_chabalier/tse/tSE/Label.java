@@ -3,8 +3,6 @@
  */
 package fr.uha.ensisa.project.pan_chabalier.tse.tSE;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -27,35 +25,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface Label extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Text</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Returns the value of the '<em><b>Text</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Text</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Text</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Text</em>' attribute list.
+   * @return the value of the '<em>Text</em>' attribute.
+   * @see #setText(String)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getLabel_Text()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getText();
+  String getText();
 
   /**
-   * Returns the value of the '<em><b>Position</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label#getText <em>Text</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Text</em>' attribute.
+   * @see #getText()
+   * @generated
+   */
+  void setText(String value);
+
+  /**
+   * Returns the value of the '<em><b>Position</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Position</em>' attribute list isn't clear,
+   * If the meaning of the '<em>Position</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Position</em>' attribute list.
+   * @return the value of the '<em>Position</em>' attribute.
+   * @see #setPosition(String)
    * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getLabel_Position()
-   * @model unique="false"
+   * @model
    * @generated
    */
-  EList<String> getPosition();
+  String getPosition();
+
+  /**
+   * Sets the value of the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Label#getPosition <em>Position</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Position</em>' attribute.
+   * @see #getPosition()
+   * @generated
+   */
+  void setPosition(String value);
 
 } // Label

@@ -8,19 +8,14 @@ import fr.uha.ensisa.project.pan_chabalier.tse.tSE.State;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage;
 import fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,8 +25,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.ElementImpl#getStates <em>States</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.ElementImpl#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.ElementImpl#getState <em>State</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.ElementImpl#getTransition <em>Transition</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,24 +34,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ElementImpl extends MinimalEObjectImpl.Container implements Element
 {
   /**
-   * The cached value of the '{@link #getStates() <em>States</em>}' containment reference list.
+   * The cached value of the '{@link #getState() <em>State</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStates()
+   * @see #getState()
    * @generated
    * @ordered
    */
-  protected EList<State> states;
+  protected State state;
 
   /**
-   * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
+   * The cached value of the '{@link #getTransition() <em>Transition</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTransitions()
+   * @see #getTransition()
    * @generated
    * @ordered
    */
-  protected EList<Transition> transitions;
+  protected Transition transition;
 
   /**
    * <!-- begin-user-doc -->
@@ -84,13 +79,9 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<State> getStates()
+  public State getState()
   {
-    if (states == null)
-    {
-      states = new EObjectContainmentEList<State>(State.class, this, TSEPackage.ELEMENT__STATES);
-    }
-    return states;
+    return state;
   }
 
   /**
@@ -98,13 +89,85 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Transition> getTransitions()
+  public NotificationChain basicSetState(State newState, NotificationChain msgs)
   {
-    if (transitions == null)
+    State oldState = state;
+    state = newState;
+    if (eNotificationRequired())
     {
-      transitions = new EObjectContainmentEList<Transition>(Transition.class, this, TSEPackage.ELEMENT__TRANSITIONS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TSEPackage.ELEMENT__STATE, oldState, newState);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return transitions;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setState(State newState)
+  {
+    if (newState != state)
+    {
+      NotificationChain msgs = null;
+      if (state != null)
+        msgs = ((InternalEObject)state).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TSEPackage.ELEMENT__STATE, null, msgs);
+      if (newState != null)
+        msgs = ((InternalEObject)newState).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TSEPackage.ELEMENT__STATE, null, msgs);
+      msgs = basicSetState(newState, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.ELEMENT__STATE, newState, newState));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Transition getTransition()
+  {
+    return transition;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetTransition(Transition newTransition, NotificationChain msgs)
+  {
+    Transition oldTransition = transition;
+    transition = newTransition;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TSEPackage.ELEMENT__TRANSITION, oldTransition, newTransition);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setTransition(Transition newTransition)
+  {
+    if (newTransition != transition)
+    {
+      NotificationChain msgs = null;
+      if (transition != null)
+        msgs = ((InternalEObject)transition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TSEPackage.ELEMENT__TRANSITION, null, msgs);
+      if (newTransition != null)
+        msgs = ((InternalEObject)newTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TSEPackage.ELEMENT__TRANSITION, null, msgs);
+      msgs = basicSetTransition(newTransition, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.ELEMENT__TRANSITION, newTransition, newTransition));
   }
 
   /**
@@ -117,10 +180,10 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
   {
     switch (featureID)
     {
-      case TSEPackage.ELEMENT__STATES:
-        return ((InternalEList<?>)getStates()).basicRemove(otherEnd, msgs);
-      case TSEPackage.ELEMENT__TRANSITIONS:
-        return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
+      case TSEPackage.ELEMENT__STATE:
+        return basicSetState(null, msgs);
+      case TSEPackage.ELEMENT__TRANSITION:
+        return basicSetTransition(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,10 +198,10 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
   {
     switch (featureID)
     {
-      case TSEPackage.ELEMENT__STATES:
-        return getStates();
-      case TSEPackage.ELEMENT__TRANSITIONS:
-        return getTransitions();
+      case TSEPackage.ELEMENT__STATE:
+        return getState();
+      case TSEPackage.ELEMENT__TRANSITION:
+        return getTransition();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -148,19 +211,16 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case TSEPackage.ELEMENT__STATES:
-        getStates().clear();
-        getStates().addAll((Collection<? extends State>)newValue);
+      case TSEPackage.ELEMENT__STATE:
+        setState((State)newValue);
         return;
-      case TSEPackage.ELEMENT__TRANSITIONS:
-        getTransitions().clear();
-        getTransitions().addAll((Collection<? extends Transition>)newValue);
+      case TSEPackage.ELEMENT__TRANSITION:
+        setTransition((Transition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -176,11 +236,11 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
   {
     switch (featureID)
     {
-      case TSEPackage.ELEMENT__STATES:
-        getStates().clear();
+      case TSEPackage.ELEMENT__STATE:
+        setState((State)null);
         return;
-      case TSEPackage.ELEMENT__TRANSITIONS:
-        getTransitions().clear();
+      case TSEPackage.ELEMENT__TRANSITION:
+        setTransition((Transition)null);
         return;
     }
     super.eUnset(featureID);
@@ -196,10 +256,10 @@ public class ElementImpl extends MinimalEObjectImpl.Container implements Element
   {
     switch (featureID)
     {
-      case TSEPackage.ELEMENT__STATES:
-        return states != null && !states.isEmpty();
-      case TSEPackage.ELEMENT__TRANSITIONS:
-        return transitions != null && !transitions.isEmpty();
+      case TSEPackage.ELEMENT__STATE:
+        return state != null;
+      case TSEPackage.ELEMENT__TRANSITION:
+        return transition != null;
     }
     return super.eIsSet(featureID);
   }

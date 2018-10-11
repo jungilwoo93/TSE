@@ -124,8 +124,8 @@ public class TSESwitch<T> extends Switch<T>
       }
       case TSEPackage.TRANSITION_PROPERTIES:
       {
-        transitionProperties transitionProperties = (transitionProperties)theEObject;
-        T result = casetransitionProperties(transitionProperties);
+        TransitionProperties transitionProperties = (TransitionProperties)theEObject;
+        T result = caseTransitionProperties(transitionProperties);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -246,17 +246,17 @@ public class TSESwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>transition Properties</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Transition Properties</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>transition Properties</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Transition Properties</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casetransitionProperties(transitionProperties object)
+  public T caseTransitionProperties(TransitionProperties object)
   {
     return null;
   }
