@@ -1,33 +1,18 @@
 package fr.uha.ensisa.projet.pan_chabalier.gui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.GridLayout;
-import java.awt.LayoutManager2;
-import java.awt.TextArea;
-
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JButton;
-
-import java.awt.FlowLayout;
-import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.TextArea;
 
-import javax.swing.Box;
-import javax.swing.JTextArea;
-import javax.swing.BoxLayout;
-import java.awt.Component;
-import java.awt.Insets;
-import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
+
+import fr.uha.ensisa.projet.pan_chabalier.common.stringSources.StringSources;
 
 public class GUI extends JFrame {
 
@@ -63,10 +48,10 @@ public class GUI extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnMenu = new JMenu("Menu");
+		JMenu mnMenu = new JMenu(StringSources.getString("GUI.mnMenu.text")); //$NON-NLS-1$
 		menuBar.add(mnMenu);
 		
-		JMenu mnHelp = new JMenu("Help");
+		JMenu mnHelp = new JMenu(StringSources.getString("GUI.mnHelp.text")); //$NON-NLS-1$
 		menuBar.add(mnHelp);
 		
 	    GridBagLayout layout = new GridBagLayout();
@@ -87,14 +72,14 @@ public class GUI extends JFrame {
 	    contentPane.add(panel, c);
 
 	    c = new GridBagConstraints();
-	    JButton validate = new JButton("Validate");
+	    JButton validate = new JButton(StringSources.getString("GUI.validate.text")); //$NON-NLS-1$
 	    c.gridx = 0;
 	    c.gridy = 2;
 	    c.gridwidth = 1;
 	    contentPane.add(validate, c);
 
 	    c_3 = new GridBagConstraints();
-	    JButton export = new JButton("Export as PDF");
+	    JButton export = new JButton(StringSources.getString("GUI.export.text")); //$NON-NLS-1$
 	    c_3.gridx = 3;
 	    c_3.gridy = 2;
 	    c_3.gridwidth = 1;
