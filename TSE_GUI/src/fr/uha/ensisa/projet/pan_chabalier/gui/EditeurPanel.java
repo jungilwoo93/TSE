@@ -1,5 +1,6 @@
 package fr.uha.ensisa.projet.pan_chabalier.gui;
 
+import java.awt.BasicStroke;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
@@ -8,11 +9,13 @@ import java.util.List;
 import javax.swing.JPanel;
 
 public class EditeurPanel extends JPanel{
-	Graphics2D g2d=null;
+	private Graphics2D g2d=null;
 	//String s = "coucou";
-	List<EditeurLabel> listLabel;
-	List<State> listState;
-	List<Transition> listTransition;
+	private List<EditeurLabel> listLabel;
+	private List<State> listState;
+	private List<Transition> listTransition;
+	private int sizeOval=50;
+	
 	/*public String getS() {
 		return s;
 	}
@@ -43,7 +46,16 @@ public class EditeurPanel extends JPanel{
 				g2d.drawString(label.getText(), label.getX(), label.getY());
 		}
 		
-		
+		if(listState.size()>0) {
+			for(State s : listState) {
+				//System.out.println("draw");
+				this.g2d.setColor(s.getColor());
+				this.g2d.setStroke(new BasicStroke(s.getThickness()));
+				this.g2d.drawOval(s.getX(),s.getY(),sizeOval,sizeOval);
+				//this.g2d.setStroke(new BasicStroke(s.getThickness()));
+				this.g2d.drawString(s.getId(),s.getX()+sizeOval/2,s.getY()+sizeOval/2);
+			}
+		}
 	}
 	
 	public void addLabel(EditeurLabel label) {
@@ -70,5 +82,9 @@ public class EditeurPanel extends JPanel{
 	
 	public void drawLabel(EditeurLabel label) {
 		this.g2d.drawString(label.getText(), label.getX(),label.getY());
+	}
+	
+	public void drawState(State s) {
+		this.g2d.drawOval(s.getX(),s.getY(),5,5);
 	}
 }

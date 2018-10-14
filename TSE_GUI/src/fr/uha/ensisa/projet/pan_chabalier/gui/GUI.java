@@ -133,7 +133,12 @@ public class GUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String text = textArea.getText();
-				if(text.contains("label")) {
+				State s1 = new State("1",Color.RED,(float) 5,200,200);
+				State s2 = new State("2",Color.RED,(float) 5,400,400);
+				Transition t = new Transition(s1,s2,Color.BLUE,"coucou",(float) 2.5,(float) 50.5);
+				panel.addState(s1);
+				panel.addState(s2);
+				/*if(text.contains("label")) {
 					System.out.println("label");
 					EditeurLabel label = new EditeurLabel("Bello",Color.RED, 200,20);
 					panel.addLabel(label);
@@ -145,7 +150,7 @@ public class GUI extends JFrame {
 					System.out.println("transition");
 					Transition trans = new Transition();
 					panel.addTransition(trans);
-				}
+				}*/
 
 			    }
 				
