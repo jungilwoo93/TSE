@@ -16,8 +16,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import fr.uha.ensisa.projet.pan_chabalier.core.ElementFactoryImp;
+
 public class GUI extends JFrame {
 
+	
+	public static ElementFactoryImp factory = new ElementFactoryImp();
 	private JPanel contentPane;
 	private GridBagConstraints c_1;
 	private GridBagConstraints c_3;
@@ -44,6 +48,7 @@ public class GUI extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		
