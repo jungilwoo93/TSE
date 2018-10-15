@@ -71,14 +71,14 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cStateKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cStatesProprietyAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cStatesProprietyStatesPropertiesParserRuleCall_2_0 = (RuleCall)cStatesProprietyAssignment_2.eContents().get(0);
+		private final Assignment cStatesPropertiesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cStatesPropertiesStatesPropertiesParserRuleCall_2_0 = (RuleCall)cStatesPropertiesAssignment_2.eContents().get(0);
 		
 		//State:
-		//	"state" name=ID statesPropriety+=StatesProperties+;
+		//	"state" name=ID statesProperties+=StatesProperties+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"state" name=ID statesPropriety+=StatesProperties+
+		//"state" name=ID statesProperties+=StatesProperties+
 		public Group getGroup() { return cGroup; }
 		
 		//"state"
@@ -90,11 +90,11 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
-		//statesPropriety+=StatesProperties+
-		public Assignment getStatesProprietyAssignment_2() { return cStatesProprietyAssignment_2; }
+		//statesProperties+=StatesProperties+
+		public Assignment getStatesPropertiesAssignment_2() { return cStatesPropertiesAssignment_2; }
 		
 		//StatesProperties
-		public RuleCall getStatesProprietyStatesPropertiesParserRuleCall_2_0() { return cStatesProprietyStatesPropertiesParserRuleCall_2_0; }
+		public RuleCall getStatesPropertiesStatesPropertiesParserRuleCall_2_0() { return cStatesPropertiesStatesPropertiesParserRuleCall_2_0; }
 	}
 	public class StatesPropertiesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "fr.uha.ensisa.project.pan_chabalier.tse.TSE.StatesProperties");
@@ -179,17 +179,15 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Keyword cTransitionKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
-		private final Assignment cStartAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
-		private final RuleCall cStartCoordinatesStatesTransitionParserRuleCall_0_2_0 = (RuleCall)cStartAssignment_0_2.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
-		private final Assignment cEndAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
-		private final RuleCall cEndCoordinatesStatesTransitionParserRuleCall_0_4_0 = (RuleCall)cEndAssignment_0_4.eContents().get(0);
-		private final Assignment cTransitionPropertiesAssignment_0_5 = (Assignment)cGroup_0.eContents().get(5);
-		private final RuleCall cTransitionPropertiesTransitionPropertiesParserRuleCall_0_5_0 = (RuleCall)cTransitionPropertiesAssignment_0_5.eContents().get(0);
-		private final Assignment cLabelAssignment_0_6 = (Assignment)cGroup_0.eContents().get(6);
-		private final RuleCall cLabelLabelParserRuleCall_0_6_0 = (RuleCall)cLabelAssignment_0_6.eContents().get(0);
+		private final Assignment cStartAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
+		private final RuleCall cStartCoordinatesStatesTransitionParserRuleCall_0_1_0 = (RuleCall)cStartAssignment_0_1.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cEndAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cEndCoordinatesStatesTransitionParserRuleCall_0_3_0 = (RuleCall)cEndAssignment_0_3.eContents().get(0);
+		private final Assignment cTransitionPropertiesAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cTransitionPropertiesTransitionPropertiesParserRuleCall_0_4_0 = (RuleCall)cTransitionPropertiesAssignment_0_4.eContents().get(0);
+		private final Assignment cLabelAssignment_0_5 = (Assignment)cGroup_0.eContents().get(5);
+		private final RuleCall cLabelLabelParserRuleCall_0_5_0 = (RuleCall)cLabelAssignment_0_5.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Keyword cInitialTransitionKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cInitAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -197,54 +195,48 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCOORDINATESTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
 		
 		//Transition:
-		//	"transition" name=ID start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
+		//	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
 		//	transitionProperties+=TransitionProperties* label=Label?
 		//	| "initialTransition" init=ID COORDINATES;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"transition" name=ID start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
+		//"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
 		//transitionProperties+=TransitionProperties* label=Label? | "initialTransition" init=ID COORDINATES
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//"transition" name=ID start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
+		//"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
 		//transitionProperties+=TransitionProperties* label=Label?
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//"transition"
 		public Keyword getTransitionKeyword_0_0() { return cTransitionKeyword_0_0; }
 		
-		//name=ID
-		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
-		
 		//start=CoordinatesStatesTransition
-		public Assignment getStartAssignment_0_2() { return cStartAssignment_0_2; }
+		public Assignment getStartAssignment_0_1() { return cStartAssignment_0_1; }
 		
 		//CoordinatesStatesTransition
-		public RuleCall getStartCoordinatesStatesTransitionParserRuleCall_0_2_0() { return cStartCoordinatesStatesTransitionParserRuleCall_0_2_0; }
+		public RuleCall getStartCoordinatesStatesTransitionParserRuleCall_0_1_0() { return cStartCoordinatesStatesTransitionParserRuleCall_0_1_0; }
 		
 		//"->"
-		public Keyword getHyphenMinusGreaterThanSignKeyword_0_3() { return cHyphenMinusGreaterThanSignKeyword_0_3; }
+		public Keyword getHyphenMinusGreaterThanSignKeyword_0_2() { return cHyphenMinusGreaterThanSignKeyword_0_2; }
 		
 		//end=CoordinatesStatesTransition
-		public Assignment getEndAssignment_0_4() { return cEndAssignment_0_4; }
+		public Assignment getEndAssignment_0_3() { return cEndAssignment_0_3; }
 		
 		//CoordinatesStatesTransition
-		public RuleCall getEndCoordinatesStatesTransitionParserRuleCall_0_4_0() { return cEndCoordinatesStatesTransitionParserRuleCall_0_4_0; }
+		public RuleCall getEndCoordinatesStatesTransitionParserRuleCall_0_3_0() { return cEndCoordinatesStatesTransitionParserRuleCall_0_3_0; }
 		
 		//transitionProperties+=TransitionProperties*
-		public Assignment getTransitionPropertiesAssignment_0_5() { return cTransitionPropertiesAssignment_0_5; }
+		public Assignment getTransitionPropertiesAssignment_0_4() { return cTransitionPropertiesAssignment_0_4; }
 		
 		//TransitionProperties
-		public RuleCall getTransitionPropertiesTransitionPropertiesParserRuleCall_0_5_0() { return cTransitionPropertiesTransitionPropertiesParserRuleCall_0_5_0; }
+		public RuleCall getTransitionPropertiesTransitionPropertiesParserRuleCall_0_4_0() { return cTransitionPropertiesTransitionPropertiesParserRuleCall_0_4_0; }
 		
 		//label=Label?
-		public Assignment getLabelAssignment_0_6() { return cLabelAssignment_0_6; }
+		public Assignment getLabelAssignment_0_5() { return cLabelAssignment_0_5; }
 		
 		//Label
-		public RuleCall getLabelLabelParserRuleCall_0_6_0() { return cLabelLabelParserRuleCall_0_6_0; }
+		public RuleCall getLabelLabelParserRuleCall_0_5_0() { return cLabelLabelParserRuleCall_0_5_0; }
 		
 		//"initialTransition" init=ID COORDINATES
 		public Group getGroup_1() { return cGroup_1; }
@@ -453,7 +445,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//State:
-	//	"state" name=ID statesPropriety+=StatesProperties+;
+	//	"state" name=ID statesProperties+=StatesProperties+;
 	public StateElements getStateAccess() {
 		return pState;
 	}
@@ -476,7 +468,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Transition:
-	//	"transition" name=ID start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
+	//	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
 	//	transitionProperties+=TransitionProperties* label=Label?
 	//	| "initialTransition" init=ID COORDINATES;
 	public TransitionElements getTransitionAccess() {

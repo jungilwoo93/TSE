@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.StateImpl#getName <em>Name</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.StateImpl#getStatesPropriety <em>States Propriety</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.StateImpl#getStatesProperties <em>States Properties</em>}</li>
  * </ul>
  *
  * @generated
@@ -60,14 +60,14 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getStatesPropriety() <em>States Propriety</em>}' containment reference list.
+   * The cached value of the '{@link #getStatesProperties() <em>States Properties</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatesPropriety()
+   * @see #getStatesProperties()
    * @generated
    * @ordered
    */
-  protected EList<StatesProperties> statesPropriety;
+  protected EList<StatesProperties> statesProperties;
 
   /**
    * <!-- begin-user-doc -->
@@ -118,13 +118,13 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StatesProperties> getStatesPropriety()
+  public EList<StatesProperties> getStatesProperties()
   {
-    if (statesPropriety == null)
+    if (statesProperties == null)
     {
-      statesPropriety = new EObjectContainmentEList<StatesProperties>(StatesProperties.class, this, TSEPackage.STATE__STATES_PROPRIETY);
+      statesProperties = new EObjectContainmentEList<StatesProperties>(StatesProperties.class, this, TSEPackage.STATE__STATES_PROPERTIES);
     }
-    return statesPropriety;
+    return statesProperties;
   }
 
   /**
@@ -137,8 +137,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case TSEPackage.STATE__STATES_PROPRIETY:
-        return ((InternalEList<?>)getStatesPropriety()).basicRemove(otherEnd, msgs);
+      case TSEPackage.STATE__STATES_PROPERTIES:
+        return ((InternalEList<?>)getStatesProperties()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -155,8 +155,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
     {
       case TSEPackage.STATE__NAME:
         return getName();
-      case TSEPackage.STATE__STATES_PROPRIETY:
-        return getStatesPropriety();
+      case TSEPackage.STATE__STATES_PROPERTIES:
+        return getStatesProperties();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -175,9 +175,9 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
       case TSEPackage.STATE__NAME:
         setName((String)newValue);
         return;
-      case TSEPackage.STATE__STATES_PROPRIETY:
-        getStatesPropriety().clear();
-        getStatesPropriety().addAll((Collection<? extends StatesProperties>)newValue);
+      case TSEPackage.STATE__STATES_PROPERTIES:
+        getStatesProperties().clear();
+        getStatesProperties().addAll((Collection<? extends StatesProperties>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,8 +196,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
       case TSEPackage.STATE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case TSEPackage.STATE__STATES_PROPRIETY:
-        getStatesPropriety().clear();
+      case TSEPackage.STATE__STATES_PROPERTIES:
+        getStatesProperties().clear();
         return;
     }
     super.eUnset(featureID);
@@ -215,8 +215,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
     {
       case TSEPackage.STATE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case TSEPackage.STATE__STATES_PROPRIETY:
-        return statesPropriety != null && !statesPropriety.isEmpty();
+      case TSEPackage.STATE__STATES_PROPERTIES:
+        return statesProperties != null && !statesProperties.isEmpty();
     }
     return super.eIsSet(featureID);
   }

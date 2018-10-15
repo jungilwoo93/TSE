@@ -15,7 +15,7 @@
     </genClasses>
     <genClasses ecoreClass="TSE.ecore#//State">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//State/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//State/statesPropriety"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//State/statesProperties"/>
     </genClasses>
     <genClasses ecoreClass="TSE.ecore#//StatesProperties">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//StatesProperties/color"/>
@@ -23,7 +23,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//StatesProperties/position"/>
     </genClasses>
     <genClasses ecoreClass="TSE.ecore#//Transition">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TSE.ecore#//Transition/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//Transition/start"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//Transition/end"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//Transition/transitionProperties"/>

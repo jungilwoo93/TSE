@@ -31,69 +31,33 @@ package fr.uha.ensisa.project.pan_chabalier.tmp;
 
 import java.awt.Color;
 import java.awt.Point;
-import java.util.HashMap;
+import fr.uha.ensisa.projet.pan_chabalier.gui.GUI;
+
 
 public class GeneratedData {
 
-	private HashMap<String,HashMap<String,Object>> states = new HashMap<String,HashMap<String,Object>>();
-	private HashMap<String,HashMap<String,Object>> transitions = new HashMap<String,HashMap<String,Object>>();
-	private HashMap<String,HashMap<String,Object>> labels = new HashMap<String,HashMap<String,Object>>();
-
-	public GeneratedData() {
+	public static void main(String[] args) {
 		«FOR e : model.elements»
 			«e.compile»
 		«ENDFOR»
-	}
-	
-	public HashMap<String, HashMap<String, Object>> getTransitions() {
-		return transitions;
-	}
-
-	public HashMap<String, HashMap<String, Object>> getLabels() {
-		return labels;
-	}
-
-	public HashMap<String, HashMap<String,Object>> getStates(){
-		return this.states;
-	}
-	
-	public HashMap<String,Object> getTransitionProperties(String transitionName){
-		return this.transitions.get(transitionName);
-	}
-	
-	public HashMap<String,Object> getLabelProperties(String transitionName){
-		return this.labels.get(transitionName);
-	}
-	
-	public HashMap<String,Object> getStatesProperties(String stateName){
-		return this.states.get(stateName);
-	}
-	
-	public static void main(String[] args) {
-		GeneratedData tmp = new GeneratedData();
-		for(HashMap<String,Object> s : tmp.getStates().values()) {
-			System.out.println(s.toString());
-		}
 	}
 }
 	'''
 
 	def compile(Element e) '''
 		«IF e.state !== null»
-			states.put("«e.state.name»", new HashMap<String,Object>(){{«FOR p:e.state.statesPropriety» put(«p.compile»);«ENDFOR»}});
+			GUI.factory.createState("«e.state.name»"«FOR p:e.state.statesProperties»«p.compile»«ENDFOR»);
 		«ENDIF»
 		
 		«IF e.transition !== null»
-			transitions.put("«e.transition.name»", new HashMap<String,Object>(){{«FOR p:e.transition.transitionProperties» put(«p.compile»);«ENDFOR»}});
-			«IF e.transition.label !== null»
-			labels.put("«e.transition.name»", new HashMap<String,Object>(){{ put("text", "«e.transition.label.text»"); put("position",  new Point(«e.transition.label.position»));}});
-			«ENDIF»
+			GUI.factory.createTransition("«IF e.transition.start.stateTransition !==null»«e.transition.start.stateTransition»«ENDIF»", "«IF e.transition.end.stateTransition !==null»«e.transition.end.stateTransition»«ENDIF»"«FOR p:e.transition.transitionProperties»«p.compile»«ENDFOR», "«IF e.transition.label.text!==null»«e.transition.label.text»«ENDIF»«IF e.transition.label.text===null»""«ENDIF»", «IF e.transition.label.position!==null»new Point(«e.transition.label.position»)«ENDIF»«IF e.transition.label.position===null»new Point(null)«ENDIF»);
 		«ENDIF»
 	'''
-	
-	def compile(TransitionProperties p)'''«IF p.thickness!==null»"thickness", new Float(«p.thickness»)«ENDIF»«IF p.color !== null»"color", Color.«p.color»«ENDIF»«IF p.curve !== null»"curvature", new Float(«p.curve»)«ENDIF»'''
 
-	def compile(StatesProperties p) '''«IF p.position!==null»"position", new Point(«p.position»)«ENDIF»«IF p.color !== null»"color", Color.«p.color»«ENDIF»«IF p.thickness!==null»"thickness", new Float(«p.thickness»)«ENDIF»'''
-	
+	def compile(
+		TransitionProperties p) ''', «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»null«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»new Float(null)«ENDIF», «IF p.curve!==null»new Float(«p.curve»)«ENDIF»«IF p.curve===null»new Float(null)«ENDIF»'''
+
+	def compile(
+		StatesProperties p) ''', «IF p.position!==null»new Point(«p.position»)«ENDIF»«IF p.position===null»new Point(null)«ENDIF», «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»null«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»new Float(null)«ENDIF»'''
 
 }

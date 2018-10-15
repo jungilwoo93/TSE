@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.State#getName <em>Name</em>}</li>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.State#getStatesPropriety <em>States Propriety</em>}</li>
+ *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.State#getStatesProperties <em>States Properties</em>}</li>
  * </ul>
  *
  * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getState()
@@ -53,19 +53,19 @@ public interface State extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>States Propriety</b></em>' containment reference list.
+   * Returns the value of the '<em><b>States Properties</b></em>' containment reference list.
    * The list contents are of type {@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>States Propriety</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>States Properties</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>States Propriety</em>' containment reference list.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getState_StatesPropriety()
+   * @return the value of the '<em>States Properties</em>' containment reference list.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.TSEPackage#getState_StatesProperties()
    * @model containment="true"
    * @generated
    */
-  EList<StatesProperties> getStatesPropriety();
+  EList<StatesProperties> getStatesProperties();
 
 } // State

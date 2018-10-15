@@ -195,17 +195,17 @@ ruleState returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getStateAccess().getStatesProprietyStatesPropertiesParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getStateAccess().getStatesPropertiesStatesPropertiesParserRuleCall_2_0());
 				}
-				lv_statesPropriety_2_0=ruleStatesProperties
+				lv_statesProperties_2_0=ruleStatesProperties
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getStateRule());
 					}
 					add(
 						$current,
-						"statesPropriety",
-						lv_statesPropriety_2_0,
+						"statesProperties",
+						lv_statesProperties_2_0,
 						"fr.uha.ensisa.project.pan_chabalier.tse.TSE.StatesProperties");
 					afterParserOrEnumRuleCall();
 				}
@@ -355,28 +355,10 @@ ruleTransition returns [EObject current=null]
 			}
 			(
 				(
-					lv_name_1_0=RULE_ID
 					{
-						newLeafNode(lv_name_1_0, grammarAccess.getTransitionAccess().getNameIDTerminalRuleCall_0_1_0());
+						newCompositeNode(grammarAccess.getTransitionAccess().getStartCoordinatesStatesTransitionParserRuleCall_0_1_0());
 					}
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getTransitionRule());
-						}
-						setWithLastConsumed(
-							$current,
-							"name",
-							lv_name_1_0,
-							"org.eclipse.xtext.common.Terminals.ID");
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getStartCoordinatesStatesTransitionParserRuleCall_0_2_0());
-					}
-					lv_start_2_0=ruleCoordinatesStatesTransition
+					lv_start_1_0=ruleCoordinatesStatesTransition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTransitionRule());
@@ -384,22 +366,22 @@ ruleTransition returns [EObject current=null]
 						set(
 							$current,
 							"start",
-							lv_start_2_0,
+							lv_start_1_0,
 							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.CoordinatesStatesTransition");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_3='->'
+			otherlv_2='->'
 			{
-				newLeafNode(otherlv_3, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_0_3());
+				newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_0_2());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getEndCoordinatesStatesTransitionParserRuleCall_0_4_0());
+						newCompositeNode(grammarAccess.getTransitionAccess().getEndCoordinatesStatesTransitionParserRuleCall_0_3_0());
 					}
-					lv_end_4_0=ruleCoordinatesStatesTransition
+					lv_end_3_0=ruleCoordinatesStatesTransition
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTransitionRule());
@@ -407,7 +389,7 @@ ruleTransition returns [EObject current=null]
 						set(
 							$current,
 							"end",
-							lv_end_4_0,
+							lv_end_3_0,
 							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.CoordinatesStatesTransition");
 						afterParserOrEnumRuleCall();
 					}
@@ -416,9 +398,9 @@ ruleTransition returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getTransitionPropertiesTransitionPropertiesParserRuleCall_0_5_0());
+						newCompositeNode(grammarAccess.getTransitionAccess().getTransitionPropertiesTransitionPropertiesParserRuleCall_0_4_0());
 					}
-					lv_transitionProperties_5_0=ruleTransitionProperties
+					lv_transitionProperties_4_0=ruleTransitionProperties
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTransitionRule());
@@ -426,7 +408,7 @@ ruleTransition returns [EObject current=null]
 						add(
 							$current,
 							"transitionProperties",
-							lv_transitionProperties_5_0,
+							lv_transitionProperties_4_0,
 							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.TransitionProperties");
 						afterParserOrEnumRuleCall();
 					}
@@ -435,9 +417,9 @@ ruleTransition returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getTransitionAccess().getLabelLabelParserRuleCall_0_6_0());
+						newCompositeNode(grammarAccess.getTransitionAccess().getLabelLabelParserRuleCall_0_5_0());
 					}
-					lv_label_6_0=ruleLabel
+					lv_label_5_0=ruleLabel
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getTransitionRule());
@@ -445,7 +427,7 @@ ruleTransition returns [EObject current=null]
 						set(
 							$current,
 							"label",
-							lv_label_6_0,
+							lv_label_5_0,
 							"fr.uha.ensisa.project.pan_chabalier.tse.TSE.Label");
 						afterParserOrEnumRuleCall();
 					}
@@ -454,15 +436,15 @@ ruleTransition returns [EObject current=null]
 		)
 		    |
 		(
-			otherlv_7='initialTransition'
+			otherlv_6='initialTransition'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getTransitionAccess().getInitialTransitionKeyword_1_0());
+				newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getInitialTransitionKeyword_1_0());
 			}
 			(
 				(
-					lv_init_8_0=RULE_ID
+					lv_init_7_0=RULE_ID
 					{
-						newLeafNode(lv_init_8_0, grammarAccess.getTransitionAccess().getInitIDTerminalRuleCall_1_1_0());
+						newLeafNode(lv_init_7_0, grammarAccess.getTransitionAccess().getInitIDTerminalRuleCall_1_1_0());
 					}
 					{
 						if ($current==null) {
@@ -471,14 +453,14 @@ ruleTransition returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"init",
-							lv_init_8_0,
+							lv_init_7_0,
 							"org.eclipse.xtext.common.Terminals.ID");
 					}
 				)
 			)
-			this_COORDINATES_9=RULE_COORDINATES
+			this_COORDINATES_8=RULE_COORDINATES
 			{
-				newLeafNode(this_COORDINATES_9, grammarAccess.getTransitionAccess().getCOORDINATESTerminalRuleCall_1_2());
+				newLeafNode(this_COORDINATES_8, grammarAccess.getTransitionAccess().getCOORDINATESTerminalRuleCall_1_2());
 			}
 		)
 	)

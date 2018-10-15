@@ -33,7 +33,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionImpl#getStart <em>Start</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionImpl#getEnd <em>End</em>}</li>
  *   <li>{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.TransitionImpl#getTransitionProperties <em>Transition Properties</em>}</li>
@@ -45,26 +44,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class TransitionImpl extends MinimalEObjectImpl.Container implements Transition
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getStart() <em>Start</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -144,29 +123,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
   protected EClass eStaticClass()
   {
     return TSEPackage.Literals.TRANSITION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TSEPackage.TRANSITION__NAME, oldName, name));
   }
 
   /**
@@ -382,8 +338,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
   {
     switch (featureID)
     {
-      case TSEPackage.TRANSITION__NAME:
-        return getName();
       case TSEPackage.TRANSITION__START:
         return getStart();
       case TSEPackage.TRANSITION__END:
@@ -409,9 +363,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
   {
     switch (featureID)
     {
-      case TSEPackage.TRANSITION__NAME:
-        setName((String)newValue);
-        return;
       case TSEPackage.TRANSITION__START:
         setStart((CoordinatesStatesTransition)newValue);
         return;
@@ -442,9 +393,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
   {
     switch (featureID)
     {
-      case TSEPackage.TRANSITION__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case TSEPackage.TRANSITION__START:
         setStart((CoordinatesStatesTransition)null);
         return;
@@ -474,8 +422,6 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
   {
     switch (featureID)
     {
-      case TSEPackage.TRANSITION__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case TSEPackage.TRANSITION__START:
         return start != null;
       case TSEPackage.TRANSITION__END:
@@ -501,9 +447,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", init: ");
+    result.append(" (init: ");
     result.append(init);
     result.append(')');
     return result.toString();

@@ -136,7 +136,7 @@ public class TSESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     State returns State
 	 *
 	 * Constraint:
-	 *     (name=ID statesPropriety+=StatesProperties+)
+	 *     (name=ID statesProperties+=StatesProperties+)
 	 */
 	protected void sequence_State(ISerializationContext context, State semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -172,7 +172,7 @@ public class TSESemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     Transition returns Transition
 	 *
 	 * Constraint:
-	 *     ((name=ID start=CoordinatesStatesTransition end=CoordinatesStatesTransition transitionProperties+=TransitionProperties* label=Label?) | init=ID)
+	 *     ((start=CoordinatesStatesTransition end=CoordinatesStatesTransition transitionProperties+=TransitionProperties* label=Label?) | init=ID)
 	 */
 	protected void sequence_Transition(ISerializationContext context, Transition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

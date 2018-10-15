@@ -10,7 +10,7 @@ Element:
 	| transition=Transition;
 
 State:
-	"state" name=ID statesPropriety+=StatesProperties+;
+	"state" name=ID statesProperties+=StatesProperties+;
 
 StatesProperties:
 	"color" color=COLOR
@@ -19,7 +19,7 @@ StatesProperties:
 	| DEFAULT position=COORDINATES;
 
 Transition:
-	"transition" name=ID start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
+	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
 	transitionProperties+=TransitionProperties* (label=Label)?
 	| "initialTransition" init=ID COORDINATES;
 

@@ -142,13 +142,13 @@ public interface TSEPackage extends EPackage
   int STATE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>States Propriety</b></em>' containment reference list.
+   * The feature id for the '<em><b>States Properties</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATE__STATES_PROPRIETY = 1;
+  int STATE__STATES_PROPERTIES = 1;
 
   /**
    * The number of structural features of the '<em>State</em>' class.
@@ -216,22 +216,13 @@ public interface TSEPackage extends EPackage
   int TRANSITION = 4;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TRANSITION__NAME = 0;
-
-  /**
    * The feature id for the '<em><b>Start</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRANSITION__START = 1;
+  int TRANSITION__START = 0;
 
   /**
    * The feature id for the '<em><b>End</b></em>' containment reference.
@@ -240,7 +231,7 @@ public interface TSEPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSITION__END = 2;
+  int TRANSITION__END = 1;
 
   /**
    * The feature id for the '<em><b>Transition Properties</b></em>' containment reference list.
@@ -249,7 +240,7 @@ public interface TSEPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSITION__TRANSITION_PROPERTIES = 3;
+  int TRANSITION__TRANSITION_PROPERTIES = 2;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' containment reference.
@@ -258,7 +249,7 @@ public interface TSEPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSITION__LABEL = 4;
+  int TRANSITION__LABEL = 3;
 
   /**
    * The feature id for the '<em><b>Init</b></em>' attribute.
@@ -267,7 +258,7 @@ public interface TSEPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSITION__INIT = 5;
+  int TRANSITION__INIT = 4;
 
   /**
    * The number of structural features of the '<em>Transition</em>' class.
@@ -276,7 +267,7 @@ public interface TSEPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TRANSITION_FEATURE_COUNT = 6;
+  int TRANSITION_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.LabelImpl <em>Label</em>}' class.
@@ -465,15 +456,15 @@ public interface TSEPackage extends EPackage
   EAttribute getState_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.State#getStatesPropriety <em>States Propriety</em>}'.
+   * Returns the meta object for the containment reference list '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.State#getStatesProperties <em>States Properties</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>States Propriety</em>'.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.State#getStatesPropriety()
+   * @return the meta object for the containment reference list '<em>States Properties</em>'.
+   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.State#getStatesProperties()
    * @see #getState()
    * @generated
    */
-  EReference getState_StatesPropriety();
+  EReference getState_StatesProperties();
 
   /**
    * Returns the meta object for class '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.StatesProperties <em>States Properties</em>}'.
@@ -527,17 +518,6 @@ public interface TSEPackage extends EPackage
    * @generated
    */
   EClass getTransition();
-
-  /**
-   * Returns the meta object for the attribute '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getName()
-   * @see #getTransition()
-   * @generated
-   */
-  EAttribute getTransition_Name();
 
   /**
    * Returns the meta object for the containment reference '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.Transition#getStart <em>Start</em>}'.
@@ -776,12 +756,12 @@ public interface TSEPackage extends EPackage
     EAttribute STATE__NAME = eINSTANCE.getState_Name();
 
     /**
-     * The meta object literal for the '<em><b>States Propriety</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>States Properties</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference STATE__STATES_PROPRIETY = eINSTANCE.getState_StatesPropriety();
+    EReference STATE__STATES_PROPERTIES = eINSTANCE.getState_StatesProperties();
 
     /**
      * The meta object literal for the '{@link fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl.StatesPropertiesImpl <em>States Properties</em>}' class.
@@ -826,14 +806,6 @@ public interface TSEPackage extends EPackage
      * @generated
      */
     EClass TRANSITION = eINSTANCE.getTransition();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TRANSITION__NAME = eINSTANCE.getTransition_Name();
 
     /**
      * The meta object literal for the '<em><b>Start</b></em>' containment reference feature.
