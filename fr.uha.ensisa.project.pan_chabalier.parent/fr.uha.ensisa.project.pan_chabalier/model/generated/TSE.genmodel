@@ -4,8 +4,8 @@
     modelPluginID="fr.uha.ensisa.project.pan_chabalier" forceOverwrite="true" modelName="TSE"
     updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="6.0" copyrightFields="false" runtimeVersion="2.13">
-  <genPackages prefix="TSE" basePackage="fr.uha.ensisa.project.pan_chabalier.tse"
-      disposableProviderFactory="true" fileExtensions="tse" ecorePackage="TSE.ecore#/">
+  <genPackages prefix="TSE" basePackage="fr.uha.ensisa.project.pan_chabalier" disposableProviderFactory="true"
+      fileExtensions="tse" ecorePackage="TSE.ecore#/">
     <genClasses ecoreClass="TSE.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TSE.ecore#//Model/elements"/>
     </genClasses>

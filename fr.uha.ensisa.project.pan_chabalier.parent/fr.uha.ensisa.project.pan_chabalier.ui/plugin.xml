@@ -4,48 +4,48 @@
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
 			extensions="tse"
-			id="fr.uha.ensisa.project.pan_chabalier.tse.TSE"
+			id="fr.uha.ensisa.project.pan_chabalier.TSE"
 			name="TSE Editor">
 		</editor>
 	</extension>
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
 			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
 			<activeWhen>
 				<reference
-					definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened">
+					definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<handler
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-			commandId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.validate">
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="fr.uha.ensisa.project.pan_chabalier.TSE.validate">
 		<activeWhen>
 			<reference
-					definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened">
+					definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened">
 			</reference>
 		</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
 			<activeWhen>
-				<reference definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened" />
+				<reference definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened" />
 			</activeWhen>
 		</handler>
 		<handler
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
 			<activeWhen>
 				<and>
-					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.XtextEditor.opened" />
+					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.XtextEditor.opened" />
 					<iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -54,22 +54,22 @@
 		</handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
-		<definition id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened">
+		<definition id="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened">
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="fr.uha.ensisa.project.pan_chabalier.tse.TSE"
+						value="fr.uha.ensisa.project.pan_chabalier.TSE"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
 		</definition>
-		<definition id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.XtextEditor.opened">
+		<definition id="fr.uha.ensisa.project.pan_chabalier.TSE.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="fr.uha.ensisa.project.pan_chabalier.tse.TSE"
+						value="fr.uha.ensisa.project.pan_chabalier.TSE"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
@@ -78,33 +78,33 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="fr.uha.ensisa.project.pan_chabalier.tse.TSE"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="fr.uha.ensisa.project.pan_chabalier.TSE"
 			name="TSE">
-			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.tse.ui.keyword_TSE"/>
+			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.ui.keyword_TSE"/>
 		</page>
 		<page
-			category="fr.uha.ensisa.project.pan_chabalier.tse.TSE"
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-			id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.coloring"
+			category="fr.uha.ensisa.project.pan_chabalier.TSE"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="fr.uha.ensisa.project.pan_chabalier.TSE.coloring"
 			name="Syntax Coloring">
-			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.tse.ui.keyword_TSE"/>
+			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.ui.keyword_TSE"/>
 		</page>
 		<page
-			category="fr.uha.ensisa.project.pan_chabalier.tse.TSE"
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-			id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.templates"
+			category="fr.uha.ensisa.project.pan_chabalier.TSE"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="fr.uha.ensisa.project.pan_chabalier.TSE.templates"
 			name="Templates">
-			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.tse.ui.keyword_TSE"/>
+			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.ui.keyword_TSE"/>
 		</page>
 	</extension>
 	<extension
 			point="org.eclipse.ui.propertyPages">
 		<page
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="fr.uha.ensisa.project.pan_chabalier.tse.TSE"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="fr.uha.ensisa.project.pan_chabalier.TSE"
 			name="TSE">
-			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.tse.ui.keyword_TSE"/>
+			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.ui.keyword_TSE"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -114,14 +114,14 @@
 	<extension
 		point="org.eclipse.ui.keywords">
 		<keyword
-			id="fr.uha.ensisa.project.pan_chabalier.tse.ui.keyword_TSE"
+			id="fr.uha.ensisa.project.pan_chabalier.ui.keyword_TSE"
 			label="TSE"/>
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
 	<command
 			description="Trigger expensive validation"
-			id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.validate"
+			id="fr.uha.ensisa.project.pan_chabalier.TSE.validate"
 			name="Validate">
 	</command>
 	<!-- copy qualified name -->
@@ -142,12 +142,12 @@
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
 			 <command
-				 commandId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.validate"
+				 commandId="fr.uha.ensisa.project.pan_chabalier.TSE.validate"
 				 style="push"
 				 tooltip="Trigger expensive validation">
 			<visibleWhen checkEnabled="false">
 				<reference
-					definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened">
+					definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened">
 				</reference>
 			</visibleWhen>
 		</command>
@@ -157,7 +157,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened" />
+					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -165,7 +165,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened" />
+					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -174,7 +174,7 @@
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
-						<reference definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.XtextEditor.opened" />
+						<reference definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -187,7 +187,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened">
+					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -195,11 +195,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
 			commandId="org.eclipse.xtext.ui.editor.FindReferences">
 			<activeWhen>
 				<reference
-					definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened">
+					definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -208,17 +208,17 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="tse">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="tse">
 		</resourceServiceProvider>
 	</extension>
-	<!-- marker definitions for fr.uha.ensisa.project.pan_chabalier.tse.TSE -->
+	<!-- marker definitions for fr.uha.ensisa.project.pan_chabalier.TSE -->
 	<extension
 			id="tse.check.fast"
 			name="TSE Problem"
@@ -242,25 +242,25 @@
 	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
 			fileExtensions="tse"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="fr.uha.ensisa.project.pan_chabalier.tse.TSE"
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.compiler.preferencePage"
+			category="fr.uha.ensisa.project.pan_chabalier.TSE"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="fr.uha.ensisa.project.pan_chabalier.TSE.compiler.preferencePage"
 			name="Compiler">
-			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.tse.ui.keyword_TSE"/>
+			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.ui.keyword_TSE"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.ui.propertyPages">
 		<page
-			category="fr.uha.ensisa.project.pan_chabalier.tse.TSE"
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.compiler.propertyPage"
+			category="fr.uha.ensisa.project.pan_chabalier.TSE"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="fr.uha.ensisa.project.pan_chabalier.TSE.compiler.propertyPage"
 			name="Compiler">
-			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.tse.ui.keyword_TSE"/>
+			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.ui.keyword_TSE"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -271,20 +271,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.OpenGeneratedCode"
+				id="fr.uha.ensisa.project.pan_chabalier.TSE.OpenGeneratedCode"
 				style="push">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened" />
+					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 			<activeWhen>
-				<reference definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened" />
+				<reference definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened" />
 			</activeWhen>
 		</handler>
 	</extension>
@@ -292,11 +292,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened">
+					definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -316,16 +316,16 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened"/>
+					<reference definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-	<!-- quickfix marker resolution generator for fr.uha.ensisa.project.pan_chabalier.tse.TSE -->
+	<!-- quickfix marker resolution generator for fr.uha.ensisa.project.pan_chabalier.TSE -->
 	<extension
 			point="org.eclipse.ui.ide.markerResolution">
 		<markerResolutionGenerator
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="fr.uha.ensisa.project.pan_chabalier.ui.tse.check.fast">
 			<attribute
 				name="FIXABLE_KEY"
@@ -333,7 +333,7 @@
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="fr.uha.ensisa.project.pan_chabalier.ui.tse.check.normal">
 			<attribute
 				name="FIXABLE_KEY"
@@ -341,7 +341,7 @@
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="fr.uha.ensisa.project.pan_chabalier.ui.tse.check.expensive">
 			<attribute
 				name="FIXABLE_KEY"
@@ -352,11 +352,11 @@
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened">
+					definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -368,7 +368,7 @@
 				style="push">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="fr.uha.ensisa.project.pan_chabalier.tse.TSE.Editor.opened">
+						definitionId="fr.uha.ensisa.project.pan_chabalier.TSE.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -376,28 +376,28 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="fr.uha.ensisa.project.pan_chabalier.tse.TSE"
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-			id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.refactoring"
+			category="fr.uha.ensisa.project.pan_chabalier.TSE"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="fr.uha.ensisa.project.pan_chabalier.TSE.refactoring"
 			name="Refactoring">
-			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.tse.ui.keyword_TSE"/>
+			<keywordReference id="fr.uha.ensisa.project.pan_chabalier.ui.keyword_TSE"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.compare.contentViewers">
-		<viewer id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.compare.contentViewers"
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="fr.uha.ensisa.project.pan_chabalier.TSE.compare.contentViewers"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="tse">
 		</viewer>
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
-		<viewer id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.compare.contentMergeViewers"
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="fr.uha.ensisa.project.pan_chabalier.TSE.compare.contentMergeViewers"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="tse" label="TSE Compare">
 		</viewer>
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
-		<provider id="fr.uha.ensisa.project.pan_chabalier.tse.TSE.editors.documentProviders"
-			class="fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+		<provider id="fr.uha.ensisa.project.pan_chabalier.TSE.editors.documentProviders"
+			class="fr.uha.ensisa.project.pan_chabalier.ui.TSEExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
 			extensions="tse">
 		</provider>
 	</extension>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tSE" nsURI="http://www.uha.fr/ensisa/project/pan_chabalier/tse/TSE"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="tSE" nsURI="http://www.uha.fr/ensisa/project/pan_chabalier/TSE"
     nsPrefix="tSE">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"

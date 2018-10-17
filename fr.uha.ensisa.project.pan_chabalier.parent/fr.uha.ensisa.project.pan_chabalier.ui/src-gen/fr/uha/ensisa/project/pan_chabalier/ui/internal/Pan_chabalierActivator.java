@@ -7,8 +7,8 @@ import com.google.common.collect.Maps;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Module;
-import fr.uha.ensisa.project.pan_chabalier.tse.TSERuntimeModule;
-import fr.uha.ensisa.project.pan_chabalier.tse.ui.TSEUiModule;
+import fr.uha.ensisa.project.pan_chabalier.TSERuntimeModule;
+import fr.uha.ensisa.project.pan_chabalier.ui.TSEUiModule;
 import java.util.Collections;
 import java.util.Map;
 import org.apache.log4j.Logger;
@@ -23,7 +23,7 @@ import org.osgi.framework.BundleContext;
  */
 public class Pan_chabalierActivator extends AbstractUIPlugin {
 
-	public static final String FR_UHA_ENSISA_PROJECT_PAN_CHABALIER_TSE_TSE = "fr.uha.ensisa.project.pan_chabalier.tse.TSE";
+	public static final String FR_UHA_ENSISA_PROJECT_PAN_CHABALIER_TSE = "fr.uha.ensisa.project.pan_chabalier.TSE";
 	
 	private static final Logger logger = Logger.getLogger(Pan_chabalierActivator.class);
 	
@@ -73,14 +73,14 @@ public class Pan_chabalierActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getRuntimeModule(String grammar) {
-		if (FR_UHA_ENSISA_PROJECT_PAN_CHABALIER_TSE_TSE.equals(grammar)) {
+		if (FR_UHA_ENSISA_PROJECT_PAN_CHABALIER_TSE.equals(grammar)) {
 			return new TSERuntimeModule();
 		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (FR_UHA_ENSISA_PROJECT_PAN_CHABALIER_TSE_TSE.equals(grammar)) {
+		if (FR_UHA_ENSISA_PROJECT_PAN_CHABALIER_TSE.equals(grammar)) {
 			return new TSEUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="fr.uha.ensisa.project.pan_chabalier.feature"
+	label="TSE Feature "
+	version="1.0.0.qualifier">
+	<plugin
+			id="fr.uha.ensisa.project.pan_chabalier"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="fr.uha.ensisa.project.pan_chabalier.ide"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+	<plugin
+			id="fr.uha.ensisa.project.pan_chabalier.ui"
+			download-size="0"
+			install-size="0"
+			version="0.0.0"
+			unpack="false"/>
+</feature>

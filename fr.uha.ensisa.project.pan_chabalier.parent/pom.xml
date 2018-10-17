@@ -18,6 +18,7 @@
 		<module>fr.uha.ensisa.project.pan_chabalier.ide</module>
 		<module>fr.uha.ensisa.project.pan_chabalier.ui</module>
 		<module>fr.uha.ensisa.project.pan_chabalier.target</module>
+		<module>fr.uha.ensisa.project.pan_chabalier.feature</module>
 		<module>fr.uha.ensisa.project.pan_chabalier.tests</module>
 		<module>fr.uha.ensisa.project.pan_chabalier.ui.tests</module>
 	</modules>

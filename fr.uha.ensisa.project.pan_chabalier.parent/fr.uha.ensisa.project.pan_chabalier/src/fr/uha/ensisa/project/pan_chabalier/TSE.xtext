@@ -1,0 +1,47 @@
+grammar fr.uha.ensisa.project.pan_chabalier.TSE with org.eclipse.xtext.common.Terminals
+
+generate tSE "http://www.uha.fr/ensisa/project/pan_chabalier/TSE"
+
+Model:
+	elements+=Element*;
+
+Element:
+	state=State
+	| transition=Transition;
+
+State:
+	"state" name=ID statesProperties+=StatesProperties+;
+
+StatesProperties:
+	"color" color=COLOR
+	| "thickness" thickness=FLOAT
+	| "position" position=COORDINATES
+	| DEFAULT position=COORDINATES;
+
+Transition:
+	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
+	transitionProperties+=TransitionProperties* (label=Label)?
+	| "initialTransition" init=ID COORDINATES;
+
+Label:
+	"label" text=STRING position=COORDINATES;
+
+CoordinatesStatesTransition:
+	stateTransition=ID;
+
+TransitionProperties:
+	"color" color=COLOR | "thickness" thickness=FLOAT | "curvature" curve=FLOAT;
+
+terminal DEFAULT:
+	("DEFAULT" | "default");
+
+terminal COLOR:
+	("WHITE" | "BLACK" | "BLUE" | "CYAN" | "DARK_GRAY" | "GRAY" | "LIGHT_GRAY" | "GREEN" | "MAGENTA" | "ORANGE" | "PINK"
+	| "RED" | "YELLOW");
+
+terminal FLOAT:
+	INT '.' INT;
+
+terminal COORDINATES:
+	INT ',' INT;
+	

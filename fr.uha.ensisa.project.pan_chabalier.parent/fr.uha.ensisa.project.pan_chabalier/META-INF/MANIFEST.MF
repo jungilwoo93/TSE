@@ -15,16 +15,15 @@ Require-Bundle: org.eclipse.xtext,
  org.eclipse.xtend.lib,
  org.eclipse.emf.common
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Automatic-Module-Name: fr.uha.ensisa.project.pan_chabalier
-Export-Package: fr.uha.ensisa.project.pan_chabalier.tse.tSE.impl,
- fr.uha.ensisa.project.pan_chabalier.tse.parser.antlr,
- fr.uha.ensisa.project.pan_chabalier.tse.validation,
- fr.uha.ensisa.project.pan_chabalier.tse.tSE,
- fr.uha.ensisa.project.pan_chabalier.tse.scoping,
- fr.uha.ensisa.project.pan_chabalier.tse.generator,
- fr.uha.ensisa.project.pan_chabalier.tse.tSE.util,
- fr.uha.ensisa.project.pan_chabalier.tse.services,
- fr.uha.ensisa.project.pan_chabalier.tse.serializer,
- fr.uha.ensisa.project.pan_chabalier.tse,
- fr.uha.ensisa.project.pan_chabalier.tse.parser.antlr.internal
+Export-Package: fr.uha.ensisa.project.pan_chabalier.services,
+ fr.uha.ensisa.project.pan_chabalier.parser.antlr.internal,
+ fr.uha.ensisa.project.pan_chabalier.scoping,
+ fr.uha.ensisa.project.pan_chabalier.tSE.util,
+ fr.uha.ensisa.project.pan_chabalier.serializer,
+ fr.uha.ensisa.project.pan_chabalier.validation,
+ fr.uha.ensisa.project.pan_chabalier.parser.antlr,
+ fr.uha.ensisa.project.pan_chabalier,
+ fr.uha.ensisa.project.pan_chabalier.tSE,
+ fr.uha.ensisa.project.pan_chabalier.tSE.impl,
+ fr.uha.ensisa.project.pan_chabalier.generator
 Import-Package: org.apache.log4j

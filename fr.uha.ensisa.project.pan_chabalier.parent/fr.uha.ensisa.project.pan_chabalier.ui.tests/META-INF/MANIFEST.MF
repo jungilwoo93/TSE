@@ -14,8 +14,7 @@ Require-Bundle: fr.uha.ensisa.project.pan_chabalier.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.workbench;resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Automatic-Module-Name: fr.uha.ensisa.project.pan_chabalier.ui.tests
-Export-Package: fr.uha.ensisa.project.pan_chabalier.tse.ui.tests;x-internal=true
+Export-Package: fr.uha.ensisa.project.pan_chabalier.ui.tests;x-internal=true
 Import-Package: org.hamcrest.core,
  org.junit;version="4.5.0",
  org.junit.runners.model;version="4.5.0",
