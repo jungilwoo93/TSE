@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import fr.uha.ensisa.projet.pan_chabalier.gui.GUI;
-import fr.uha.ensisa.projet.pan_chabalier.gui.State;
-import fr.uha.ensisa.projet.pan_chabalier.gui.Transition;
 
 public class ElementFactoryImp implements ElementFactory{
 

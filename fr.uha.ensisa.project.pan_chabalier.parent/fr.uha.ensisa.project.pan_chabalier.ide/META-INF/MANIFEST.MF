@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: fr.uha.ensisa.project.pan_chabalier.ide
-Bundle-Vendor: My Company
+Bundle-Vendor: PAN_Liuyan-CHABALIER_Andy
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: fr.uha.ensisa.project.pan_chabalier.ide; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -12,4 +12,5 @@ Require-Bundle: fr.uha.ensisa.project.pan_chabalier,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: fr.uha.ensisa.project.pan_chabalier.ide.contentassist.antlr,
  fr.uha.ensisa.project.pan_chabalier.ide.contentassist.antlr.internal
+Automatic-Module-Name: fr.uha.ensisa.project.pan_chabalier.ide
 

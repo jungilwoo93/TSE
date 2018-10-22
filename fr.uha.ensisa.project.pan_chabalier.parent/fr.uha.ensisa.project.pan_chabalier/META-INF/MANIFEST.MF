@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: fr.uha.ensisa.project.pan_chabalier
-Bundle-Vendor: My Company
+Bundle-Vendor: PAN_Liuyan-CHABALIER_Andy
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: fr.uha.ensisa.project.pan_chabalier; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -27,3 +27,4 @@ Export-Package: fr.uha.ensisa.project.pan_chabalier.services,
  fr.uha.ensisa.project.pan_chabalier.tSE.impl,
  fr.uha.ensisa.project.pan_chabalier.generator
 Import-Package: org.apache.log4j
+Automatic-Module-Name: fr.uha.ensisa.project.pan_chabalier

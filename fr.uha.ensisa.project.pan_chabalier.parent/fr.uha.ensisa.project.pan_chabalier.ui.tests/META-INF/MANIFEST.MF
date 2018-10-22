@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: fr.uha.ensisa.project.pan_chabalier.ui.tests
-Bundle-Vendor: My Company
+Bundle-Vendor: PAN_Liuyan-CHABALIER_Andy
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: fr.uha.ensisa.project.pan_chabalier.ui.tests; singleton:=true
 Bundle-ActivationPolicy: lazy
@@ -22,3 +22,4 @@ Import-Package: org.hamcrest.core,
  org.junit.runners;version="4.5.0",
  org.junit.runner.manipulation;version="4.5.0",
  org.junit.runner.notification;version="4.5.0"
+Automatic-Module-Name: fr.uha.ensisa.project.pan_chabalier.ui.tests
