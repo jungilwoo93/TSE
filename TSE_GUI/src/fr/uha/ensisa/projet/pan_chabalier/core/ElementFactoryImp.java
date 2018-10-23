@@ -5,8 +5,6 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import fr.uha.ensisa.projet.pan_chabalier.gui.GUI;
-
 public class ElementFactoryImp implements ElementFactory{
 
 	private HashMap<String,State> states = new HashMap<String,State>();
@@ -18,7 +16,7 @@ public class ElementFactoryImp implements ElementFactory{
 		states.put(id,s);
 		return s;
 	}
-
+	
 	@Override
 	public Transition createTransition(String startId, String endId, Color color, float thickness, float curvature, String text, Point textPosition) {
 		Transition t = new Transition(states.get(startId), states.get(endId), color, thickness, curvature, text, textPosition);

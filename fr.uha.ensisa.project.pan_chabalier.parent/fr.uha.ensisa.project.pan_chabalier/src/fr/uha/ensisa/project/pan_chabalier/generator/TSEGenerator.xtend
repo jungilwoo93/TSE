@@ -32,25 +32,37 @@ package fr.uha.ensisa.project.pan_chabalier.tmp;
 import java.awt.Color;
 import java.awt.Point;
 import fr.uha.ensisa.projet.pan_chabalier.gui.GUI;
+import fr.uha.ensisa.projet.pan_chabalier.controller.GeneratedDataInterface;
 
 
-public class GeneratedData {
+public class GeneratedData implements GeneratedDataInterface {
 
-	public static void main(String[] args) {
+	private ElementFactory factory;
+	
+	public GeneratedData(GUI gui){
+		this.gui = gui;
+	}
+	
+	@Override
+	public void instanciateElements(){
 		«FOR e : model.elements»
 			«e.compile»
 		«ENDFOR»
+	}
+	
+	public void setGUI(ElementFactory f){
+		this.factory = f;
 	}
 }
 	'''
 
 	def compile(Element e) '''
 		«IF e.state !== null»
-			GUI.factory.createState("«e.state.name»"«FOR p:e.state.statesProperties»«p.compile»«ENDFOR»);
+			factory.createState("«e.state.name»"«FOR p:e.state.statesProperties»«p.compile»«ENDFOR»);
 		«ENDIF»
 		
 		«IF e.transition !== null»
-			GUI.factory.createTransition("«IF e.transition.start.stateTransition !==null»«e.transition.start.stateTransition»«ENDIF»", "«IF e.transition.end.stateTransition !==null»«e.transition.end.stateTransition»«ENDIF»"«FOR p:e.transition.transitionProperties»«p.compile»«ENDFOR», "«IF e.transition.label.text!==null»«e.transition.label.text»«ENDIF»«IF e.transition.label.text===null»""«ENDIF»", «IF e.transition.label.position!==null»new Point(«e.transition.label.position»)«ENDIF»«IF e.transition.label.position===null»new Point(null)«ENDIF»);
+			factory.createTransition("«IF e.transition.start.stateTransition !==null»«e.transition.start.stateTransition»«ENDIF»", "«IF e.transition.end.stateTransition !==null»«e.transition.end.stateTransition»«ENDIF»"«FOR p:e.transition.transitionProperties»«p.compile»«ENDFOR», "«IF e.transition.label.text!==null»«e.transition.label.text»«ENDIF»«IF e.transition.label.text===null»""«ENDIF»", «IF e.transition.label.position!==null»new Point(«e.transition.label.position»)«ENDIF»«IF e.transition.label.position===null»new Point(null)«ENDIF»);
 		«ENDIF»
 	'''
 

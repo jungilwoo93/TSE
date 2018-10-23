@@ -45,13 +45,34 @@ public class TSEGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("import fr.uha.ensisa.projet.pan_chabalier.gui.GUI;");
     _builder.newLine();
+    _builder.append("import fr.uha.ensisa.projet.pan_chabalier.controller.GeneratedDataInterface;");
     _builder.newLine();
     _builder.newLine();
-    _builder.append("public class GeneratedData {");
+    _builder.newLine();
+    _builder.append("public class GeneratedData implements GeneratedDataInterface {");
     _builder.newLine();
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public static void main(String[] args) {");
+    _builder.append("private ElementFactory factory;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public GeneratedData(GUI gui){");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("this.gui = gui;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@Override");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void instanciateElements(){");
     _builder.newLine();
     {
       EList<Element> _elements = model.getElements();
@@ -62,6 +83,17 @@ public class TSEGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void setGUI(ElementFactory f){");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("this.factory = f;");
+    _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
@@ -76,7 +108,7 @@ public class TSEGenerator extends AbstractGenerator {
       State _state = e.getState();
       boolean _tripleNotEquals = (_state != null);
       if (_tripleNotEquals) {
-        _builder.append("GUI.factory.createState(\"");
+        _builder.append("factory.createState(\"");
         String _name = e.getState().getName();
         _builder.append(_name);
         _builder.append("\"");
@@ -96,7 +128,7 @@ public class TSEGenerator extends AbstractGenerator {
       Transition _transition = e.getTransition();
       boolean _tripleNotEquals_1 = (_transition != null);
       if (_tripleNotEquals_1) {
-        _builder.append("GUI.factory.createTransition(\"");
+        _builder.append("factory.createTransition(\"");
         {
           String _stateTransition = e.getTransition().getStart().getStateTransition();
           boolean _tripleNotEquals_2 = (_stateTransition != null);

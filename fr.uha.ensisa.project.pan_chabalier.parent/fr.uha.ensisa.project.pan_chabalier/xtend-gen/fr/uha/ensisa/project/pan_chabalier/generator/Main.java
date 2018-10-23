@@ -67,6 +67,7 @@ public class Main {
       it.setCancelIndicator(CancelIndicator.NullImpl);
     };
     final GeneratorContext context = ObjectExtensions.<GeneratorContext>operator_doubleArrow(_generatorContext, _function_1);
+    System.out.println("Code generation started");
     this.generator.generate(resource, this.fileAccess, context);
     System.out.println("Code generation finished.");
   }

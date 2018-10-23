@@ -52,6 +52,7 @@ class Main {
 		val context = new GeneratorContext => [
 			cancelIndicator = CancelIndicator.NullImpl
 		]
+		System.out.println('Code generation started')
 		generator.generate(resource, fileAccess, context)
 		System.out.println('Code generation finished.')
 	}
