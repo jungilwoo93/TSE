@@ -5,9 +5,11 @@ import org.eclipse.xtext.xtext.generator.model.project.*
 
 var rootPath = ".."
 
+
 Workflow {
 	
 	component = XtextGenerator {
+		
 		configuration = {
 			project = StandardProjectConfig {
 				baseName = "fr.uha.ensisa.project.pan_chabalier"
@@ -38,6 +40,9 @@ Workflow {
 			}
 			validator = {
 				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+			}
+			generator = {
+				generateXtendMain = true
 			}
 		}
 	}
