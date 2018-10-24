@@ -31,16 +31,16 @@ package fr.uha.ensisa.project.pan_chabalier.tmp;
 
 import java.awt.Color;
 import java.awt.Point;
-import fr.uha.ensisa.projet.pan_chabalier.gui.GUI;
+import fr.uha.ensisa.projet.pan_chabalier.core.ElementFactoryImp;
 import fr.uha.ensisa.projet.pan_chabalier.controller.GeneratedDataInterface;
 
 
 public class GeneratedData implements GeneratedDataInterface {
 
-	private ElementFactory factory;
+	private ElementFactoryImp factory;
 	
-	public GeneratedData(GUI gui){
-		this.gui = gui;
+	public GeneratedData(ElementFactoryImp factory){
+		this.factory = factory;
 	}
 	
 	@Override
@@ -50,7 +50,8 @@ public class GeneratedData implements GeneratedDataInterface {
 		«ENDFOR»
 	}
 	
-	public void setGUI(ElementFactory f){
+	@Override
+	public void setFactory(ElementFactoryImp f){
 		this.factory = f;
 	}
 }

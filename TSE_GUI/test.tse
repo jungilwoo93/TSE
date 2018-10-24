@@ -1,0 +1,12 @@
+state q0 default 0,0
+state q1 position 1,3 thickness 1.0 color GRAY
+state q2 default 5,3
+state q3 default 7,9
+state q4 default 3,6
+//
+//initialTransition q0 1,0
+//transition q0 -> q1 color GRAY thickness 0.3 curvature 0.0
+transition q2 -> q3 color GRAY thickness 0.3 curvature 0.0 label "label1" 6,5
+transition q4 -> q1 label "label2" 1,1
+//transition q0 -> q2 color GRAY
+//transition q2 -> q0 curvature 1.0

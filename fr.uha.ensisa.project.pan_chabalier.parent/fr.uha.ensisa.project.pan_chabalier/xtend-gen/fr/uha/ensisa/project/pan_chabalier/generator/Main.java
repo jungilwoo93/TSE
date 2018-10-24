@@ -49,6 +49,7 @@ public class Main {
   private JavaIoFileSystemAccess fileAccess;
   
   protected void runGenerator(final String string) {
+    System.out.println("Loading ressources");
     final ResourceSet set = this.resourceSetProvider.get();
     final Resource resource = set.getResource(URI.createFileURI(string), true);
     final List<Issue> issues = this.validator.validate(resource, CheckMode.ALL, CancelIndicator.NullImpl);
@@ -61,7 +62,7 @@ public class Main {
       issues.forEach(_function);
       return;
     }
-    this.fileAccess.setOutputPath("src-gen/");
+    this.fileAccess.setOutputPath("src/");
     GeneratorContext _generatorContext = new GeneratorContext();
     final Procedure1<GeneratorContext> _function_1 = (GeneratorContext it) -> {
       it.setCancelIndicator(CancelIndicator.NullImpl);

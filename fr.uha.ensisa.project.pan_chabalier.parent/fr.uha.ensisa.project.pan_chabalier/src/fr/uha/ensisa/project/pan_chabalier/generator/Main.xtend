@@ -36,6 +36,7 @@ class Main {
 	@Inject JavaIoFileSystemAccess fileAccess
 
 	def protected runGenerator(String string) {
+		System.out.println('Loading ressources')
 		// Load the resource
 		val set = resourceSetProvider.get
 		val resource = set.getResource(URI.createFileURI(string), true)
@@ -48,7 +49,7 @@ class Main {
 		}
 
 		// Configure and start the generator
-		fileAccess.outputPath = 'src-gen/'
+		fileAccess.outputPath = 'src/'
 		val context = new GeneratorContext => [
 			cancelIndicator = CancelIndicator.NullImpl
 		]
