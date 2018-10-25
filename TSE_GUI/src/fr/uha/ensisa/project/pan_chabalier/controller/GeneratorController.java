@@ -1,9 +1,10 @@
 package fr.uha.ensisa.project.pan_chabalier.controller;
 
+import java.awt.Point;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.net.MalformedURLException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.URLClassLoader;
 
@@ -23,22 +24,25 @@ public class GeneratorController {
 		this.factory = factory;
 	}
 	 
-	public void compile() throws IOException, InterruptedException {
+	public void compile() throws IOException, InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, URISyntaxException {
 		Process process = this.pb.start();
 		setOut(((Process) process).getOutputStream());
 		process.waitFor();
+		executeGeneratedCode();
 	}
 	
-	public void executeGeneratedCode() throws MalformedURLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-		File sourceFile = new File("src/fr/uha/ensisa/project/pan_chabalier/tmp/GeneratedData.java");
-		File root = new File("");
+	public void executeGeneratedCode() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, URISyntaxException {
+//        File root = new File("src/fr/uha/ensisa/project/pan_chabalier/tmp");	
+//		File root = new File(GeneratorController.class.getResource("fr/uha/ensisa/project/pan_chabalier/tmp/").toString());
+		File root = new File("src/fr/uha/ensisa/project/pan_chabalier/tmp");
+        File sourceFile = new File(root, "GeneratedData.java");
 		// Compile source file.
 		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 		compiler.run(null, null, null, sourceFile.getPath());
 
 		// Load and instantiate compiled class.
 		URLClassLoader classLoader = URLClassLoader.newInstance(new URL[] { root.toURI().toURL() });
-		Class<?> cls = Class.forName("fr/uha/ensisa/project/pan_chabalier/tmp/GeneratedData", true, classLoader);
+		Class<?> cls = Class.forName("fr.uha.ensisa.project.pan_chabalier.tmp.GeneratedData", true, classLoader);
 		GeneratedDataInterface instance = (GeneratedDataInterface) cls.newInstance();
 		instance.setFactory(this.factory);
 		instance.instanciateElements();
@@ -56,13 +60,13 @@ public class GeneratorController {
 		//only for test
 		ElementFactoryImp factory = new ElementFactoryImp();
 		GeneratorController gen = new GeneratorController("test.tse", "generator.jar", factory);
-		System.out.println("factory before generation => " + factory.getStates().size() );
+		System.out.println("factory before generation => " + factory.getStates());
 		try {
 			gen.compile();
-			gen.executeGeneratedCode();
-		} catch (IOException | InterruptedException | ClassNotFoundException | InstantiationException | IllegalAccessException e) {
+//			gen.executeGeneratedCode();
+		} catch (IOException | ClassNotFoundException | InstantiationException | IllegalAccessException | InterruptedException | URISyntaxException e) {
 			e.printStackTrace();
 		}
-		System.out.println("factory after generation => " + factory.getStates().size() );
+		System.out.println("factory after generation => " + factory.getStates());
 	}
 }

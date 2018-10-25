@@ -31,13 +31,18 @@ package fr.uha.ensisa.project.pan_chabalier.tmp;
 
 import java.awt.Color;
 import java.awt.Point;
-import fr.uha.ensisa.projet.pan_chabalier.core.ElementFactoryImp;
-import fr.uha.ensisa.projet.pan_chabalier.controller.GeneratedDataInterface;
+
+import fr.uha.ensisa.project.pan_chabalier.controller.GeneratedDataInterface;
+import fr.uha.ensisa.project.pan_chabalier.core.ElementFactoryImp;
 
 
 public class GeneratedData implements GeneratedDataInterface {
 
 	private ElementFactoryImp factory;
+	
+	public GeneratedData() {
+		
+	}
 	
 	public GeneratedData(ElementFactoryImp factory){
 		this.factory = factory;
@@ -49,7 +54,7 @@ public class GeneratedData implements GeneratedDataInterface {
 			«e.compile»
 		«ENDFOR»
 	}
-	
+		
 	@Override
 	public void setFactory(ElementFactoryImp f){
 		this.factory = f;
@@ -63,15 +68,15 @@ public class GeneratedData implements GeneratedDataInterface {
 		«ENDIF»
 		
 		«IF e.transition !== null»
-			factory.createTransition("«IF e.transition.start.stateTransition !==null»«e.transition.start.stateTransition»«ENDIF»", "«IF e.transition.end.stateTransition !==null»«e.transition.end.stateTransition»«ENDIF»"«FOR p:e.transition.transitionProperties»«p.compile»«ENDFOR», "«IF e.transition.label.text!==null»«e.transition.label.text»«ENDIF»«IF e.transition.label.text===null»""«ENDIF»", «IF e.transition.label.position!==null»new Point(«e.transition.label.position»)«ENDIF»«IF e.transition.label.position===null»new Point(null)«ENDIF»);
+			factory.createTransition("«IF e.transition.start.stateTransition !==null»«e.transition.start.stateTransition»«ENDIF»", "«IF e.transition.end.stateTransition !==null»«e.transition.end.stateTransition»«ENDIF»"«FOR p:e.transition.transitionProperties»«p.compile»«ENDFOR», "«IF e.transition.label.text!==null»«e.transition.label.text»«ENDIF»«IF e.transition.label.text===null»""«ENDIF»", «IF e.transition.label.position!==null»new Point(«e.transition.label.position»)«ENDIF»«IF e.transition.label.position===null»null«ENDIF»);
 		«ENDIF»
 	'''
 
 	def compile(
-		TransitionProperties p) ''', «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»null«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»new Float(null)«ENDIF», «IF p.curve!==null»new Float(«p.curve»)«ENDIF»«IF p.curve===null»new Float(null)«ENDIF»'''
+		TransitionProperties p) ''', «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»null«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»null«ENDIF», «IF p.curve!==null»new Float(«p.curve»)«ENDIF»«IF p.curve===null»null«ENDIF»'''
 
 	def compile(
-		StatesProperties p) ''', «IF p.position!==null»new Point(«p.position»)«ENDIF»«IF p.position===null»new Point(null)«ENDIF», «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»null«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»new Float(null)«ENDIF»'''
+		StatesProperties p) ''', «IF p.position!==null»new Point(«p.position»)«ENDIF»«IF p.position===null»null«ENDIF», «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»null«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»null«ENDIF»'''
 
 }
 

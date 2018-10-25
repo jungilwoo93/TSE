@@ -43,9 +43,10 @@ public class TSEGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("import java.awt.Point;");
     _builder.newLine();
-    _builder.append("import fr.uha.ensisa.projet.pan_chabalier.core.ElementFactoryImp;");
     _builder.newLine();
-    _builder.append("import fr.uha.ensisa.projet.pan_chabalier.controller.GeneratedDataInterface;");
+    _builder.append("import fr.uha.ensisa.project.pan_chabalier.controller.GeneratedDataInterface;");
+    _builder.newLine();
+    _builder.append("import fr.uha.ensisa.project.pan_chabalier.core.ElementFactoryImp;");
     _builder.newLine();
     _builder.newLine();
     _builder.newLine();
@@ -54,6 +55,16 @@ public class TSEGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("private ElementFactoryImp factory;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public GeneratedData() {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
     _builder.newLine();
     _builder.append("\t");
     _builder.newLine();
@@ -86,7 +97,7 @@ public class TSEGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("@Override");
@@ -188,7 +199,7 @@ public class TSEGenerator extends AbstractGenerator {
           String _position_2 = e.getTransition().getLabel().getPosition();
           boolean _tripleEquals_1 = (_position_2 == null);
           if (_tripleEquals_1) {
-            _builder.append("new Point(null)");
+            _builder.append("null");
           }
         }
         _builder.append(");");
@@ -232,7 +243,7 @@ public class TSEGenerator extends AbstractGenerator {
       String _thickness_2 = p.getThickness();
       boolean _tripleEquals_1 = (_thickness_2 == null);
       if (_tripleEquals_1) {
-        _builder.append("new Float(null)");
+        _builder.append("null");
       }
     }
     _builder.append(", ");
@@ -250,7 +261,7 @@ public class TSEGenerator extends AbstractGenerator {
       String _curve_2 = p.getCurve();
       boolean _tripleEquals_2 = (_curve_2 == null);
       if (_tripleEquals_2) {
-        _builder.append("new Float(null)");
+        _builder.append("null");
       }
     }
     return _builder;
@@ -273,7 +284,7 @@ public class TSEGenerator extends AbstractGenerator {
       String _position_2 = p.getPosition();
       boolean _tripleEquals = (_position_2 == null);
       if (_tripleEquals) {
-        _builder.append("new Point(null)");
+        _builder.append("null");
       }
     }
     _builder.append(", ");
@@ -308,7 +319,7 @@ public class TSEGenerator extends AbstractGenerator {
       String _thickness_2 = p.getThickness();
       boolean _tripleEquals_2 = (_thickness_2 == null);
       if (_tripleEquals_2) {
-        _builder.append("new Float(null)");
+        _builder.append("null");
       }
     }
     return _builder;

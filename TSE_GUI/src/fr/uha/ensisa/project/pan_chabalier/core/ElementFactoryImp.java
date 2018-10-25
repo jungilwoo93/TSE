@@ -32,4 +32,34 @@ public class ElementFactoryImp implements ElementFactory{
 		return transitions;
 	}
 
+	public State createState(String id, Point point, Object object, Float float1) {
+		// TODO Auto-generated method stub
+		State s = null;
+		states.put(id,s);
+		return s;
+	}
+
+	public State createState(String id, Point point, Object object, Float float1, Point point2, Object object2,
+			Float float2, Point point3, Color gray, Float float3) {
+		// TODO Auto-generated method stub
+		State s = null;
+		states.put(id,s);
+		return s;
+	}
+
+	public Transition createTransition(String string, String string2, Color gray, Float float1, Float float2, Object object,
+			Float float3, Float float4, Object object2, Float float5, Float float6, String string3, Point point) {
+		// TODO Auto-generated method stub
+		Transition t = null;
+		transitions.add(t);
+		return t;
+	}
+
+	public Transition createTransition(String string, String string2, String string3, Point point) {
+		// TODO Auto-generated method stub
+		Transition t = null;
+		transitions.add(t);
+		return t;
+	}
+
 }
