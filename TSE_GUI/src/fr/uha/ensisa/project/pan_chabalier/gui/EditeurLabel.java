@@ -1,11 +1,11 @@
 package fr.uha.ensisa.project.pan_chabalier.gui;
 
 import java.awt.Color;
+import java.awt.Point;
 
 public class EditeurLabel {
 	private String text;
-	private int x;
-	private int y;
+	private Point p;
 	// private JLabel label;
 	private Color color;
 
@@ -14,10 +14,15 @@ public class EditeurLabel {
 		// label.setLocation(x, y);
 		// label.setForeground(color);
 		System.out.println("create");
-		this.color = color;
-		this.text = text;
-		this.x = x;
-		this.y = y;
+		setText(text);
+		setColor(color);
+		setP(new Point(x, y));
+	}
+
+	public EditeurLabel(String text, Color color, Point textPosition) {
+		setText(text);
+		setColor(color);
+		setP(textPosition);
 	}
 
 	public String getText() {
@@ -30,20 +35,24 @@ public class EditeurLabel {
 		// this.label.setText(text);
 	}
 
+	@Deprecated
 	public int getX() {
-		return x;
+		return p.x;
 	}
 
+	@Deprecated
 	public void setX(int x) {
-		this.x = x;
+		p.setLocation(x, p.y);
 	}
 
+	@Deprecated
 	public int getY() {
-		return y;
+		return p.y;
 	}
 
+	@Deprecated
 	public void setY(int y) {
-		this.y = y;
+		p.setLocation(p.x, y);
 	}
 
 	/*
@@ -56,5 +65,13 @@ public class EditeurLabel {
 
 	public void setColor(Color color) {
 		this.color = color;
+	}
+
+	public Point getP() {
+		return p;
+	}
+
+	public void setP(Point p) {
+		this.p = p;
 	}
 }

@@ -4,38 +4,42 @@ import java.awt.Color;
 import java.awt.Point;
 
 public class State {
-	private int x, y;
+	private Point p;
 	private Color color;
 	private float thickness;
 	private String id;
 
 	public State(String id, Color color, float thickness, int x, int y) {
-		this.id = id;
-		this.x = x;
-		this.y = y;
-		this.setColor(color);
-		this.setThickness(thickness);
-
+		setId(id);
+		setP(new Point(x,y));
+		setColor(color);
+		setThickness(thickness);
 	}
 
-	public State(String id2, Color color2, float thickness2, Point p) {
-		// TODO Auto-generated constructor stub
-	}
+	public State(String id, Color color, float thickness, Point p) {
+		setId(id);
+		setP(p);
+		setColor(color);
+		setThickness(thickness);	}
 
+	@Deprecated
 	public int getX() {
-		return x;
+		return p.x;
 	}
 
+	@Deprecated
 	public void setX(int x) {
-		this.x = x;
+		p.setLocation(x, p.y);
 	}
 
+	@Deprecated
 	public int getY() {
-		return y;
+		return p.y;
 	}
 
+	@Deprecated
 	public void setY(int y) {
-		this.y = y;
+		p.setLocation(p.x, y);
 	}
 
 	public String getId() {
@@ -60,5 +64,13 @@ public class State {
 
 	public void setThickness(float thickness) {
 		this.thickness = thickness;
+	}
+
+	public Point getP() {
+		return p;
+	}
+
+	public void setP(Point p) {
+		this.p = p;
 	}
 }

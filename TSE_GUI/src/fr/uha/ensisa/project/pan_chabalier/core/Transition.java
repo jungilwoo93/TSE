@@ -10,16 +10,20 @@ public class Transition {
 	private float thickness, curvature;
 	private EditeurLabel label;
 
-	public Transition(State start, State end, Color color, String label, float thickness, float curvature) {
+	public Transition(State start, State end, Color color, String text, float thickness, float curvature) {
 		this.setStart(start);
 		this.setEnd(end);
-		this.setLabel(new EditeurLabel(label, color, (start.getX() + end.getX()) / 2, (start.getY() + end.getY()) / 2));
+		this.setLabel(new EditeurLabel(text, color, (start.getX() + end.getX()) / 2, (start.getY() + end.getY()) / 2));
 
 	}
 
-	public Transition(State state, State state2, Color color, float thickness2, float curvature2, String text,
+	public Transition(State start, State end, Color color, float thickness, float curvature, String text,
 			Point textPosition) {
-		// TODO Auto-generated constructor stub
+		setStart(start);
+		setEnd(end);
+		setThickness(thickness);
+		setCurvature(curvature);
+		setLabel(new EditeurLabel(text,color,textPosition));
 	}
 
 	public State getStart() {
