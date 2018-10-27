@@ -3,20 +3,22 @@ package fr.uha.ensisa.project.pan_chabalier.core;
 import java.awt.Color;
 import java.awt.Point;
 
+import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
+
 public class State {
 	private Point p;
 	private Color color;
 	private float thickness;
 	private String id;
 
-	public State(String id, Color color, float thickness, int x, int y) {
+	public State(String id, Color color, Float thickness, int x, int y) {
 		setId(id);
 		setP(new Point(x,y));
 		setColor(color);
 		setThickness(thickness);
 	}
 
-	public State(String id, Color color, float thickness, Point p) {
+	public State(String id, Color color, Float thickness, Point p) {
 		setId(id);
 		setP(p);
 		setColor(color);
@@ -55,6 +57,9 @@ public class State {
 	}
 
 	public void setColor(Color color) {
+		if(color.equals(null)) {
+			color = Constants.DEFAULT_COLOR;
+		}
 		this.color = color;
 	}
 
@@ -62,7 +67,10 @@ public class State {
 		return thickness;
 	}
 
-	public void setThickness(float thickness) {
+	public void setThickness(Float thickness) {
+		if(thickness.equals(null)) {
+			thickness = Constants.DEFAULT_THICKNESS;
+		}
 		this.thickness = thickness;
 	}
 

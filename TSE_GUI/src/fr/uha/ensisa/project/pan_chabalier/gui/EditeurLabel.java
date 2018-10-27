@@ -3,6 +3,8 @@ package fr.uha.ensisa.project.pan_chabalier.gui;
 import java.awt.Color;
 import java.awt.Point;
 
+import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
+
 public class EditeurLabel {
 	private String text;
 	private Point p;
@@ -64,6 +66,9 @@ public class EditeurLabel {
 	}
 
 	public void setColor(Color color) {
+		if(color.equals(null)) {
+			color = Constants.DEFAULT_COLOR;
+		}
 		this.color = color;
 	}
 
