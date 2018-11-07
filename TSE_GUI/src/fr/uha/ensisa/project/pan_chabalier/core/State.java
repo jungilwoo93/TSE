@@ -20,6 +20,11 @@ public class State {
 
 	public State(String id2, Color color2, float thickness2, Point p) {
 		// TODO Auto-generated constructor stub
+		this.id = id2;
+		this.x = p.x;
+		this.y = p.y;
+		this.setColor(color);
+		this.setThickness(thickness);
 	}
 
 	public int getX() {

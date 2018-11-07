@@ -56,15 +56,29 @@ public class GUI extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI() {
-		setTitle(StringSources.getString("GUI.this.title")); //$NON-NLS-1$
+		//setTitle(StringSources.getString("GUI.this.title")); //$NON-NLS-1$
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
+		
+		JMenu mnMenu = new JMenu("Menu");
+		menuBar.add(mnMenu);
+		
+		JMenuItem mntmOpenFile = new JMenuItem("Open File");
+		mnMenu.add(mntmOpenFile);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Export"); //$NON-NLS-1$
+		mnMenu.add(mntmNewMenuItem);
 
-		JMenu mnMenu = new JMenu(StringSources.getString("GUI.mnMenu.text")); //$NON-NLS-1$
+		JMenu mnHelp = new JMenu("Help"); //$NON-NLS-1$
+		menuBar.add(mnHelp);
+		
+		JMenuItem aboutMenu = new JMenuItem("About us"); //$NON-NLS-1$*/
+
+		/*JMenu mnMenu = new JMenu(StringSources.getString("GUI.mnMenu.text")); //$NON-NLS-1$
 		menuBar.add(mnMenu);
 
 		JMenuItem mntmOpenFile = new JMenuItem(StringSources.getString("GUI.mntmOpenFile.text")); //$NON-NLS-1$
@@ -76,7 +90,8 @@ public class GUI extends JFrame {
 		JMenu mnHelp = new JMenu(StringSources.getString("GUI.mnHelp.text")); //$NON-NLS-1$
 		menuBar.add(mnHelp);
 		
-		JMenuItem aboutMenu = new JMenuItem(StringSources.getString("GUI.aboutMenu.text")); //$NON-NLS-1$
+		JMenuItem aboutMenu = new JMenuItem(StringSources.getString("GUI.aboutMenu.text")); //$NON-NLS-1$*/
+		
 		aboutMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//TODO Do the about window
@@ -91,7 +106,8 @@ public class GUI extends JFrame {
 		});
 		mnHelp.add(aboutMenu);
 
-		JMenuItem mntmContactUs = new JMenuItem(StringSources.getString("GUI.mntmContactUs.text")); //$NON-NLS-1$
+		//JMenuItem mntmContactUs = new JMenuItem(StringSources.getString("GUI.mntmContactUs.text")); //$NON-NLS-1$
+		JMenuItem mntmContactUs = new JMenuItem("Contact us");
 		mntmContactUs.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -108,7 +124,8 @@ public class GUI extends JFrame {
 		});
 		mnHelp.add(mntmContactUs);
 		
-		JMenuItem wikiMenu = new JMenuItem(StringSources.getString("GUI.wikiMenu.text")); //$NON-NLS-1$
+		//JMenuItem wikiMenu = new JMenuItem(StringSources.getString("GUI.wikiMenu.text")); //$NON-NLS-1$
+		JMenuItem wikiMenu = new JMenuItem("Wiki");
 		wikiMenu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -146,7 +163,8 @@ public class GUI extends JFrame {
 
 		c_4 = new GridBagConstraints();
 		c_4.insets = new Insets(0, 0, 0, 5);
-		JButton validate = new JButton(StringSources.getString("GUI.validate.text")); //$NON-NLS-1$
+		JButton validate = new JButton("Validate");
+		//JButton validate = new JButton(StringSources.getString("GUI.validate.text")); //$NON-NLS-1$
 		c_4.gridx = 0;
 		c_4.gridy = 4;
 		c_4.gridwidth = 1;
@@ -154,7 +172,8 @@ public class GUI extends JFrame {
 
 		c_3 = new GridBagConstraints();
 		c_3.insets = new Insets(0, 0, 0, 5);
-		JButton export = new JButton(StringSources.getString("GUI.export.text")); //$NON-NLS-1$
+		JButton export = new JButton("Export");
+		//JButton export = new JButton(StringSources.getString("GUI.export.text")); //$NON-NLS-1$
 		c_3.gridx = 3;
 		c_3.gridy = 4;
 		c_3.gridwidth = 1;
@@ -176,9 +195,10 @@ public class GUI extends JFrame {
 				String text = textArea.getText();
 				State s1 = new State("1", Color.RED, (float) 5, 200, 200);
 				State s2 = new State("2", Color.RED, (float) 5, 400, 400);
-				Transition t = new Transition(s1, s2, Color.BLUE, "coucou", (float) 2.5, (float) 50.5);
+				Transition t = new Transition(s1, s2, Color.BLUE, "coucou", (float) 2.5, (float) 90);
 				panel.addState(s1);
 				panel.addState(s2);
+				panel.addTransition(t);
 				/*
 				 * if(text.contains("label")) { System.out.println("label"); EditeurLabel label
 				 * = new EditeurLabel("Bello",Color.RED, 200,20); panel.addLabel(label); }else

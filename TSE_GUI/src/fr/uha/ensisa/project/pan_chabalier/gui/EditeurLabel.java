@@ -13,7 +13,7 @@ public class EditeurLabel {
 		// label=new JLabel(text);
 		// label.setLocation(x, y);
 		// label.setForeground(color);
-		System.out.println("create");
+		//System.out.println("create");
 		this.color = color;
 		this.text = text;
 		this.x = x;
