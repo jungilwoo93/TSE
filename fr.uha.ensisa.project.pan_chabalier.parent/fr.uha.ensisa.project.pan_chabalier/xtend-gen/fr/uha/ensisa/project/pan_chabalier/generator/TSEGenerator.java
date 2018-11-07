@@ -44,6 +44,8 @@ public class TSEGenerator extends AbstractGenerator {
     _builder.append("import java.awt.Point;");
     _builder.newLine();
     _builder.newLine();
+    _builder.append("import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;");
+    _builder.newLine();
     _builder.append("import fr.uha.ensisa.project.pan_chabalier.controller.GeneratedDataInterface;");
     _builder.newLine();
     _builder.append("import fr.uha.ensisa.project.pan_chabalier.core.ElementFactoryImp;");
@@ -225,7 +227,7 @@ public class TSEGenerator extends AbstractGenerator {
       String _color_2 = p.getColor();
       boolean _tripleEquals = (_color_2 == null);
       if (_tripleEquals) {
-        _builder.append("null");
+        _builder.append("Constants.DEFAULT_COLOR");
       }
     }
     _builder.append(", ");
@@ -243,7 +245,7 @@ public class TSEGenerator extends AbstractGenerator {
       String _thickness_2 = p.getThickness();
       boolean _tripleEquals_1 = (_thickness_2 == null);
       if (_tripleEquals_1) {
-        _builder.append("null");
+        _builder.append("Constants.DEFAULT_THICKNESS");
       }
     }
     _builder.append(", ");
@@ -261,7 +263,7 @@ public class TSEGenerator extends AbstractGenerator {
       String _curve_2 = p.getCurve();
       boolean _tripleEquals_2 = (_curve_2 == null);
       if (_tripleEquals_2) {
-        _builder.append("null");
+        _builder.append("Constants.DEFAULT_CURVATURE");
       }
     }
     return _builder;
@@ -284,7 +286,7 @@ public class TSEGenerator extends AbstractGenerator {
       String _position_2 = p.getPosition();
       boolean _tripleEquals = (_position_2 == null);
       if (_tripleEquals) {
-        _builder.append("null");
+        _builder.append("new Point(-1,-1)");
       }
     }
     _builder.append(", ");
@@ -301,7 +303,7 @@ public class TSEGenerator extends AbstractGenerator {
       String _color_2 = p.getColor();
       boolean _tripleEquals_1 = (_color_2 == null);
       if (_tripleEquals_1) {
-        _builder.append("null");
+        _builder.append("Constants.DEFAULT_COLOR");
       }
     }
     _builder.append(", ");
@@ -319,7 +321,7 @@ public class TSEGenerator extends AbstractGenerator {
       String _thickness_2 = p.getThickness();
       boolean _tripleEquals_2 = (_thickness_2 == null);
       if (_tripleEquals_2) {
-        _builder.append("null");
+        _builder.append("Constants.DEFAULT_THICKNESS");
       }
     }
     return _builder;

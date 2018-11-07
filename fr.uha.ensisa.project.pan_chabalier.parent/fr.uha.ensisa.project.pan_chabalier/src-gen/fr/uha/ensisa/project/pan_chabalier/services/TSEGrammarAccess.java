@@ -46,8 +46,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTransitionTransitionParserRuleCall_1_0 = (RuleCall)cTransitionAssignment_1.eContents().get(0);
 		
 		//Element:
-		//	state=State
-		//	| transition=Transition;
+		//	state=State | transition=Transition;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//state=State | transition=Transition
@@ -117,10 +116,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cPositionCOORDINATESTerminalRuleCall_3_1_0 = (RuleCall)cPositionAssignment_3_1.eContents().get(0);
 		
 		//StatesProperties:
-		//	"color" color=COLOR
-		//	| "thickness" thickness=FLOAT
-		//	| "position" position=COORDINATES
-		//	| DEFAULT position=COORDINATES;
+		//	"color" color=COLOR | "thickness" thickness=FLOAT | "position" position=COORDINATES | DEFAULT position=COORDINATES;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"color" color=COLOR | "thickness" thickness=FLOAT | "position" position=COORDINATES | DEFAULT position=COORDINATES
@@ -196,8 +192,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Transition:
 		//	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
-		//	transitionProperties+=TransitionProperties* label=Label?
-		//	| "initialTransition" init=ID COORDINATES;
+		//	transitionProperties+=TransitionProperties* label=Label? | "initialTransition" init=ID COORDINATES;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
@@ -434,8 +429,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Element:
-	//	state=State
-	//	| transition=Transition;
+	//	state=State | transition=Transition;
 	public ElementElements getElementAccess() {
 		return pElement;
 	}
@@ -455,10 +449,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//StatesProperties:
-	//	"color" color=COLOR
-	//	| "thickness" thickness=FLOAT
-	//	| "position" position=COORDINATES
-	//	| DEFAULT position=COORDINATES;
+	//	"color" color=COLOR | "thickness" thickness=FLOAT | "position" position=COORDINATES | DEFAULT position=COORDINATES;
 	public StatesPropertiesElements getStatesPropertiesAccess() {
 		return pStatesProperties;
 	}
@@ -469,8 +460,7 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Transition:
 	//	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
-	//	transitionProperties+=TransitionProperties* label=Label?
-	//	| "initialTransition" init=ID COORDINATES;
+	//	transitionProperties+=TransitionProperties* label=Label? | "initialTransition" init=ID COORDINATES;
 	public TransitionElements getTransitionAccess() {
 		return pTransition;
 	}
@@ -516,8 +506,8 @@ public class TSEGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal COLOR:
-	//	"WHITE" | "BLACK" | "BLUE" | "CYAN" | "DARK_GRAY" | "GRAY" | "LIGHT_GRAY" | "GREEN" | "MAGENTA" | "ORANGE" | "PINK"
-	//	| "RED" | "YELLOW";
+	//	"WHITE" | "BLACK" | "BLUE" | "CYAN" | "DARK_GRAY" | "GRAY" | "LIGHT_GRAY" | "GREEN" | "MAGENTA" | "ORANGE" | "PINK" |
+	//	"RED" | "YELLOW";
 	public TerminalRule getCOLORRule() {
 		return tCOLOR;
 	}

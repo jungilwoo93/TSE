@@ -32,6 +32,7 @@ package fr.uha.ensisa.project.pan_chabalier.tmp;
 import java.awt.Color;
 import java.awt.Point;
 
+import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
 import fr.uha.ensisa.project.pan_chabalier.controller.GeneratedDataInterface;
 import fr.uha.ensisa.project.pan_chabalier.core.ElementFactoryImp;
 
@@ -64,6 +65,7 @@ public class GeneratedData implements GeneratedDataInterface {
 
 	def compile(Element e) '''
 		«IF e.state !== null»
+«««			factory.createState("«e.state.name»"«FOR p:e.state.statesProperties»«p.compile»«ENDFOR»);
 			factory.createState("«e.state.name»"«FOR p:e.state.statesProperties»«p.compile»«ENDFOR»);
 		«ENDIF»
 		
@@ -73,10 +75,10 @@ public class GeneratedData implements GeneratedDataInterface {
 	'''
 
 	def compile(
-		TransitionProperties p) ''', «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»null«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»null«ENDIF», «IF p.curve!==null»new Float(«p.curve»)«ENDIF»«IF p.curve===null»null«ENDIF»'''
+		TransitionProperties p) ''', «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»Constants.DEFAULT_COLOR«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»Constants.DEFAULT_THICKNESS«ENDIF», «IF p.curve!==null»new Float(«p.curve»)«ENDIF»«IF p.curve===null»Constants.DEFAULT_CURVATURE«ENDIF»'''
 
 	def compile(
-		StatesProperties p) ''', «IF p.position!==null»new Point(«p.position»)«ENDIF»«IF p.position===null»null«ENDIF», «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»null«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»null«ENDIF»'''
+		StatesProperties p) ''', «IF p.position!==null»new Point(«p.position»)«ENDIF»«IF p.position===null»new Point(-1,-1)«ENDIF», «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»Constants.DEFAULT_COLOR«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»Constants.DEFAULT_THICKNESS«ENDIF»'''
 
 }
 
