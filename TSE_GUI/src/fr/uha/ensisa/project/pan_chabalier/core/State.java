@@ -57,9 +57,9 @@ public class State {
 	}
 
 	public void setColor(Color color) {
-		if(color.equals(null)) {
-			color = Constants.DEFAULT_COLOR;
-		}
+//		if(color.equals(null)) {
+//			color = Constants.DEFAULT_COLOR;
+//		}
 		this.color = color;
 	}
 
@@ -68,9 +68,9 @@ public class State {
 	}
 
 	public void setThickness(Float thickness) {
-		if(thickness.equals(null)) {
-			thickness = Constants.DEFAULT_THICKNESS;
-		}
+//		if(thickness.equals(null)) {
+//			thickness = Constants.DEFAULT_THICKNESS;
+//		}
 		this.thickness = thickness;
 	}
 

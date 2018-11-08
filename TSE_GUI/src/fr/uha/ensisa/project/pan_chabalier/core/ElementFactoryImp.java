@@ -5,6 +5,8 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
+
 public class ElementFactoryImp implements ElementFactory{
 
 	private HashMap<String,State> states = new HashMap<String,State>();
@@ -23,6 +25,18 @@ public class ElementFactoryImp implements ElementFactory{
 		transitions.add(t);
 		return t;
 	}
+	
+	public State createState(String id, Point point, Color color, Float thickness) {
+		State s = new State(id,color,thickness,point);
+		states.put(id,s);
+		return s;
+	}
+	
+	public Transition createTransition(String startId, String endId, String labelText, Point LabelPoint) {
+		Transition t = new Transition(states.get(startId), states.get(endId), Constants.DEFAULT_COLOR, Constants.DEFAULT_THICKNESS, Constants.DEFAULT_CURVATURE, labelText, LabelPoint);
+		transitions.add(t);
+		return t;
+	}
 
 	public HashMap<String, State> getStates() {
 		return states;
@@ -32,34 +46,8 @@ public class ElementFactoryImp implements ElementFactory{
 		return transitions;
 	}
 
-	public State createState(String id, Point point, Object object, Float float1) {
-		// TODO Auto-generated method stub
-		State s = null;
-		states.put(id,s);
-		return s;
+	public void erase() {
+		this.states.clear();
+		this.transitions.clear();
 	}
-
-	public State createState(String id, Point point, Object object, Float float1, Point point2, Object object2,
-			Float float2, Point point3, Color gray, Float float3) {
-		// TODO Auto-generated method stub
-		State s = null;
-		states.put(id,s);
-		return s;
-	}
-
-	public Transition createTransition(String string, String string2, Color gray, Float float1, Float float2, Object object,
-			Float float3, Float float4, Object object2, Float float5, Float float6, String string3, Point point) {
-		// TODO Auto-generated method stub
-		Transition t = null;
-		transitions.add(t);
-		return t;
-	}
-
-	public Transition createTransition(String string, String string2, String string3, Point point) {
-		// TODO Auto-generated method stub
-		Transition t = null;
-		transitions.add(t);
-		return t;
-	}
-
 }

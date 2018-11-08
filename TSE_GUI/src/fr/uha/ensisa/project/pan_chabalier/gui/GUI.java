@@ -8,6 +8,8 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -20,10 +22,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import fr.uha.ensisa.project.pan_chabalier.common.stringSources.StringSources;
+import fr.uha.ensisa.project.pan_chabalier.controller.GeneratorController;
 import fr.uha.ensisa.project.pan_chabalier.core.ElementFactoryImp;
-import fr.uha.ensisa.project.pan_chabalier.core.State;
-import fr.uha.ensisa.project.pan_chabalier.core.Transition;
 
 public class GUI extends JFrame {
 
@@ -56,7 +56,7 @@ public class GUI extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI() {
-		setTitle(StringSources.getString("GUI.this.title")); //$NON-NLS-1$
+		setTitle("State system and transitions editor");
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
@@ -64,19 +64,19 @@ public class GUI extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 
-		JMenu mnMenu = new JMenu(StringSources.getString("GUI.mnMenu.text")); //$NON-NLS-1$
+		JMenu mnMenu = new JMenu("Menu");
 		menuBar.add(mnMenu);
 
-		JMenuItem mntmOpenFile = new JMenuItem(StringSources.getString("GUI.mntmOpenFile.text")); //$NON-NLS-1$
+		JMenuItem mntmOpenFile = new JMenuItem("Open");
 		mnMenu.add(mntmOpenFile);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem(StringSources.getString("GUI.export.text")); //$NON-NLS-1$
+		JMenuItem mntmNewMenuItem = new JMenuItem("Export as PDF");
 		mnMenu.add(mntmNewMenuItem);
 
-		JMenu mnHelp = new JMenu(StringSources.getString("GUI.mnHelp.text")); //$NON-NLS-1$
+		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 		
-		JMenuItem aboutMenu = new JMenuItem(StringSources.getString("GUI.aboutMenu.text")); //$NON-NLS-1$
+		JMenuItem aboutMenu = new JMenuItem("About");
 		aboutMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//TODO Do the about window
@@ -85,13 +85,13 @@ public class GUI extends JFrame {
 //								+ Sprites.class.getResource(
 //										"/com/chabalier/andy/uha/ensisa/starcraft/ressources/sprite/logo.png")
 //								+ "\" alt=\"EnsicraftLogo\"><br>ENSICRAFT, <br>"
-//								+ StringSources.getString("Main_UI.aboutDialog.text") + "</center></html>",
+//								+ "Main_UI.aboutDialog.text") + "</center></html>",
 //						"About", JOptionPane.PLAIN_MESSAGE);
 			}
 		});
 		mnHelp.add(aboutMenu);
 
-		JMenuItem mntmContactUs = new JMenuItem(StringSources.getString("GUI.mntmContactUs.text")); //$NON-NLS-1$
+		JMenuItem mntmContactUs = new JMenuItem("Report bug or enhancement");
 		mntmContactUs.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -108,7 +108,7 @@ public class GUI extends JFrame {
 		});
 		mnHelp.add(mntmContactUs);
 		
-		JMenuItem wikiMenu = new JMenuItem(StringSources.getString("GUI.wikiMenu.text")); //$NON-NLS-1$
+		JMenuItem wikiMenu = new JMenuItem("Wiki");
 		wikiMenu.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -136,6 +136,7 @@ public class GUI extends JFrame {
 		c.gridheight = 4;
 		c.fill = GridBagConstraints.BOTH;
 
+		
 		EditeurPanel panel = new EditeurPanel();
 		panel.setBackground(Color.WHITE);
 		// panel.setLayout(null);
@@ -146,7 +147,7 @@ public class GUI extends JFrame {
 
 		c_4 = new GridBagConstraints();
 		c_4.insets = new Insets(0, 0, 0, 5);
-		JButton validate = new JButton(StringSources.getString("GUI.validate.text")); //$NON-NLS-1$
+		JButton validate = new JButton("Execute");
 		c_4.gridx = 0;
 		c_4.gridy = 4;
 		c_4.gridwidth = 1;
@@ -154,7 +155,7 @@ public class GUI extends JFrame {
 
 		c_3 = new GridBagConstraints();
 		c_3.insets = new Insets(0, 0, 0, 5);
-		JButton export = new JButton(StringSources.getString("GUI.export.text")); //$NON-NLS-1$
+		JButton export = new JButton("Export as PDF");
 		c_3.gridx = 3;
 		c_3.gridy = 4;
 		c_3.gridwidth = 1;
@@ -174,19 +175,49 @@ public class GUI extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String text = textArea.getText();
-				State s1 = new State("1", Color.RED, (float) 5, 200, 200);
-				State s2 = new State("2", Color.RED, (float) 5, 400, 400);
-				Transition t = new Transition(s1, s2, Color.BLUE, "coucou", (float) 2.5, (float) 50.5);
-				panel.addState(s1);
-				panel.addState(s2);
-				/*
-				 * if(text.contains("label")) { System.out.println("label"); EditeurLabel label
-				 * = new EditeurLabel("Bello",Color.RED, 200,20); panel.addLabel(label); }else
-				 * if(text.contains("state")) { System.out.println("state"); State state = new
-				 * State(); panel.addState(state); }else if(text.contains("trans")) {
-				 * System.out.println("transition"); Transition trans = new Transition();
-				 * panel.addTransition(trans); }
-				 */
+				factory.erase();
+				try {
+					File f = new File("writedFile.tse");
+					FileOutputStream fout = new FileOutputStream("writedFile.tse");
+					fout.write(text.getBytes());
+					fout.close();
+					GeneratorController gen = new GeneratorController(f.getAbsolutePath(),"generator.jar",factory);
+					System.out.println("generation started");
+					gen.compile();
+					System.out.println("generation ended");
+					
+				} catch (IOException | URISyntaxException | ClassNotFoundException | InstantiationException | IllegalAccessException | InterruptedException e) {
+					e.printStackTrace();
+				}
+				System.out.println("Cleaning factory");
+				panel.cleanLists();
+				System.out.println("done");
+				
+				System.out.println("Adding data");
+				panel.addStates(factory.getStates().values());
+				panel.addTransitions(factory.getTransitions());
+				panel.addLabels(factory.getTransitions());
+				System.out.println("done");
+				
+				System.out.println("Repainting");
+				panel.getParent().repaint();
+				panel.repaint();
+				System.out.println("done");
+				//old code TODO refactor it
+				
+//				State s1 = new State("1", Color.RED, (float) 5, 200, 200);
+//				State s2 = new State("2", Color.RED, (float) 5, 400, 400);
+//				Transition t = new Transition(s1, s2, Color.BLUE, "coucou", (float) 2.5, (float) 50.5);
+//				panel.addState(s1);
+//				panel.addState(s2);
+//				/*
+//				 * if(text.contains("label")) { System.out.println("label"); EditeurLabel label
+//				 * = new EditeurLabel("Bello",Color.RED, 200,20); panel.addLabel(label); }else
+//				 * if(text.contains("state")) { System.out.println("state"); State state = new
+//				 * State(); panel.addState(state); }else if(text.contains("trans")) {
+//				 * System.out.println("transition"); Transition trans = new Transition();
+//				 * panel.addTransition(trans); }
+//				 */
 
 			}
 

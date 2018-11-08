@@ -41,9 +41,9 @@ public class Transition {
 
 	//always use setStart before setEnd
 	public void setEnd(State end) {
-		if(end.equals(null)) {
-			end = start;
-		}
+//		if(end.equals(null)) {
+//			end = start;
+//		}
 		this.end = end;
 	}
 
@@ -52,9 +52,9 @@ public class Transition {
 	}
 
 	public void setThickness(Float thickness) {
-		if(thickness.equals(null)) {
-			thickness = Constants.DEFAULT_THICKNESS;
-		}
+//		if(thickness.equals(null)) {
+//			thickness = Constants.DEFAULT_THICKNESS;
+//		}
 		this.thickness = thickness;
 	}
 
@@ -63,9 +63,9 @@ public class Transition {
 	}
 
 	public void setCurvature(Float curvature) {
-		if(curvature.equals(null)) {
-			curvature = Constants.DEFAULT_CURVATURE;
-		}
+//		if(curvature.equals(null)) {
+//			curvature = Constants.DEFAULT_CURVATURE;
+//		}
 		this.curvature = curvature;
 	}
 
