@@ -63,8 +63,23 @@ public class GUI extends JFrame {
 
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
-
+		
 		JMenu mnMenu = new JMenu("Menu");
+		menuBar.add(mnMenu);
+		
+		JMenuItem mntmOpenFile = new JMenuItem("Open File");
+		mnMenu.add(mntmOpenFile);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("Export"); //$NON-NLS-1$
+		mnMenu.add(mntmNewMenuItem);
+
+		JMenu mnHelp = new JMenu("Help"); //$NON-NLS-1$
+		menuBar.add(mnHelp);
+		
+		JMenuItem aboutMenu = new JMenuItem("About us"); //$NON-NLS-1$*/
+
+		/*JMenu mnMenu = new JMenu(StringSources.getString("GUI.mnMenu.text")); //$NON-NLS-1$
+>>>>>>> d6e5049fbc87f2cbbd88dcef193a5b88dfc2dcf3
 		menuBar.add(mnMenu);
 
 		JMenuItem mntmOpenFile = new JMenuItem("Open");
@@ -76,7 +91,11 @@ public class GUI extends JFrame {
 		JMenu mnHelp = new JMenu("Help");
 		menuBar.add(mnHelp);
 		
+<<<<<<< HEAD
 		JMenuItem aboutMenu = new JMenuItem("About");
+=======
+		JMenuItem aboutMenu = new JMenuItem(StringSources.getString("GUI.aboutMenu.text")); //$NON-NLS-1$*/
+		
 		aboutMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//TODO Do the about window
@@ -148,6 +167,7 @@ public class GUI extends JFrame {
 		c_4 = new GridBagConstraints();
 		c_4.insets = new Insets(0, 0, 0, 5);
 		JButton validate = new JButton("Execute");
+		//JButton validate = new JButton(StringSources.getString("GUI.validate.text")); //$NON-NLS-1$
 		c_4.gridx = 0;
 		c_4.gridy = 4;
 		c_4.gridwidth = 1;
@@ -156,6 +176,7 @@ public class GUI extends JFrame {
 		c_3 = new GridBagConstraints();
 		c_3.insets = new Insets(0, 0, 0, 5);
 		JButton export = new JButton("Export as PDF");
+		//JButton export = new JButton(StringSources.getString("GUI.export.text")); //$NON-NLS-1$
 		c_3.gridx = 3;
 		c_3.gridy = 4;
 		c_3.gridwidth = 1;

@@ -22,7 +22,8 @@ public class State {
 		setId(id);
 		setP(p);
 		setColor(color);
-		setThickness(thickness);	}
+		setThickness(thickness);	
+	}
 
 	@Deprecated
 	public int getX() {

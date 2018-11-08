@@ -2,6 +2,7 @@ package fr.uha.ensisa.project.pan_chabalier.gui;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import fr.uha.ensisa.project.pan_chabalier.core.Transition;
 
 public class EditeurPanel extends JPanel {
 	private static final long serialVersionUID = 8977236653006925656L;
-//	private Graphics2D g2d = null;
+	private Graphics2D g2d = null;
 	// String s = "coucou";
 	private List<EditeurLabel> listLabel;
 	private List<State> listState;
@@ -63,10 +64,28 @@ public class EditeurPanel extends JPanel {
 				// this.g2d.setStroke(new BasicStroke(s.getThickness()));
 				g2d.drawString(s.getId(), s.getX() + sizeOval / 2, s.getY() + sizeOval / 2);
 			}
+		
+		
+//		if(listTransition.size()>0) {
+//			for(Transition t :listTransition) {
+//				System.out.println("draw");
+//				this.g2d.setColor(t.getColor());
+//				this.g2d.setStroke(new BasicStroke(t.getThickness()));
+//				//this.g2d.drawArc(10, 50, 100, 200, 0, 60);
+//				/*System.out.println(t.getStart().getX());
+//				System.out.println(t.getStart().getY());
+//				System.out.println(t.getEnd().getX()-t.getStart().getX());
+//				System.out.println(t.getEnd().getY()-t.getStart().getY());
+//				System.out.println((int)t.getCurvature());*/
+//				//this.g2d.drawArc(t.getStart().getX(),t.getStart().getY(),t.getEnd().getX()-t.getStart().getX(),t.getEnd().getY()-t.getStart().getY(),0,(int)t.getCurvature());
+//				this.g2d.setFont(new Font("Arial", Font.PLAIN,20));
+//				this.g2d.drawString(t.getLabel().getText(), t.getLabel().getX(), t.getLabel().getY());
+//			}
+//		}
 	}
 
 	public void addLabel(EditeurLabel label) {
-		System.out.println("ajouter label");
+		//System.out.println("ajouter label");
 		listLabel.add(label);
 		this.repaint();
 	}

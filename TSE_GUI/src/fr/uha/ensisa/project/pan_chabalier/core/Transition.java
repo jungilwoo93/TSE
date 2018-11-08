@@ -3,13 +3,13 @@ package fr.uha.ensisa.project.pan_chabalier.core;
 import java.awt.Color;
 import java.awt.Point;
 
-import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
 import fr.uha.ensisa.project.pan_chabalier.gui.EditeurLabel;
 
 public class Transition {
 	private State start, end;
 	private float thickness, curvature;
 	private EditeurLabel label;
+	private Color color;
 
 	public Transition(State start, State end, Color color, String text, Float thickness, Float curvature) {
 		this.setStart(start);
@@ -25,6 +25,7 @@ public class Transition {
 		setThickness(thickness);
 		setCurvature(curvature);
 		setLabel(new EditeurLabel(text,color,textPosition));
+	
 	}
 
 	public State getStart() {
@@ -77,4 +78,10 @@ public class Transition {
 		this.label = label;
 	}
 
+	public Color getColor() {
+		return color;
+	}
+	public void setColor(Color color) {
+		this.color = color;
+	}
 }
