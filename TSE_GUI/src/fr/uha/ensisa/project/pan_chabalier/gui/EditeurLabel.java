@@ -37,22 +37,18 @@ public class EditeurLabel {
 		// this.label.setText(text);
 	}
 
-	@Deprecated
 	public int getX() {
 		return p.x;
 	}
 
-	@Deprecated
 	public void setX(int x) {
 		p.setLocation(x, p.y);
 	}
 
-	@Deprecated
 	public int getY() {
 		return p.y;
 	}
 
-	@Deprecated
 	public void setY(int y) {
 		p.setLocation(p.x, y);
 	}

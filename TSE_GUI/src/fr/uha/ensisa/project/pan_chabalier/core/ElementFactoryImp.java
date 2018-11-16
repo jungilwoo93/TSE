@@ -26,17 +26,17 @@ public class ElementFactoryImp implements ElementFactory{
 		return t;
 	}
 	
-	public State createState(String id, Point point, Color color, Float thickness) {
+	/*public State createState(String id, Point point, Color color, Float thickness) {
 		State s = new State(id,color,thickness,point);
 		states.put(id,s);
 		return s;
 	}
-	
+
 	public Transition createTransition(String startId, String endId, String labelText, Point LabelPoint) {
 		Transition t = new Transition(states.get(startId), states.get(endId), Constants.DEFAULT_COLOR, Constants.DEFAULT_THICKNESS, Constants.DEFAULT_CURVATURE, labelText, LabelPoint);
 		transitions.add(t);
 		return t;
-	}
+	}*/
 
 	public HashMap<String, State> getStates() {
 		return states;

@@ -11,6 +11,7 @@ import java.net.URLClassLoader;
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
 
+import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
 import fr.uha.ensisa.project.pan_chabalier.core.ElementFactoryImp;
 
 public class GeneratorController {
@@ -25,27 +26,44 @@ public class GeneratorController {
 	}
 	 
 	public void compile() throws IOException, InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, URISyntaxException {
-		Process process = this.pb.start();
-		setOut(((Process) process).getOutputStream());
-		process.waitFor();
+//		Process process = this.pb.start();
+//		setOut(((Process) process).getOutputStream());
+//		process.waitFor();
 		executeGeneratedCode();
 	}
 	
 	public void executeGeneratedCode() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, URISyntaxException {
-//        File root = new File("src/fr/uha/ensisa/project/pan_chabalier/tmp");	
-//		File root = new File(GeneratorController.class.getResource("fr/uha/ensisa/project/pan_chabalier/tmp/").toString());
-		File root = new File("src/fr/uha/ensisa/project/pan_chabalier/tmp");
-        File sourceFile = new File(root, "GeneratedData.java");
-		// Compile source file.
-		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-		compiler.run(null, null, null, sourceFile.getPath());
-
-		// Load and instantiate compiled class.
-		URLClassLoader classLoader = URLClassLoader.newInstance(new URL[] { root.toURI().toURL() });
-		Class<?> cls = Class.forName("fr.uha.ensisa.project.pan_chabalier.tmp.GeneratedData", true, classLoader);
-		GeneratedDataInterface instance = (GeneratedDataInterface) cls.newInstance();
-		instance.setFactory(this.factory);
-		instance.instanciateElements();
+////        File root = new File("src/fr/uha/ensisa/project/pan_chabalier/tmp");	
+////		File root = new File(GeneratorController.class.getResource("fr/uha/ensisa/project/pan_chabalier/tmp/").toString());
+////		File root = new File("src/fr/uha/ensisa/project/pan_chabalier/tmp");
+////        File sourceFile = new File(root, "GeneratedData.java");
+//	
+//		File root = new File("fr/uha/ensisa/project/pan_chabalier/tmp");
+//        File sourceFile = new File(root, "GeneratedData.java");
+//		
+//		// Compile source file.
+//		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+//		System.out.println(sourceFile.getAbsolutePath());
+//		
+//		compiler.run(null, null, null, sourceFile.getAbsolutePath());
+//
+//		// Load and instantiate compiled class.
+//		URLClassLoader classLoader = URLClassLoader.newInstance(new URL[] { root.toURI().toURL() });
+//		Class<?> cls = Class.forName("fr.uha.ensisa.project.pan_chabalier.tmp.GeneratedData", true, classLoader);
+//		GeneratedDataInterface instance = (GeneratedDataInterface) cls.newInstance();
+//		instance.setFactory(this.factory);
+//		instance.instanciateElements();
+		
+		factory.createState("q0", Constants.DEFAULT_COLOR, Constants.DEFAULT_THICKNESS,new Point(0,0));
+		
+		/*factory.createState("q2", new Point(5,3), Constants.DEFAULT_COLOR, Constants.DEFAULT_THICKNESS);
+		
+		factory.createState("q3", new Point(7,9), Constants.DEFAULT_COLOR, Constants.DEFAULT_THICKNESS);
+		
+		factory.createState("q4", new Point(3,6), Constants.DEFAULT_COLOR, Constants.DEFAULT_THICKNESS);
+		
+		
+		factory.createTransition("q4", "q1", "label2", new Point(1,1));*/
 	}
 	
 	public OutputStream getOut() {
