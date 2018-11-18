@@ -11,6 +11,7 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import fr.uha.ensisa.project.pan_chabalier.core.EditeurLabel;
 import fr.uha.ensisa.project.pan_chabalier.core.State;
 import fr.uha.ensisa.project.pan_chabalier.core.Transition;
 
@@ -37,23 +38,26 @@ public class EditeurPanel extends JPanel {
 
 	@Override
 	protected void paintComponent(Graphics g) {
-		Graphics2D g2d = (Graphics2D) g;
-		super.repaint();
+		this.g2d = (Graphics2D) g;
+		//super.repaint();
 		super.paintComponent(g2d);
 		/*
 		 * System.out.println("Repaint called"); if(s!="coucou") {
 		 * this.g2d.drawString(s, 200, 200); }else { this.g2d.drawString(s, 10, 200); }
 		 */
+		if(listLabel.size()>0) {
 			for(EditeurLabel label : listLabel) {
 				g2d.drawString(label.getText(), label.getX(), label.getY());
 			}
-			
-			for(Transition transition : listTransition) {
-				g2d.setColor(Color.BLACK);
-				g2d.setStroke(new BasicStroke(transition.getThickness()));
-				g2d.drawLine(transition.getStart().getX(), transition.getStart().getY(), transition.getEnd().getX(), transition.getEnd().getY());
+		}
+		if(listTransition.size()>0) {
+			for(Transition t : listTransition) {
+				g2d.setColor(t.getColor());
+				g2d.setStroke(new BasicStroke(t.getThickness()));
+				g2d.drawLine(t.getStart().getX(), t.getStart().getY(), t.getEnd().getX(), t.getEnd().getY());
 			}
-
+		}
+		if(listState.size()>0)
 			for(State s : listState) {
 				// System.out.println("draw");
 				g2d.setColor(Color.WHITE);

@@ -1,4 +1,4 @@
-package fr.uha.ensisa.project.pan_chabalier.gui;
+package fr.uha.ensisa.project.pan_chabalier.core;
 
 import java.awt.Color;
 import java.awt.Point;

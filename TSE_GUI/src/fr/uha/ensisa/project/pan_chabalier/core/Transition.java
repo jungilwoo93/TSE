@@ -3,8 +3,6 @@ package fr.uha.ensisa.project.pan_chabalier.core;
 import java.awt.Color;
 import java.awt.Point;
 
-import fr.uha.ensisa.project.pan_chabalier.gui.EditeurLabel;
-
 public class Transition {
 	private State start, end;
 	private float thickness, curvature;

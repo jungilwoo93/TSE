@@ -26,9 +26,9 @@ public class GeneratorController {
 	}
 	 
 	public void compile() throws IOException, InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, URISyntaxException {
-		Process process = this.pb.start();
-		setOut(((Process) process).getOutputStream());
-		process.waitFor();
+//		Process process = this.pb.start();
+//		setOut(((Process) process).getOutputStream());
+//		process.waitFor();
 		executeGeneratedCode();
 	}
 	
