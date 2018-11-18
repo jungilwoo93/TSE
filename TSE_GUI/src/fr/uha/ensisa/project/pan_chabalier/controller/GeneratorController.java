@@ -26,9 +26,9 @@ public class GeneratorController {
 	}
 	 
 	public void compile() throws IOException, InterruptedException, ClassNotFoundException, InstantiationException, IllegalAccessException, URISyntaxException {
-//		Process process = this.pb.start();
-//		setOut(((Process) process).getOutputStream());
-//		process.waitFor();
+		Process process = this.pb.start();
+		setOut(((Process) process).getOutputStream());
+		process.waitFor();
 		executeGeneratedCode();
 	}
 	
@@ -38,23 +38,23 @@ public class GeneratorController {
 ////		File root = new File("src/fr/uha/ensisa/project/pan_chabalier/tmp");
 ////        File sourceFile = new File(root, "GeneratedData.java");
 //	
-//		File root = new File("fr/uha/ensisa/project/pan_chabalier/tmp");
-//        File sourceFile = new File(root, "GeneratedData.java");
-//		
-//		// Compile source file.
-//		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-//		System.out.println(sourceFile.getAbsolutePath());
-//		
-//		compiler.run(null, null, null, sourceFile.getAbsolutePath());
-//
-//		// Load and instantiate compiled class.
-//		URLClassLoader classLoader = URLClassLoader.newInstance(new URL[] { root.toURI().toURL() });
-//		Class<?> cls = Class.forName("fr.uha.ensisa.project.pan_chabalier.tmp.GeneratedData", true, classLoader);
-//		GeneratedDataInterface instance = (GeneratedDataInterface) cls.newInstance();
-//		instance.setFactory(this.factory);
-//		instance.instanciateElements();
+		File root = new File("fr/uha/ensisa/project/pan_chabalier/tmp");
+        File sourceFile = new File(root, "GeneratedData.java");
 		
-		factory.createState("q0", Constants.DEFAULT_COLOR, Constants.DEFAULT_THICKNESS,new Point(0,0));
+		// Compile source file.
+		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+		System.out.println(sourceFile.getAbsolutePath());
+		//System.out.println("coucou");
+		compiler.run(null, null, null, sourceFile.getAbsolutePath());
+
+		// Load and instantiate compiled class.
+		URLClassLoader classLoader = URLClassLoader.newInstance(new URL[] { root.toURI().toURL() });
+		Class<?> cls = Class.forName("fr.uha.ensisa.project.pan_chabalier.tmp.GeneratedData", true, classLoader);
+		GeneratedDataInterface instance = (GeneratedDataInterface) cls.newInstance();
+		instance.setFactory(this.factory);
+		instance.instanciateElements();
+		
+		//factory.createState("q0", Constants.DEFAULT_COLOR, Constants.DEFAULT_THICKNESS,new Point(0,0));
 		
 		/*factory.createState("q2", new Point(5,3), Constants.DEFAULT_COLOR, Constants.DEFAULT_THICKNESS);
 		
