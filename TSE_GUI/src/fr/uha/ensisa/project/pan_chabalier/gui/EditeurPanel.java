@@ -113,6 +113,27 @@ public class EditeurPanel extends JPanel {
 //		}
 	}
 
+	/**
+	 * Method to get the control point of the "bezier" curve. 
+	 * Math formula: 
+	 * x_c = x_a(x_b-x_a)/(2cos(theta))*(cos(delta)-sin(delta)tan(theta))
+	 * y_c = y_a(x_b-x_a)/(2cos(theta))*(sin(delta)+cos(delta)tan(theta))
+	 * 
+	 * with delta=arctan((y_b-y_a)/(x_b-x_a))
+	 * 
+	 * @param A First control Point (start)
+	 * @param B Last control Point (end)
+	 * @param theta Angle of the curve
+	 * @return The new control point
+	 */
+	public Point2D.Double calculateControlPoint(Point A, Point B,Float theta) {
+		Double delta = Math.atan((B.getY()-A.getY())/(B.getX()-A.getX()));
+		Double com = (B.getX()-A.getX())/(2*Math.cos(theta));
+		Double X_c = A.getX()*com*(Math.cos(delta)-Math.sin(delta)*Math.tan(theta));
+		Double Y_c = A.getY()*com*(Math.sin(delta)+Math.cos(delta)*Math.tan(theta));
+		return new Point2D.Double(X_c, Y_c);
+	}
+	
 	public void addLabel(EditeurLabel label) {
 		//System.out.println("ajouter label");
 		listLabel.add(label);
