@@ -15,7 +15,7 @@ public class EditeurLabel {
 		// label=new JLabel(text);
 		// label.setLocation(x, y);
 		// label.setForeground(color);
-		System.out.println("create");
+		//System.out.println("create");
 		setText(text);
 		setColor(color);
 		setP(new Point(x, y));

@@ -9,20 +9,23 @@ public class Transition {
 	private EditeurLabel label;
 	private Color color;
 
-	public Transition(State start, State end, Color color, String text, Float thickness, Float curvature) {
+	public Transition(State start, State end, Color color, Float thickness, Float curvature, String text) {
 		this.setStart(start);
 		this.setEnd(end);
-		this.setLabel(new EditeurLabel(text, color, (start.getX() + end.getX()) / 2, (start.getY() + end.getY()) / 2));
+		this.setThickness(thickness);
+		this.setCurvature(curvature);
+		this.setColor(color);
+		this.setLabel(new EditeurLabel(text, Color.BLACK, (start.getX() + end.getX()) / 2, (start.getY() + end.getY()) / 2));
 
 	}
 
 	public Transition(State start, State end, Color color, Float thickness, Float curvature, String text,
 			Point textPosition) {
-		setStart(start);
-		setEnd(end);
-		setThickness(thickness);
-		setCurvature(curvature);
-		setLabel(new EditeurLabel(text,color,textPosition));
+		this.setStart(start);
+		this.setEnd(end);
+		this.setThickness(thickness);
+		this.setCurvature(curvature);
+		this.setLabel(new EditeurLabel(text,color,textPosition));
 	
 	}
 

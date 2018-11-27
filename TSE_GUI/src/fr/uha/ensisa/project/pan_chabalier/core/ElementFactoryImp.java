@@ -27,7 +27,13 @@ public class ElementFactoryImp implements ElementFactory{
 		transitions.add(t);
 		return t;
 	}
-	
+	@Override
+	public Transition createTransition(String startId, String endId, Color color, Float thickness, Float curvature, String text) {
+		Transition t = new Transition(states.get(startId), states.get(endId), color, thickness, curvature, text);
+		System.out.println("end + " + states.get(endId));
+		transitions.add(t);
+		return t;
+	}
 	/*public State createState(String id, Point point, Color color, Float thickness) {
 		State s = new State(id,color,thickness,point);
 		states.put(id,s);

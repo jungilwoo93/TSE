@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.geom.Path2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.QuadCurve2D;
 import java.util.ArrayList;
@@ -48,11 +49,11 @@ public class EditeurPanel extends JPanel {
 		 * System.out.println("Repaint called"); if(s!="coucou") {
 		 * this.g2d.drawString(s, 200, 200); }else { this.g2d.drawString(s, 10, 200); }
 		 */
-		if(listLabel.size()>0) {
+		/*if(listLabel.size()>0) {
 			for(EditeurLabel label : listLabel) {
 				g2d.drawString(label.getText(), label.getX(), label.getY());
 			}
-		}
+		}*/
 		if(listTransition.size()>0) {
 			for(Transition t : listTransition) {
 				g2d.setColor(t.getColor());
@@ -62,23 +63,51 @@ public class EditeurPanel extends JPanel {
 				double distance = start.distance(end);
 				Point2D cp = new Point();
 				//TODO corriger formule
-				if(start.getX()-end.getX()==0) {
-					cp.setLocation(start.getX()+Math.sin(t.getCurvature())*distance/2,start.getY()+distance/2);
-					//System.out.println("x=0");
+				if(t.getCurvature()==0) {
+					g2d.drawLine((int)start.getX()+sizeOval/2, (int)start.getY()+sizeOval/2, (int)end.getX()+sizeOval/2, (int)end.getY()+sizeOval/2);
+					g2d.drawString(t.getLabel().getText(),(int)(start.getX()+distance/2),(int)(start.getY()+distance/2)-50);
+				}/*else if(t.getCurvature() == 90){
+					cp.setLocation(start.getX()+sizeOval/2,start.getY()+sizeOval);
+					QuadCurve2D curve = new QuadCurve2D.Double();
+					curve.setCurve(start.getX()+sizeOval/2,start.getY(), cp.getX()+100,cp.getY()+100,  start.getX()+sizeOval/2,start.getY());
+					g2d.draw(curve);
+					System.out.println("90!!!");
+				}*/else {
+					if(Math.abs(start.getX()-end.getX())==0) {
+						cp.setLocation(start.getX()+Math.sin(t.getCurvature())*distance/2+sizeOval/2,start.getY()+distance/2+sizeOval/2);
+						
+						System.out.println("x=0");
+					}
+					else if(Math.abs(start.getY()-end.getY())==0) {
+						cp.setLocation(start.getX()+distance/2+sizeOval/2, start.getY()+Math.sin(t.getCurvature())*distance/2+sizeOval/2);
+						
+						//System.out.println("controle point " + cp);
+						System.out.println("y=0");
+					}else {
+						if(Math.abs(t.getCurvature())==45) {
+							cp.setLocation(start.getX(),end.getY());
+						}else {
+							double disX = Math.abs(start.getX()-end.getX());
+							double disY = Math.abs(start.getY()-end.getY());
+							cp.setLocation(start.getX()+disX/2, end.getY()+disY/2);
+							System.out.println("x,y !=0");
+						}
+							
+					}
+					//Point2D cp = calculateControlPoint(start,end,(float)Math.PI/4);
+					//P path = new Path2D.Double();
+					//path.moveTo(start.getX()+sizeOval/2, start.getY()+sizeOval/2);
+					//path.curveTo(start.getX(), start.getY(), cp.getX(), cp.getY(), end.getX(), end.getY());
+					QuadCurve2D curve = new QuadCurve2D.Double();
+					curve.setCurve(start.getX()+sizeOval/2,start.getY()+sizeOval/2, cp.getX(),cp.getY(),  end.getX()+sizeOval/2, end.getY()+sizeOval/2);
+					g2d.draw(curve);
+					if(t.getCurvature()>0) {
+						g2d.drawString(t.getLabel().getText(),(int)cp.getX(),(int)cp.getY()+40);
+					}else {
+						g2d.drawString(t.getLabel().getText(),(int)cp.getX(),(int)cp.getY()-30);
+					}
 				}
-				else if(start.getY()-end.getY()==0) {
-					cp.setLocation(start.getX()+distance/2, start.getY()+Math.sin(t.getCurvature())*distance/2);
-					//System.out.println("controle point " + cp);
-					//System.out.println("y=0");
-				}else {
-					double disX = Math.abs(start.getX()-end.getX());
-					double disY = Math.abs(start.getY()-end.getY());
-					cp.setLocation(start.getX()+disX/2, end.getY()+disY/2);
-					//System.out.println("x,y !=0");
-				}
-				QuadCurve2D curve = new QuadCurve2D.Double();
-				curve.setCurve(start.getX()+sizeOval/2,start.getY()+sizeOval/2, cp.getX(),cp.getY(),  end.getX()+sizeOval/2, end.getY()+sizeOval/2);
-				g2d.draw(curve);
+				
 				//g2d.drawLine(t.getStart().getX()+sizeOval/2, t.getStart().getY()+sizeOval/2, t.getEnd().getX()+sizeOval/2, t.getEnd().getY()+sizeOval/2);
 			}
 		}
