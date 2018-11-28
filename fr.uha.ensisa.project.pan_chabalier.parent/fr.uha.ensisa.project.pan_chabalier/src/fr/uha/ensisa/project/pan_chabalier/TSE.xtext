@@ -19,7 +19,7 @@ StatesProperties:
 	| DEFAULT position=COORDINATES;
 
 Transition:
-	"transition" start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
+	("transition")? start=CoordinatesStatesTransition "->" end=CoordinatesStatesTransition
 	transitionProperties+=TransitionProperties* (label=Label)?
 	| "initialTransition" init=ID COORDINATES;
 

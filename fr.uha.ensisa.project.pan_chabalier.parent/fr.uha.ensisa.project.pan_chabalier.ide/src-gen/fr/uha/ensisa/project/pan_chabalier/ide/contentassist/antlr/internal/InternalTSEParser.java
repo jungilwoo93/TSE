@@ -131,7 +131,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==15||LA1_0==19||LA1_0==21) ) {
+                if ( (LA1_0==RULE_ID||LA1_0==15||LA1_0==19||LA1_0==21) ) {
                     alt1=1;
                 }
 
@@ -729,7 +729,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             if ( (LA2_0==15) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==19||LA2_0==21) ) {
+            else if ( (LA2_0==RULE_ID||LA2_0==19||LA2_0==21) ) {
                 alt2=2;
             }
             else {
@@ -972,7 +972,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==19) ) {
+            if ( (LA4_0==RULE_ID||LA4_0==19) ) {
                 alt4=1;
             }
             else if ( (LA4_0==21) ) {
@@ -2090,7 +2090,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             // InternalTSE.g:662:1: ( rule__Transition__Group_0__0__Impl rule__Transition__Group_0__1 )
             // InternalTSE.g:663:2: rule__Transition__Group_0__0__Impl rule__Transition__Group_0__1
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_10);
             rule__Transition__Group_0__0__Impl();
 
             state._fsp--;
@@ -2119,20 +2119,37 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Transition__Group_0__0__Impl"
-    // InternalTSE.g:670:1: rule__Transition__Group_0__0__Impl : ( 'transition' ) ;
+    // InternalTSE.g:670:1: rule__Transition__Group_0__0__Impl : ( ( 'transition' )? ) ;
     public final void rule__Transition__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalTSE.g:674:1: ( ( 'transition' ) )
-            // InternalTSE.g:675:1: ( 'transition' )
+            // InternalTSE.g:674:1: ( ( ( 'transition' )? ) )
+            // InternalTSE.g:675:1: ( ( 'transition' )? )
             {
-            // InternalTSE.g:675:1: ( 'transition' )
-            // InternalTSE.g:676:2: 'transition'
+            // InternalTSE.g:675:1: ( ( 'transition' )? )
+            // InternalTSE.g:676:2: ( 'transition' )?
             {
              before(grammarAccess.getTransitionAccess().getTransitionKeyword_0_0()); 
-            match(input,19,FOLLOW_2); 
+            // InternalTSE.g:677:2: ( 'transition' )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==19) ) {
+                alt7=1;
+            }
+            switch (alt7) {
+                case 1 :
+                    // InternalTSE.g:677:3: 'transition'
+                    {
+                    match(input,19,FOLLOW_2); 
+
+                    }
+                    break;
+
+            }
+
              after(grammarAccess.getTransitionAccess().getTransitionKeyword_0_0()); 
 
             }
@@ -2165,7 +2182,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             // InternalTSE.g:689:1: ( rule__Transition__Group_0__1__Impl rule__Transition__Group_0__2 )
             // InternalTSE.g:690:2: rule__Transition__Group_0__1__Impl rule__Transition__Group_0__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__Transition__Group_0__1__Impl();
 
             state._fsp--;
@@ -2250,7 +2267,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             // InternalTSE.g:716:1: ( rule__Transition__Group_0__2__Impl rule__Transition__Group_0__3 )
             // InternalTSE.g:717:2: rule__Transition__Group_0__2__Impl rule__Transition__Group_0__3
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_10);
             rule__Transition__Group_0__2__Impl();
 
             state._fsp--;
@@ -2325,7 +2342,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             // InternalTSE.g:743:1: ( rule__Transition__Group_0__3__Impl rule__Transition__Group_0__4 )
             // InternalTSE.g:744:2: rule__Transition__Group_0__3__Impl rule__Transition__Group_0__4
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__Transition__Group_0__3__Impl();
 
             state._fsp--;
@@ -2410,7 +2427,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             // InternalTSE.g:770:1: ( rule__Transition__Group_0__4__Impl rule__Transition__Group_0__5 )
             // InternalTSE.g:771:2: rule__Transition__Group_0__4__Impl rule__Transition__Group_0__5
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_12);
             rule__Transition__Group_0__4__Impl();
 
             state._fsp--;
@@ -2453,21 +2470,21 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getTransitionAccess().getTransitionPropertiesAssignment_0_4()); 
             // InternalTSE.g:785:2: ( rule__Transition__TransitionPropertiesAssignment_0_4 )*
-            loop7:
+            loop8:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt8=2;
+                int LA8_0 = input.LA(1);
 
-                if ( ((LA7_0>=16 && LA7_0<=17)||LA7_0==23) ) {
-                    alt7=1;
+                if ( ((LA8_0>=16 && LA8_0<=17)||LA8_0==23) ) {
+                    alt8=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt8) {
             	case 1 :
             	    // InternalTSE.g:785:3: rule__Transition__TransitionPropertiesAssignment_0_4
             	    {
-            	    pushFollow(FOLLOW_12);
+            	    pushFollow(FOLLOW_13);
             	    rule__Transition__TransitionPropertiesAssignment_0_4();
 
             	    state._fsp--;
@@ -2477,7 +2494,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop8;
                 }
             } while (true);
 
@@ -2551,13 +2568,13 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getTransitionAccess().getLabelAssignment_0_5()); 
             // InternalTSE.g:811:2: ( rule__Transition__LabelAssignment_0_5 )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA8_0==22) ) {
-                alt8=1;
+            if ( (LA9_0==22) ) {
+                alt9=1;
             }
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
                     // InternalTSE.g:811:3: rule__Transition__LabelAssignment_0_5
                     {
@@ -2834,7 +2851,7 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
             // InternalTSE.g:905:1: ( rule__Label__Group__0__Impl rule__Label__Group__1 )
             // InternalTSE.g:906:2: rule__Label__Group__0__Impl rule__Label__Group__1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_14);
             rule__Label__Group__0__Impl();
 
             state._fsp--;
@@ -4307,16 +4324,17 @@ public class InternalTSEParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000288002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000288042L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000070010L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000070012L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000100L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000C30000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000830002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080040L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000C30000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000830002L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000200L});
 
 }

@@ -349,10 +349,12 @@ ruleTransition returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='transition'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getTransitionKeyword_0_0());
-			}
+			(
+				otherlv_0='transition'
+				{
+					newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getTransitionKeyword_0_0());
+				}
+			)?
 			(
 				(
 					{
