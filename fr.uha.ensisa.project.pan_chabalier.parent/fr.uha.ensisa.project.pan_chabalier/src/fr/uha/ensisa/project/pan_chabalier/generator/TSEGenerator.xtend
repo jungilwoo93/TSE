@@ -65,7 +65,6 @@ public class GeneratedData implements GeneratedDataInterface {
 
 	def compile(Element e) '''
 		«IF e.state !== null»
-«««			factory.createState("«e.state.name»"«FOR p:e.state.statesProperties»«p.compile»«ENDFOR»);
 			factory.createState("«e.state.name»"«FOR p:e.state.statesProperties»«p.compile»«ENDFOR»);
 		«ENDIF»
 		
@@ -78,7 +77,7 @@ public class GeneratedData implements GeneratedDataInterface {
 		TransitionProperties p) ''', «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»Constants.DEFAULT_COLOR«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»Constants.DEFAULT_THICKNESS«ENDIF», «IF p.curve!==null»new Float(«p.curve»)«ENDIF»«IF p.curve===null»Constants.DEFAULT_CURVATURE«ENDIF»'''
 
 	def compile(
-		StatesProperties p) ''', «IF p.position!==null»new Point(«p.position»)«ENDIF»«IF p.position===null»new Point(-1,-1)«ENDIF», «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»Constants.DEFAULT_COLOR«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»Constants.DEFAULT_THICKNESS«ENDIF»'''
+		StatesProperties p) ''', «IF p.color !== null»Color.«p.color»«ENDIF»«IF p.color === null»Constants.DEFAULT_COLOR«ENDIF», «IF p.thickness!==null»new Float(«p.thickness»)«ENDIF»«IF p.thickness===null»Constants.DEFAULT_THICKNESS«ENDIF» ,«IF p.position!==null»new Point(«p.position»)«ENDIF»«IF p.position===null»new Point(-1,-1)«ENDIF»'''
 
 }
 

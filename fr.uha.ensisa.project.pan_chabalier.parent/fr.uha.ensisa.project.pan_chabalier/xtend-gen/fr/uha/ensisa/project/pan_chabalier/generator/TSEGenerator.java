@@ -273,27 +273,9 @@ public class TSEGenerator extends AbstractGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append(", ");
     {
-      String _position = p.getPosition();
-      boolean _tripleNotEquals = (_position != null);
-      if (_tripleNotEquals) {
-        _builder.append("new Point(");
-        String _position_1 = p.getPosition();
-        _builder.append(_position_1);
-        _builder.append(")");
-      }
-    }
-    {
-      String _position_2 = p.getPosition();
-      boolean _tripleEquals = (_position_2 == null);
-      if (_tripleEquals) {
-        _builder.append("new Point(-1,-1)");
-      }
-    }
-    _builder.append(", ");
-    {
       String _color = p.getColor();
-      boolean _tripleNotEquals_1 = (_color != null);
-      if (_tripleNotEquals_1) {
+      boolean _tripleNotEquals = (_color != null);
+      if (_tripleNotEquals) {
         _builder.append("Color.");
         String _color_1 = p.getColor();
         _builder.append(_color_1);
@@ -301,16 +283,16 @@ public class TSEGenerator extends AbstractGenerator {
     }
     {
       String _color_2 = p.getColor();
-      boolean _tripleEquals_1 = (_color_2 == null);
-      if (_tripleEquals_1) {
+      boolean _tripleEquals = (_color_2 == null);
+      if (_tripleEquals) {
         _builder.append("Constants.DEFAULT_COLOR");
       }
     }
     _builder.append(", ");
     {
       String _thickness = p.getThickness();
-      boolean _tripleNotEquals_2 = (_thickness != null);
-      if (_tripleNotEquals_2) {
+      boolean _tripleNotEquals_1 = (_thickness != null);
+      if (_tripleNotEquals_1) {
         _builder.append("new Float(");
         String _thickness_1 = p.getThickness();
         _builder.append(_thickness_1);
@@ -319,9 +301,27 @@ public class TSEGenerator extends AbstractGenerator {
     }
     {
       String _thickness_2 = p.getThickness();
-      boolean _tripleEquals_2 = (_thickness_2 == null);
-      if (_tripleEquals_2) {
+      boolean _tripleEquals_1 = (_thickness_2 == null);
+      if (_tripleEquals_1) {
         _builder.append("Constants.DEFAULT_THICKNESS");
+      }
+    }
+    _builder.append(" ,");
+    {
+      String _position = p.getPosition();
+      boolean _tripleNotEquals_2 = (_position != null);
+      if (_tripleNotEquals_2) {
+        _builder.append("new Point(");
+        String _position_1 = p.getPosition();
+        _builder.append(_position_1);
+        _builder.append(")");
+      }
+    }
+    {
+      String _position_2 = p.getPosition();
+      boolean _tripleEquals_2 = (_position_2 == null);
+      if (_tripleEquals_2) {
+        _builder.append("new Point(-1,-1)");
       }
     }
     return _builder;

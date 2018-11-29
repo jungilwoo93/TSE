@@ -141,7 +141,7 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==15||LA1_0==19||LA1_0==21) ) {
+                if ( (LA1_0==RULE_ID||LA1_0==15||LA1_0==19||LA1_0==21) ) {
                     alt1=1;
                 }
 
@@ -263,7 +263,7 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
             if ( (LA2_0==15) ) {
                 alt2=1;
             }
-            else if ( (LA2_0==19||LA2_0==21) ) {
+            else if ( (LA2_0==RULE_ID||LA2_0==19||LA2_0==21) ) {
                 alt2=2;
             }
             else {
@@ -846,7 +846,7 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransition"
-    // InternalTSE.g:343:1: ruleTransition returns [EObject current=null] : ( (otherlv_0= 'transition' ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? ) | (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES ) ) ;
+    // InternalTSE.g:343:1: ruleTransition returns [EObject current=null] : ( ( (otherlv_0= 'transition' )? ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? ) | (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES ) ) ;
     public final EObject ruleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -868,46 +868,63 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTSE.g:349:2: ( ( (otherlv_0= 'transition' ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? ) | (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES ) ) )
-            // InternalTSE.g:350:2: ( (otherlv_0= 'transition' ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? ) | (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES ) )
+            // InternalTSE.g:349:2: ( ( ( (otherlv_0= 'transition' )? ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? ) | (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES ) ) )
+            // InternalTSE.g:350:2: ( ( (otherlv_0= 'transition' )? ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? ) | (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES ) )
             {
-            // InternalTSE.g:350:2: ( (otherlv_0= 'transition' ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? ) | (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalTSE.g:350:2: ( ( (otherlv_0= 'transition' )? ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? ) | (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES ) )
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==19) ) {
-                alt7=1;
+            if ( (LA8_0==RULE_ID||LA8_0==19) ) {
+                alt8=1;
             }
-            else if ( (LA7_0==21) ) {
-                alt7=2;
+            else if ( (LA8_0==21) ) {
+                alt8=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // InternalTSE.g:351:3: (otherlv_0= 'transition' ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? )
+                    // InternalTSE.g:351:3: ( (otherlv_0= 'transition' )? ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? )
                     {
-                    // InternalTSE.g:351:3: (otherlv_0= 'transition' ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? )
-                    // InternalTSE.g:352:4: otherlv_0= 'transition' ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )?
+                    // InternalTSE.g:351:3: ( (otherlv_0= 'transition' )? ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )? )
+                    // InternalTSE.g:352:4: (otherlv_0= 'transition' )? ( (lv_start_1_0= ruleCoordinatesStatesTransition ) ) otherlv_2= '->' ( (lv_end_3_0= ruleCoordinatesStatesTransition ) ) ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )* ( (lv_label_5_0= ruleLabel ) )?
                     {
-                    otherlv_0=(Token)match(input,19,FOLLOW_4); 
+                    // InternalTSE.g:352:4: (otherlv_0= 'transition' )?
+                    int alt5=2;
+                    int LA5_0 = input.LA(1);
 
-                    				newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getTransitionKeyword_0_0());
-                    			
-                    // InternalTSE.g:356:4: ( (lv_start_1_0= ruleCoordinatesStatesTransition ) )
-                    // InternalTSE.g:357:5: (lv_start_1_0= ruleCoordinatesStatesTransition )
+                    if ( (LA5_0==19) ) {
+                        alt5=1;
+                    }
+                    switch (alt5) {
+                        case 1 :
+                            // InternalTSE.g:353:5: otherlv_0= 'transition'
+                            {
+                            otherlv_0=(Token)match(input,19,FOLLOW_10); 
+
+                            					newLeafNode(otherlv_0, grammarAccess.getTransitionAccess().getTransitionKeyword_0_0());
+                            				
+
+                            }
+                            break;
+
+                    }
+
+                    // InternalTSE.g:358:4: ( (lv_start_1_0= ruleCoordinatesStatesTransition ) )
+                    // InternalTSE.g:359:5: (lv_start_1_0= ruleCoordinatesStatesTransition )
                     {
-                    // InternalTSE.g:357:5: (lv_start_1_0= ruleCoordinatesStatesTransition )
-                    // InternalTSE.g:358:6: lv_start_1_0= ruleCoordinatesStatesTransition
+                    // InternalTSE.g:359:5: (lv_start_1_0= ruleCoordinatesStatesTransition )
+                    // InternalTSE.g:360:6: lv_start_1_0= ruleCoordinatesStatesTransition
                     {
 
                     						newCompositeNode(grammarAccess.getTransitionAccess().getStartCoordinatesStatesTransitionParserRuleCall_0_1_0());
                     					
-                    pushFollow(FOLLOW_10);
+                    pushFollow(FOLLOW_11);
                     lv_start_1_0=ruleCoordinatesStatesTransition();
 
                     state._fsp--;
@@ -929,20 +946,20 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,20,FOLLOW_4); 
+                    otherlv_2=(Token)match(input,20,FOLLOW_10); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_0_2());
                     			
-                    // InternalTSE.g:379:4: ( (lv_end_3_0= ruleCoordinatesStatesTransition ) )
-                    // InternalTSE.g:380:5: (lv_end_3_0= ruleCoordinatesStatesTransition )
+                    // InternalTSE.g:381:4: ( (lv_end_3_0= ruleCoordinatesStatesTransition ) )
+                    // InternalTSE.g:382:5: (lv_end_3_0= ruleCoordinatesStatesTransition )
                     {
-                    // InternalTSE.g:380:5: (lv_end_3_0= ruleCoordinatesStatesTransition )
-                    // InternalTSE.g:381:6: lv_end_3_0= ruleCoordinatesStatesTransition
+                    // InternalTSE.g:382:5: (lv_end_3_0= ruleCoordinatesStatesTransition )
+                    // InternalTSE.g:383:6: lv_end_3_0= ruleCoordinatesStatesTransition
                     {
 
                     						newCompositeNode(grammarAccess.getTransitionAccess().getEndCoordinatesStatesTransitionParserRuleCall_0_3_0());
                     					
-                    pushFollow(FOLLOW_11);
+                    pushFollow(FOLLOW_12);
                     lv_end_3_0=ruleCoordinatesStatesTransition();
 
                     state._fsp--;
@@ -964,28 +981,28 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTSE.g:398:4: ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )*
-                    loop5:
+                    // InternalTSE.g:400:4: ( (lv_transitionProperties_4_0= ruleTransitionProperties ) )*
+                    loop6:
                     do {
-                        int alt5=2;
-                        int LA5_0 = input.LA(1);
+                        int alt6=2;
+                        int LA6_0 = input.LA(1);
 
-                        if ( ((LA5_0>=16 && LA5_0<=17)||LA5_0==23) ) {
-                            alt5=1;
+                        if ( ((LA6_0>=16 && LA6_0<=17)||LA6_0==23) ) {
+                            alt6=1;
                         }
 
 
-                        switch (alt5) {
+                        switch (alt6) {
                     	case 1 :
-                    	    // InternalTSE.g:399:5: (lv_transitionProperties_4_0= ruleTransitionProperties )
+                    	    // InternalTSE.g:401:5: (lv_transitionProperties_4_0= ruleTransitionProperties )
                     	    {
-                    	    // InternalTSE.g:399:5: (lv_transitionProperties_4_0= ruleTransitionProperties )
-                    	    // InternalTSE.g:400:6: lv_transitionProperties_4_0= ruleTransitionProperties
+                    	    // InternalTSE.g:401:5: (lv_transitionProperties_4_0= ruleTransitionProperties )
+                    	    // InternalTSE.g:402:6: lv_transitionProperties_4_0= ruleTransitionProperties
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getTransitionAccess().getTransitionPropertiesTransitionPropertiesParserRuleCall_0_4_0());
                     	    					
-                    	    pushFollow(FOLLOW_11);
+                    	    pushFollow(FOLLOW_12);
                     	    lv_transitionProperties_4_0=ruleTransitionProperties();
 
                     	    state._fsp--;
@@ -1009,23 +1026,23 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop5;
+                    	    break loop6;
                         }
                     } while (true);
 
-                    // InternalTSE.g:417:4: ( (lv_label_5_0= ruleLabel ) )?
-                    int alt6=2;
-                    int LA6_0 = input.LA(1);
+                    // InternalTSE.g:419:4: ( (lv_label_5_0= ruleLabel ) )?
+                    int alt7=2;
+                    int LA7_0 = input.LA(1);
 
-                    if ( (LA6_0==22) ) {
-                        alt6=1;
+                    if ( (LA7_0==22) ) {
+                        alt7=1;
                     }
-                    switch (alt6) {
+                    switch (alt7) {
                         case 1 :
-                            // InternalTSE.g:418:5: (lv_label_5_0= ruleLabel )
+                            // InternalTSE.g:420:5: (lv_label_5_0= ruleLabel )
                             {
-                            // InternalTSE.g:418:5: (lv_label_5_0= ruleLabel )
-                            // InternalTSE.g:419:6: lv_label_5_0= ruleLabel
+                            // InternalTSE.g:420:5: (lv_label_5_0= ruleLabel )
+                            // InternalTSE.g:421:6: lv_label_5_0= ruleLabel
                             {
 
                             						newCompositeNode(grammarAccess.getTransitionAccess().getLabelLabelParserRuleCall_0_5_0());
@@ -1062,20 +1079,20 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalTSE.g:438:3: (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES )
+                    // InternalTSE.g:440:3: (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES )
                     {
-                    // InternalTSE.g:438:3: (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES )
-                    // InternalTSE.g:439:4: otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES
+                    // InternalTSE.g:440:3: (otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES )
+                    // InternalTSE.g:441:4: otherlv_6= 'initialTransition' ( (lv_init_7_0= RULE_ID ) ) this_COORDINATES_8= RULE_COORDINATES
                     {
                     otherlv_6=(Token)match(input,21,FOLLOW_4); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getInitialTransitionKeyword_1_0());
                     			
-                    // InternalTSE.g:443:4: ( (lv_init_7_0= RULE_ID ) )
-                    // InternalTSE.g:444:5: (lv_init_7_0= RULE_ID )
+                    // InternalTSE.g:445:4: ( (lv_init_7_0= RULE_ID ) )
+                    // InternalTSE.g:446:5: (lv_init_7_0= RULE_ID )
                     {
-                    // InternalTSE.g:444:5: (lv_init_7_0= RULE_ID )
-                    // InternalTSE.g:445:6: lv_init_7_0= RULE_ID
+                    // InternalTSE.g:446:5: (lv_init_7_0= RULE_ID )
+                    // InternalTSE.g:447:6: lv_init_7_0= RULE_ID
                     {
                     lv_init_7_0=(Token)match(input,RULE_ID,FOLLOW_9); 
 
@@ -1130,7 +1147,7 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLabel"
-    // InternalTSE.g:470:1: entryRuleLabel returns [EObject current=null] : iv_ruleLabel= ruleLabel EOF ;
+    // InternalTSE.g:472:1: entryRuleLabel returns [EObject current=null] : iv_ruleLabel= ruleLabel EOF ;
     public final EObject entryRuleLabel() throws RecognitionException {
         EObject current = null;
 
@@ -1138,8 +1155,8 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTSE.g:470:46: (iv_ruleLabel= ruleLabel EOF )
-            // InternalTSE.g:471:2: iv_ruleLabel= ruleLabel EOF
+            // InternalTSE.g:472:46: (iv_ruleLabel= ruleLabel EOF )
+            // InternalTSE.g:473:2: iv_ruleLabel= ruleLabel EOF
             {
              newCompositeNode(grammarAccess.getLabelRule()); 
             pushFollow(FOLLOW_1);
@@ -1166,7 +1183,7 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLabel"
-    // InternalTSE.g:477:1: ruleLabel returns [EObject current=null] : (otherlv_0= 'label' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_position_2_0= RULE_COORDINATES ) ) ) ;
+    // InternalTSE.g:479:1: ruleLabel returns [EObject current=null] : (otherlv_0= 'label' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_position_2_0= RULE_COORDINATES ) ) ) ;
     public final EObject ruleLabel() throws RecognitionException {
         EObject current = null;
 
@@ -1178,21 +1195,21 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTSE.g:483:2: ( (otherlv_0= 'label' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_position_2_0= RULE_COORDINATES ) ) ) )
-            // InternalTSE.g:484:2: (otherlv_0= 'label' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_position_2_0= RULE_COORDINATES ) ) )
+            // InternalTSE.g:485:2: ( (otherlv_0= 'label' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_position_2_0= RULE_COORDINATES ) ) ) )
+            // InternalTSE.g:486:2: (otherlv_0= 'label' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_position_2_0= RULE_COORDINATES ) ) )
             {
-            // InternalTSE.g:484:2: (otherlv_0= 'label' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_position_2_0= RULE_COORDINATES ) ) )
-            // InternalTSE.g:485:3: otherlv_0= 'label' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_position_2_0= RULE_COORDINATES ) )
+            // InternalTSE.g:486:2: (otherlv_0= 'label' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_position_2_0= RULE_COORDINATES ) ) )
+            // InternalTSE.g:487:3: otherlv_0= 'label' ( (lv_text_1_0= RULE_STRING ) ) ( (lv_position_2_0= RULE_COORDINATES ) )
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_12); 
+            otherlv_0=(Token)match(input,22,FOLLOW_13); 
 
             			newLeafNode(otherlv_0, grammarAccess.getLabelAccess().getLabelKeyword_0());
             		
-            // InternalTSE.g:489:3: ( (lv_text_1_0= RULE_STRING ) )
-            // InternalTSE.g:490:4: (lv_text_1_0= RULE_STRING )
+            // InternalTSE.g:491:3: ( (lv_text_1_0= RULE_STRING ) )
+            // InternalTSE.g:492:4: (lv_text_1_0= RULE_STRING )
             {
-            // InternalTSE.g:490:4: (lv_text_1_0= RULE_STRING )
-            // InternalTSE.g:491:5: lv_text_1_0= RULE_STRING
+            // InternalTSE.g:492:4: (lv_text_1_0= RULE_STRING )
+            // InternalTSE.g:493:5: lv_text_1_0= RULE_STRING
             {
             lv_text_1_0=(Token)match(input,RULE_STRING,FOLLOW_9); 
 
@@ -1214,11 +1231,11 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTSE.g:507:3: ( (lv_position_2_0= RULE_COORDINATES ) )
-            // InternalTSE.g:508:4: (lv_position_2_0= RULE_COORDINATES )
+            // InternalTSE.g:509:3: ( (lv_position_2_0= RULE_COORDINATES ) )
+            // InternalTSE.g:510:4: (lv_position_2_0= RULE_COORDINATES )
             {
-            // InternalTSE.g:508:4: (lv_position_2_0= RULE_COORDINATES )
-            // InternalTSE.g:509:5: lv_position_2_0= RULE_COORDINATES
+            // InternalTSE.g:510:4: (lv_position_2_0= RULE_COORDINATES )
+            // InternalTSE.g:511:5: lv_position_2_0= RULE_COORDINATES
             {
             lv_position_2_0=(Token)match(input,RULE_COORDINATES,FOLLOW_2); 
 
@@ -1263,7 +1280,7 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCoordinatesStatesTransition"
-    // InternalTSE.g:529:1: entryRuleCoordinatesStatesTransition returns [EObject current=null] : iv_ruleCoordinatesStatesTransition= ruleCoordinatesStatesTransition EOF ;
+    // InternalTSE.g:531:1: entryRuleCoordinatesStatesTransition returns [EObject current=null] : iv_ruleCoordinatesStatesTransition= ruleCoordinatesStatesTransition EOF ;
     public final EObject entryRuleCoordinatesStatesTransition() throws RecognitionException {
         EObject current = null;
 
@@ -1271,8 +1288,8 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTSE.g:529:68: (iv_ruleCoordinatesStatesTransition= ruleCoordinatesStatesTransition EOF )
-            // InternalTSE.g:530:2: iv_ruleCoordinatesStatesTransition= ruleCoordinatesStatesTransition EOF
+            // InternalTSE.g:531:68: (iv_ruleCoordinatesStatesTransition= ruleCoordinatesStatesTransition EOF )
+            // InternalTSE.g:532:2: iv_ruleCoordinatesStatesTransition= ruleCoordinatesStatesTransition EOF
             {
              newCompositeNode(grammarAccess.getCoordinatesStatesTransitionRule()); 
             pushFollow(FOLLOW_1);
@@ -1299,7 +1316,7 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCoordinatesStatesTransition"
-    // InternalTSE.g:536:1: ruleCoordinatesStatesTransition returns [EObject current=null] : ( (lv_stateTransition_0_0= RULE_ID ) ) ;
+    // InternalTSE.g:538:1: ruleCoordinatesStatesTransition returns [EObject current=null] : ( (lv_stateTransition_0_0= RULE_ID ) ) ;
     public final EObject ruleCoordinatesStatesTransition() throws RecognitionException {
         EObject current = null;
 
@@ -1309,14 +1326,14 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTSE.g:542:2: ( ( (lv_stateTransition_0_0= RULE_ID ) ) )
-            // InternalTSE.g:543:2: ( (lv_stateTransition_0_0= RULE_ID ) )
+            // InternalTSE.g:544:2: ( ( (lv_stateTransition_0_0= RULE_ID ) ) )
+            // InternalTSE.g:545:2: ( (lv_stateTransition_0_0= RULE_ID ) )
             {
-            // InternalTSE.g:543:2: ( (lv_stateTransition_0_0= RULE_ID ) )
-            // InternalTSE.g:544:3: (lv_stateTransition_0_0= RULE_ID )
+            // InternalTSE.g:545:2: ( (lv_stateTransition_0_0= RULE_ID ) )
+            // InternalTSE.g:546:3: (lv_stateTransition_0_0= RULE_ID )
             {
-            // InternalTSE.g:544:3: (lv_stateTransition_0_0= RULE_ID )
-            // InternalTSE.g:545:4: lv_stateTransition_0_0= RULE_ID
+            // InternalTSE.g:546:3: (lv_stateTransition_0_0= RULE_ID )
+            // InternalTSE.g:547:4: lv_stateTransition_0_0= RULE_ID
             {
             lv_stateTransition_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1358,7 +1375,7 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransitionProperties"
-    // InternalTSE.g:564:1: entryRuleTransitionProperties returns [EObject current=null] : iv_ruleTransitionProperties= ruleTransitionProperties EOF ;
+    // InternalTSE.g:566:1: entryRuleTransitionProperties returns [EObject current=null] : iv_ruleTransitionProperties= ruleTransitionProperties EOF ;
     public final EObject entryRuleTransitionProperties() throws RecognitionException {
         EObject current = null;
 
@@ -1366,8 +1383,8 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTSE.g:564:61: (iv_ruleTransitionProperties= ruleTransitionProperties EOF )
-            // InternalTSE.g:565:2: iv_ruleTransitionProperties= ruleTransitionProperties EOF
+            // InternalTSE.g:566:61: (iv_ruleTransitionProperties= ruleTransitionProperties EOF )
+            // InternalTSE.g:567:2: iv_ruleTransitionProperties= ruleTransitionProperties EOF
             {
              newCompositeNode(grammarAccess.getTransitionPropertiesRule()); 
             pushFollow(FOLLOW_1);
@@ -1394,7 +1411,7 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransitionProperties"
-    // InternalTSE.g:571:1: ruleTransitionProperties returns [EObject current=null] : ( (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) ) | (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) ) | (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) ) ) ;
+    // InternalTSE.g:573:1: ruleTransitionProperties returns [EObject current=null] : ( (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) ) | (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) ) | (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) ) ) ;
     public final EObject ruleTransitionProperties() throws RecognitionException {
         EObject current = null;
 
@@ -1409,50 +1426,50 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTSE.g:577:2: ( ( (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) ) | (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) ) | (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) ) ) )
-            // InternalTSE.g:578:2: ( (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) ) | (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) ) | (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) ) )
+            // InternalTSE.g:579:2: ( ( (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) ) | (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) ) | (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) ) ) )
+            // InternalTSE.g:580:2: ( (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) ) | (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) ) | (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) ) )
             {
-            // InternalTSE.g:578:2: ( (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) ) | (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) ) | (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) ) )
-            int alt8=3;
+            // InternalTSE.g:580:2: ( (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) ) | (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) ) | (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) ) )
+            int alt9=3;
             switch ( input.LA(1) ) {
             case 16:
                 {
-                alt8=1;
+                alt9=1;
                 }
                 break;
             case 17:
                 {
-                alt8=2;
+                alt9=2;
                 }
                 break;
             case 23:
                 {
-                alt8=3;
+                alt9=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // InternalTSE.g:579:3: (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) )
+                    // InternalTSE.g:581:3: (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) )
                     {
-                    // InternalTSE.g:579:3: (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) )
-                    // InternalTSE.g:580:4: otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) )
+                    // InternalTSE.g:581:3: (otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) ) )
+                    // InternalTSE.g:582:4: otherlv_0= 'color' ( (lv_color_1_0= RULE_COLOR ) )
                     {
                     otherlv_0=(Token)match(input,16,FOLLOW_7); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getTransitionPropertiesAccess().getColorKeyword_0_0());
                     			
-                    // InternalTSE.g:584:4: ( (lv_color_1_0= RULE_COLOR ) )
-                    // InternalTSE.g:585:5: (lv_color_1_0= RULE_COLOR )
+                    // InternalTSE.g:586:4: ( (lv_color_1_0= RULE_COLOR ) )
+                    // InternalTSE.g:587:5: (lv_color_1_0= RULE_COLOR )
                     {
-                    // InternalTSE.g:585:5: (lv_color_1_0= RULE_COLOR )
-                    // InternalTSE.g:586:6: lv_color_1_0= RULE_COLOR
+                    // InternalTSE.g:587:5: (lv_color_1_0= RULE_COLOR )
+                    // InternalTSE.g:588:6: lv_color_1_0= RULE_COLOR
                     {
                     lv_color_1_0=(Token)match(input,RULE_COLOR,FOLLOW_2); 
 
@@ -1481,20 +1498,20 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalTSE.g:604:3: (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) )
+                    // InternalTSE.g:606:3: (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) )
                     {
-                    // InternalTSE.g:604:3: (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) )
-                    // InternalTSE.g:605:4: otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) )
+                    // InternalTSE.g:606:3: (otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) ) )
+                    // InternalTSE.g:607:4: otherlv_2= 'thickness' ( (lv_thickness_3_0= RULE_FLOAT ) )
                     {
                     otherlv_2=(Token)match(input,17,FOLLOW_8); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getTransitionPropertiesAccess().getThicknessKeyword_1_0());
                     			
-                    // InternalTSE.g:609:4: ( (lv_thickness_3_0= RULE_FLOAT ) )
-                    // InternalTSE.g:610:5: (lv_thickness_3_0= RULE_FLOAT )
+                    // InternalTSE.g:611:4: ( (lv_thickness_3_0= RULE_FLOAT ) )
+                    // InternalTSE.g:612:5: (lv_thickness_3_0= RULE_FLOAT )
                     {
-                    // InternalTSE.g:610:5: (lv_thickness_3_0= RULE_FLOAT )
-                    // InternalTSE.g:611:6: lv_thickness_3_0= RULE_FLOAT
+                    // InternalTSE.g:612:5: (lv_thickness_3_0= RULE_FLOAT )
+                    // InternalTSE.g:613:6: lv_thickness_3_0= RULE_FLOAT
                     {
                     lv_thickness_3_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); 
 
@@ -1523,20 +1540,20 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalTSE.g:629:3: (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) )
+                    // InternalTSE.g:631:3: (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) )
                     {
-                    // InternalTSE.g:629:3: (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) )
-                    // InternalTSE.g:630:4: otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) )
+                    // InternalTSE.g:631:3: (otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) ) )
+                    // InternalTSE.g:632:4: otherlv_4= 'curvature' ( (lv_curve_5_0= RULE_FLOAT ) )
                     {
                     otherlv_4=(Token)match(input,23,FOLLOW_8); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getTransitionPropertiesAccess().getCurvatureKeyword_2_0());
                     			
-                    // InternalTSE.g:634:4: ( (lv_curve_5_0= RULE_FLOAT ) )
-                    // InternalTSE.g:635:5: (lv_curve_5_0= RULE_FLOAT )
+                    // InternalTSE.g:636:4: ( (lv_curve_5_0= RULE_FLOAT ) )
+                    // InternalTSE.g:637:5: (lv_curve_5_0= RULE_FLOAT )
                     {
-                    // InternalTSE.g:635:5: (lv_curve_5_0= RULE_FLOAT )
-                    // InternalTSE.g:636:6: lv_curve_5_0= RULE_FLOAT
+                    // InternalTSE.g:637:5: (lv_curve_5_0= RULE_FLOAT )
+                    // InternalTSE.g:638:6: lv_curve_5_0= RULE_FLOAT
                     {
                     lv_curve_5_0=(Token)match(input,RULE_FLOAT,FOLLOW_2); 
 
@@ -1592,15 +1609,16 @@ public class InternalTSEParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000288002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000288012L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000070100L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000070102L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000C30002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080010L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000C30002L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000200L});
 
 }

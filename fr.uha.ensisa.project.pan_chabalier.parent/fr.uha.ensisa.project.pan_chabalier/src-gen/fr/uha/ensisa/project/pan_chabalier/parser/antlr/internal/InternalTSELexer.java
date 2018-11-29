@@ -241,10 +241,10 @@ public class InternalTSELexer extends Lexer {
         try {
             int _type = RULE_DEFAULT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTSE.g:656:14: ( ( 'DEFAULT' | 'default' ) )
-            // InternalTSE.g:656:16: ( 'DEFAULT' | 'default' )
+            // InternalTSE.g:658:14: ( ( 'DEFAULT' | 'default' ) )
+            // InternalTSE.g:658:16: ( 'DEFAULT' | 'default' )
             {
-            // InternalTSE.g:656:16: ( 'DEFAULT' | 'default' )
+            // InternalTSE.g:658:16: ( 'DEFAULT' | 'default' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -262,7 +262,7 @@ public class InternalTSELexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalTSE.g:656:17: 'DEFAULT'
+                    // InternalTSE.g:658:17: 'DEFAULT'
                     {
                     match("DEFAULT"); 
 
@@ -270,7 +270,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalTSE.g:656:27: 'default'
+                    // InternalTSE.g:658:27: 'default'
                     {
                     match("default"); 
 
@@ -296,15 +296,15 @@ public class InternalTSELexer extends Lexer {
         try {
             int _type = RULE_COLOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTSE.g:658:12: ( ( 'WHITE' | 'BLACK' | 'BLUE' | 'CYAN' | 'DARK_GRAY' | 'GRAY' | 'LIGHT_GRAY' | 'GREEN' | 'MAGENTA' | 'ORANGE' | 'PINK' | 'RED' | 'YELLOW' ) )
-            // InternalTSE.g:658:14: ( 'WHITE' | 'BLACK' | 'BLUE' | 'CYAN' | 'DARK_GRAY' | 'GRAY' | 'LIGHT_GRAY' | 'GREEN' | 'MAGENTA' | 'ORANGE' | 'PINK' | 'RED' | 'YELLOW' )
+            // InternalTSE.g:660:12: ( ( 'WHITE' | 'BLACK' | 'BLUE' | 'CYAN' | 'DARK_GRAY' | 'GRAY' | 'LIGHT_GRAY' | 'GREEN' | 'MAGENTA' | 'ORANGE' | 'PINK' | 'RED' | 'YELLOW' ) )
+            // InternalTSE.g:660:14: ( 'WHITE' | 'BLACK' | 'BLUE' | 'CYAN' | 'DARK_GRAY' | 'GRAY' | 'LIGHT_GRAY' | 'GREEN' | 'MAGENTA' | 'ORANGE' | 'PINK' | 'RED' | 'YELLOW' )
             {
-            // InternalTSE.g:658:14: ( 'WHITE' | 'BLACK' | 'BLUE' | 'CYAN' | 'DARK_GRAY' | 'GRAY' | 'LIGHT_GRAY' | 'GREEN' | 'MAGENTA' | 'ORANGE' | 'PINK' | 'RED' | 'YELLOW' )
+            // InternalTSE.g:660:14: ( 'WHITE' | 'BLACK' | 'BLUE' | 'CYAN' | 'DARK_GRAY' | 'GRAY' | 'LIGHT_GRAY' | 'GREEN' | 'MAGENTA' | 'ORANGE' | 'PINK' | 'RED' | 'YELLOW' )
             int alt2=13;
             alt2 = dfa2.predict(input);
             switch (alt2) {
                 case 1 :
-                    // InternalTSE.g:658:15: 'WHITE'
+                    // InternalTSE.g:660:15: 'WHITE'
                     {
                     match("WHITE"); 
 
@@ -312,7 +312,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalTSE.g:658:23: 'BLACK'
+                    // InternalTSE.g:660:23: 'BLACK'
                     {
                     match("BLACK"); 
 
@@ -320,7 +320,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 3 :
-                    // InternalTSE.g:658:31: 'BLUE'
+                    // InternalTSE.g:660:31: 'BLUE'
                     {
                     match("BLUE"); 
 
@@ -328,7 +328,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 4 :
-                    // InternalTSE.g:658:38: 'CYAN'
+                    // InternalTSE.g:660:38: 'CYAN'
                     {
                     match("CYAN"); 
 
@@ -336,7 +336,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 5 :
-                    // InternalTSE.g:658:45: 'DARK_GRAY'
+                    // InternalTSE.g:660:45: 'DARK_GRAY'
                     {
                     match("DARK_GRAY"); 
 
@@ -344,7 +344,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 6 :
-                    // InternalTSE.g:658:57: 'GRAY'
+                    // InternalTSE.g:660:57: 'GRAY'
                     {
                     match("GRAY"); 
 
@@ -352,7 +352,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 7 :
-                    // InternalTSE.g:658:64: 'LIGHT_GRAY'
+                    // InternalTSE.g:660:64: 'LIGHT_GRAY'
                     {
                     match("LIGHT_GRAY"); 
 
@@ -360,7 +360,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 8 :
-                    // InternalTSE.g:658:77: 'GREEN'
+                    // InternalTSE.g:660:77: 'GREEN'
                     {
                     match("GREEN"); 
 
@@ -368,7 +368,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 9 :
-                    // InternalTSE.g:658:85: 'MAGENTA'
+                    // InternalTSE.g:660:85: 'MAGENTA'
                     {
                     match("MAGENTA"); 
 
@@ -376,7 +376,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 10 :
-                    // InternalTSE.g:658:95: 'ORANGE'
+                    // InternalTSE.g:660:95: 'ORANGE'
                     {
                     match("ORANGE"); 
 
@@ -384,7 +384,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 11 :
-                    // InternalTSE.g:658:104: 'PINK'
+                    // InternalTSE.g:660:104: 'PINK'
                     {
                     match("PINK"); 
 
@@ -392,7 +392,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 12 :
-                    // InternalTSE.g:658:111: 'RED'
+                    // InternalTSE.g:660:111: 'RED'
                     {
                     match("RED"); 
 
@@ -400,7 +400,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 13 :
-                    // InternalTSE.g:658:117: 'YELLOW'
+                    // InternalTSE.g:660:117: 'YELLOW'
                     {
                     match("YELLOW"); 
 
@@ -426,8 +426,8 @@ public class InternalTSELexer extends Lexer {
         try {
             int _type = RULE_FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTSE.g:660:12: ( RULE_INT '.' RULE_INT )
-            // InternalTSE.g:660:14: RULE_INT '.' RULE_INT
+            // InternalTSE.g:662:12: ( RULE_INT '.' RULE_INT )
+            // InternalTSE.g:662:14: RULE_INT '.' RULE_INT
             {
             mRULE_INT(); 
             match('.'); 
@@ -448,8 +448,8 @@ public class InternalTSELexer extends Lexer {
         try {
             int _type = RULE_COORDINATES;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTSE.g:662:18: ( RULE_INT ',' RULE_INT )
-            // InternalTSE.g:662:20: RULE_INT ',' RULE_INT
+            // InternalTSE.g:664:18: ( RULE_INT ',' RULE_INT )
+            // InternalTSE.g:664:20: RULE_INT ',' RULE_INT
             {
             mRULE_INT(); 
             match(','); 
@@ -470,10 +470,10 @@ public class InternalTSELexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTSE.g:664:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalTSE.g:664:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalTSE.g:666:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalTSE.g:666:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalTSE.g:664:11: ( '^' )?
+            // InternalTSE.g:666:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -482,7 +482,7 @@ public class InternalTSELexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalTSE.g:664:11: '^'
+                    // InternalTSE.g:666:11: '^'
                     {
                     match('^'); 
 
@@ -500,7 +500,7 @@ public class InternalTSELexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalTSE.g:664:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalTSE.g:666:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -547,10 +547,10 @@ public class InternalTSELexer extends Lexer {
     // $ANTLR start "RULE_INT"
     public final void mRULE_INT() throws RecognitionException {
         try {
-            // InternalTSE.g:666:19: ( ( '0' .. '9' )+ )
-            // InternalTSE.g:666:21: ( '0' .. '9' )+
+            // InternalTSE.g:668:19: ( ( '0' .. '9' )+ )
+            // InternalTSE.g:668:21: ( '0' .. '9' )+
             {
-            // InternalTSE.g:666:21: ( '0' .. '9' )+
+            // InternalTSE.g:668:21: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -564,7 +564,7 @@ public class InternalTSELexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // InternalTSE.g:666:22: '0' .. '9'
+            	    // InternalTSE.g:668:22: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -594,10 +594,10 @@ public class InternalTSELexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTSE.g:668:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalTSE.g:668:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalTSE.g:670:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalTSE.g:670:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalTSE.g:668:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalTSE.g:670:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -615,10 +615,10 @@ public class InternalTSELexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // InternalTSE.g:668:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalTSE.g:670:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalTSE.g:668:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalTSE.g:670:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -634,7 +634,7 @@ public class InternalTSELexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalTSE.g:668:21: '\\\\' .
+                    	    // InternalTSE.g:670:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -642,7 +642,7 @@ public class InternalTSELexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalTSE.g:668:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalTSE.g:670:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -667,10 +667,10 @@ public class InternalTSELexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalTSE.g:668:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalTSE.g:670:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalTSE.g:668:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalTSE.g:670:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -686,7 +686,7 @@ public class InternalTSELexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // InternalTSE.g:668:54: '\\\\' .
+                    	    // InternalTSE.g:670:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -694,7 +694,7 @@ public class InternalTSELexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalTSE.g:668:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalTSE.g:670:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -737,12 +737,12 @@ public class InternalTSELexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTSE.g:670:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalTSE.g:670:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalTSE.g:672:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalTSE.g:672:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalTSE.g:670:24: ( options {greedy=false; } : . )*
+            // InternalTSE.g:672:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -767,7 +767,7 @@ public class InternalTSELexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalTSE.g:670:52: .
+            	    // InternalTSE.g:672:52: .
             	    {
             	    matchAny(); 
 
@@ -797,12 +797,12 @@ public class InternalTSELexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTSE.g:672:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalTSE.g:672:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalTSE.g:674:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalTSE.g:674:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalTSE.g:672:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalTSE.g:674:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -815,7 +815,7 @@ public class InternalTSELexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // InternalTSE.g:672:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalTSE.g:674:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -835,7 +835,7 @@ public class InternalTSELexer extends Lexer {
                 }
             } while (true);
 
-            // InternalTSE.g:672:40: ( ( '\\r' )? '\\n' )?
+            // InternalTSE.g:674:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -844,9 +844,9 @@ public class InternalTSELexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // InternalTSE.g:672:41: ( '\\r' )? '\\n'
+                    // InternalTSE.g:674:41: ( '\\r' )? '\\n'
                     {
-                    // InternalTSE.g:672:41: ( '\\r' )?
+                    // InternalTSE.g:674:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -855,7 +855,7 @@ public class InternalTSELexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // InternalTSE.g:672:41: '\\r'
+                            // InternalTSE.g:674:41: '\\r'
                             {
                             match('\r'); 
 
@@ -887,10 +887,10 @@ public class InternalTSELexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTSE.g:674:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalTSE.g:674:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalTSE.g:676:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalTSE.g:676:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalTSE.g:674:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalTSE.g:676:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -944,8 +944,8 @@ public class InternalTSELexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalTSE.g:676:16: ( . )
-            // InternalTSE.g:676:18: .
+            // InternalTSE.g:678:16: ( . )
+            // InternalTSE.g:678:18: .
             {
             matchAny(); 
 
@@ -1168,7 +1168,7 @@ public class InternalTSELexer extends Lexer {
             this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "658:14: ( 'WHITE' | 'BLACK' | 'BLUE' | 'CYAN' | 'DARK_GRAY' | 'GRAY' | 'LIGHT_GRAY' | 'GREEN' | 'MAGENTA' | 'ORANGE' | 'PINK' | 'RED' | 'YELLOW' )";
+            return "660:14: ( 'WHITE' | 'BLACK' | 'BLUE' | 'CYAN' | 'DARK_GRAY' | 'GRAY' | 'LIGHT_GRAY' | 'GREEN' | 'MAGENTA' | 'ORANGE' | 'PINK' | 'RED' | 'YELLOW' )";
         }
     }
     static final String DFA14_eotS =

@@ -674,7 +674,7 @@ rule__Transition__Group_0__0__Impl
 :
 (
 	{ before(grammarAccess.getTransitionAccess().getTransitionKeyword_0_0()); }
-	'transition'
+	('transition')?
 	{ after(grammarAccess.getTransitionAccess().getTransitionKeyword_0_0()); }
 )
 ;
