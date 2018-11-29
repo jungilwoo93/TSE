@@ -3,26 +3,29 @@ package fr.uha.ensisa.project.pan_chabalier.core;
 import java.awt.Color;
 import java.awt.Point;
 
+import javax.swing.JLabel;
+
 import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
 
-public class EditeurLabel {
+public class EditeurLabel{
 	private String text;
 	private Point p;
-	// private JLabel label;
+	private JLabel label;
 	private Color color;
 
 	public EditeurLabel(String text, Color color, int x, int y) {
-		// label=new JLabel(text);
+		label=new JLabel(text);
 		// label.setLocation(x, y);
 		// label.setForeground(color);
 		//System.out.println("create");
-		setText(text);
+		//setText(text);
 		setColor(color);
 		setP(new Point(x, y));
 	}
 
 	public EditeurLabel(String text, Color color, Point textPosition) {
-		setText(text);
+		//setText(text);
+		label=new JLabel(text);
 		setColor(color);
 		setP(textPosition);
 	}
@@ -53,9 +56,12 @@ public class EditeurLabel {
 		p.setLocation(p.x, y);
 	}
 
-	/*
-	 * public JLabel getLabel() { return this.label; }
-	 */
+	public JLabel getLabel() { return this.label; }
+	
+	public void setLabel(JLabel label) {
+		this.label = label;
+	}
+	
 
 	public Color getColor() {
 		return color;
