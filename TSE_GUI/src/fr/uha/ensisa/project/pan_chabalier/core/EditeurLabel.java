@@ -1,47 +1,59 @@
 package fr.uha.ensisa.project.pan_chabalier.core;
 
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.AffineTransform;
 
 import javax.swing.JLabel;
 
 import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
 
-public class EditeurLabel{
-	private String text;
-	private Point p;
-	private JLabel label;
+public class EditeurLabel extends JLabel{
+	//private String text;
+	//private Point p;
+	//private JLabel label;
 	private Color color;
 
 	public EditeurLabel(String text, Color color, int x, int y) {
-		label=new JLabel(text);
+		//label=new JLabel(text);
+		//label.setLocation(x, y);
 		// label.setLocation(x, y);
 		// label.setForeground(color);
 		//System.out.println("create");
 		//setText(text);
-		setColor(color);
-		setP(new Point(x, y));
+		this.setText(text);
+		this.setLocation(x, y);
+		this.setColor(color);
+		this.setLocation(x, y);
 	}
 
 	public EditeurLabel(String text, Color color, Point textPosition) {
 		//setText(text);
-		label=new JLabel(text);
-		setColor(color);
-		setP(textPosition);
+		//label=new JLabel(text);
+		//label.setLocation(textPosition);
+		this.setText(text);
+		this.setLocation(textPosition);
+		this.setColor(color);
+		this.setLocation(textPosition);
 	}
 
-	public String getText() {
+	/*public String getText() {
 		// return this.label.getText();
-		return text;
+		
+		return this.getText();
 	}
 
 	public void setText(String text) {
-		this.text = text;
+		this.setText(text);
 		// this.label.setText(text);
-	}
+	}*/
 
-	public int getX() {
-		return p.x;
+	/*public int getX() {
+		return this.getX();
 	}
 
 	public void setX(int x) {
@@ -49,18 +61,20 @@ public class EditeurLabel{
 	}
 
 	public int getY() {
-		return p.y;
-	}
+		return this.getY();
+	}*/
 
-	public void setY(int y) {
+	/*public void setY(int y) {
 		p.setLocation(p.x, y);
-	}
+	}*/
 
-	public JLabel getLabel() { return this.label; }
+	/*public JLabel getLabel() { 
+		return this; 
+	}*/
 	
-	public void setLabel(JLabel label) {
-		this.label = label;
-	}
+	/*public void setLabel(JLabel label) {
+		this.setLabel(label);
+	}*/
 	
 
 	public Color getColor() {
@@ -72,13 +86,25 @@ public class EditeurLabel{
 			color = Constants.DEFAULT_COLOR;
 		}
 		this.color = color;
+		//this.setColor(color);
+	}
+	
+	public Rectangle getBounds() {
+		Font font = new Font("SANS_SERIF",0,13);
+		AffineTransform affinetransform = new AffineTransform();
+		FontRenderContext frc = new FontRenderContext(affinetransform, true, true);
+		int textwidth = (int) (font.getStringBounds(this.getText(), frc).getWidth());
+		int textheight = (int) (font.getStringBounds(this.getText(), frc).getHeight());
+		Point upPoint = new Point((int) (this.getX()), (int) (this.getY()) - textheight);
+		Dimension dim = new Dimension(textwidth, textheight);
+		return (new Rectangle(upPoint, dim));
 	}
 
-	public Point getP() {
-		return p;
-	}
+	/*public Point getP() {
+		return this.getLocation();
+	}*/
 
-	public void setP(Point p) {
-		this.p = p;
-	}
+	/*public void setP(Point p) {
+		this.setLocation(p);
+	}*/
 }

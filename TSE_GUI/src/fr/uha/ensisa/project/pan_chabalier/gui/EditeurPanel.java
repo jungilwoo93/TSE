@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import fr.uha.ensisa.project.pan_chabalier.core.EditeurLabel;
@@ -65,7 +66,10 @@ public class EditeurPanel extends JPanel {
 				//TODO corriger formule
 				if(t.getCurvature()==0) {
 					g2d.drawLine((int)start.getX()+sizeOval/2, (int)start.getY()+sizeOval/2, (int)end.getX()+sizeOval/2, (int)end.getY()+sizeOval/2);
-					g2d.drawString(t.getLabel().getText(),(int)(start.getX()+distance/2),(int)(start.getY()+distance/2)-50);
+					//this.add(t.getLabel().getLabel());
+					//this.repaint();
+					this.addLabel(t.getLabel());
+					//g2d.drawString(t.getLabel().getText(),(int)(start.getX()+distance/2),(int)(start.getY()+distance/2)-50);
 				}/*else if(t.getCurvature() == 90){
 					cp.setLocation(start.getX()+sizeOval/2,start.getY()+sizeOval);
 					QuadCurve2D curve = new QuadCurve2D.Double();
@@ -102,16 +106,20 @@ public class EditeurPanel extends JPanel {
 					curve.setCurve(start.getX()+sizeOval/2,start.getY()+sizeOval/2, cp.getX(),cp.getY(),  end.getX()+sizeOval/2, end.getY()+sizeOval/2);
 					g2d.draw(curve);
 					if(t.getCurvature()>0) {
-						g2d.drawString(t.getLabel().getText(),(int)cp.getX(),(int)cp.getY()+40);
+						this.add(t.getLabel());
+						this.repaint();
+						//g2d.drawString(t.getLabel().getText(),(int)cp.getX(),(int)cp.getY()+40);
 					}else {
-						g2d.drawString(t.getLabel().getText(),(int)cp.getX(),(int)cp.getY()-30);
+						this.add(t.getLabel());
+						this.repaint();
+						//g2d.drawString(t.getLabel().getText(),(int)cp.getX(),(int)cp.getY()-30);
 					}
 				}
 				
 				//g2d.drawLine(t.getStart().getX()+sizeOval/2, t.getStart().getY()+sizeOval/2, t.getEnd().getX()+sizeOval/2, t.getEnd().getY()+sizeOval/2);
 			}
 		}
-		if(listState.size()>0)
+		if(listState.size()>0) {
 			for(State s : listState) {
 				// System.out.println("draw");
 				g2d.setColor(Color.WHITE);
@@ -119,9 +127,16 @@ public class EditeurPanel extends JPanel {
 				g2d.setColor(s.getColor());
 				g2d.setStroke(new BasicStroke(s.getThickness()));
 				g2d.drawOval(s.getX(), s.getY(), sizeOval, sizeOval);
+				this.addLabel(new EditeurLabel(s.getId(),Color.BLACK,s.getX() + sizeOval / 2, s.getY() + sizeOval / 2));
 				// this.g2d.setStroke(new BasicStroke(s.getThickness()));
-				g2d.drawString(s.getId(), s.getX() + sizeOval / 2, s.getY() + sizeOval / 2);
+				/*JLabel label = new JLabel(s.getId());
+				label.setLocation(s.getX() + sizeOval / 2, s.getY() + sizeOval / 2);
+				label.setVisible(true);
+				this.add(label);
+				this.repaint();*/
+				//g2d.drawString(s.getId(), s.getX() + sizeOval / 2, s.getY() + sizeOval / 2);
 			}
+		}
 		
 		
 //		if(listTransition.size()>0) {
@@ -164,8 +179,12 @@ public class EditeurPanel extends JPanel {
 	}
 	
 	public void addLabel(EditeurLabel label) {
-		//System.out.println("ajouter label");
-		listLabel.add(label);
+		System.out.println("ajouter label");
+		//listLabel.add(label);
+		label.setBounds(label.getX(), label.getY(), (int)label.getBounds().getWidth(), (int)label.getBounds().getHeight());
+		/*System.out.println("wd " + (int)label.getBounds().getWidth());
+		System.out.println("wd " + (int)label.getBounds().getHeight());*/
+		this.add(label);
 		this.repaint();
 	}
 
