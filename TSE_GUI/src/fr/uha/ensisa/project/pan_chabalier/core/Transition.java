@@ -10,6 +10,7 @@ public class Transition extends Element {
 	private Color color;
 
 	public Transition(State start, State end, Color color, Float thickness, Float curvature, String text) {
+		super();
 		this.setStart(start);
 		this.setEnd(end);
 		this.setThickness(thickness);
@@ -21,6 +22,7 @@ public class Transition extends Element {
 
 	public Transition(State start, State end, Color color, Float thickness, Float curvature, String text,
 			Point textPosition) {
+		super();
 		this.setStart(start);
 		this.setEnd(end);
 		this.setThickness(thickness);

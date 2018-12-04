@@ -13,6 +13,7 @@ public class State extends Element{
 	private String id;
 
 	public State(String id, Color color, Float thickness, int x, int y) {
+		super();
 		setId(id);
 		setP(new Point(x,y));
 		setColor(color);
@@ -20,6 +21,7 @@ public class State extends Element{
 	}
 
 	public State(String id, Color color, Float thickness, Point p) {
+		super();
 		setId(id);
 		setP(p);
 		setColor(color);
@@ -86,6 +88,7 @@ public class State extends Element{
 	public boolean isInBounds(Point other) {
 		// Check if the coordinates of the other point is in the circle ( (xa + xb)² + (ya + yb) = radius)
 		if(Math.pow(this.p.getX()+other.getX(), 2)+Math.pow(this.p.getY()+other.getY(), 2)==Constants.DEFAULT_STATE_RADIUS) {
+			System.out.println(other + " is in " + this);
 			return true;
 		}
 		return false;

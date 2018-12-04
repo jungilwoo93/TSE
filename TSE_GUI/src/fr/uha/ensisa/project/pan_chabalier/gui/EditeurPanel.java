@@ -87,13 +87,11 @@ public class EditeurPanel extends JPanel {
 					if(Math.abs(start.getX()-end.getX())==0) {
 						cp.setLocation(start.getX()+Math.sin(t.getCurvature())*distance/2+Constants.DEFAULT_STATE_RADIUS/2,start.getY()+distance/2+Constants.DEFAULT_STATE_RADIUS/2);
 						
-						System.out.println("x=0");
 					}
 					else if(Math.abs(start.getY()-end.getY())==0) {
 						cp.setLocation(start.getX()+distance/2+Constants.DEFAULT_STATE_RADIUS/2, start.getY()+Math.sin(t.getCurvature())*distance/2+Constants.DEFAULT_STATE_RADIUS/2);
 						
 						//System.out.println("controle point " + cp);
-						System.out.println("y=0");
 					}else {
 						if(Math.abs(t.getCurvature())==45) {
 							cp.setLocation(start.getX(),end.getY());
@@ -101,7 +99,6 @@ public class EditeurPanel extends JPanel {
 							double disX = Math.abs(start.getX()-end.getX());
 							double disY = Math.abs(start.getY()-end.getY());
 							cp.setLocation(start.getX()+disX/2, end.getY()+disY/2);
-							System.out.println("x,y !=0");
 						}
 							
 					}
@@ -186,7 +183,6 @@ public class EditeurPanel extends JPanel {
 	}
 	
 	public void addLabel(EditeurLabel label) {
-		System.out.println("ajouter label");
 		//listLabel.add(label);
 		label.setBounds(label.getX(), label.getY(), (int)label.getBounds().getWidth(), (int)label.getBounds().getHeight());
 		/*System.out.println("wd " + (int)label.getBounds().getWidth());
@@ -200,13 +196,11 @@ public class EditeurPanel extends JPanel {
 	}
 
 	public void addState(State s) {
-		System.out.println("ajouter state");
 		listState.add(s);
 		this.repaint();
 	}
 
 	public void addTransition(Transition t) {
-		System.out.println("ajouter transition");
 		listTransition.add(t);
 		this.repaint();
 	}
