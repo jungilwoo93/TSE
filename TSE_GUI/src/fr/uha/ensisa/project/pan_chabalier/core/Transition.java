@@ -3,7 +3,7 @@ package fr.uha.ensisa.project.pan_chabalier.core;
 import java.awt.Color;
 import java.awt.Point;
 
-public class Transition {
+public class Transition extends Element {
 	private State start, end;
 	private float thickness, curvature;
 	private EditeurLabel label;
@@ -84,5 +84,11 @@ public class Transition {
 	}
 	public void setColor(Color color) {
 		this.color = color;
+	}
+
+	@Override
+	public boolean isInBounds(Point other) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

@@ -33,10 +33,6 @@ public class GeneratorController {
 	}
 	
 	public void executeGeneratedCode() throws ClassNotFoundException, InstantiationException, IllegalAccessException, IOException, URISyntaxException {
-////        File root = new File("src/fr/uha/ensisa/project/pan_chabalier/tmp");	
-////		File root = new File(GeneratorController.class.getResource("fr/uha/ensisa/project/pan_chabalier/tmp/").toString());
-////		File root = new File("src/fr/uha/ensisa/project/pan_chabalier/tmp");
-////        File sourceFile = new File(root, "GeneratedData.java");
 //	
 		File root = new File("fr/uha/ensisa/project/pan_chabalier/tmp");
         File sourceFile = new File(root, "GeneratedData.java");
@@ -44,7 +40,6 @@ public class GeneratorController {
 		// Compile source file.
 		JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 		System.out.println(sourceFile.getAbsolutePath());
-		//System.out.println("coucou");
 		compiler.run(null, null, null, sourceFile.getAbsolutePath());
 
 		// Load and instantiate compiled class.

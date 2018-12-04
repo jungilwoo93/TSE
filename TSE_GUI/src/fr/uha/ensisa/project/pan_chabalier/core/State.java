@@ -2,10 +2,11 @@ package fr.uha.ensisa.project.pan_chabalier.core;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.awt.Rectangle;
 
 import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
 
-public class State {
+public class State extends Element{
 	private Point p;
 	private Color color;
 	private float thickness;
@@ -80,4 +81,14 @@ public class State {
 	public void setP(Point p) {
 		this.p = p;
 	}
+
+	@Override
+	public boolean isInBounds(Point other) {
+		// Check if the coordinates of the other point is in the circle ( (xa + xb)² + (ya + yb) = radius)
+		if(Math.pow(this.p.getX()+other.getX(), 2)+Math.pow(this.p.getY()+other.getY(), 2)==Constants.DEFAULT_STATE_RADIUS) {
+			return true;
+		}
+		return false;
+	}
+
 }

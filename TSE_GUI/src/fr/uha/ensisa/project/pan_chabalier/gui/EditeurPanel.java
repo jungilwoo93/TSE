@@ -16,31 +16,38 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
+import fr.uha.ensisa.project.pan_chabalier.controller.Controller;
+import fr.uha.ensisa.project.pan_chabalier.controller.ElementController;
 import fr.uha.ensisa.project.pan_chabalier.core.EditeurLabel;
 import fr.uha.ensisa.project.pan_chabalier.core.State;
+import fr.uha.ensisa.project.pan_chabalier.core.Systeme;
 import fr.uha.ensisa.project.pan_chabalier.core.Transition;
 
 public class EditeurPanel extends JPanel {
 	private static final long serialVersionUID = 8977236653006925656L;
+	private Object model;
+	private Controller controller;
 	private Graphics2D g2d = null;
-	// String s = "coucou";
 	private List<EditeurLabel> listLabel;
 	private List<State> listState;
 	private List<Transition> listTransition;
-	private int sizeOval = 50;
-
-	/*
-	 * public String getS() { return s; }
-	 * 
-	 * public void setS(String s) { this.s = s; this.revalidate(); }
-	 */
 
 	public EditeurPanel() {
 		this.listLabel = new ArrayList<EditeurLabel>();
 		this.listState = new ArrayList<State>();
 		this.listTransition = new ArrayList<Transition>();
+		
+		this.model = new Systeme();
+		this.controller = defaultController(model);
+		this.controller.setView(this);
+		this.addMouseListener(this.controller);
+		this.addMouseMotionListener(this.controller);
+		this.addKeyListener(this.controller);
 	}
 
+	
+	
 	@Override
 	protected void paintComponent(Graphics g) {
 		this.g2d = (Graphics2D) g;
@@ -65,25 +72,25 @@ public class EditeurPanel extends JPanel {
 				Point2D cp = new Point();
 				//TODO corriger formule
 				if(t.getCurvature()==0) {
-					g2d.drawLine((int)start.getX()+sizeOval/2, (int)start.getY()+sizeOval/2, (int)end.getX()+sizeOval/2, (int)end.getY()+sizeOval/2);
+					g2d.drawLine((int)start.getX()+Constants.DEFAULT_STATE_RADIUS/2, (int)start.getY()+Constants.DEFAULT_STATE_RADIUS/2, (int)end.getX()+Constants.DEFAULT_STATE_RADIUS/2, (int)end.getY()+Constants.DEFAULT_STATE_RADIUS/2);
 					//this.add(t.getLabel().getLabel());
 					//this.repaint();
 					this.addLabel(t.getLabel());
 					//g2d.drawString(t.getLabel().getText(),(int)(start.getX()+distance/2),(int)(start.getY()+distance/2)-50);
 				}/*else if(t.getCurvature() == 90){
-					cp.setLocation(start.getX()+sizeOval/2,start.getY()+sizeOval);
+					cp.setLocation(start.getX()+Constants.STATE_RADIUS/2,start.getY()+Constants.STATE_RADIUS);
 					QuadCurve2D curve = new QuadCurve2D.Double();
-					curve.setCurve(start.getX()+sizeOval/2,start.getY(), cp.getX()+100,cp.getY()+100,  start.getX()+sizeOval/2,start.getY());
+					curve.setCurve(start.getX()+Constants.STATE_RADIUS/2,start.getY(), cp.getX()+100,cp.getY()+100,  start.getX()+Constants.STATE_RADIUS/2,start.getY());
 					g2d.draw(curve);
 					System.out.println("90!!!");
 				}*/else {
 					if(Math.abs(start.getX()-end.getX())==0) {
-						cp.setLocation(start.getX()+Math.sin(t.getCurvature())*distance/2+sizeOval/2,start.getY()+distance/2+sizeOval/2);
+						cp.setLocation(start.getX()+Math.sin(t.getCurvature())*distance/2+Constants.DEFAULT_STATE_RADIUS/2,start.getY()+distance/2+Constants.DEFAULT_STATE_RADIUS/2);
 						
 						System.out.println("x=0");
 					}
 					else if(Math.abs(start.getY()-end.getY())==0) {
-						cp.setLocation(start.getX()+distance/2+sizeOval/2, start.getY()+Math.sin(t.getCurvature())*distance/2+sizeOval/2);
+						cp.setLocation(start.getX()+distance/2+Constants.DEFAULT_STATE_RADIUS/2, start.getY()+Math.sin(t.getCurvature())*distance/2+Constants.DEFAULT_STATE_RADIUS/2);
 						
 						//System.out.println("controle point " + cp);
 						System.out.println("y=0");
@@ -100,10 +107,10 @@ public class EditeurPanel extends JPanel {
 					}
 					//Point2D cp = calculateControlPoint(start,end,(float)Math.PI/4);
 					//P path = new Path2D.Double();
-					//path.moveTo(start.getX()+sizeOval/2, start.getY()+sizeOval/2);
+					//path.moveTo(start.getX()+Constants.STATE_RADIUS/2, start.getY()+Constants.STATE_RADIUS/2);
 					//path.curveTo(start.getX(), start.getY(), cp.getX(), cp.getY(), end.getX(), end.getY());
 					QuadCurve2D curve = new QuadCurve2D.Double();
-					curve.setCurve(start.getX()+sizeOval/2,start.getY()+sizeOval/2, cp.getX(),cp.getY(),  end.getX()+sizeOval/2, end.getY()+sizeOval/2);
+					curve.setCurve(start.getX()+Constants.DEFAULT_STATE_RADIUS/2,start.getY()+Constants.DEFAULT_STATE_RADIUS/2, cp.getX(),cp.getY(),  end.getX()+Constants.DEFAULT_STATE_RADIUS/2, end.getY()+Constants.DEFAULT_STATE_RADIUS/2);
 					g2d.draw(curve);
 					if(t.getCurvature()>0) {
 						this.add(t.getLabel());
@@ -116,25 +123,25 @@ public class EditeurPanel extends JPanel {
 					}
 				}
 				
-				//g2d.drawLine(t.getStart().getX()+sizeOval/2, t.getStart().getY()+sizeOval/2, t.getEnd().getX()+sizeOval/2, t.getEnd().getY()+sizeOval/2);
+				//g2d.drawLine(t.getStart().getX()+Constants.STATE_RADIUS/2, t.getStart().getY()+Constants.STATE_RADIUS/2, t.getEnd().getX()+Constants.STATE_RADIUS/2, t.getEnd().getY()+Constants.STATE_RADIUS/2);
 			}
 		}
 		if(listState.size()>0) {
 			for(State s : listState) {
 				// System.out.println("draw");
 				g2d.setColor(Color.WHITE);
-				g2d.fillOval(s.getX(), s.getY(), sizeOval, sizeOval);
+				g2d.fillOval(s.getX(), s.getY(), Constants.DEFAULT_STATE_RADIUS, Constants.DEFAULT_STATE_RADIUS);
 				g2d.setColor(s.getColor());
 				g2d.setStroke(new BasicStroke(s.getThickness()));
-				g2d.drawOval(s.getX(), s.getY(), sizeOval, sizeOval);
-				this.addLabel(new EditeurLabel(s.getId(),Color.BLACK,s.getX() + sizeOval / 2, s.getY() + sizeOval / 2));
+				g2d.drawOval(s.getX(), s.getY(), Constants.DEFAULT_STATE_RADIUS, Constants.DEFAULT_STATE_RADIUS);
+				this.addLabel(new EditeurLabel(s.getId(),Color.BLACK,s.getX() + Constants.DEFAULT_STATE_RADIUS / 2, s.getY() + Constants.DEFAULT_STATE_RADIUS / 2));
 				// this.g2d.setStroke(new BasicStroke(s.getThickness()));
 				/*JLabel label = new JLabel(s.getId());
-				label.setLocation(s.getX() + sizeOval / 2, s.getY() + sizeOval / 2);
+				label.setLocation(s.getX() + Constants.STATE_RADIUS / 2, s.getY() + Constants.STATE_RADIUS / 2);
 				label.setVisible(true);
 				this.add(label);
 				this.repaint();*/
-				//g2d.drawString(s.getId(), s.getX() + sizeOval / 2, s.getY() + sizeOval / 2);
+				//g2d.drawString(s.getId(), s.getX() + Constants.STATE_RADIUS / 2, s.getY() + Constants.STATE_RADIUS / 2);
 			}
 		}
 		
@@ -244,4 +251,21 @@ public class EditeurPanel extends JPanel {
 //	public void drawState(State s) {
 //		g2d.drawOval(s.getX(), s.getY(), 5, 5);
 //	}
+	
+	public void setModel(Object model) {
+		this.model = model;
+		this.controller.setModel(model);
+	}
+
+	public Object getModel() {
+		return this.model;
+	}
+
+	public Controller defaultController(Object model) {
+		return new ElementController(this.getModel());
+	}
+
+	final public Controller getController() {
+		return this.controller;
+	}
 }
