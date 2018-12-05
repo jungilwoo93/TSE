@@ -26,7 +26,7 @@ import fr.uha.ensisa.project.pan_chabalier.core.Transition;
 
 public class EditeurPanel extends JPanel {
 	private static final long serialVersionUID = 8977236653006925656L;
-	private Object model;
+	private Systeme model;
 	private Controller controller;
 	private Graphics2D g2d = null;
 	private List<EditeurLabel> listLabel;
@@ -197,24 +197,28 @@ public class EditeurPanel extends JPanel {
 
 	public void addState(State s) {
 		listState.add(s);
+		this.model.add(s);
 		this.repaint();
 	}
 
 	public void addTransition(Transition t) {
 		listTransition.add(t);
+		this.model.add(t);
 		this.repaint();
 	}
 	
 	public void addStates(Collection<State> collection) {
 		this.listState.addAll(collection);
+		this.model.addAll(collection);
 	}
 	
 	public void cleanStates() {
 		this.listState.clear();
 	}
 	
-	public void addTransitions(List<Transition> transitions) {
+	public void addTransitions(Collection<Transition> transitions) {
 		this.listTransition.addAll(transitions);
+		this.model.addAll(transitions);
 	}
 	
 	public void cleanTransitions() {
@@ -247,7 +251,7 @@ public class EditeurPanel extends JPanel {
 //	}
 	
 	public void setModel(Object model) {
-		this.model = model;
+		this.model = (Systeme) model;
 		this.controller.setModel(model);
 	}
 

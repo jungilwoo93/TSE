@@ -24,15 +24,16 @@ public class ElementController extends Controller {
 		Systeme model = (Systeme) getModel();
 		Iterator<Element> iter = model.iterator(); // we try to find which element is under the mouse
 		while (iter.hasNext()) {
-			Element element = iter.next();
-			if (element.isInBounds((this.posMouse))) { // if the location of mouse is on the element
-				return element;
+			Element iElement = iter.next();
+			if (iElement.getBounds().contains(this.posMouse)) { // if the location of mouse is on the Element's
+																// boundedRectagle
+				return iElement;
 			}
 
 		}
 		return null; // if no element under mouse
 	}
-	
+
 	@Override
 	public void mousePressed(MouseEvent e) {
 		super.mousePressed(e);
@@ -46,21 +47,17 @@ public class ElementController extends Controller {
 					attrs.unSelected();
 				}
 			}
+		} else {
+			this.collect.remove(element);
 		}
-		
-		else if (element != null) {
+		if (element != null) {
 			SelectionAttributes attrSelect = (SelectionAttributes) element.getSelectionAttributes();
-
 			if (attrSelect != null) {
 				attrSelect.toggleSelection();
 			}
 			if (!isShiftPressed) {
 				this.collect.add(element);
 			}
-
-
-		} else {
-			this.collect.remove(element);
 		}
 		getView().repaint();
 	}

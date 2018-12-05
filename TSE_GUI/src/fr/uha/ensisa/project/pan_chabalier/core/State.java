@@ -1,6 +1,7 @@
 package fr.uha.ensisa.project.pan_chabalier.core;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
 
@@ -84,14 +85,18 @@ public class State extends Element{
 		this.p = p;
 	}
 
+	@Deprecated
 	@Override
 	public boolean isInBounds(Point other) {
 		// Check if the coordinates of the other point is in the circle ( (xa + xb)² + (ya + yb) = radius)
-		if(Math.pow(this.p.getX()+other.getX(), 2)+Math.pow(this.p.getY()+other.getY(), 2)==Constants.DEFAULT_STATE_RADIUS) {
-			System.out.println(other + " is in " + this);
-			return true;
-		}
-		return false;
+		return Math.pow(this.p.getX()+other.getX(), 2)+Math.pow(this.p.getY()+other.getY(), 2)==Constants.DEFAULT_STATE_RADIUS;
+	}
+	
+	@Override
+	public Rectangle getBounds() {
+		Point upPoint = new Point((int) (this.p.getX()), (int) (this.p.getY()));
+		Dimension dim = new Dimension(Constants.DEFAULT_STATE_RADIUS, Constants.DEFAULT_STATE_RADIUS);
+		return (new Rectangle(upPoint, dim));
 	}
 
 }

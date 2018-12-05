@@ -2,6 +2,7 @@ package fr.uha.ensisa.project.pan_chabalier.core;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.awt.Rectangle;
 
 public class Transition extends Element {
 	private State start, end;
@@ -89,8 +90,15 @@ public class Transition extends Element {
 	}
 
 	@Override
+	@Deprecated
 	public boolean isInBounds(Point other) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	@Override
+	public Rectangle getBounds() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
