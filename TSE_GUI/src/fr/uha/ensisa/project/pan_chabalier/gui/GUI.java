@@ -79,6 +79,7 @@ public class GUI extends JFrame {
 		menuBar.add(mnMenu);
 		
 		JMenuItem mntmOpenFile = new JMenuItem("Open File");
+		mntmOpenFile.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_MASK));
 		mntmOpenFile.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -125,6 +126,23 @@ public class GUI extends JFrame {
 			}
 		});
 		mnMenu.add(mntmImport);
+		
+		
+		JMenuItem mntmExport = new JMenuItem("Export");
+		mntmExport.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == mntmExport) {
+					try {
+						FileManager.exportAutFile(textArea.getText());
+					} catch (IOException e1) {
+						JOptionPane.showMessageDialog(null, "IOError: " + e1.getCause(), "Error", JOptionPane.ERROR_MESSAGE);
+					}
+				}
+			}
+		});
+		mnMenu.add(mntmExport);
+		mntmExport.setEnabled(false); //Not well implemented yet
 		
 		JMenuItem mntmLeave = new JMenuItem("Leave");
 		mntmLeave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));

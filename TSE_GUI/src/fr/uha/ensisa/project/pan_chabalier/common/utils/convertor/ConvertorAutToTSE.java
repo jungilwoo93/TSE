@@ -1,4 +1,4 @@
-package fr.uha.ensisa.project.pan_chabalier.common.utils;
+package fr.uha.ensisa.project.pan_chabalier.common.utils.convertor;
 
 import java.util.HashSet;
 import java.util.Scanner;
@@ -10,7 +10,7 @@ public class ConvertorAutToTSE {
 	public static String convert(String text) {
 		HashSet<String> states = new HashSet<String>();
 		HashSet<String> transitions = new HashSet<String>();
-		Scanner sc = new Scanner(formatText((text)));
+		Scanner sc = new Scanner(formatText(text));
 		while (sc.hasNext()) {
 			Pattern pattern = Pattern.compile("(.*),(.*),(.*)");
 			Matcher matcher = pattern.matcher(sc.nextLine());

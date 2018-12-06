@@ -11,6 +11,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import fr.uha.ensisa.project.pan_chabalier.common.utils.convertor.ConvertorAutToTSE;
+
 public class FileManager {
 
 	/**
@@ -45,7 +47,7 @@ public class FileManager {
 	}
 
 	/**
-	 * Export the text in a file
+	 * Export the text in a tse file
 	 * Open a file chooser dialog
 	 * @param text the text to export
 	 * @throws IOException If an I/O error occurs
@@ -58,6 +60,29 @@ public class FileManager {
 			File f = chooser.getSelectedFile();
 			if(FileManager.getFileExtension(f)!="tse"){
 				f = new File(f.getPath()+".tse");
+			}
+			FileWriter fw = new FileWriter(f);
+			System.out.println("You choose to export in: " + f);
+			fw.write(text);
+			fw.close();
+		}
+
+	}
+	
+	/**
+	 * Export the text in a aut file
+	 * Open a file chooser dialog
+	 * @param text the text to export
+	 * @throws IOException If an I/O error occurs
+	 */
+	public static void exportAutFile(String text) throws IOException {
+		JFileChooser chooser = new JFileChooser();
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("aut files", "aut");
+		chooser.setFileFilter(filter);
+		if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
+			File f = chooser.getSelectedFile();
+			if(FileManager.getFileExtension(f)!="aut"){
+				f = new File(f.getPath()+".aut");
 			}
 			FileWriter fw = new FileWriter(f);
 			System.out.println("You choose to export in: " + f);
