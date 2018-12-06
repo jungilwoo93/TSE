@@ -8,6 +8,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class FileManager {
@@ -75,7 +76,7 @@ public class FileManager {
 	public static String importAutFile() throws IOException {
 		//TODO make the conversion of aut file to tse string
 		JFileChooser chooser = new JFileChooser();
-		FileNameExtensionFilter filter = new FileNameExtensionFilter("tse files", "tse");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("aut files", "aut");
 		chooser.setFileFilter(filter);
 		int returnVal = chooser.showOpenDialog(null);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -93,7 +94,7 @@ public class FileManager {
 			fr.close();
 			return ConvertorAutToTSE.convert(text.toString());
 		} else {
-			System.out.println("Aborting import");
+			JOptionPane.showMessageDialog(null, "Aborting import.", "Information", JOptionPane.WARNING_MESSAGE);
 			return "";
 		}
 	}

@@ -95,6 +95,7 @@ public class GUI extends JFrame {
 		mnMenu.add(mntmOpenFile);
 		
 		JMenuItem mntmSaveAs = new JMenuItem("Save as"); 
+		mntmSaveAs.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
 		mntmSaveAs.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
