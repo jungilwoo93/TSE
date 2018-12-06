@@ -12,10 +12,14 @@ public class State extends Element{
 	private Color color;
 	private float thickness;
 	private String id;
+	private EditeurLabel label;
+	private int sizeOval = 50;
 
 	public State(String id, Color color, Float thickness, int x, int y) {
 		super();
 		setId(id);
+		EditeurLabel label = new EditeurLabel(id, color,x + sizeOval / 2, y + sizeOval / 2);
+		setLabel(label);
 		setP(new Point(x,y));
 		setColor(color);
 		setThickness(thickness);
@@ -24,6 +28,8 @@ public class State extends Element{
 	public State(String id, Color color, Float thickness, Point p) {
 		super();
 		setId(id);
+		EditeurLabel label = new EditeurLabel(id, color,(int)p.getX() + sizeOval / 2, (int)p.getY() + sizeOval / 2);
+		setLabel(label);
 		setP(p);
 		setColor(color);
 		setThickness(thickness);	
@@ -99,4 +105,11 @@ public class State extends Element{
 		return (new Rectangle(upPoint, dim));
 	}
 
+	public EditeurLabel getLabel() {
+		return label;
+	}
+
+	public void setLabel(EditeurLabel label) {
+		this.label = label;
+	}
 }

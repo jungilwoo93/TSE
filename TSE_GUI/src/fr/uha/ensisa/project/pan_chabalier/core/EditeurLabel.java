@@ -9,6 +9,7 @@ import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
 
 import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
 
@@ -25,6 +26,7 @@ public class EditeurLabel extends JLabel{
 		// label.setForeground(color);
 		//System.out.println("create");
 		//setText(text);
+		//this.setEditable(false);
 		this.setText(text);
 		this.setLocation(x, y);
 		this.setColor(color);
@@ -35,6 +37,7 @@ public class EditeurLabel extends JLabel{
 		//setText(text);
 		//label=new JLabel(text);
 		//label.setLocation(textPosition);
+		//this.setEditable(false);
 		this.setText(text);
 		this.setLocation(textPosition);
 		this.setColor(color);
@@ -90,7 +93,7 @@ public class EditeurLabel extends JLabel{
 	}
 	
 	public Rectangle getBounds() {
-		Font font = new Font("SANS_SERIF",0,13);
+		Font font = new Font("SANS_SERIF",0,15);
 		AffineTransform affinetransform = new AffineTransform();
 		FontRenderContext frc = new FontRenderContext(affinetransform, true, true);
 		int textwidth = (int) (font.getStringBounds(this.getText(), frc).getWidth());
@@ -99,6 +102,8 @@ public class EditeurLabel extends JLabel{
 		Dimension dim = new Dimension(textwidth, textheight);
 		return (new Rectangle(upPoint, dim));
 	}
+
+
 
 	/*public Point getP() {
 		return this.getLocation();
