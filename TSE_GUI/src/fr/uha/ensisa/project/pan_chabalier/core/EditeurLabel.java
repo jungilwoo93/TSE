@@ -96,7 +96,7 @@ public class EditeurLabel extends JLabel{
 		Font font = new Font("SANS_SERIF",0,15);
 		AffineTransform affinetransform = new AffineTransform();
 		FontRenderContext frc = new FontRenderContext(affinetransform, true, true);
-		int textwidth = (int) (font.getStringBounds(this.getText(), frc).getWidth());
+		int textwidth = (int) (font.getStringBounds(this.getText(), frc).getWidth()+5);
 		int textheight = (int) (font.getStringBounds(this.getText(), frc).getHeight());
 		Point upPoint = new Point((int) (this.getX()), (int) (this.getY()) - textheight);
 		Dimension dim = new Dimension(textwidth, textheight);

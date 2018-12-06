@@ -7,6 +7,8 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import javax.swing.JTextField;
+
 public class Systeme extends Element{
 	protected List<Element> list = new ArrayList<Element>();
 
@@ -56,6 +58,17 @@ public class Systeme extends Element{
 		for (Element e : list)
 			rect = rect.union(e.getBounds());// compute union of rectangle and return a new rectangle
 		return rect;
+	}
+	
+	@Override
+	public JTextField labelToJtext() {
+		return null;
+	}
+
+	@Override
+	public EditeurLabel getLabel() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

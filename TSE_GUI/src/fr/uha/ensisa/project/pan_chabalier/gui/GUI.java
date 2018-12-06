@@ -217,7 +217,7 @@ public class GUI extends JFrame {
 				System.out.println("Adding data");
 				panel.addStates(factory.getStates().values());
 				panel.addTransitions(factory.getTransitions());
-				panel.addLabels(factory.getTransitions());
+				//panel.addLabels(factory.getTransitions());
 				System.out.println("done");
 				
 				System.out.println("Repainting");

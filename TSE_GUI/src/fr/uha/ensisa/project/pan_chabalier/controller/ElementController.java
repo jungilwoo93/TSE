@@ -5,6 +5,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 
+import fr.uha.ensisa.project.pan_chabalier.core.EditeurLabel;
 import fr.uha.ensisa.project.pan_chabalier.core.Element;
 import fr.uha.ensisa.project.pan_chabalier.core.State;
 import fr.uha.ensisa.project.pan_chabalier.core.Systeme;
@@ -37,29 +38,46 @@ public class ElementController extends Controller {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		super.mousePressed(e);
+		int buttonDown = e.getButton();
 		this.posMouse = e.getPoint();
 		Element element = selectElement();
-		if (!isShiftPressed) {
-			for (Iterator<Element> iter = ((Systeme) this.getModel()).iterator(); iter.hasNext();) {
-				Element iElement = iter.next();
-				SelectionAttributes attrs = (SelectionAttributes) iElement.getSelectionAttributes();
-				if (attrs != null) {
-					attrs.unSelected();
+		if (buttonDown == MouseEvent.BUTTON1) {
+	           // Bouton GAUCHE enfoncé
+			
+			if (!isShiftPressed) {
+				for (Iterator<Element> iter = ((Systeme) this.getModel()).iterator(); iter.hasNext();) {
+					Element iElement = iter.next();
+					SelectionAttributes attrs = (SelectionAttributes) iElement.getSelectionAttributes();
+					if (attrs != null) {
+						attrs.unSelected();
+					}
+				}
+			} else {
+				this.collect.remove(element);
+			}
+			if (element != null) {
+				SelectionAttributes attrSelect = (SelectionAttributes) element.getSelectionAttributes();
+				if (attrSelect != null) {
+					attrSelect.toggleSelection();
+				}
+				if (!isShiftPressed) {
+					this.collect.add(element);
 				}
 			}
-		} else {
-			this.collect.remove(element);
-		}
-		if (element != null) {
-			SelectionAttributes attrSelect = (SelectionAttributes) element.getSelectionAttributes();
-			if (attrSelect != null) {
-				attrSelect.toggleSelection();
-			}
-			if (!isShiftPressed) {
-				this.collect.add(element);
-			}
-		}
-		getView().repaint();
+			getView().repaint();
+	    } else if(buttonDown == MouseEvent.BUTTON2) {
+	           // Bouton du MILIEU enfoncé
+	    	
+	    	
+	    } else if(buttonDown == MouseEvent.BUTTON3) {
+	           // Bouton DROIT enfoncé
+	    	//getView().remove();
+	    	//getView().add(element.labelToJtext());
+	    	getView().toChange(true);
+	    	//getView().removeLabel(element.getLabel());
+	    	//getView().repaint();
+	    }
+		
 	}
 
 	@Override

@@ -32,12 +32,13 @@ public class EditeurPanel extends JPanel {
 	private Systeme model;
 	private Controller controller;
 	private Graphics2D g2d = null;
-	private List<EditeurLabel> listLabel;
+	private boolean toChange = false;
+	//private List<EditeurLabel> listLabel;
 	private List<State> listState;
 	private List<Transition> listTransition;
 
 	public EditeurPanel() {
-		this.listLabel = new ArrayList<EditeurLabel>();
+		//this.listLabel = new ArrayList<EditeurLabel>();
 		this.listState = new ArrayList<State>();
 		this.listTransition = new ArrayList<Transition>();
 		
@@ -80,7 +81,18 @@ public class EditeurPanel extends JPanel {
 					g2d.drawLine((int)start.getX()+Constants.DEFAULT_STATE_RADIUS/2, (int)start.getY()+Constants.DEFAULT_STATE_RADIUS/2, (int)end.getX()+Constants.DEFAULT_STATE_RADIUS/2, (int)end.getY()+Constants.DEFAULT_STATE_RADIUS/2);
 					//this.add(t.getLabel().getLabel());
 					//this.repaint();
-					this.addLabel(t.getLabel());
+					if(!toChange) {
+						//System.out.println("change1");
+						this.addLabel(t.getLabel());
+					}
+					else {
+						//System.out.println("change2");
+						this.remove(t.getLabel());
+						//this.removeLabel(t.getLabel());
+						//this.toChange=false;
+						this.addJText(t.labelToJtext());
+						
+					}
 					//g2d.drawString(t.getLabel().getText(),(int)(start.getX()+distance/2),(int)(start.getY()+distance/2)-50);
 				}/*else if(t.getCurvature() == 90){
 					cp.setLocation(start.getX()+Constants.STATE_RADIUS/2,start.getY()+Constants.STATE_RADIUS);
@@ -114,11 +126,33 @@ public class EditeurPanel extends JPanel {
 					curve.setCurve(start.getX()+Constants.DEFAULT_STATE_RADIUS/2,start.getY()+Constants.DEFAULT_STATE_RADIUS/2, cp.getX(),cp.getY(),  end.getX()+Constants.DEFAULT_STATE_RADIUS/2, end.getY()+Constants.DEFAULT_STATE_RADIUS/2);
 					g2d.draw(curve);
 					if(t.getCurvature()>0) {
-						this.addLabel(t.getLabel());
+						if(!toChange) {
+							//System.out.println("change3");
+							this.addLabel(t.getLabel());
+						}
+						else {
+							//System.out.println("change4");
+							this.remove(t.getLabel());
+							//this.removeLabel(t.getLabel());
+							//this.toChange=false;
+							this.addJText(t.labelToJtext());
+						}
+						//this.addLabel(t.getLabel());
 						//this.repaint();
 						//g2d.drawString(t.getLabel().getText(),(int)cp.getX(),(int)cp.getY()+40);
 					}else {
-						this.addLabel(t.getLabel());
+						if(!toChange) {
+							//System.out.println("change5");
+							this.addLabel(t.getLabel());
+						}
+						else {
+							//System.out.println("change6");
+							this.remove(t.getLabel());
+							//this.removeLabel(t.getLabel());
+							//this.toChange=false;
+							this.addJText(t.labelToJtext());
+						}
+						//this.addLabel(t.getLabel());
 						//this.repaint();
 						//g2d.drawString(t.getLabel().getText(),(int)cp.getX(),(int)cp.getY()-30);
 					}
@@ -135,7 +169,19 @@ public class EditeurPanel extends JPanel {
 				g2d.setColor(s.getColor());
 				g2d.setStroke(new BasicStroke(s.getThickness()));
 				g2d.drawOval(s.getX(), s.getY(), Constants.DEFAULT_STATE_RADIUS, Constants.DEFAULT_STATE_RADIUS);
-				this.addLabel(s.getLabel());
+				
+				if(!toChange) {
+					System.out.println("change7");
+					this.addLabel(s.getLabel());
+				}
+				else {
+					System.out.println("change8");
+					this.remove(s.getLabel());
+					//this.removeLabel(t.getLabel());
+					//this.toChange=false;
+					this.addJText(s.labelToJtext());
+					
+				}//this.addLabel(s.getLabel());
 				// this.g2d.setStroke(new BasicStroke(s.getThickness()));
 				/*JLabel label = new JLabel(s.getId());
 				label.setLocation(s.getX() + Constants.STATE_RADIUS / 2, s.getY() + Constants.STATE_RADIUS / 2);
@@ -164,6 +210,20 @@ public class EditeurPanel extends JPanel {
 //			}
 //		}
 	}
+
+	private void addJText(JTextField labelToJtext) {
+		// TODO Auto-generated method stub
+		this.add(labelToJtext);
+		
+		//this.repaint();
+	}
+	
+	public void toChange(boolean isChange) {
+		this.toChange=isChange;
+	}
+	
+
+
 
 	/**
 	 * Method to get the control point of the "bezier" curve. 
@@ -203,7 +263,9 @@ public class EditeurPanel extends JPanel {
 	}
 
 	public void removeLabel(EditeurLabel label) {
-		listLabel.remove(label);
+		//listLabel.remove(label);
+		this.remove(label);
+		//this.model.remove(label);
 		this.repaint();
 	}
 
@@ -237,18 +299,18 @@ public class EditeurPanel extends JPanel {
 		this.listTransition.clear();
 	}
 	
-	public void addLabels(List<Transition> transitions) {
+	/*public void addLabels(List<Transition> transitions) {
 		for(Transition t : transitions) {
 			this.listLabel.add(t.getLabel());
 		}
-	}
+	}*/
 	
-	public void cleanLabels() {
+	/*public void cleanLabels() {
 		this.listLabel.clear();
-	}
+	}*/
 
 	public void cleanLists() {
-		cleanLabels();
+		//cleanLabels();
 		cleanTransitions();
 		cleanStates();
 	}

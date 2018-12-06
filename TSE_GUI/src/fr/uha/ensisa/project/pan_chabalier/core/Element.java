@@ -3,6 +3,8 @@ package fr.uha.ensisa.project.pan_chabalier.core;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import javax.swing.JTextField;
+
 import fr.uha.ensisa.project.pan_chabalier.core.attributes.Attributes;
 import fr.uha.ensisa.project.pan_chabalier.core.attributes.SelectionAttributes;
 
@@ -31,5 +33,6 @@ public abstract class Element {
 	 * @return the bounding rectangle of the element
 	 */
 	public abstract Rectangle getBounds();
-
+	public abstract EditeurLabel getLabel();
+	public abstract JTextField labelToJtext();
 }

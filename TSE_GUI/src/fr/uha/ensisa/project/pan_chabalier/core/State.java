@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import javax.swing.JTextField;
+
 import fr.uha.ensisa.project.pan_chabalier.common.utils.Constants;
 
 public class State extends Element{
@@ -104,12 +106,20 @@ public class State extends Element{
 		Dimension dim = new Dimension(Constants.DEFAULT_STATE_RADIUS, Constants.DEFAULT_STATE_RADIUS);
 		return (new Rectangle(upPoint, dim));
 	}
-
+	@Override
 	public EditeurLabel getLabel() {
 		return label;
 	}
 
 	public void setLabel(EditeurLabel label) {
 		this.label = label;
+	}
+	@Override
+	public JTextField labelToJtext() {
+		JTextField txt = new JTextField(label.getText());
+		txt.setLocation(label.getLocation());
+		txt.setBounds(label.getBounds());
+		txt.setEditable(true);
+		return txt;
 	}
 }

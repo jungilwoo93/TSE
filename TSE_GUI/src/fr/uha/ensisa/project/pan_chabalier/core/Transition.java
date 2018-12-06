@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import javax.swing.JTextField;
+
 public class Transition extends Element {
 	private State start, end;
 	private float thickness, curvature;
@@ -100,5 +102,14 @@ public class Transition extends Element {
 	public Rectangle getBounds() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public JTextField labelToJtext() {
+		JTextField txt = new JTextField(label.getText());
+		txt.setLocation(label.getLocation());
+		txt.setBounds(label.getBounds());
+		txt.setEditable(true);
+		return txt;
 	}
 }
