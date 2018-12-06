@@ -3,6 +3,7 @@ package fr.uha.ensisa.project.pan_chabalier.gui;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.EventQueue;
+import java.awt.Frame;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -19,11 +20,19 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import fr.uha.ensisa.project.pan_chabalier.common.utils.FileManager;
+import fr.uha.ensisa.project.pan_chabalier.common.utils.Screenshot;
 import fr.uha.ensisa.project.pan_chabalier.controller.GeneratorController;
 import fr.uha.ensisa.project.pan_chabalier.core.ElementFactoryImp;
+import javax.swing.KeyStroke;
+import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class GUI extends JFrame {
 
@@ -33,6 +42,7 @@ public class GUI extends JFrame {
 	private GridBagConstraints c_1;
 	private GridBagConstraints c_3;
 	private GridBagConstraints c_4;
+	private JTextArea textArea;
 
 	// private Text textToTreat;
 	/**
@@ -64,21 +74,90 @@ public class GUI extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnMenu = new JMenu("Menu");
+		JMenu mnMenu = new JMenu("Fichier");
+		
 		menuBar.add(mnMenu);
 		
 		JMenuItem mntmOpenFile = new JMenuItem("Open File");
+		mntmOpenFile.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == mntmOpenFile) {
+					try {
+						String newText = FileManager.importFile();
+						textArea.setText(newText);
+					} catch (IOException e1) {
+						JOptionPane.showMessageDialog(null, "IOError: " + e1.getCause(), "Error", JOptionPane.ERROR_MESSAGE);
+					}
+				}
+			}
+		});
 		mnMenu.add(mntmOpenFile);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Export"); //$NON-NLS-1$
-		mnMenu.add(mntmNewMenuItem);
+		JMenuItem mntmSaveAs = new JMenuItem("Save as"); 
+		mntmSaveAs.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == mntmSaveAs) {
+					try {
+						FileManager.exportFile(textArea.getText());
+					} catch (IOException e1) {
+						JOptionPane.showMessageDialog(null, "IOError: " + e1.getCause(), "Error", JOptionPane.ERROR_MESSAGE);
+					}
+				}
+			}
+		});
+		mnMenu.add(mntmSaveAs);
+		
+		JMenuItem mntmImport = new JMenuItem("Import");
+		mntmImport.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == mntmImport) {
+					try {
+						String newText = FileManager.importAutFile();
+						textArea.setText(newText);
+					} catch (IOException e1) {
+						JOptionPane.showMessageDialog(null, "IOError: " + e1.getCause(), "Error", JOptionPane.ERROR_MESSAGE);
+					}
+				}
+			}
+		});
+		mnMenu.add(mntmImport);
+		
+		JMenuItem mntmLeave = new JMenuItem("Leave");
+		mntmLeave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
+		mntmLeave.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == mntmLeave) {
+					System.exit(0);
+				}
+			}
+		});
+		mnMenu.add(mntmLeave);
+		
+		JMenu mnEdition = new JMenu("Edition");
+		menuBar.add(mnEdition);
+		
+		JMenuItem mntmScreenshot = new JMenuItem("Take a Screenshot");
+		mntmScreenshot.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_PRINTSCREEN, 0));
+		mntmScreenshot.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (e.getSource() == mntmScreenshot) {
+					Screenshot.main((JFrame) JFrame.getFrames()[0]);
+				}
+			}
+		});
+		mnEdition.add(mntmScreenshot);
 
-		JMenu mnHelp = new JMenu("Help"); //$NON-NLS-1$
+		JMenu mnHelp = new JMenu("Help"); 
 		menuBar.add(mnHelp);
 		
-		JMenuItem aboutMenu = new JMenuItem("About us"); //$NON-NLS-1$*/
+		JMenuItem aboutMenu = new JMenuItem("About us"); 
 
-		/*JMenu mnMenu = new JMenu(StringSources.getString("GUI.mnMenu.text")); //$NON-NLS-1$
+		/*JMenu mnMenu = new JMenu(StringSources.getString("GUI.mnMenu.text")); 
 >>>>>>> d6e5049fbc87f2cbbd88dcef193a5b88dfc2dcf3
 		menuBar.add(mnMenu);
 
@@ -94,7 +173,7 @@ public class GUI extends JFrame {
 <<<<<<< HEAD
 		JMenuItem aboutMenu = new JMenuItem("About");
 =======
-		JMenuItem aboutMenu = new JMenuItem(StringSources.getString("GUI.aboutMenu.text")); //$NON-NLS-1$*/
+		JMenuItem aboutMenu = new JMenuItem(StringSources.getString("GUI.aboutMenu.text")); */
 		
 		aboutMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -167,7 +246,7 @@ public class GUI extends JFrame {
 		c_4 = new GridBagConstraints();
 		c_4.insets = new Insets(0, 0, 0, 5);
 		JButton validate = new JButton("Execute");
-		//JButton validate = new JButton(StringSources.getString("GUI.validate.text")); //$NON-NLS-1$
+		//JButton validate = new JButton(StringSources.getString("GUI.validate.text")); 
 		c_4.gridx = 0;
 		c_4.gridy = 4;
 		c_4.gridwidth = 1;
@@ -176,13 +255,13 @@ public class GUI extends JFrame {
 		c_3 = new GridBagConstraints();
 		c_3.insets = new Insets(0, 0, 0, 5);
 		JButton export = new JButton("Export as PDF");
-		//JButton export = new JButton(StringSources.getString("GUI.export.text")); //$NON-NLS-1$
+		//JButton export = new JButton(StringSources.getString("GUI.export.text")); 
 		c_3.gridx = 3;
 		c_3.gridy = 4;
 		c_3.gridwidth = 1;
 		contentPane.add(export, c_3);
 
-		JTextArea textArea = new JTextArea();
+		this.textArea = new JTextArea();
 		GridBagConstraints gbc_textArea = new GridBagConstraints();
 		gbc_textArea.gridwidth = 3;
 		gbc_textArea.gridheight = 4;
@@ -244,5 +323,4 @@ public class GUI extends JFrame {
 
 		});
 	}
-
 }
