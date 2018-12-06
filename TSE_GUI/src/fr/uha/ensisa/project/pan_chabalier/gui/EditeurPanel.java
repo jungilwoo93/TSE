@@ -6,6 +6,8 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.geom.Path2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.QuadCurve2D;
@@ -15,6 +17,7 @@ import java.util.List;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 import fr.uha.ensisa.project.pan_chabalier.core.EditeurLabel;
 import fr.uha.ensisa.project.pan_chabalier.core.State;
@@ -39,6 +42,54 @@ public class EditeurPanel extends JPanel {
 		this.listLabel = new ArrayList<EditeurLabel>();
 		this.listState = new ArrayList<State>();
 		this.listTransition = new ArrayList<Transition>();
+		this.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+				//label.setEditable(true);;
+			}
+
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				for(EditeurLabel label :listLabel) {
+					//if(label.getBounds().contains(e.getPoint())) {
+						System.out.println("click");
+						//JTextField txt = new JTextField(label.getText());
+						removeLabel(label);
+						//txt.setEditable(true);
+						
+						//add(txt);
+						//repaint();
+					//}
+				}
+				
+				
+				//remove(label);//label.add(txt);
+				//add(txt);
+				//repaint();
+				//label.setEditable(true);;
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+	    });
 	}
 
 	@Override
@@ -80,13 +131,13 @@ public class EditeurPanel extends JPanel {
 					if(Math.abs(start.getX()-end.getX())==0) {
 						cp.setLocation(start.getX()+Math.sin(t.getCurvature())*distance/2+sizeOval/2,start.getY()+distance/2+sizeOval/2);
 						
-						System.out.println("x=0");
+						//System.out.println("x=0");
 					}
 					else if(Math.abs(start.getY()-end.getY())==0) {
 						cp.setLocation(start.getX()+distance/2+sizeOval/2, start.getY()+Math.sin(t.getCurvature())*distance/2+sizeOval/2);
 						
 						//System.out.println("controle point " + cp);
-						System.out.println("y=0");
+						//System.out.println("y=0");
 					}else {
 						if(Math.abs(t.getCurvature())==45) {
 							cp.setLocation(start.getX(),end.getY());
@@ -94,7 +145,7 @@ public class EditeurPanel extends JPanel {
 							double disX = Math.abs(start.getX()-end.getX());
 							double disY = Math.abs(start.getY()-end.getY());
 							cp.setLocation(start.getX()+disX/2, end.getY()+disY/2);
-							System.out.println("x,y !=0");
+							//System.out.println("x,y !=0");
 						}
 							
 					}
@@ -106,12 +157,12 @@ public class EditeurPanel extends JPanel {
 					curve.setCurve(start.getX()+sizeOval/2,start.getY()+sizeOval/2, cp.getX(),cp.getY(),  end.getX()+sizeOval/2, end.getY()+sizeOval/2);
 					g2d.draw(curve);
 					if(t.getCurvature()>0) {
-						this.add(t.getLabel());
-						this.repaint();
+						this.addLabel(t.getLabel());
+						//this.repaint();
 						//g2d.drawString(t.getLabel().getText(),(int)cp.getX(),(int)cp.getY()+40);
 					}else {
-						this.add(t.getLabel());
-						this.repaint();
+						this.addLabel(t.getLabel());
+						//this.repaint();
 						//g2d.drawString(t.getLabel().getText(),(int)cp.getX(),(int)cp.getY()-30);
 					}
 				}
@@ -127,7 +178,7 @@ public class EditeurPanel extends JPanel {
 				g2d.setColor(s.getColor());
 				g2d.setStroke(new BasicStroke(s.getThickness()));
 				g2d.drawOval(s.getX(), s.getY(), sizeOval, sizeOval);
-				this.addLabel(new EditeurLabel(s.getId(),Color.BLACK,s.getX() + sizeOval / 2, s.getY() + sizeOval / 2));
+				this.addLabel(s.getLabel());
 				// this.g2d.setStroke(new BasicStroke(s.getThickness()));
 				/*JLabel label = new JLabel(s.getId());
 				label.setLocation(s.getX() + sizeOval / 2, s.getY() + sizeOval / 2);
@@ -179,17 +230,25 @@ public class EditeurPanel extends JPanel {
 	}
 	
 	public void addLabel(EditeurLabel label) {
-		System.out.println("ajouter label");
+		//System.out.println("ajouter label");
 		//listLabel.add(label);
 		label.setBounds(label.getX(), label.getY(), (int)label.getBounds().getWidth(), (int)label.getBounds().getHeight());
 		/*System.out.println("wd " + (int)label.getBounds().getWidth());
 		System.out.println("wd " + (int)label.getBounds().getHeight());*/
 		this.add(label);
+		/*System.out.println("click");
+		JTextField txt = new JTextField(label.getText());
+		txt.setEditable(true);
+		remove(label);//label.add(txt);
+		add(txt);
+		repaint();*/
+
 		this.repaint();
 	}
 
 	public void removeLabel(EditeurLabel label) {
-
+		listLabel.remove(label);
+		this.repaint();
 	}
 
 	public void addState(State s) {

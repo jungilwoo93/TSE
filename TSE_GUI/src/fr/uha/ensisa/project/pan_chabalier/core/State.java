@@ -10,9 +10,13 @@ public class State {
 	private Color color;
 	private float thickness;
 	private String id;
+	private EditeurLabel label;
+	private int sizeOval = 50;
 
 	public State(String id, Color color, Float thickness, int x, int y) {
 		setId(id);
+		EditeurLabel label = new EditeurLabel(id, color,x + sizeOval / 2, y + sizeOval / 2);
+		setLabel(label);
 		setP(new Point(x,y));
 		setColor(color);
 		setThickness(thickness);
@@ -20,6 +24,8 @@ public class State {
 
 	public State(String id, Color color, Float thickness, Point p) {
 		setId(id);
+		EditeurLabel label = new EditeurLabel(id, color,(int)p.getX() + sizeOval / 2, (int)p.getY() + sizeOval / 2);
+		setLabel(label);
 		setP(p);
 		setColor(color);
 		setThickness(thickness);	
@@ -79,5 +85,13 @@ public class State {
 
 	public void setP(Point p) {
 		this.p = p;
+	}
+
+	public EditeurLabel getLabel() {
+		return label;
+	}
+
+	public void setLabel(EditeurLabel label) {
+		this.label = label;
 	}
 }
