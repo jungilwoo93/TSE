@@ -129,7 +129,7 @@ public class FileManager {
 	 * @param file the file to get extention
 	 * @return the extention in string (or empty string if no extention)
 	 */
-    private static String getFileExtension(File file) {
+    public static String getFileExtension(File file) {
         String fileName = file.getName();
         if(fileName.lastIndexOf(".") != -1 && fileName.lastIndexOf(".") != 0)
         return fileName.substring(fileName.lastIndexOf(".")+1);

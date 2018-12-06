@@ -25,10 +25,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
 import fr.uha.ensisa.project.pan_chabalier.common.utils.FileManager;
+import fr.uha.ensisa.project.pan_chabalier.common.utils.LargePanelToImageMCVE;
 import fr.uha.ensisa.project.pan_chabalier.common.utils.Screenshot;
 import fr.uha.ensisa.project.pan_chabalier.controller.GeneratorController;
 import fr.uha.ensisa.project.pan_chabalier.core.ElementFactoryImp;
 import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
+
 import java.awt.event.KeyEvent;
 import java.awt.event.InputEvent;
 import javax.swing.AbstractAction;
@@ -43,6 +46,7 @@ public class GUI extends JFrame {
 	private GridBagConstraints c_3;
 	private GridBagConstraints c_4;
 	private JTextArea textArea;
+	private EditeurPanel panel;
 
 	// private Text textToTreat;
 	/**
@@ -254,7 +258,7 @@ public class GUI extends JFrame {
 		c.fill = GridBagConstraints.BOTH;
 
 		
-		EditeurPanel panel = new EditeurPanel();
+		panel = new EditeurPanel();
 		panel.setBackground(Color.WHITE);
 		// panel.setLayout(null);
 		c.gridx = 3;
@@ -274,7 +278,12 @@ public class GUI extends JFrame {
 		c_3 = new GridBagConstraints();
 		c_3.insets = new Insets(0, 0, 0, 5);
 		JButton export = new JButton("Export as PDF");
-		//JButton export = new JButton(StringSources.getString("GUI.export.text")); 
+		export.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				exportAsPdf();
+			}
+		});
 		c_3.gridx = 3;
 		c_3.gridy = 4;
 		c_3.gridwidth = 1;
@@ -341,5 +350,13 @@ public class GUI extends JFrame {
 			}
 
 		});
+	}
+	
+	public void exportAsPdf() {
+		SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new LargePanelToImageMCVE(panel);
+            }
+        });
 	}
 }
